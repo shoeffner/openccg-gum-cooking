@@ -1,0 +1,2034 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY gum "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#" >
+    <!ENTITY GUM-3-space "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#"
+     xml:base="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:gum="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:GUM-3-space="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label rdf:datatype="&xsd;string"
+            >GUM 3 spatial extension.</rdfs:label>
+        <owl:versionInfo rdf:datatype="&xsd;string"
+            >1.1, 13 Oct 2008</owl:versionInfo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The Generalized Upper Model 3.0 (GUM 3.0) is a linguistically motivated ontology,
+which aims primarily to mediate between natural language and application components.
+It is based on the semantic perspective of natural language as described in Halliday
+and Matthiessen [1999]. Therefore the concepts of the GUM ontology are influenced
+strongly by the lexicogrammar of natural language and they are applicable in arbitrary
+domains. The complete model and all of its concepts and principles are described
+in detail in Bateman et al. [2006a], its underlying experimental linguistic results and
+language analysis are documented in Bateman et al. [2006b]. Currently, the Generalized
+Upper Model 3.0 is represented in OWL DL.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This is the spatial module of GUM 3.0 which extends &quot;GUM-3.owl&quot; with spatial notions.</rdfs:comment>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >developers: University of Bremen, SFB/TR8 Spatial Cognition, I1-[OntoSpace]
+http://www.ontospace.uni-bremen.de</rdfs:comment>
+        <owl:versionInfo rdf:datatype="&xsd;string"
+            >license: http://creativecommons.org/licenses/by-nc-nd/3.0/</owl:versionInfo>
+        <owl:imports rdf:resource="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#destination -->
+
+    <owl:ObjectProperty rdf:about="#destination">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The destination of a DirectedMotion, defines where the motion ends.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedLocation"/>
+        <rdfs:domain rdf:resource="#GeneralizedRoute"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#direction -->
+
+    <owl:ObjectProperty rdf:about="#direction">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation indicating directedness towards a place in a spatial locating or other non-abstract configuration.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedLocation"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#AffectingSpatialAction"/>
+                    <rdf:Description rdf:about="#NonAffectingSpatialDoing"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#hasSpatialModality -->
+
+    <owl:ObjectProperty rdf:about="#hasSpatialModality">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This is the relation holding between a GeneralizedLocation and a SpatialModality. It defines the spatio-functional relation of a GeneralizedLocation.</rdfs:comment>
+        <rdfs:domain rdf:resource="#GeneralizedLocation"/>
+        <rdfs:range rdf:resource="#SpatialModality"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#locatum -->
+
+    <owl:ObjectProperty rdf:about="#locatum">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The object which is located in space in a spatial locating configuration.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&gum;domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#motionDirection -->
+
+    <owl:ObjectProperty rdf:about="#motionDirection">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >DirectedMotion and OrientationChange configurations can specify the direction that gives information about the re-orientation of the motion.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#direction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#nextPathIndication -->
+
+    <owl:ObjectProperty rdf:about="#nextPathIndication">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >nextPathIndication represents a composition of GeneralizedPathLocations, that forms a path out of a series of single pathIndications. It defines the successor of one GeneralizedPathLocation, which is again a GeneralizedPathLocation.</rdfs:comment>
+        <rdfs:domain rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:range rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#nextPathPlacement -->
+
+    <owl:ObjectProperty rdf:about="#nextPathPlacement">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This concept represents a composition of GeneralizedPathLocations, that forms a path out of a series of single paths.</rdfs:comment>
+        <rdfs:domain rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:range rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#orientationDirection -->
+
+    <owl:ObjectProperty rdf:about="#orientationDirection">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >DirectedMotion and OrientationChange configurations can specify the direction that gives information about the orientation.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedLocation"/>
+        <rdfs:subPropertyOf rdf:resource="#direction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#orientationRoute -->
+
+    <owl:ObjectProperty rdf:about="#orientationRoute">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >a route that defines the path of an orientation of the actor.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#route"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#AffectingDirectedMotion"/>
+                    <rdf:Description rdf:about="#AffectingOrientationChange"/>
+                    <rdf:Description rdf:about="#NonAffectingDirectedMotion"/>
+                    <rdf:Description rdf:about="#NonAffectingOrientationChange"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#pathIndication -->
+
+    <owl:ObjectProperty rdf:about="#pathIndication">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A pathIndication of a directed motion, defines a certain SpatialLocating which is indicating the path of the motion.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:domain rdf:resource="#GeneralizedRoute"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#pathPlacement -->
+
+    <owl:ObjectProperty rdf:about="#pathPlacement">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A pathPlacement is used for a description of paths within a DirectedMotion configuration. GeneralizedRoutes can have pathPlacements, which are filled by GeneralizedPathLocations.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:domain rdf:resource="#GeneralizedRoute"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#placement -->
+
+    <owl:ObjectProperty rdf:about="#placement">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation indicating the placement in a spatial locating or other non-abstract configuration.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#GeneralizedLocation"/>
+                    <rdf:Description rdf:about="#GeneralizedRoute"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#AffectingSpatialAction"/>
+                    <rdf:Description rdf:about="#NonAffectingSpatialDoing"/>
+                    <rdf:Description rdf:about="#SpatialLocating"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#qualitativeAngleExtent -->
+
+    <owl:ObjectProperty rdf:about="#qualitativeAngleExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A qualitativeAngle, e.g. &quot;turn a bit around&quot;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#qualitativeSpatialExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#qualitativeDistanceExtent -->
+
+    <owl:ObjectProperty rdf:about="#qualitativeDistanceExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A qualitative distance extent, e.g. &quot;go forward a bit&quot;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#qualitativeSpatialExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#qualitativeSpatialExtent -->
+
+    <owl:ObjectProperty rdf:about="#qualitativeSpatialExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relationship of extent that is classified as qualitative. Qualitative here refers to a posited property of spatial relationships concerning how they are treated by the grammar of a language.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#spatialExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#quantitativeAngleExtent -->
+
+    <owl:ObjectProperty rdf:about="#quantitativeAngleExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A quantitative angle extent, e.g.: &quot;turn 180 degrees&quot;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#quantitativeSpatialExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#quantitativeDistanceExtent -->
+
+    <owl:ObjectProperty rdf:about="#quantitativeDistanceExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A quantitative distance extent, e.g. &quot;move forward 10 meters&quot;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#quantitativeSpatialExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#quantitativeSpatialExtent -->
+
+    <owl:ObjectProperty rdf:about="#quantitativeSpatialExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relationship of extent that is classified as quantitative. Quantitative here refers to a posited property of spatial relationships concerning how they are treated by the grammar of English. Absolute spatial relationships are taken to be unchanging with respect to the observer.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#spatialExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#relatum -->
+
+    <owl:ObjectProperty rdf:about="#relatum">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This encodes the reference object in spatial locatings, and holds between a place and a spatial object.</rdfs:comment>
+        <rdfs:domain rdf:resource="#GeneralizedLocation"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;range"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#route -->
+
+    <owl:ObjectProperty rdf:about="#route">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >route can be part of a DirectdMotion configuration and it is filled by a GeneralizedRoute.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedRoute"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#AffectingDirectedMotion"/>
+                    <rdf:Description rdf:about="#NonAffectingDirectedMotion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#source -->
+
+    <owl:ObjectProperty rdf:about="#source">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The source of a motion process, defines where the motion starts.</rdfs:comment>
+        <rdfs:range rdf:resource="#GeneralizedLocation"/>
+        <rdfs:domain rdf:resource="#GeneralizedRoute"/>
+        <rdfs:subPropertyOf rdf:resource="&gum;attribute"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#spatialExtent -->
+
+    <owl:ObjectProperty rdf:about="#spatialExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A spatio relation of specifying the extent in space taken (e.g. `for five miles&#39;).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&gum;spatialCircumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#spatialPerspective -->
+
+    <owl:ObjectProperty rdf:about="#spatialPerspective">
+        <rdfs:subPropertyOf rdf:resource="&gum;circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute -->
+
+    <owl:ObjectProperty rdf:about="&gum;attribute"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#circumstanceInConfiguration -->
+
+    <owl:ObjectProperty rdf:about="&gum;circumstanceInConfiguration"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#domain -->
+
+    <owl:ObjectProperty rdf:about="&gum;domain"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#gumrelation -->
+
+    <owl:ObjectProperty rdf:about="&gum;gumrelation"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#range -->
+
+    <owl:ObjectProperty rdf:about="&gum;range"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#spatialCircumstance -->
+
+    <owl:ObjectProperty rdf:about="&gum;spatialCircumstance"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#accessibility -->
+
+    <owl:DatatypeProperty rdf:about="#accessibility">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >accessibility of the locatum/actor/actee to the reference object (values: high or low).</rdfs:comment>
+        <rdfs:domain rdf:resource="#GeneralizedLocation"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#extremeDistancePosition -->
+
+    <owl:DatatypeProperty rdf:about="#extremeDistancePosition">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation gives additional information about the relation between two entities. It describes their distance by implying an extreme position. Ex.:&quot;Go to the blue bowl closest to me&quot;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#extremePosition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#extremePosition -->
+
+    <owl:DatatypeProperty rdf:about="#extremePosition">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation describes an extreme position referring to distance, axis, etc.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#extremePositionOnAxis -->
+
+    <owl:DatatypeProperty rdf:about="#extremePositionOnAxis">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation gives additional information about the position on an axis of an entity. Ex.: ``It is the furthest left one&#39;&#39;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#extremePosition"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#reciprocalRelation -->
+
+    <owl:DatatypeProperty rdf:about="#reciprocalRelation">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >a reciprocal relationship between entities. In its spatial meaning, there exist a reciprocal relation between the locatum/actor/actee and the relatum. They are often equal, e.g. &quot;They are beside each other&quot;.</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AboveProjection -->
+
+    <owl:Class rdf:about="#AboveProjection">
+        <rdfs:subClassOf rdf:resource="#VerticalProjection"/>
+        <owl:disjointWith rdf:resource="#BelowProjection"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation referring to a position above.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AboveProjectionExternal -->
+
+    <owl:Class rdf:about="#AboveProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#AboveProjection"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <owl:disjointWith rdf:resource="#AboveProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#BackProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#BelowProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#DenialOfFunctionalControl"/>
+        <owl:disjointWith rdf:resource="#DirectionalRelation"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The external  vertical relation indicating that the locatum is higher on the vertical axis than the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AboveProjectionInternal -->
+
+    <owl:Class rdf:about="#AboveProjectionInternal">
+        <rdfs:subClassOf rdf:resource="#AboveProjection"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#BackProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#BelowProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#Central"/>
+        <owl:disjointWith rdf:resource="#EastInternal"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The internal  vertical relation indicating that the locatum is higher on the vertical axis than the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Access -->
+
+    <owl:Class rdf:about="#Access">
+        <rdfs:subClassOf rdf:resource="#FunctionalSpatialModality"/>
+        <owl:disjointWith rdf:resource="#Control"/>
+        <owl:disjointWith rdf:resource="#DenialOfFunctionalControl"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The reified functional relation holding between two spatial objects x and y, such that y is physically accessbile from x for some purpose as intended by an agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AffectingDirectedMotion -->
+
+    <owl:Class rdf:about="#AffectingDirectedMotion">
+        <rdfs:subClassOf rdf:resource="#AffectingMotion"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#motionDirection"/>
+                        <owl:onClass rdf:resource="#GeneralizedLocation"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#route"/>
+                        <owl:onClass rdf:resource="#GeneralizedRoute"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#AffectingOrientationChange"/>
+        <owl:disjointWith rdf:resource="#AffectingSimpleMotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Affecting motion that includes either a source, path, destination, or pathIndication or it includes a direction (in which the GeneralizedLocation does not define a relatum).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AffectingMotion -->
+
+    <owl:Class rdf:about="#AffectingMotion">
+        <rdfs:subClassOf rdf:resource="#AffectingSpatialAction"/>
+        <owl:disjointWith rdf:resource="#AffectingOrienting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of affecting directed action defined by a motion verb, e.g. &quot;He moves it&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AffectingOrientationChange -->
+
+    <owl:Class rdf:about="#AffectingOrientationChange">
+        <rdfs:subClassOf rdf:resource="#AffectingMotion"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#orientationDirection"/>
+                        <owl:onClass rdf:resource="#GeneralizedLocation"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#orientationRoute"/>
+                        <owl:onClass rdf:resource="#GeneralizedRoute"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#AffectingSimpleMotion"/>
+        <rdfs:comment xml:lang="en"
+            >A change in orientation of an actee. Example: &#39;He turns it left&#39;, here the spatial change is defined by an orientationDirection. Otherwise a route can be defined with this category, i.e. &#39;He turns it from the window to the door&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AffectingOrienting -->
+
+    <owl:Class rdf:about="#AffectingOrienting">
+        <rdfs:subClassOf rdf:resource="#AffectingSpatialAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#orientationDirection"/>
+                <owl:onClass rdf:resource="#GeneralizedLocation"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >AffectingOrienting describes a spatial configuration by using orientation information on an actee. It needs a direction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AffectingSimpleMotion -->
+
+    <owl:Class rdf:about="#AffectingSimpleMotion">
+        <rdfs:subClassOf rdf:resource="#AffectingMotion"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#direction"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#route"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An affecting spatial action that does not include a destination, but may include a location where the motion takes place. Example: &#39;He shakes it&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#AffectingSpatialAction -->
+
+    <owl:Class rdf:about="#AffectingSpatialAction">
+        <rdfs:subClassOf rdf:resource="&gum;DispositiveMaterialAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#placement"/>
+                <owl:allValuesFrom rdf:resource="#GeneralizedLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&gum;NameEvent"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A spatial action, in which an actee is affected. In general, a placement where the action takes place may be specified</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#ArcDirectional -->
+
+    <owl:Class rdf:about="#ArcDirectional">
+        <rdfs:subClassOf rdf:resource="#SpecificDirectional"/>
+        <owl:disjointWith rdf:resource="#CardinalDirectional"/>
+        <owl:disjointWith rdf:resource="#TopographicDirectional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Locations, which are defined by arc information, such as &quot;the chair is at *three o&#39;clock*&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#BackProjection -->
+
+    <owl:Class rdf:about="#BackProjection">
+        <rdfs:subClassOf rdf:resource="#FrontalProjection"/>
+        <owl:disjointWith rdf:resource="#FrontProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation referring to the back side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#BackProjectionExternal -->
+
+    <owl:Class rdf:about="#BackProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#BackProjection"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <owl:disjointWith rdf:resource="#BackProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#BelowProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#DenialOfFunctionalControl"/>
+        <owl:disjointWith rdf:resource="#DirectionalRelation"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The external  frontal relation indicating that the locatum is in the half plane closest to its back, e.g., &#39;behind&#39; or &#39;in back of&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#BackProjectionInternal -->
+
+    <owl:Class rdf:about="#BackProjectionInternal">
+        <rdfs:subClassOf rdf:resource="#BackProjection"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#BelowProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#Central"/>
+        <owl:disjointWith rdf:resource="#EastInternal"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The internal  frontal relation indicating that the locatum is in the half plane closest to its back, e.g., &#39;behind&#39; or &#39;in back of&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#BelowProjection -->
+
+    <owl:Class rdf:about="#BelowProjection">
+        <rdfs:subClassOf rdf:resource="#VerticalProjection"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation referring to a position below.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#BelowProjectionExternal -->
+
+    <owl:Class rdf:about="#BelowProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#BelowProjection"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <owl:disjointWith rdf:resource="#BelowProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#DenialOfFunctionalControl"/>
+        <owl:disjointWith rdf:resource="#DirectionalRelation"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The external vertical relation indicating that the locatum is lower on the vertical axis than the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#BelowProjectionInternal -->
+
+    <owl:Class rdf:about="#BelowProjectionInternal">
+        <rdfs:subClassOf rdf:resource="#BelowProjection"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#Central"/>
+        <owl:disjointWith rdf:resource="#EastInternal"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The internal vertical relation indicating that the locatum is lower on the vertical axis than the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#CardinalDirectional -->
+
+    <owl:Class rdf:about="#CardinalDirectional">
+        <rdfs:subClassOf rdf:resource="#SpecificDirectional"/>
+        <owl:disjointWith rdf:resource="#TopographicDirectional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Directional Relation that is expressed by a cardinatlity, such as North, East, South, West.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Central -->
+
+    <owl:Class rdf:about="#Central">
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#EastInternal"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#SouthInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment xml:lang="en"
+            >A spatial relationship which is described by a central part of the relatum. Ex. &quot;in the middle of&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Connection -->
+
+    <owl:Class rdf:about="#Connection">
+        <rdfs:subClassOf rdf:resource="#RelativeSpatialModality"/>
+        <owl:disjointWith rdf:resource="#Disjointness"/>
+        <owl:disjointWith rdf:resource="#Distribution"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The topological relation of connection, or contact, holding between any two spatial entities whose surfaces (or internal parts) have physical contact. Examples of such are &quot;touching her sister&#39;s arm&quot; or &quot;Er lehnt sich an die Mauer&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Containment -->
+
+    <owl:Class rdf:about="#Containment">
+        <rdfs:subClassOf rdf:resource="#Control"/>
+        <owl:disjointWith rdf:resource="#Support"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The reified functional relation holding between two spatial objects x and y, such that x functionally contains y; x need not spatially contain y. An example of an expression falling into this category is: &quot;The apple is *in* the bowl&quot;. Here, the apple does not necessarily need to be spatially contained in the bowl (no topological containment).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Control -->
+
+    <owl:Class rdf:about="#Control">
+        <rdfs:subClassOf rdf:resource="#FunctionalSpatialModality"/>
+        <owl:disjointWith rdf:resource="#DenialOfFunctionalControl"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The binary functional relation holding between two spatial objects x and y, such that x controls y&#39;s position in space; if x moves, then y moves as well; x and y need not be in contact.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#DeicticSpatialTemporal -->
+
+    <owl:Class rdf:about="#DeicticSpatialTemporal">
+        <rdfs:subClassOf rdf:resource="&gum;SpatialTemporal"/>
+        <owl:disjointWith rdf:resource="#NonDeicticSpatialTemporal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relationship of spatialtemporal locating that is classified as relative. Relative here refers to a posited property of temporal and spatial relationships concerning how they are treated by the grammar of a language. Relative spatiotemporal relationships are taken to `move along with&#39; an observer. This contrasts with absolute relationships which do not accompany the observer. As an example, the notion of `today&#39;, `tomorrow&#39;, etc. do not stand still and allow the observer to pass them by, they move with the observer; this is in contrast to the notion of a `Monday&#39;, which can come and pass the observer by.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#DenialOfFunctionalControl -->
+
+    <owl:Class rdf:about="#DenialOfFunctionalControl">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#FunctionalSpatialModality"/>
+        <owl:disjointWith rdf:resource="#DirectionalRelation"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation expresses disconnection and denies functional control. It can be expressed by &quot;off&quot;, &quot;outside&quot;, &quot;out&quot;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#DirectionalRelation -->
+
+    <owl:Class rdf:about="#DirectionalRelation">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >DirectionalRelation is a spatial relation that indication a specific
+direction, which could be given by a vector.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Disjointness -->
+
+    <owl:Class rdf:about="#Disjointness">
+        <rdfs:subClassOf rdf:resource="#RelativeSpatialModality"/>
+        <owl:disjointWith rdf:resource="#Distribution"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The reified relation of disjointness, or disconnectedness, such that for any two spatial entities x and y, x and y do not contact.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Distal -->
+
+    <owl:Class rdf:about="#Distal">
+        <rdfs:subClassOf rdf:resource="#QualitativeDistance"/>
+        <owl:disjointWith rdf:resource="#Proximal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A qualitative spatial relation indicating that the locatum is relatively distant, as expressed by the prepositions &#39;far from&#39;, &#39;away from&#39;,  etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Distribution -->
+
+    <owl:Class rdf:about="#Distribution">
+        <rdfs:subClassOf rdf:resource="#RelativeSpatialModality"/>
+        <owl:disjointWith rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#ProjectionRelation"/>
+        <owl:disjointWith rdf:resource="#ShapeCommitting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The concept Distribution differs from all other categories in its required complex relatum.
+Therefore, it can only be used in cases of GeneralizedComplexLocations. Prepositions like
+among and between are indicating this concept.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#East -->
+
+    <owl:Class rdf:about="#East">
+        <rdfs:subClassOf rdf:resource="#CardinalDirectional"/>
+        <owl:disjointWith rdf:resource="#North"/>
+        <owl:disjointWith rdf:resource="#South"/>
+        <owl:disjointWith rdf:resource="#West"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The absolute relation based on the cardinal direction east.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#EastExternal -->
+
+    <owl:Class rdf:about="#EastExternal">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#East"/>
+        <owl:disjointWith rdf:resource="#EastInternal"/>
+        <rdfs:comment xml:lang="en"
+            >external cardinal relation of east, e.g. &quot;To the east of Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#EastInternal -->
+
+    <owl:Class rdf:about="#EastInternal">
+        <rdfs:subClassOf rdf:resource="#East"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#SouthInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment xml:lang="en"
+            >internal cardinal relation of east, e.g. &quot;East Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#FrontProjection -->
+
+    <owl:Class rdf:about="#FrontProjection">
+        <rdfs:subClassOf rdf:resource="#FrontalProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation referring to the front side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#FrontProjectionExternal -->
+
+    <owl:Class rdf:about="#FrontProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#Access"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#FrontProjection"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <owl:disjointWith rdf:resource="#FrontProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#Surrounding"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The external  frontal relation indicating that the locatum is in the half plane closest to its front, e.g., &#39;in front of&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#FrontProjectionInternal -->
+
+    <owl:Class rdf:about="#FrontProjectionInternal">
+        <rdfs:subClassOf rdf:resource="#FrontProjection"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The internal  frontal relation indicating that the locatum is in the half plane closest to its front, e.g., &#39;in front of&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#FrontalProjection -->
+
+    <owl:Class rdf:about="#FrontalProjection">
+        <rdfs:subClassOf rdf:resource="#HorizontalProjection"/>
+        <owl:disjointWith rdf:resource="#LateralProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation that referes to the front or back side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#FunctionalSpatialModality -->
+
+    <owl:Class rdf:about="#FunctionalSpatialModality">
+        <rdfs:subClassOf rdf:resource="#SpatialModality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The most general type of functional spatial relations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralDirectional -->
+
+    <owl:Class rdf:about="#GeneralDirectional">
+        <rdfs:subClassOf rdf:resource="#DirectionalRelation"/>
+        <owl:disjointWith rdf:resource="#SpecificDirectional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This less specific directional relation is expressed by a direction,
+such as &quot;to&quot;, &quot;from&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralDirectionalDistancing -->
+
+    <owl:Class rdf:about="#GeneralDirectionalDistancing">
+        <rdfs:subClassOf rdf:resource="#GeneralDirectional"/>
+        <owl:disjointWith rdf:resource="#GeneralDirectionalNearing"/>
+        <rdfs:comment xml:lang="en"
+            >A directional relationship that reflects increasing distance, e.g. &quot;aus Richtung der/des&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralDirectionalNearing -->
+
+    <owl:Class rdf:about="#GeneralDirectionalNearing">
+        <rdfs:subClassOf rdf:resource="#GeneralDirectional"/>
+        <rdfs:comment xml:lang="en"
+            >A directional relationship that reflects decreasing distance, e.g. &quot;going homewards&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralizedComplexLocation -->
+
+    <owl:Class rdf:about="#GeneralizedComplexLocation">
+        <rdfs:subClassOf rdf:resource="#GeneralizedLocation"/>
+        <owl:disjointWith rdf:resource="#GeneralizedPathLocation"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This element specifies the location in a SpatialLocating or other non-abstract configurations. It is minimally defined
+by a spatial relation and a complex relatum, which has to be a DecomposableObject or consist of more
+than one entities. In addition, the accessibility to the speaker or listener can be given, and it has always a belonging spatial extent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralizedLocation -->
+
+    <owl:Class rdf:about="#GeneralizedLocation">
+        <rdfs:subClassOf rdf:resource="&gum;Circumstance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#relatum"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#hasSpatialModality"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#GeneralizedRoute"/>
+        <owl:disjointWith rdf:resource="&gum;SubjectMatter"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The spatio-functional entity serving as the location in spatial locatings or other non-abstract configurations. It is minimally defined by a spatial relation, and a (potentially unspecified) relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralizedPathLocation -->
+
+    <owl:Class rdf:about="#GeneralizedPathLocation">
+        <rdfs:subClassOf rdf:resource="#GeneralizedLocation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#nextPathPlacement"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#nextPathIndication"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >GeneralizedPathLocation has an optional successor. This location is used in path-placement relations to represent lists of path placements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#GeneralizedRoute -->
+
+    <owl:Class rdf:about="#GeneralizedRoute">
+        <rdfs:subClassOf rdf:resource="&gum;Circumstance"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#source"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="#GeneralizedLocation"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#hasSpatialModality"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:complementOf rdf:resource="#GeneralDirectionalNearing"/>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#destination"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#pathIndication"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#pathPlacement"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#source"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#destination"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="#GeneralizedLocation"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#hasSpatialModality"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:complementOf rdf:resource="#GeneralDirectionalDistancing"/>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >GeneralizedRoute represents a route description or parts of it that are described in a DirectedMotion configuration. It can have sources, pathIndications, destinations, placements, and pathPlacements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#HeightNonProjectionAxial -->
+
+    <owl:Class rdf:about="#HeightNonProjectionAxial">
+        <rdfs:subClassOf rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#RelativeNonProjectionAxial"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relative spatial modality in which gravity information is involved, referring to a vertical axis.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#HorizontalProjection -->
+
+    <owl:Class rdf:about="#HorizontalProjection">
+        <rdfs:subClassOf rdf:resource="#ProjectionRelation"/>
+        <owl:disjointWith rdf:resource="#VerticalProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation that is horiziontally oriented.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#LateralProjection -->
+
+    <owl:Class rdf:about="#LateralProjection">
+        <rdfs:subClassOf rdf:resource="#HorizontalProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation that refers to the right or left side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#LeftProjection -->
+
+    <owl:Class rdf:about="#LeftProjection">
+        <rdfs:subClassOf rdf:resource="#LateralProjection"/>
+        <owl:disjointWith rdf:resource="#RightProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation that refers to the left side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#LeftProjectionExternal -->
+
+    <owl:Class rdf:about="#LeftProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#LeftProjection"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <owl:disjointWith rdf:resource="#LeftProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#NonProjectionAxial"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A external relative lateral relation indicating the locatum is somewhere in the left-hand side half plane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#LeftProjectionInternal -->
+
+    <owl:Class rdf:about="#LeftProjectionInternal">
+        <rdfs:subClassOf rdf:resource="#LeftProjection"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An internal relative lateral relation indicating the locatum is somewhere in the left-hand side half plane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#MultipleDirectional -->
+
+    <owl:Class rdf:about="#MultipleDirectional">
+        <rdfs:subClassOf rdf:resource="#GeneralDirectional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This spatial modality represents diverse directions, as expressed in &quot;zigzag&quot;, &quot;to and fro&quot;, &quot;back and forth&quot;, &quot;around&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonAffectingDirectedMotion -->
+
+    <owl:Class rdf:about="#NonAffectingDirectedMotion">
+        <rdfs:subClassOf rdf:resource="#NonAffectingMotion"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#orientationDirection"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#direction"/>
+                        <owl:onClass rdf:resource="#GeneralizedLocation"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#route"/>
+                        <owl:onClass rdf:resource="#GeneralizedRoute"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#NonAffectingOrientationChange"/>
+        <owl:disjointWith rdf:resource="#NonAffectingSimpleMotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Motion that includes either a source, path, destination, or pathIndication or it includes a direction (in which the GeneralizedLocation does not define a relatum).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonAffectingMotion -->
+
+    <owl:Class rdf:about="#NonAffectingMotion">
+        <rdfs:subClassOf rdf:resource="#NonAffectingSpatialDoing"/>
+        <owl:disjointWith rdf:resource="#NonAffectingOrienting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of an action defined by a motion verb, such as &quot;He goes&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonAffectingOrientationChange -->
+
+    <owl:Class rdf:about="#NonAffectingOrientationChange">
+        <rdfs:subClassOf rdf:resource="#NonAffectingMotion"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#orientationDirection"/>
+                        <owl:onClass rdf:resource="#GeneralizedLocation"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#orientationRoute"/>
+                        <owl:onClass rdf:resource="#GeneralizedRoute"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#NonAffectingSimpleMotion"/>
+        <rdfs:comment xml:lang="en"
+            >A change in orientation of an actor. Example: &#39;He turns right&#39;, here the spatial change is defined by an orientationDirection. Otherwise a route can be defined with this category, i.e. &#39;He turns from the kitchen 90 degrees to the left to the bathroom&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonAffectingOrienting -->
+
+    <owl:Class rdf:about="#NonAffectingOrienting">
+        <rdfs:subClassOf rdf:resource="#NonAffectingSpatialDoing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#orientationDirection"/>
+                <owl:onClass rdf:resource="#GeneralizedLocation"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NonAffectingOrienting describes a spatial configuration (happening) by using orientation information. It needs a direction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonAffectingSimpleMotion -->
+
+    <owl:Class rdf:about="#NonAffectingSimpleMotion">
+        <rdfs:subClassOf rdf:resource="#NonAffectingMotion"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#direction"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#route"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Motion that does not include a destination, but may include a location where the motion takes place. Example: &#39;He is dancing&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonAffectingSpatialDoing -->
+
+    <owl:Class rdf:about="#NonAffectingSpatialDoing">
+        <rdfs:subClassOf rdf:resource="&gum;NonAffectingDoing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#placement"/>
+                <owl:allValuesFrom rdf:resource="#GeneralizedLocation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A spatial action, orientation or motion. In general, a placement where something happens may be specified</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonDeicticSpatialTemporal -->
+
+    <owl:Class rdf:about="#NonDeicticSpatialTemporal">
+        <rdfs:subClassOf rdf:resource="&gum;SpatialTemporal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relationship of spatialtemporal locating that is classified as absolute. Absolute here refers to a posited property of temporal and spatial relationships concerning how they are treated by the grammar of English. Absolute spatiotemporal relationships are taken to be unchanging with respect to the observer. A relative relationship is one that moves with the observer. As an example, the notion of `today&#39;, `tomorrow&#39;, etc. do not stand still and allow the observer to pass them by, they move with the observer; this is in contrast to the notion of a `Monday&#39;, which can come and pass the observer by.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NonProjectionAxial -->
+
+    <owl:Class rdf:about="#NonProjectionAxial">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#SpatialDistanceModality"/>
+        <owl:disjointWith rdf:resource="#OverProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#QualitativeDistance"/>
+        <owl:disjointWith rdf:resource="#QuantitativeDistance"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective, axial relation that also provides the functionality
+of Access and Proximal. Possible prepositions for this category are &quot;besides&quot;, &quot;at the side&quot;. If a reference
+system is indicated, the axis has to be lateral.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#North -->
+
+    <owl:Class rdf:about="#North">
+        <rdfs:subClassOf rdf:resource="#CardinalDirectional"/>
+        <owl:disjointWith rdf:resource="#South"/>
+        <owl:disjointWith rdf:resource="#West"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The absolute relation based on the cardinal direction north.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NorthExternal -->
+
+    <owl:Class rdf:about="#NorthExternal">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#North"/>
+        <owl:disjointWith rdf:resource="#NorthInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >External cardinal relation of east, e.g. &quot;To the north of Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#NorthInternal -->
+
+    <owl:Class rdf:about="#NorthInternal">
+        <rdfs:subClassOf rdf:resource="#North"/>
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#Peripheral"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#SouthInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >internal cardinal relation of North, e.g. &quot;North Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#OverProjectionExternal -->
+
+    <owl:Class rdf:about="#OverProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#Access"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <rdfs:subClassOf rdf:resource="#VerticalProjection"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingExternal"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#Surrounding"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The external  vertical relation indicating that the locatum is higher on the vertical axis and has access to the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Parthood -->
+
+    <owl:Class rdf:about="#Parthood">
+        <rdfs:subClassOf rdf:resource="#RelativeSpatialModality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The reified relation of parthood such that for two spatial entities x and y, x is a part of y.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#PathRepresenting -->
+
+    <owl:Class rdf:about="#PathRepresenting">
+        <rdfs:subClassOf rdf:resource="#ShapeCommitting"/>
+        <owl:disjointWith rdf:resource="#Surrounding"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This shape committing relation is represented by an inherently given path.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#PathRepresentingExternal -->
+
+    <owl:Class rdf:about="#PathRepresentingExternal">
+        <rdfs:subClassOf rdf:resource="#PathRepresenting"/>
+        <rdfs:subClassOf rdf:resource="#SpatialDistanceModality"/>
+        <owl:disjointWith rdf:resource="#PathRepresentingInternal"/>
+        <owl:disjointWith rdf:resource="#QualitativeDistance"/>
+        <owl:disjointWith rdf:resource="#QuantitativeDistance"/>
+        <owl:disjointWith rdf:resource="#RightProjectionExternal"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An external, path representing relation that indicates
+a distance, proximity as default. It results from the respective expression, if the related objects
+have contact. One common preposition is &quot;along&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#PathRepresentingInternal -->
+
+    <owl:Class rdf:about="#PathRepresentingInternal">
+        <rdfs:subClassOf rdf:resource="#PathRepresenting"/>
+        <rdfs:subClassOf rdf:resource="#Support"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An internal, path representing relation that at least
+indicates an overlap of both objects. Common prepositions are &quot;across&quot;, &quot;through&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Peripheral -->
+
+    <owl:Class rdf:about="#Peripheral">
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#SouthInternal"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment xml:lang="en"
+            >A spatial relationship that is described by peripheral parts of the relatum. Ex: &quot;edge&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#ProjectionRelation -->
+
+    <owl:Class rdf:about="#ProjectionRelation">
+        <rdfs:subClassOf rdf:resource="#RelativeSpatialModality"/>
+        <owl:disjointWith rdf:resource="#ShapeCommitting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Any spatial relation situating an object configurationally according to one of the three principal spatial axes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Proximal -->
+
+    <owl:Class rdf:about="#Proximal">
+        <rdfs:subClassOf rdf:resource="#QualitativeDistance"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A qualitative spatial relation indicating relative proximity, as expressed by the prepositions &#39;near&#39;, &#39;close to&#39;, &#39;next to&#39;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#QualitativeDistance -->
+
+    <owl:Class rdf:about="#QualitativeDistance">
+        <rdfs:subClassOf rdf:resource="#SpatialDistanceModality"/>
+        <owl:disjointWith rdf:resource="#QuantitativeDistance"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Any spatial relation involving an explicit qualitative (ie non-quantitative) distance component, possibly assessed using functional criteria, &#39;The house is far from/near the river&#39; (Tenbrink 2005: 58).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#QualitativeSpatialTemporal -->
+
+    <owl:Class rdf:about="#QualitativeSpatialTemporal">
+        <rdfs:subClassOf rdf:resource="&gum;SpatialTemporal"/>
+        <owl:disjointWith rdf:resource="#QuantitativeSpatialTemporal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A spatial or temporal entity, that gives a qualitative information within a configuration. In &quot;Turn slightly to the right&quot;, the term &quot;slightly&quot; would be represented by QualitativeSpatialTemporal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#QuantitativeDistance -->
+
+    <owl:Class rdf:about="#QuantitativeDistance">
+        <rdfs:subClassOf rdf:resource="#SpatialDistanceModality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Any spatial relation that encodes distance expressed by metric information, &#39;The house is 20 meters from the motorway&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#QuantitativeSpatialTemporal -->
+
+    <owl:Class rdf:about="#QuantitativeSpatialTemporal">
+        <rdfs:subClassOf rdf:resource="&gum;SpatialTemporal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A spatial or temporal entity, that gives a quantitative information within a configuration. In &quot;Turn 45 degrees to the right&quot;, the term &quot;45 degrees&quot; would be represented by QuantitativeSpatialTemporal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#RelativeNonProjectionAxial -->
+
+    <owl:Class rdf:about="#RelativeNonProjectionAxial">
+        <rdfs:subClassOf rdf:resource="#NonProjectionAxial"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relative spatial modality that is represented by axial (lateral) spatial relations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#RelativeSpatialModality -->
+
+    <owl:Class rdf:about="#RelativeSpatialModality">
+        <rdfs:subClassOf rdf:resource="#SpatialModality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation denoting the position of an object in space based on certain properties of entities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#RightProjection -->
+
+    <owl:Class rdf:about="#RightProjection">
+        <rdfs:subClassOf rdf:resource="#LateralProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation that refers to the right side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#RightProjectionExternal -->
+
+    <owl:Class rdf:about="#RightProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <rdfs:subClassOf rdf:resource="#RightProjection"/>
+        <owl:disjointWith rdf:resource="#RightProjectionInternal"/>
+        <owl:disjointWith rdf:resource="#Sequential"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A external  relative lateral relation indicating the locatum is somewhere in the right-hand side half plane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#RightProjectionInternal -->
+
+    <owl:Class rdf:about="#RightProjectionInternal">
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <rdfs:subClassOf rdf:resource="#RightProjection"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An internal  relative lateral relation indicating the locatum is somewhere in the right-hand side half plane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Sequential -->
+
+    <owl:Class rdf:about="#Sequential">
+        <rdfs:subClassOf rdf:resource="#Access"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <owl:disjointWith rdf:resource="#Surrounding"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This modality defines a sequential relationship between entities, e.g. &quot;The dog chased after the man&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SequentialQuality -->
+
+    <owl:Class rdf:about="#SequentialQuality">
+        <rdfs:subClassOf rdf:resource="&gum;SimpleQuality"/>
+        <owl:disjointWith rdf:resource="&gum;ClassAscription"/>
+        <owl:disjointWith rdf:resource="&gum;LogicalQuality"/>
+        <owl:disjointWith rdf:resource="&gum;MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="&gum;ModalQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >indicates spatial, sequential attributes of Elements that occur in spatial configurations, such as &quot;it is on the *second* floor&quot; or &quot;take the *next* turn&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#ShapeCommitting -->
+
+    <owl:Class rdf:about="#ShapeCommitting">
+        <rdfs:subClassOf rdf:resource="#RelativeSpatialModality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation commits to a specific shape of the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#South -->
+
+    <owl:Class rdf:about="#South">
+        <rdfs:subClassOf rdf:resource="#CardinalDirectional"/>
+        <owl:disjointWith rdf:resource="#West"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The absolute relation based on the cardinal direction south.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SouthExternal -->
+
+    <owl:Class rdf:about="#SouthExternal">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#South"/>
+        <owl:disjointWith rdf:resource="#SouthInternal"/>
+        <rdfs:comment xml:lang="en"
+            >external cardinal relation of east, e.g. &quot;To the south of Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SouthInternal -->
+
+    <owl:Class rdf:about="#SouthInternal">
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <rdfs:subClassOf rdf:resource="#South"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment xml:lang="en"
+            >internal cardinal relation of east, e.g. &quot;South Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SpatialDistanceModality -->
+
+    <owl:Class rdf:about="#SpatialDistanceModality">
+        <rdfs:subClassOf rdf:resource="#SpatialModality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation that indicates some sort of qualitative or quantitative distance information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SpatialLocating -->
+
+    <owl:Class rdf:about="#SpatialLocating">
+        <rdfs:subClassOf rdf:resource="&gum;GeneralizedLocating"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#locatum"/>
+                <owl:onClass rdf:resource="&gum;SimpleThing"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#placement"/>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="#GeneralizedLocation"/>
+                            <rdf:Description rdf:about="#GeneralizedRoute"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:onClass>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Any configuration whose function it is to locate some physical object in space. Instances must have one locatum and one placement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SpatialModality -->
+
+    <owl:Class rdf:about="#SpatialModality">
+        <rdfs:subClassOf rdf:resource="&gum;Element"/>
+        <owl:disjointWith rdf:resource="&gum;Circumstance"/>
+        <owl:disjointWith rdf:resource="&gum;Process"/>
+        <owl:disjointWith rdf:resource="&gum;SimpleQuality"/>
+        <owl:disjointWith rdf:resource="&gum;SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Spatial modality is a reified spatial relation. It serves to define entities such as place by providing constraints that are relational in nature, that is, accompanied by a (potentially unspecified) relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SpatialTemporalLocating -->
+
+    <owl:Class rdf:about="#SpatialTemporalLocating">
+        <rdfs:subClassOf rdf:resource="#SpatialLocating"/>
+        <rdfs:subClassOf rdf:resource="#TemporalLocating"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Any configuration whose function it is to locate some object in space and time. Instances must have one locatum and at least one placement and &#39;time information&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#SpecificDirectional -->
+
+    <owl:Class rdf:about="#SpecificDirectional">
+        <rdfs:subClassOf rdf:resource="#DirectionalRelation"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This spatial relation represents a specific direction. Possible expressions are &quot;up&quot;, &quot;down&quot;, &quot;straight&quot;, &quot;into&quot;, &quot;ahead&quot;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Support -->
+
+    <owl:Class rdf:about="#Support">
+        <rdfs:subClassOf rdf:resource="#Control"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The reified functional relation holding between two spatial objects x and y, such that x physically supports y in the presence of gravity; x and y need not be in contact. An example of such an expression is &quot;The bowl is on the table&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#Surrounding -->
+
+    <owl:Class rdf:about="#Surrounding">
+        <rdfs:subClassOf rdf:resource="#Access"/>
+        <rdfs:subClassOf rdf:resource="#ShapeCommitting"/>
+        <owl:disjointWith rdf:resource="#UnderProjectionExternal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The surrounding relation also provides a functional access between
+the related objects. If they have contact or not results from the expression. One possible
+preposition is &quot;around&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#TemporalLocating -->
+
+    <owl:Class rdf:about="#TemporalLocating">
+        <rdfs:subClassOf rdf:resource="&gum;GeneralizedLocating"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Any configuration whose function it is to locate some process in time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#TopographicDirectional -->
+
+    <owl:Class rdf:about="#TopographicDirectional">
+        <rdfs:subClassOf rdf:resource="#SpecificDirectional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Directional relation that is expressed by topographical aspects, auch as &quot;uphill&quot;,
+&quot;downhill&quot;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#UnderProjectionExternal -->
+
+    <owl:Class rdf:about="#UnderProjectionExternal">
+        <rdfs:subClassOf rdf:resource="#Access"/>
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#Proximal"/>
+        <rdfs:subClassOf rdf:resource="#VerticalProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The external vertical relation indicating that the locatum is lower on the vertical axis and has access to the relatum.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#VerticalProjection -->
+
+    <owl:Class rdf:about="#VerticalProjection">
+        <rdfs:subClassOf rdf:resource="#ProjectionRelation"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projective relation that is vertically oriented.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#West -->
+
+    <owl:Class rdf:about="#West">
+        <rdfs:subClassOf rdf:resource="#CardinalDirectional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The absolute  relation based on the cardinal direction west.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#WestExternal -->
+
+    <owl:Class rdf:about="#WestExternal">
+        <rdfs:subClassOf rdf:resource="#Disjointness"/>
+        <rdfs:subClassOf rdf:resource="#West"/>
+        <owl:disjointWith rdf:resource="#WestInternal"/>
+        <rdfs:comment xml:lang="en"
+            >external cardinal relation of east, e.g. &quot;To the west of Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3-space.owl#WestInternal -->
+
+    <owl:Class rdf:about="#WestInternal">
+        <rdfs:subClassOf rdf:resource="#Parthood"/>
+        <rdfs:subClassOf rdf:resource="#West"/>
+        <rdfs:comment xml:lang="en"
+            >internal cardinal relation of east, e.g. &quot;West Minnesota&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstance -->
+
+    <owl:Class rdf:about="&gum;Circumstance"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ClassAscription -->
+
+    <owl:Class rdf:about="&gum;ClassAscription"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DispositiveMaterialAction -->
+
+    <owl:Class rdf:about="&gum;DispositiveMaterialAction"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Element -->
+
+    <owl:Class rdf:about="&gum;Element"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedLocating -->
+
+    <owl:Class rdf:about="&gum;GeneralizedLocating"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LogicalQuality -->
+
+    <owl:Class rdf:about="&gum;LogicalQuality"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MaterialWorldQuality -->
+
+    <owl:Class rdf:about="&gum;MaterialWorldQuality"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalQuality -->
+
+    <owl:Class rdf:about="&gum;ModalQuality"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameEvent -->
+
+    <owl:Class rdf:about="&gum;NameEvent"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingDoing -->
+
+    <owl:Class rdf:about="&gum;NonAffectingDoing"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process -->
+
+    <owl:Class rdf:about="&gum;Process"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality -->
+
+    <owl:Class rdf:about="&gum;SimpleQuality"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing -->
+
+    <owl:Class rdf:about="&gum;SimpleThing"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal -->
+
+    <owl:Class rdf:about="&gum;SpatialTemporal"/>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SubjectMatter -->
+
+    <owl:Class rdf:about="&gum;SubjectMatter"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

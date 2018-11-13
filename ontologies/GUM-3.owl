@@ -1,0 +1,3125 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY GUM-3 "http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#"
+     xml:base="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:GUM-3="http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <rdfs:label rdf:datatype="&xsd;string">GUM 3</rdfs:label>
+        <owl:versionInfo rdf:datatype="&xsd;string">3.0</owl:versionInfo>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >developers: University of Bremen, SFB/TR8 Spatial Cognition, I1-[OntoSpace]
+http://www.ontospace.uni-bremen.de</rdfs:comment>
+        <owl:versionInfo rdf:datatype="&xsd;string"
+            >lisence: http://creativecommons.org/licenses/by-nc-nd/3.0/</owl:versionInfo>
+        <rdfs:comment xml:lang="en"
+            >The Generalized Upper Model 3.0 (GUM 3.0) is a linguistically motivated ontology,
+which aims primarily to mediate between natural language and application components.
+It is based on the semantic perspective of natural language as described in Halliday
+and Matthiessen [1999]. Therefore the concepts of the GUM ontology are influenced
+strongly by the lexicogrammar of natural language and they are applicable in arbitrary
+domains. The complete model and all of its concepts and principles are described
+in detail in Bateman et al. [2006a], its underlying experimental linguistic results and
+language analysis are documented in Bateman et al. [2006b]. Currently, the Generalized
+Upper Model 3.0 is represented in OWL DL.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#accompaniment -->
+
+    <owl:ObjectProperty rdf:about="#accompaniment">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation holds between objects which participate jointly in some process.  Accompaniment may be expressed as: {independent-argument} `be with&#39; {dependent-argument}; or by a prepositional phrase beginning with the preposition `with&#39; as in: {independent-	argument} ... `with&#39; {dependent-argument}. Note that it is not necessary for both of the participants to be aware of the participation. Thus both of the following sentences are examples of this relation: (1) John went for a walk with Mary. (2) John went for a walk with his umbrella. The relation also allows for variation in both a positive and negative direction. For example, `without&#39; is also a type of accompaniment, albeit negative, as is `instead of&#39;, which is an accompaniment of alternative.</rdfs:comment>
+        <rdfs:range rdf:resource="#SimpleThing"/>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#actee -->
+
+    <owl:ObjectProperty rdf:about="#actee">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process participant describing the entity to which a process is `done&#39;, `carried out on&#39;, etc., e.g. &quot;John took a bath&quot;. The verb carries no info about what the process is actually doing.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#actor -->
+
+    <owl:ObjectProperty rdf:about="#actor">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A transitivity function in a material clause; the participant always inherent in the clause according to the transitive model of transitivity. The process it participates in may or may not extend to affect another participant, the Goal. For instance, (Actor:) Henry (Process:) dove; (Actor:) Henry (Process:) kicked (Goal:) the ugly duckling.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#additive -->
+
+    <owl:ObjectProperty rdf:about="#additive">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One type of accompaniment that may holds between objects which participate jointly in some process. This form of accompaniment states that the accompaniment is positive and actual; it may be expressed by a prepositional phrase beginning with the preposition `as well as&#39; as in: {independent-argument} ... `as well as&#39; {dependent-argument}. The following sentences is an example of this relation: John went for a walk with Mary as well as Joan.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#accompaniment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#addressee -->
+
+    <owl:ObjectProperty rdf:about="#addressee">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Receiver of the communicative process, e.g. ``Henry told *me* that dinner would be ready at 6:00pm.&#39;&#39; This is called &#39;receiver&#39; in Halliday and Matthiessen (1999: 130).</rdfs:comment>
+        <rdfs:domain rdf:resource="#External"/>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#agentive -->
+
+    <owl:ObjectProperty rdf:about="#agentive">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of participant and generalized-means that captures the notion of causal responsibility for a process&#39; perfomance.</rdfs:comment>
+        <rdfs:range rdf:resource="#Element"/>
+        <rdfs:subPropertyOf rdf:resource="#generalizedMeans"/>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#alphaParticipantInMultiConfiguration -->
+
+    <owl:ObjectProperty rdf:about="#alphaParticipantInMultiConfiguration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >For binary relations: this participant defines the starting point of the MultiConfiguration.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInMultiConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#alternative -->
+
+    <owl:ObjectProperty rdf:about="#alternative">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One type of accompaniment that may holds between objects which participate jointly in some process. This form of accompaniment states that the accompaniment is positive but replacing; i.e., that some object participated in a process or state as an alternative to some other. It may be expressed as a prepositional phrase beginning with the preposition `instead&#39;. as in: {independent-argument} ... `with&#39; {dependent-argument}. Note that it is not necessary for both of the participants to be aware of the participation. Thus both of the following sentences are examples of this relation: (1) John went for a walk with Joan instead of Mary. (2) John went for a walk with his blue shoes instead of his white ones.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#accompaniment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#anterior -->
+
+    <owl:ObjectProperty rdf:about="#anterior">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation between intervals that specifies their order in time. A type of temporal locating, a spatio-temporal circumstantial. Here one interval is said to be prior to	another.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalOrdering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribuend -->
+
+    <owl:ObjectProperty rdf:about="#attribuend">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The participant in a scaled comparison whose possession of a quality is being compared.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute -->
+
+    <owl:ObjectProperty rdf:about="#attribute">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The role played by the value in a Relating (HM 1999: 151).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#beneficiary -->
+
+    <owl:ObjectProperty rdf:about="#beneficiary">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A transitivity function in the clause, according to the generalized ergative transitivity model: the participant benefitting from the actualization of the combination of Process+Medium. In a material clause, it is the Recipient (My aunt gave *the farmer* a duckpress) or the Client (Pour *me* out a cold Dos Equis beer) and in a verbal one, it is the addressee (Joe told *us* all about Eve). It also occurs in a few relational clause types (I owe *you* an apology) and mental clauses (I envy *you* your luck; I don&#39;t begrudge *you* your happiness).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#betaParticipantInMultiConfiguration -->
+
+    <owl:ObjectProperty rdf:about="#betaParticipantInMultiConfiguration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >For binary relations: this participant is dependent on the first participant of the MultiConfiguration. It usually extends the first participant.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInMultiConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#carrier -->
+
+    <owl:ObjectProperty rdf:about="#carrier">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The role played by the thing that has attributes or is identified in Relatings (HM 1999: 183).</rdfs:comment>
+        <rdfs:range rdf:resource="#SimpleThing"/>
+        <rdfs:subPropertyOf rdf:resource="#domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#causalRelation -->
+
+    <owl:ObjectProperty rdf:about="#causalRelation">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Causal-relation logically has two roles: cause (the domain) and effect (the range). At this most general level, causality may be expressed as: {effect} `because&#39; {cause}, or {cause} `cause&#39; {effect}.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#causeEffect -->
+
+    <owl:ObjectProperty rdf:about="#causeEffect">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This captures the relationship of one thing being the cause of another, the effect.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#causalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#circumstanceInConfiguration -->
+
+    <owl:ObjectProperty rdf:about="#circumstanceInConfiguration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relates a Configuration to a Circumstance.</rdfs:comment>
+        <rdfs:range rdf:resource="#Element"/>
+        <rdfs:domain rdf:resource="#GUMThing"/>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#client -->
+
+    <owl:ObjectProperty rdf:about="#client">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The role of beneficiary where something is done for another person.</rdfs:comment>
+        <rdfs:range rdf:resource="#Element"/>
+        <rdfs:subPropertyOf rdf:resource="#beneficiary"/>
+        <rdfs:subPropertyOf rdf:resource="#causalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#compareQuality -->
+
+    <owl:ObjectProperty rdf:about="#compareQuality">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The slot in a scaled comparison that contains that quality with respect to which an object (the attribuend) is being compared.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#comparison -->
+
+    <owl:ObjectProperty rdf:about="#comparison">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This category encompasses relations which indicate how similar or dissimilar two entities are. One subcategory is so-far discriminated: SIMILARITY. Difference could be presented as a further subtype, and equality could be a further specialization of similarity. Verbs articulated by this category include: `resemble&#39;, `differ from&#39;, `be similar to&#39;, `be different than&#39;, `be like&#39;, `match&#39;, `fit&#39;, etc. A grammatical characteristic of entities in this category is that they are symmetric, i.e. subject and object can be interchanged without passivization. Note however, that the passive form is still possible. For example, `` Henry resembles Joan. Joan resembles Henry. Joan is resembled by Henry.&#39;&#39;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#concessive -->
+
+    <owl:ObjectProperty rdf:about="#concessive">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One type of generalized causation relationship. This relation states that some process occured despite some other event or state of affairs holding. It is typically realized in English by the preposition `despite&#39; therefore.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#causalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#concurrent -->
+
+    <owl:ObjectProperty rdf:about="#concurrent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Concurrent temporal intervals overlap or occupy the same moments of time (from MUM 1994).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalOrdering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#condition -->
+
+    <owl:ObjectProperty rdf:about="#condition">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A conditional relation describing a more general reason relation, e.g. &quot;if...then&quot;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#reason"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#difference -->
+
+    <owl:ObjectProperty rdf:about="#difference">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A sub-type of the comparison relationship that picks out negative comparison.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#comparison"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#domain -->
+
+    <owl:ObjectProperty rdf:about="#domain">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One of the required relations in a Relating. Necessary for generation, but could be deleted later if the generator is changed.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#enablement -->
+
+    <owl:ObjectProperty rdf:about="#enablement">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of generalized means; this relation refers to a possible enabling relationship between the actualization of some process or state of affairs and an entity, state of affairs, or other process.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#generalizedMeans"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#exclusive -->
+
+    <owl:ObjectProperty rdf:about="#exclusive">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A subtype of accompaniment that picks out the negative nature of accompaniment; an exclusive accompaniment indicates that accompaniment occured at the expense of, or instead of some entity that did not accompany.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#accompaniment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#exhaustiveDuration -->
+
+    <owl:ObjectProperty rdf:about="#exhaustiveDuration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An exhaustive duration is a relation which specifies that the process or state participating in the relation is one which holds for the entire extent of the	temporal interval participating in the relation. It is typically realized in English by the preposition `during&#39;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#qualitativeTemporalExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#existent -->
+
+    <owl:ObjectProperty rdf:about="#existent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation defines the only participant allowed in an Existential Configuration.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Existence"/>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#extremal -->
+
+    <owl:ObjectProperty rdf:about="#extremal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation of temporal locating that explicitly orients to the end point of an interval; this establishes contrasts such as `until&#39; (extremal) vs. `before&#39; (nonextremal), and	`since&#39; (extremal) vs. `after&#39; (nonextremal).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalOrdering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#follow -->
+
+    <owl:ObjectProperty rdf:about="#follow">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A temporal relationship of strict precedence; it is therefore posterior and nonextremal. It is an inverse to the precede relation that is used in tense reasoning by the grammar.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#nonExtremal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#generalizedMeans -->
+
+    <owl:ObjectProperty rdf:about="#generalizedMeans">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of participant which can be agentive, manner, instrumental, or enablemenet.	It is a generalized notion that refers to the abstract concept of the means for	actualizing some process.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#greater -->
+
+    <owl:ObjectProperty rdf:about="#greater">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A direction of comparison in a scaled comparison: here, the quality with respect to which comparison proceeds holds more rather than less.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#attribuend"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#gumrelation -->
+
+    <owl:ObjectProperty rdf:about="#gumrelation">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The most general property a concept can have.</rdfs:comment>
+        <rdfs:domain rdf:resource="#GUMThing"/>
+        <rdfs:range rdf:resource="#GUMThing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#hasConjunct -->
+
+    <owl:ObjectProperty rdf:about="#hasConjunct">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The binary relation between a Conjunction and one of its conjuncts.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#hasDisjunct -->
+
+    <owl:ObjectProperty rdf:about="#hasDisjunct">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The binary relation between a Disjunction and one of its disjuncts.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#hasElaboration -->
+
+    <owl:ObjectProperty rdf:about="#hasElaboration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An elaboration of an element. Ex.: &quot;A cheerful Mexican kitchen&quot; (HM06: p183)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#hasModification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#hasEnhancement -->
+
+    <owl:ObjectProperty rdf:about="#hasEnhancement">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An enhancement of an element. Ex.: &quot;This 18th century vase from Mexico&quot; (HM06: p183)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#hasModification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#hasExtension -->
+
+    <owl:ObjectProperty rdf:about="#hasExtension">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An extension of an element. Ex.: &quot;My aunt&#39;s teapot&quot; (HM06: p183)</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#hasModification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#hasModification -->
+
+    <owl:ObjectProperty rdf:about="#hasModification">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A modification of a participant in a configuration. This relation adds attributes to an element. It can be linguistically expressed as epithets, classifiers, qualifiers, etc. (HM06: p183).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Element"/>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#inclusive -->
+
+    <owl:ObjectProperty rdf:about="#inclusive">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A subtype of accompaniment that picks out the positive nature of accompaniment; an exclusive accompaniment indicates that accompaniment occured in addition to	some other entity that accompanies.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#accompaniment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#instrumental -->
+
+    <owl:ObjectProperty rdf:about="#instrumental">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Instrument is typically expressed as: `{verb} + with&#39; where {verb} cannot be `be&#39;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#generalizedMeans"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#lesser -->
+
+    <owl:ObjectProperty rdf:about="#lesser">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A direction of comparison in a scaled comparison: here the quality with respect to which comparison proceeds holds less rather than more.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#attribuend"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#manner -->
+
+    <owl:ObjectProperty rdf:about="#manner">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A circumstantial role of a process that describes the manner in which the process&#39;	actualization is achieved. Commonly realized by adverbs in English, although there	are other possibilities also.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#generalizedMeans"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#material -->
+
+    <owl:ObjectProperty rdf:about="#material">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A participant role that carries information about the material from which an entity is constructed.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#metaMessage -->
+
+    <owl:ObjectProperty rdf:about="#metaMessage">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The type of information, e.g., a story or lecture, being communicated by a communicative process (from MUM 1994).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#saying"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#nonExhaustiveDuration -->
+
+    <owl:ObjectProperty rdf:about="#nonExhaustiveDuration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An nonexhaustive duration is a relation which specifies that the process or state	participating in the relation is one which does not hold for the entire extent of the temporal interval participating in the relation. It is typically realized in English by the preposition `in&#39;.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#qualitativeTemporalExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#nonExtremal -->
+
+    <owl:ObjectProperty rdf:about="#nonExtremal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relationship of temporal locating that is not oriented to the end points of an interval; examples of this distinction are: `until&#39; (extremal) vs. `before&#39; (nonextremal), and `since&#39; (extremal) vs. `after&#39; (nonextremal).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalOrdering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#nonMetaMessage -->
+
+    <owl:ObjectProperty rdf:about="#nonMetaMessage">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The information being communicated by a communicative process (from MUM 1994).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#saying"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#orderingRelation -->
+
+    <owl:ObjectProperty rdf:about="#orderingRelation">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The general relationship that holds between the parts of an ordered object.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#participantInConfiguration -->
+
+    <owl:ObjectProperty rdf:about="#participantInConfiguration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A Configuration is said to `contain&#39; some number of entities that participate in its actualization. The manner of these entities is identified in terms of given role names. Participants in a process typically come from the SimpleThing hierarchy and are realized as nominal groups. Clearly there are some kinds of relations which will have actions or processes as their participants, e.g. causality.</rdfs:comment>
+        <rdfs:domain rdf:resource="#GUMThing"/>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#participantInMultiConfiguration -->
+
+    <owl:ObjectProperty rdf:about="#participantInMultiConfiguration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This property defines the participants of combinations of Configurations. For more complex structures participants can also be MultiConfigurations.</rdfs:comment>
+        <rdfs:domain rdf:resource="#MultiConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Configuration"/>
+                    <rdf:Description rdf:about="#MultiConfiguration"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#phenomenon -->
+
+    <owl:ObjectProperty rdf:about="#phenomenon">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The object of perception in an InternalProcessing (HM 1999: 131).</rdfs:comment>
+        <rdfs:domain rdf:resource="#Internal"/>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#possessed -->
+
+    <owl:ObjectProperty rdf:about="#possessed">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation relates the configuration to an entity which has an owner (possessor).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#possessor -->
+
+    <owl:ObjectProperty rdf:about="#possessor">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation relates the configuration to an entitiy which possesses something (possessed).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#posterior -->
+
+    <owl:ObjectProperty rdf:about="#posterior">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation between intervals that specifies their order in time. A type of temporal locating, a circumstantial (somewhere under relational process) with range of a time interval and a commented out domain of a process. Here one interval is said to follow another.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalOrdering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#posterior-extremal -->
+
+    <owl:ObjectProperty rdf:about="#posterior-extremal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >(from MUM 1994).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#extremal"/>
+        <rdfs:subPropertyOf rdf:resource="#posterior"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#precede -->
+
+    <owl:ObjectProperty rdf:about="#precede">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A temporal relationship of strict precedence; it is therefore anterior and nonextremal. It is used particularly in tense reasoning by the grammar.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#anterior"/>
+        <rdfs:subPropertyOf rdf:resource="#nonExtremal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#processInConfiguration -->
+
+    <owl:ObjectProperty rdf:about="#processInConfiguration">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >That which holds between a Configuration and a Process.</rdfs:comment>
+        <rdfs:domain rdf:resource="#Configuration"/>
+        <rdfs:range rdf:resource="#Process"/>
+        <rdfs:subPropertyOf rdf:resource="#gumrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#processRange -->
+
+    <owl:ObjectProperty rdf:about="#processRange">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A participant role where the participant is not affected or altered by the actualization of the process, but instead serves more to define the nature of the process, e.g. &quot;The car turned the corner.&#39;&#39; Here the corner is the range over which the process is occurring. The reason processRange is a subclass of actee is that the filler of processRange &quot;acts like&quot; an actee, i.e. comes after the verb without a preposition intervening. (Probably in conflict with grammar.)</rdfs:comment>
+        <rdfs:domain rdf:resource="#DoingAndHappening"/>
+        <rdfs:subPropertyOf rdf:resource="#actee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#prompt -->
+
+    <owl:ObjectProperty rdf:about="#prompt">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The information process preceding the recent communicative process.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#purpose -->
+
+    <owl:ObjectProperty rdf:about="#purpose">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Purpose captures the notion of why something was done. They may be motivational as with `reasons&#39; but look forward rather than back.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#causalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#qualitativeTemporalExtent -->
+
+    <owl:ObjectProperty rdf:about="#qualitativeTemporalExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A qualitative temporal extent, e.g., &quot;a long while&quot;.
+A relationship of temporal extent that is classified as qualitative. Qualitative here refers to a posited property of temporal relationships concerning how they are treated by the grammar of a language. Qualitative spatial relationships are taken to `move along with&#39; an observer. This contrasts with absolute relationships which do not accompany the observer. As an example, the notion of `today&#39;, `tomorrow&#39;, etc. do not stand still and allow the observer to pass them by, they move with the observer; this is in contrast to the notion of a `Monday&#39;, which can come and pass the observer by.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#quantitativeTemporalExtent -->
+
+    <owl:ObjectProperty rdf:about="#quantitativeTemporalExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A quantitative temporal extent, e.g., &quot;three hours&quot;.
+A relationship of temporal extent that is classified as quantitative. Quantitative here refers to a posited property of temporal relationships concerning how they are treated by the grammar of English. Absolute temporal relationships are taken to be unchanging with respect to the observer. A relative relationship is one that moves with the observer. As an example, the notion of `today&#39;, `tomorrow&#39;, etc. do not stand still and allow the observer to pass them by, they move with the observer; this is in contrast to the notion of a `Monday&#39;, which can come and pass the observer by.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalExtent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#range -->
+
+    <owl:ObjectProperty rdf:about="#range">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One of the required relations in a Relating. Necessary for generation, but could be deleted later if the generator is changed.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#reason -->
+
+    <owl:ObjectProperty rdf:about="#reason">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >REASON captures the notion of motivation. Here the effect is volitional or intentional. This relation is expressed by terms such as: `since&#39;, `because&#39;. Examples include: ``Henry went to the store because he needed milk.&#39;&#39; and ``since it was raining, Henry brought his umbrella.&#39;&#39;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#causalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#recipient -->
+
+    <owl:ObjectProperty rdf:about="#recipient">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The beneficiary participant role of a material process.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#beneficiary"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#result -->
+
+    <owl:ObjectProperty rdf:about="#result">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A particular type of participant relationship to a process: identifies the participant that is in the role of being affected, acted upon, or brought into being by the	actualization of the process.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#actee"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#sayer -->
+
+    <owl:ObjectProperty rdf:about="#sayer">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The required role in an ExternalProcess; this requires a symbolic source, a concious or non-concious being (HM 1999: 130).</rdfs:comment>
+        <rdfs:domain rdf:resource="#External"/>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#saying -->
+
+    <owl:ObjectProperty rdf:about="#saying">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The information being communicated by a communicative process.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#senser -->
+
+    <owl:ObjectProperty rdf:about="#senser">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The required role in an InternalProcess. The range is restricted to be a conscious-being (HM 1999: 130).
+----unedited----
+Examples include: `happy&#39;, `angry&#39;, `sad&#39;, `amused&#39;, `afraid&#39;. Constructions involving qualities in this class can specify a fact as the cau--se of the mental state. For example, ``Henry was sad that he missed the performance&#39;&#39;. ``Henry was angry because the train was late&#39;&#39;. Note that such constructions are not possible with phenomenon-oriented-qualities. Some qualities fall into both categories, but are expressed differently depending on their classification. Compare: ``I am *amazed* that the earth is flat&#39;&#39; (senser-oriented); ``That the earth is flat is *amazing* to me&#39;&#39; (phenomenon-oriented). (Bateman, Henschel, and Rinaldi 1995: 64)</rdfs:comment>
+        <rdfs:range rdf:resource="#ConsciousBeing"/>
+        <rdfs:domain rdf:resource="#Internal"/>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#similarity -->
+
+    <owl:ObjectProperty rdf:about="#similarity">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A sub-type of the comparison relationship that picks out positive comparison.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#comparison"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#since -->
+
+    <owl:ObjectProperty rdf:about="#since">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >(from MUM 1994).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#posterior-extremal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#spatialCircumstance -->
+
+    <owl:ObjectProperty rdf:about="#spatialCircumstance">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This describes the relation of two entites in space.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#spatialTemporalCircumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#spatialTemporalCircumstance -->
+
+    <owl:ObjectProperty rdf:about="#spatialTemporalCircumstance">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This relation represents all circumstantial spatial or temporal relations of any configuration.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#standard -->
+
+    <owl:ObjectProperty rdf:about="#standard">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The standard against which comparison is drawn in a scaled comparison.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#subjectMatter -->
+
+    <owl:ObjectProperty rdf:about="#subjectMatter">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Expressed as: be about, as in: ``This document is about the entity hierarchy.&#39;&#39;</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#circumstanceInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalCircumstance -->
+
+    <owl:ObjectProperty rdf:about="#temporalCircumstance">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This describes the relation of two entites in time.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#spatialTemporalCircumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalExtent -->
+
+    <owl:ObjectProperty rdf:about="#temporalExtent">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A temporal relation of specifying the time that a state of affairs or process holds (e.g. `for 5 years&#39;).</rdfs:comment>
+        <rdfs:range rdf:resource="#TemporalObject"/>
+        <rdfs:subPropertyOf rdf:resource="#temporalCircumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalInclusive -->
+
+    <owl:ObjectProperty rdf:about="#temporalInclusive">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >In a temporal inclusive relation, the first interval completely includes or covers the second (from MUM 1994).</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#concurrent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalLocating -->
+
+    <owl:ObjectProperty rdf:about="#temporalLocating">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relationship between an object or process and its location in time.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalNonOrdering -->
+
+    <owl:ObjectProperty rdf:about="#temporalNonOrdering">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A class of temporal relations that do not impose any ordering on the points or intervals they hold over. Examples of these would typically be realized in English by the prepositions `in&#39;, `at&#39;, `on&#39;, etc.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalLocating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalOrdering -->
+
+    <owl:ObjectProperty rdf:about="#temporalOrdering">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The ordering relation that can hold between points or intervals in time.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#orderingRelation"/>
+        <rdfs:subPropertyOf rdf:resource="#temporalLocating"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#temporalRelation -->
+
+    <owl:ObjectProperty rdf:about="#temporalRelation">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >TEMPORAL-RELATION is often expressed using `be at&#39;. It may also be expressed as a prepositional phrase beginning with a preposition such as `before&#39; or `after&#39;. Further discriminations select between these possibilities.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="#temporalCircumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Ability -->
+
+    <owl:Class rdf:about="#Ability">
+        <rdfs:subClassOf rdf:resource="#Possibility"/>
+        <owl:disjointWith rdf:resource="#GeneralPossibility"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A modal qualification of the process, with respect to the ability to perform that process; typically realized by `can&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Abstraction -->
+
+    <owl:Class rdf:about="#Abstraction">
+        <rdfs:subClassOf rdf:resource="#NonConsciousThing"/>
+        <owl:disjointWith rdf:resource="#SpatialTemporal"/>
+        <owl:disjointWith rdf:resource="#Substance"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Something which exists in metaphorical or qualitative space rather than in physical space, e.g., truth.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AddresseeOriented -->
+
+    <owl:Class rdf:about="#AddresseeOriented">
+        <rdfs:subClassOf rdf:resource="#ProperVerbal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#addressee"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#MessageOriented"/>
+        <owl:disjointWith rdf:resource="#NonAddresseeOriented"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >AddresseeOriented defines a process for which the addressee is mandatory. However, in come cases the addressee may not be expressed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Addressing -->
+
+    <owl:Class rdf:about="#Addressing">
+        <rdfs:subClassOf rdf:resource="#BehavioralVerbal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#addressee"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#NonAddressing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >It is mandatory for this configuration to have an addressee as a direct object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AddressingVerbal -->
+
+    <owl:Class rdf:about="#AddressingVerbal">
+        <rdfs:subClassOf rdf:resource="#AddresseeOriented"/>
+        <rdfs:subClassOf rdf:resource="#NonMessageOriented"/>
+        <owl:disjointWith rdf:resource="#CommunicativeAttitude"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >AddressingVerbal configurations are expressed by the use of verbs which take the addressee as a direct object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AffectingAction -->
+
+    <owl:Class rdf:about="#AffectingAction">
+        <rdfs:subClassOf rdf:resource="#DoingAndHappening"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#actee"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#NonAffectingAction"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >AffectingActions have an ACTEE role. They are always transitive, although they may be acteeintransitive. In this case, the actee is not specified, but is inferrable. For example, ``Henry hunts.&#39;&#39; In this case, we can infer that Henry hunts something in the category of `huntablethings&#39;. AffectingActions can always have a beneficiary of the client type. This is expressed by the prepositional phrase: `for&#39; client. Directed actions are further broken up into two subclasses depending upon whether or not the actee existed before the action occurred.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Age -->
+
+    <owl:Class rdf:about="#Age">
+        <rdfs:subClassOf rdf:resource="#SenseANDMeasureQuality"/>
+        <owl:disjointWith rdf:resource="#Color"/>
+        <owl:disjointWith rdf:resource="#Size"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A sense and measure quality pertaining to the age of an entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AgePropertyAscription -->
+
+    <owl:Class rdf:about="#AgePropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#Age"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#ColorPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#LogicalPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#MaterialPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ModalPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ProvenancePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ScaledComparison"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The type of ascription of property that ascribes a quality of age to an object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Ambience -->
+
+    <owl:Class rdf:about="#Ambience">
+        <rdfs:subClassOf rdf:resource="#NonAffectingAction"/>
+        <owl:disjointWith rdf:resource="#NonAffectingDoing"/>
+        <owl:disjointWith rdf:resource="#NonAffectingHappening"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process describing an ambient condition, such as the weather, temperature, etc. The term &quot;Meteorological Processes&quot; is also sometimes used.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Ascription -->
+
+    <owl:Class rdf:about="#Ascription">
+        <rdfs:subClassOf rdf:resource="#Intensive"/>
+        <owl:disjointWith rdf:resource="#Identity"/>
+        <owl:disjointWith rdf:resource="#Symbolization"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This two place relation captures the notion of membership in a set. In general, the domain (attribuend) will be filled by an object. The range (attribute) will be filled by a quality or by an object. Finer restrictions can be made based on the given attribute. This relation is typically expressed by the verb `be&#39;. The inverse is AscriptionInverse. Note that this relation does not claim to be exhaustive.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AscriptionInverse -->
+
+    <owl:Class rdf:about="#AscriptionInverse">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossession"/>
+        <owl:disjointWith rdf:resource="#GeneralizedRoleRelation"/>
+        <owl:disjointWith rdf:resource="#NameOf"/>
+        <owl:disjointWith rdf:resource="#Ownership"/>
+        <owl:disjointWith rdf:resource="#PartWhole"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The inverse of the Ascription relation. ClassAscription offers an alternative to the subclass relation. For example, we may want to say &quot;John is a democrat&quot; without making John a subclass of Democrat.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AtLeast -->
+
+    <owl:Class rdf:about="#AtLeast">
+        <rdfs:subClassOf rdf:resource="#NumberFocusing"/>
+        <owl:disjointWith rdf:resource="#AtMost"/>
+        <owl:disjointWith rdf:resource="#Exactly"/>
+        <owl:disjointWith rdf:resource="#GreaterThan"/>
+        <owl:disjointWith rdf:resource="#LessThan"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An ascription of relative quantity that puts a lower bound on the quantity ascribed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#AtMost -->
+
+    <owl:Class rdf:about="#AtMost">
+        <rdfs:subClassOf rdf:resource="#NumberFocusing"/>
+        <owl:disjointWith rdf:resource="#Exactly"/>
+        <owl:disjointWith rdf:resource="#GreaterThan"/>
+        <owl:disjointWith rdf:resource="#LessThan"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An ascription of relative quantity that puts an upper bound on the quantity ascribed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#BehavioralQuality -->
+
+    <owl:Class rdf:about="#BehavioralQuality">
+        <rdfs:subClassOf rdf:resource="#DynamicQuality"/>
+        <rdfs:subClassOf rdf:resource="#PolarQuality"/>
+        <rdfs:subClassOf rdf:resource="#ScalableQuality"/>
+        <owl:disjointWith rdf:resource="#EvaluativeQuality"/>
+        <owl:disjointWith rdf:resource="#SenseANDMeasureQuality"/>
+        <owl:disjointWith rdf:resource="#StatusQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Behavioral qualities are qualities which characterize the behavior of a conscious being.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#BehavioralVerbal -->
+
+    <owl:Class rdf:about="#BehavioralVerbal">
+        <rdfs:subClassOf rdf:resource="#External"/>
+        <owl:disjointWith rdf:resource="#NameEvent"/>
+        <owl:disjointWith rdf:resource="#ProperVerbal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This concept describes processes of configurations which fall in between classes of &quot;material and verbal processes&quot; (Bateman, Henschel, and Rinaldi 1995: 42). Including both, material processes that represent human behaviours (&quot;moan&quot;, &quot;groan&quot;, etc.) and which can be used like verbal processes (e.g. projection), and verbal processes (like &quot;John is talking about the President&quot;) which do not share typical properties of verbal processes (e.g. projection).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#BeingAndHaving -->
+
+    <owl:Class rdf:about="#BeingAndHaving">
+        <rdfs:subClassOf rdf:resource="#Configuration"/>
+        <owl:disjointWith rdf:resource="#DoingAndHappening"/>
+        <owl:disjointWith rdf:resource="#SayingAndSensing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A Configuration that relates its participants rather than describing an action of one on another. In contrast to DoingANDHappening, not input of energy is required nor is it always the case that there will be change over time (HM 1999: 132).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Believe -->
+
+    <owl:Class rdf:about="#Believe">
+        <rdfs:subClassOf rdf:resource="#Cognition"/>
+        <owl:disjointWith rdf:resource="#Know"/>
+        <owl:disjointWith rdf:resource="#Think"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The involuntary mental process of holding a belief.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Causal -->
+
+    <owl:Class rdf:about="#Causal">
+        <rdfs:subClassOf rdf:resource="#Circumstantial"/>
+        <owl:disjointWith rdf:resource="#CircumstantialOther"/>
+        <owl:disjointWith rdf:resource="#GeneralizedLocating"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This concept defines a Configuration, in which one of the participants is the cause of the other. Hence, one of the participants occupies the role &quot;cause&quot;, and the other one &quot;effect&quot; (Bateman, Rinaldi, and Henschel 1995, p. 33).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstance -->
+
+    <owl:Class rdf:about="#Circumstance">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+        <owl:disjointWith rdf:resource="#Process"/>
+        <owl:disjointWith rdf:resource="#SimpleQuality"/>
+        <owl:disjointWith rdf:resource="#SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Circumstances are often realized as adverbial groups or prepositional phrases. The kinds of entities that can be used as circumstances (places, times, etc.) can also serve as participants in the appropriate configurations. Circumstances fill circumstantial roles in figures. Most circumstantial elements embody some feature of grammatical metaphor. Of those that do not, the most usual are those of time, place, manner, quality and intensity. Circumstances are realized as adverbial groups or prepositional phrases. Circumstances expressed as adverbial groups come from the CIRCUMSTANCE hierarchy, while those expressed as prepositional phrases are represented as circumstantial relations [HM99, p. ].</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstantial -->
+
+    <owl:Class rdf:about="#Circumstantial">
+        <rdfs:subClassOf rdf:resource="#Relating"/>
+        <owl:disjointWith rdf:resource="#GeneralizedPossession"/>
+        <owl:disjointWith rdf:resource="#GeneralizedPossessionInverse"/>
+        <owl:disjointWith rdf:resource="#Intensive"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This class relates an entity to its cause, generalized location (in space, time, abstract space), or other circumstance-like entities (Bateman, Rinaldi, and Henschel 1995, p. 33).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#CircumstantialOther -->
+
+    <owl:Class rdf:about="#CircumstantialOther">
+        <rdfs:subClassOf rdf:resource="#Circumstantial"/>
+        <owl:disjointWith rdf:resource="#GeneralizedLocating"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This concepts captures all Circumstantial configurations which are not</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ClassAscription -->
+
+    <owl:Class rdf:about="#ClassAscription">
+        <rdfs:subClassOf rdf:resource="#SimpleQuality"/>
+        <owl:disjointWith rdf:resource="#LogicalQuality"/>
+        <owl:disjointWith rdf:resource="#MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="#ModalQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >For this two place relation, both the domain (functioning as `attribuend&#39;) and the range (functioning as `attribute&#39;) are restricted to be filled by objects. This relation corresponds to the SuperClass notion. It too is often expressed by the verb `be&#39;. For example, ``Henry is a teacher.&#39;&#39;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ClassQuality -->
+
+    <owl:Class rdf:about="#ClassQuality">
+        <rdfs:subClassOf rdf:resource="#NonScalableQuality"/>
+        <rdfs:subClassOf rdf:resource="#StativeQuality"/>
+        <rdfs:subClassOf rdf:resource="#TaxonomicQuality"/>
+        <owl:disjointWith rdf:resource="#EvaluativeQuality"/>
+        <owl:disjointWith rdf:resource="#SenseANDMeasureQuality"/>
+        <owl:disjointWith rdf:resource="#StatusQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This category may contain various taxonomies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Cognition -->
+
+    <owl:Class rdf:about="#Cognition">
+        <rdfs:subClassOf rdf:resource="#Internal"/>
+        <owl:disjointWith rdf:resource="#Intention"/>
+        <owl:disjointWith rdf:resource="#MentalActive"/>
+        <owl:disjointWith rdf:resource="#MentalInactive"/>
+        <owl:disjointWith rdf:resource="#Perception"/>
+        <owl:disjointWith rdf:resource="#ReactionAndEmotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Processes of cognition realized by the verbs `think&#39;, `believe&#39;, `know&#39;, `understand&#39;, `realize&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Color -->
+
+    <owl:Class rdf:about="#Color">
+        <rdfs:subClassOf rdf:resource="#SenseANDMeasureQuality"/>
+        <owl:disjointWith rdf:resource="#Size"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A sense and measure quality pertaining to color.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ColorPropertyAscription -->
+
+    <owl:Class rdf:about="#ColorPropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#Color"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#LogicalPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#MaterialPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ModalPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ProvenancePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ScaledComparison"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The type of ascription of property that ascribes a quality of color to an object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#CommunicativeAttitude -->
+
+    <owl:Class rdf:about="#CommunicativeAttitude">
+        <rdfs:subClassOf rdf:resource="#NonAddresseeOriented"/>
+        <rdfs:subClassOf rdf:resource="#NonMessageOriented"/>
+        <owl:disjointWith rdf:resource="#MessageTransfer"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >CommunicativeAttitude verbal configurations are realized by means of a verb for which the addressee as well as the message cannot be expressed by a direct complement (e.g. &quot;complain&quot;).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Conditional -->
+
+    <owl:Class rdf:about="#Conditional">
+        <rdfs:subClassOf rdf:resource="#ModalQuality"/>
+        <owl:disjointWith rdf:resource="#NonConditional"/>
+        <owl:disjointWith rdf:resource="#NonVolitional"/>
+        <owl:disjointWith rdf:resource="#Volitional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of modal quality. Modal qualities that are conditional are expressed by `would&#39;, `might&#39;, `could&#39;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Configuration -->
+
+    <owl:Class rdf:about="#Configuration">
+        <rdfs:subClassOf rdf:resource="#GUMThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#processInConfiguration"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#Element"/>
+        <owl:disjointWith rdf:resource="#MultiConfiguration"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A Configuration, or &#39;figure&#39;, is the basic fragment of experience that embodies one quantum of change (HM 1999: 128).  It is the totality of all the Elements participating in some activity or state of affairs (Bateman, Henschel, and Rinaldi 1995: 13). Configurations are expressed at the level of the clause and potentially consist of three components: the Process itself, Participants in the Process, and Circumstances associated with the Process. A Configuration must contain just one Process. It unfolds through time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Conjunction -->
+
+    <owl:Class rdf:about="#Conjunction">
+        <rdfs:subClassOf rdf:resource="#Extension"/>
+        <owl:disjointWith rdf:resource="#Disjunction"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A logical additive combination of two or more configurations; often realized by conjoining with `and&#39;, `also&#39;, `in addition&#39;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ConsciousBeing -->
+
+    <owl:Class rdf:about="#ConsciousBeing">
+        <rdfs:subClassOf rdf:resource="#SimpleThing"/>
+        <owl:disjointWith rdf:resource="#NonConsciousThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An active entity that is capable of producing information that may be ascribed consciousness; e.g. a person.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#CreativeMaterialAction -->
+
+    <owl:Class rdf:about="#CreativeMaterialAction">
+        <rdfs:subClassOf rdf:resource="#AffectingAction"/>
+        <owl:disjointWith rdf:resource="#DispositiveMaterialAction"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Actions in this category create their actee. For example, ``Mary baked a cake.&#39;&#39; All actions in this category can be realized using the verbs `create&#39; or `make&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DecomposableObject -->
+
+    <owl:Class rdf:about="#DecomposableObject">
+        <rdfs:subClassOf rdf:resource="#SimpleThing"/>
+        <owl:disjointWith rdf:resource="#NonDecomposableObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An object that is being viewed as being made up of parts that may be taken apart and are often given explicit linguistic recognition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DiffuseMatter -->
+
+    <owl:Class rdf:about="#DiffuseMatter">
+        <rdfs:subClassOf rdf:resource="#SubjectMatter"/>
+        <owl:disjointWith rdf:resource="#SpecificMatter"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Distinguish between explicit focus on referent, and more general, diffuse reference (from MUM 1994).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Disjunction -->
+
+    <owl:Class rdf:about="#Disjunction">
+        <rdfs:subClassOf rdf:resource="#Extension"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A logical disjunctive combination of two or more configurations; often realized by conjoining with `or&#39; or `alternatively&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DisjunctiveSet -->
+
+    <owl:Class rdf:about="#DisjunctiveSet">
+        <rdfs:subClassOf rdf:resource="#UMSet"/>
+        <owl:disjointWith rdf:resource="#OrderedSet"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A set of alternatives.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Disliking -->
+
+    <owl:Class rdf:about="#Disliking">
+        <rdfs:subClassOf rdf:resource="#ReactionAndEmotion"/>
+        <owl:disjointWith rdf:resource="#Fearing"/>
+        <owl:disjointWith rdf:resource="#Liking"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A mental reaction that is negative towards some object or state of affairs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DispositiveMaterialAction -->
+
+    <owl:Class rdf:about="#DispositiveMaterialAction">
+        <rdfs:subClassOf rdf:resource="#AffectingAction"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Actions in this category affect their actee. This category includes any verbs that describe an action on something that already exists, e.g. ``Eunice ate the cake.&#39;&#39;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DoingAndHappening -->
+
+    <owl:Class rdf:about="#DoingAndHappening">
+        <rdfs:subClassOf rdf:resource="#Configuration"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#actor"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#agentive"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A Configuration that requires the input of energy usually from one of the participants. It also involves change over time, such as circumstantial change, qualitative change, or change in possession (HM 1999: 132).
+
+DoingANDHappening includes both intentional actions, i.e. actions with a volitional actor, e.g. ``The mouse ran up the clock&#39;&#39; and happenings, such as Erosion and Disintegration, e.g. ``The wall came tumbling down.&#39;&#39; The role of this relation is: Actor. This should be value-restricted to simplethings excluding things created by mental processing (e.g. facts) and speech (direct or indirect). Material actions which are in the process of occurring are typically expressed in the present progressive tense. Compare the following: ``My watch says it is 4:30pm.&#39;&#39; vs. ``Henry is going to the market.&#39;&#39; Thus, a test for determining whether a concept falls into this category is to look at the natural way of expressing the concept. For example, ``The house collapses&#39;&#39; (nonprogressive) vs.  ``The house is collapsing&#39;&#39; (progressive).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DynamicQuality -->
+
+    <owl:Class rdf:about="#DynamicQuality">
+        <rdfs:subClassOf rdf:resource="#MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="#NonScalableQuality"/>
+        <owl:disjointWith rdf:resource="#StativeQuality"/>
+        <owl:disjointWith rdf:resource="#TaxonomicQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A quality can be stative or dynamic. A quality is dynamic if the entity possessing this quality must exert some effort in order to maintain the quality. Stative qualities hold regardless of any particular process. Dynamic qualities can be expressed using the present progressive tense, i.e. they can take the form: `X is being quality.&#39; John is being clever/skillful/creative/enthusiastic. Stative qualities cannot take this form: *John is being dead/German/tall. These can take the simple present only.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Elaboration -->
+
+    <owl:Class rdf:about="#Elaboration">
+        <rdfs:subClassOf rdf:resource="#Expansion"/>
+        <owl:disjointWith rdf:resource="#Enhancement"/>
+        <owl:disjointWith rdf:resource="#Extension"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An expansion such that the two configurations offer different perspectives of the same thing. E.g., `it matters a lot; it plays an important role&#39; (HM 1999: 117).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Element -->
+
+    <owl:Class rdf:about="#Element">
+        <rdfs:subClassOf rdf:resource="#GUMThing"/>
+        <owl:disjointWith rdf:resource="#MultiConfiguration"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An Element is a single &#39;stand-alone&#39; object or conceptual item (Bateman, Henschel, and Rinaldi 1995, p. 13). They are expressed as constituents below the clause. Elements fill roles of Configurations.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ElementList -->
+
+    <owl:Class rdf:about="#ElementList">
+        <rdfs:subClassOf rdf:resource="#Part"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of PartWhole relationship, such as that holding is between a list and its elements. It is the inverse of the ElementList relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ElementOf -->
+
+    <owl:Class rdf:about="#ElementOf">
+        <rdfs:subClassOf rdf:resource="#PartOf"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The inverse of the Element relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Enhancement -->
+
+    <owl:Class rdf:about="#Enhancement">
+        <rdfs:subClassOf rdf:resource="#Expansion"/>
+        <owl:disjointWith rdf:resource="#Extension"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An expansion such that configuration qualifies the other; e.g., `it is autumn, so the leaves are turning brown&#39; (HM 1999: 117).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#EvaluativeQuality -->
+
+    <owl:Class rdf:about="#EvaluativeQuality">
+        <rdfs:subClassOf rdf:resource="#PolarQuality"/>
+        <rdfs:subClassOf rdf:resource="#ScalableQuality"/>
+        <rdfs:subClassOf rdf:resource="#StativeQuality"/>
+        <owl:disjointWith rdf:resource="#SenseANDMeasureQuality"/>
+        <owl:disjointWith rdf:resource="#StatusQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Qualities which belong to this class are determined by some value system of some conscious being. Such a value system may be moral, aesthetic, or utilitarian. Moral qualities include `honest&#39;, `polite&#39;, `generous&#39;. `Beautiful&#39;, `neat&#39; are examples of aesthetic qualities. `Readable&#39;, `easy&#39;, and `thorough&#39; are some taskoriented qualities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Exactly -->
+
+    <owl:Class rdf:about="#Exactly">
+        <rdfs:subClassOf rdf:resource="#NumberFocusing"/>
+        <owl:disjointWith rdf:resource="#GreaterThan"/>
+        <owl:disjointWith rdf:resource="#LessThan"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relation of focusing or restricting an attribution of quantity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Existence -->
+
+    <owl:Class rdf:about="#Existence">
+        <rdfs:subClassOf rdf:resource="#BeingAndHaving"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#existent"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#Relating"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A one-place relation found, for example, in ``There is a block.&#39;&#39; Note that the notion of `state&#39; does not come out as a category of special status in the upper model. Instead, what we may think of as state is spread out over several concepts, e.g. relations and  qualities. If considerations of inferencing require the notion of state, it will be necessary to recognize it as a separate category.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Expansion -->
+
+    <owl:Class rdf:about="#Expansion">
+        <rdfs:subClassOf rdf:resource="#MultiConfiguration"/>
+        <owl:disjointWith rdf:resource="#Projection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A multiconfiguration of two configurations such that they both occupy the same order of reality, and such that one adds dimensionality to the other (HM 1999: 117).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Extension -->
+
+    <owl:Class rdf:about="#Extension">
+        <rdfs:subClassOf rdf:resource="#Expansion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An expansion such that the first configuration is additive to the other in terms of information value; e.g., `he is too young and he doesn&#39;t speak the language&#39; (HM 1999: 117).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#External -->
+
+    <owl:Class rdf:about="#External">
+        <rdfs:subClassOf rdf:resource="#SayingAndSensing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#sayer"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#Internal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process of communication with at least one participant playing the sayer role, and possibly an participant playing a reciever role (HM 1999: 129--130). The sayer is not necessarily an entity endowed with consciousness (HM 1999: 135).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Fearing -->
+
+    <owl:Class rdf:about="#Fearing">
+        <rdfs:subClassOf rdf:resource="#ReactionAndEmotion"/>
+        <owl:disjointWith rdf:resource="#Liking"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A mental reaction that is negative towards some object or state of affairs and which invokes fear.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Female -->
+
+    <owl:Class rdf:about="#Female">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+        <owl:disjointWith rdf:resource="#Male"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A object that is to be considered female, for, e.g., pronominalization purposes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Future -->
+
+    <owl:Class rdf:about="#Future">
+        <rdfs:subClassOf rdf:resource="#TimeInterval"/>
+        <owl:disjointWith rdf:resource="#OneOrTwoDTime"/>
+        <owl:disjointWith rdf:resource="#Past"/>
+        <owl:disjointWith rdf:resource="#Present"/>
+        <owl:disjointWith rdf:resource="#ThreeDTime"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A time interval taking place in the future.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GUMThing -->
+
+    <owl:Class rdf:about="#GUMThing">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The most general experiential category that can be expressed through the resources of the lexicogrammar of a language. UMThing corresponds to &#39;phenomena&#39; in Halliday and Mathiessen (1999: 48).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralPossibility -->
+
+    <owl:Class rdf:about="#GeneralPossibility">
+        <rdfs:subClassOf rdf:resource="#Possibility"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A general possibility relationship is a modal modification of a process that indicates that the process may occur; it is typically realized using the modal `may&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedLocating -->
+
+    <owl:Class rdf:about="#GeneralizedLocating">
+        <rdfs:subClassOf rdf:resource="#Circumstantial"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A concept for specifying the location of an entity in physical space, time, or in a more abstract space (Bateman, Rinaldi, and Henschel 1995, p. 33).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedPossession -->
+
+    <owl:Class rdf:about="#GeneralizedPossession">
+        <rdfs:subClassOf rdf:resource="#Relating"/>
+        <owl:disjointWith rdf:resource="#GeneralizedPossessionInverse"/>
+        <owl:disjointWith rdf:resource="#Intensive"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >GeneralizedPossession logically has two roles: POSSESSOR (the domain) and POSSESSED (the range). The notion of generalized possession is often expressed as: {possessor} `has&#39; {possessed}. In general, relations in this category can also be expressed with a possessive form, e.g. `John&#39;s book&#39;, `Henry&#39;s sister&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedPossessionInverse -->
+
+    <owl:Class rdf:about="#GeneralizedPossessionInverse">
+        <rdfs:subClassOf rdf:resource="#Relating"/>
+        <owl:disjointWith rdf:resource="#Intensive"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The inverse of the GeneralizedPossession relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedRoleRelation -->
+
+    <owl:Class rdf:about="#GeneralizedRoleRelation">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossession"/>
+        <owl:disjointWith rdf:resource="#NameOf"/>
+        <owl:disjointWith rdf:resource="#Ownership"/>
+        <owl:disjointWith rdf:resource="#PartWhole"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This is the generalized perspective on an entity that `has some relationship&#39; with another. When no more specific information concerning available grammatical realizations is given, subtypes ({role}) of this relationship can be used to generate language of the form:  ``{domain} has {range} as {role}&#39;&#39; or ``{domain}&#39;s {role} is {range}&#39;&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GreaterThan -->
+
+    <owl:Class rdf:about="#GreaterThan">
+        <rdfs:subClassOf rdf:resource="#NumberFocusing"/>
+        <owl:disjointWith rdf:resource="#LessThan"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relative quantity ascription that specifies a range beginning at some lower bound.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GreaterThanComparison -->
+
+    <owl:Class rdf:about="#GreaterThanComparison">
+        <rdfs:subClassOf rdf:resource="#ScaledComparison"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#GreaterThan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#LessThanComparison"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The scaled comparison that compares by stating that a quality holds more rather than less.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Hailing -->
+
+    <owl:Class rdf:about="#Hailing">
+        <rdfs:subClassOf rdf:resource="#Ambience"/>
+        <owl:disjointWith rdf:resource="#Raining"/>
+        <owl:disjointWith rdf:resource="#Snowing"/>
+        <owl:disjointWith rdf:resource="#Sunning"/>
+        <owl:disjointWith rdf:resource="#Winding"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process describing a hailing condition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#IdeaProjection -->
+
+    <owl:Class rdf:about="#IdeaProjection">
+        <rdfs:subClassOf rdf:resource="#Projection"/>
+        <owl:disjointWith rdf:resource="#LocutionProjection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projection such that the configuration in the range refers to the meaning content of what someone said or thought (HM 1999: 108).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#IdeaQuoting -->
+
+    <owl:Class rdf:about="#IdeaQuoting">
+        <rdfs:subClassOf rdf:resource="#IdeaProjection"/>
+        <rdfs:subClassOf rdf:resource="#Quoting"/>
+        <owl:disjointWith rdf:resource="#IdeaReporting"/>
+        <owl:disjointWith rdf:resource="#LocutionQuoting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The projecting of an idea by a Configuration such that the projected idea is equal to the other in terms of semantic status (HM 1999: 114). E.g., &quot;Harriet thought, &#39;Should I feed the cat&#39;.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#IdeaReporting -->
+
+    <owl:Class rdf:about="#IdeaReporting">
+        <rdfs:subClassOf rdf:resource="#IdeaProjection"/>
+        <rdfs:subClassOf rdf:resource="#Reporting"/>
+        <owl:disjointWith rdf:resource="#LocutionReporting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The projecting of one idea by another such that the projected idea is not equal to the other in terms of semantic status; they have different &#39;semantic weights&#39;  (HM 1999: 114) E.g., &quot;Harriet wondered whether she should feed the cat&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Identity -->
+
+    <owl:Class rdf:about="#Identity">
+        <rdfs:subClassOf rdf:resource="#Intensive"/>
+        <owl:disjointWith rdf:resource="#Symbolization"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The type of relation between entities that states that they are in some sense identical or overlapping. Sentences typical of this type of relation are `X is Y&#39;, or `X is mine&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Intensive -->
+
+    <owl:Class rdf:about="#Intensive">
+        <rdfs:subClassOf rdf:resource="#Relating"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Intensive relations are those which ascribe a property to an object, or which identify or symbolize it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Intention -->
+
+    <owl:Class rdf:about="#Intention">
+        <rdfs:subClassOf rdf:resource="#Internal"/>
+        <owl:disjointWith rdf:resource="#MentalActive"/>
+        <owl:disjointWith rdf:resource="#MentalInactive"/>
+        <owl:disjointWith rdf:resource="#Perception"/>
+        <owl:disjointWith rdf:resource="#ReactionAndEmotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An Intention configuration has a mental process that captures the notion of actively pursuing a determinate aim.
+
+---note:
+Reaction (2.0) becomes Intention (3.0) to avoid confusion.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Internal -->
+
+    <owl:Class rdf:about="#Internal">
+        <rdfs:subClassOf rdf:resource="#SayingAndSensing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#senser"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A communicative Configuration that projects ideas into existence (HM 1999: 136). At least one concious participant playing the senser role is required (HM 1999: 129--130). If this constraint is violated by an utterance, the utterance is grammatically metaphorical. E.g., ``I think I&#39;ll give it up.&#39;&#39;
+--------
+There is also a role for the PHENOMENON of mental processing ().</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Know -->
+
+    <owl:Class rdf:about="#Know">
+        <rdfs:subClassOf rdf:resource="#Cognition"/>
+        <owl:disjointWith rdf:resource="#Think"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A mental process describing the involuntary state of knowing that something is the case.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LessThan -->
+
+    <owl:Class rdf:about="#LessThan">
+        <rdfs:subClassOf rdf:resource="#NumberFocusing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relative quantity ascription with respect to a higher bound.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LessThanComparison -->
+
+    <owl:Class rdf:about="#LessThanComparison">
+        <rdfs:subClassOf rdf:resource="#ScaledComparison"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#LessThan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The scaled comparison that compares by stating that a quality holds less rather than more.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Liking -->
+
+    <owl:Class rdf:about="#Liking">
+        <rdfs:subClassOf rdf:resource="#ReactionAndEmotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An involuntary favorable mental/emotional reaction to some entity or state of affairs, or a process that presupposes a favorable reaction, e.g. to `want&#39; or `strive&#39; to bring something about.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LocutionProjection -->
+
+    <owl:Class rdf:about="#LocutionProjection">
+        <rdfs:subClassOf rdf:resource="#Projection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projection such that the range configuration is what someone said (HM 1999: 108).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LocutionQuoting -->
+
+    <owl:Class rdf:about="#LocutionQuoting">
+        <rdfs:subClassOf rdf:resource="#LocutionProjection"/>
+        <rdfs:subClassOf rdf:resource="#Quoting"/>
+        <owl:disjointWith rdf:resource="#LocutionReporting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The projecting of speech by a Configuration such that the projected speech is  equal to the other in terms of semantic status (HM 1999: 114). E.g., &quot;Harriet said, &#39;Should I feed the cat&#39;.&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LocutionReporting -->
+
+    <owl:Class rdf:about="#LocutionReporting">
+        <rdfs:subClassOf rdf:resource="#LocutionProjection"/>
+        <rdfs:subClassOf rdf:resource="#Reporting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The projecting of one locution by another such that the projected locution is not equal to the other in terms of semantic status; they have different &#39;semantic weights&#39;  (HM 1999: 114) E.g., &quot;Harriet asked whether she should feed the cat&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LogicalPropertyAscription -->
+
+    <owl:Class rdf:about="#LogicalPropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <owl:disjointWith rdf:resource="#MaterialPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ModalPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ProvenancePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ScaledComparison"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >?? The type of ascription of property that ascribes a logical parameter to an object (like true or false).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LogicalQuality -->
+
+    <owl:Class rdf:about="#LogicalQuality">
+        <rdfs:subClassOf rdf:resource="#SimpleQuality"/>
+        <owl:disjointWith rdf:resource="#MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="#ModalQuality"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LogicalUniqueness -->
+
+    <owl:Class rdf:about="#LogicalUniqueness">
+        <rdfs:subClassOf rdf:resource="#LogicalQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Male -->
+
+    <owl:Class rdf:about="#Male">
+        <rdfs:subClassOf rdf:resource="#Person"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A object that is to be considered male, for, e.g., pronominalization purposes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MaterialClassQuality -->
+
+    <owl:Class rdf:about="#MaterialClassQuality">
+        <rdfs:subClassOf rdf:resource="#ClassQuality"/>
+        <owl:disjointWith rdf:resource="#ProvenanceClassQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >MaterialClassQuality describes the quality of being made of a particular material, e.g. wood, metal, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MaterialPropertyAscription -->
+
+    <owl:Class rdf:about="#MaterialPropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#MaterialClassQuality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#ModalPropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ProvenancePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ScaledComparison"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The general ascription of a material world quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MaterialWorldQuality -->
+
+    <owl:Class rdf:about="#MaterialWorldQuality">
+        <rdfs:subClassOf rdf:resource="#SimpleQuality"/>
+        <owl:disjointWith rdf:resource="#ModalQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Material qualities can be thought of as those qualities which are evident when the referent is looked at, weighed, measured, etc. Examples include: `heavy&#39;, `blue&#39;, `American&#39;, `readable&#39;, `efficient&#39;, `maintainable&#39;. The referents of these qualities are things.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MentalActive -->
+
+    <owl:Class rdf:about="#MentalActive">
+        <rdfs:subClassOf rdf:resource="#Internal"/>
+        <owl:disjointWith rdf:resource="#MentalInactive"/>
+        <owl:disjointWith rdf:resource="#Perception"/>
+        <owl:disjointWith rdf:resource="#ReactionAndEmotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This is another specialization of actions concerned with mental processing. Examples of verbs which would fall into this category are: `convince&#39;, `please&#39;. Also the verb `will&#39;, in the context: ``I will that something be the case&#39;&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MentalInactive -->
+
+    <owl:Class rdf:about="#MentalInactive">
+        <rdfs:subClassOf rdf:resource="#Internal"/>
+        <owl:disjointWith rdf:resource="#Perception"/>
+        <owl:disjointWith rdf:resource="#ReactionAndEmotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Concepts in this category describe passive, inactive mental processing. There are 3 subtypes of this category: Perception (e.g. `see`, `hear`, `taste`, `smell`, `feel`), Cognition (e.g. `think`, `believe`, `know`, `understand`, `realize`), and Reaction/Emotion/Affection (e.g. `love`, `hate`, `want`, `wish`, `fear`, `desire`.)  MentalInactives do not normally take the progressive form. Recall that materialactions do take the progressive form.Passivization is rare for most of these, except in the case where the phenomenon is a noun phrase, e.g. ``Henry likes Mary.&#39;&#39; ``Mary is liked by Henry.&#39;&#39; but not ``Henry likes to go to the races.&#39;&#39; ``*To go to the races is liked by Henry.&#39;&#39;  These also often form `reversal pairs&#39;. One of the mental actions in the pair is active, the other is inactive (or inactive), e.g.``I *like* bananas.&#39;&#39; vs.  ``Bananas *please* me.&#39;&#39; Other pairs are {fear, frighten}, {wonder, amaze}, {desire,  attract}. Compare this to actions where reversal is only possible using passive voice.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MessageOriented -->
+
+    <owl:Class rdf:about="#MessageOriented">
+        <rdfs:subClassOf rdf:resource="#ProperVerbal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#saying"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#NonMessageOriented"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >For MessageOriented verbal processes the message is an obligatory role, although the message may not always be expressed.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MessageTransfer -->
+
+    <owl:Class rdf:about="#MessageTransfer">
+        <rdfs:subClassOf rdf:resource="#MessageOriented"/>
+        <rdfs:subClassOf rdf:resource="#NonAddresseeOriented"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >MessageTransfer verbal configurations are usually realized by means of verbs having the message as a direct complement but the addressee as an indirect complement.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalPropertyAscription -->
+
+    <owl:Class rdf:about="#ModalPropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#ModalQuality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#ProvenancePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#ScaledComparison"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The ascription of a modal quality, typically to a process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalQuality -->
+
+    <owl:Class rdf:about="#ModalQuality">
+        <rdfs:subClassOf rdf:resource="#SimpleQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Qualities of being able to do something, wanting to do something, having to do something, and so forth.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MultiConfiguration -->
+
+    <owl:Class rdf:about="#MultiConfiguration">
+        <rdfs:subClassOf rdf:resource="#GUMThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#betaParticipantInMultiConfiguration"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#alphaParticipantInMultiConfiguration"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Formerly labelled &#39;sequence&#39; (GUM 2.0), this is a series of related Configurations. Various sorts of Sequences are differentiated by the type of relation they enter into. Every MultiConfiguration consists of two ordered parts, a first and a second participant, which is a Configuration or a MultiConfiguration. Furthermore, MultiConfigurations are either Equative or NonEquative (HM 1999: 50).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Name -->
+
+    <owl:Class rdf:about="#Name">
+        <rdfs:subClassOf rdf:resource="#Word"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An accepted but possibly arbitrary label for some entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameEvent -->
+
+    <owl:Class rdf:about="#NameEvent">
+        <rdfs:subClassOf rdf:resource="#DispositiveMaterialAction"/>
+        <rdfs:subClassOf rdf:resource="#External"/>
+        <owl:disjointWith rdf:resource="#ProperVerbal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The process of giving something a name. It does not intrinsically require an addressee (non-addressee-oriented).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameOf -->
+
+    <owl:Class rdf:about="#NameOf">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossession"/>
+        <owl:disjointWith rdf:resource="#Ownership"/>
+        <owl:disjointWith rdf:resource="#PartWhole"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation that holds betwen a name and its bearer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameRelation -->
+
+    <owl:Class rdf:about="#NameRelation">
+        <rdfs:subClassOf rdf:resource="#Symbolization"/>
+        <owl:disjointWith rdf:resource="#RolePlaying"/>
+        <owl:disjointWith rdf:resource="#Signification"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation that holds between a name&#39;s bearer and that name.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NamedObject -->
+
+    <owl:Class rdf:about="#NamedObject">
+        <rdfs:subClassOf rdf:resource="#SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Objects which typically have names.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NaturalNumber -->
+
+    <owl:Class rdf:about="#NaturalNumber">
+        <rdfs:subClassOf rdf:resource="#Abstraction"/>
+        <owl:disjointWith rdf:resource="#UMSet"/>
+        <owl:disjointWith rdf:resource="#Word"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of abstraction referring to numerical value.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Necessity -->
+
+    <owl:Class rdf:about="#Necessity">
+        <rdfs:subClassOf rdf:resource="#NonVolitional"/>
+        <owl:disjointWith rdf:resource="#Possibility"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An example of a modal quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAddresseeOriented -->
+
+    <owl:Class rdf:about="#NonAddresseeOriented">
+        <rdfs:subClassOf rdf:resource="#ProperVerbal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This concepts describes verbal processes that do not intrinsically require an addressee. If the addressee occurs it must always be indirect.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAddressing -->
+
+    <owl:Class rdf:about="#NonAddressing">
+        <rdfs:subClassOf rdf:resource="#BehavioralVerbal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#addressee"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This BehavioralVerbal configuration has no direct adressee.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingAction -->
+
+    <owl:Class rdf:about="#NonAffectingAction">
+        <rdfs:subClassOf rdf:resource="#DoingAndHappening"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >NonAffectingActions have no `actee&#39;, or the `actee&#39; is not created or affected by the action. They are often (though not necessarily) intransitive. In the case they are transitive, the object is not affected or created by the action. Instead it specifies a range of the action. For example, ``I play the piano/ tennis.&#39;&#39; This specifies that I am capable of a typical kind of playing.  All verbs of movement are examples of NonAffectingActions, e.g. `climb&#39;, `walk&#39;, `fly&#39;, `fall&#39;, `run&#39;. Skills, such as `read (book)&#39;, `listen (music)&#39;, `speak (French), etc. are included in this category. In addition, the verbs `have&#39; as in `have lunch&#39;, `take&#39; as in `take a shower&#39;, `do&#39; as in `do a dance&#39;, and `make&#39; are in this category.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingDoing -->
+
+    <owl:Class rdf:about="#NonAffectingDoing">
+        <rdfs:subClassOf rdf:resource="#NonAffectingAction"/>
+        <owl:disjointWith rdf:resource="#NonAffectingHappening"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An action where the &quot;actor&quot; is one who intentionally performs the action. Verbs of movement, like &quot;climb&quot;, &quot;walk&quot;, etc., are examples of such actions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingHappening -->
+
+    <owl:Class rdf:about="#NonAffectingHappening">
+        <rdfs:subClassOf rdf:resource="#NonAffectingAction"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An action where something is happening. Also where the &quot;actor&quot; is not volitionally performing the action.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonConditional -->
+
+    <owl:Class rdf:about="#NonConditional">
+        <rdfs:subClassOf rdf:resource="#ModalQuality"/>
+        <owl:disjointWith rdf:resource="#NonVolitional"/>
+        <owl:disjointWith rdf:resource="#Volitional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of modal quality. Modal qualities that are not conditional are expressed with modalities such as: &quot;will&quot;, &quot;must&quot;, &quot;can&quot;, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonConsciousThing -->
+
+    <owl:Class rdf:about="#NonConsciousThing">
+        <rdfs:subClassOf rdf:resource="#SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Some entities are just not treated by the language to be conscious. They go here.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonDecomposableObject -->
+
+    <owl:Class rdf:about="#NonDecomposableObject">
+        <rdfs:subClassOf rdf:resource="#SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An object that is being regarded as not possessing significant parts, or which is not to be considered decomposable for present purposes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonMessageOriented -->
+
+    <owl:Class rdf:about="#NonMessageOriented">
+        <rdfs:subClassOf rdf:resource="#ProperVerbal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process of a NonMessageOriented configuration does not intrinsically require a message. If a message occurs it must always be indirect.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonScalableQuality -->
+
+    <owl:Class rdf:about="#NonScalableQuality">
+        <rdfs:subClassOf rdf:resource="#MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="#ScalableQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A NonScaleableQuality is either possessed by an object or it is not. `Empty&#39; is a nonscaleable quality. A quality is scaleable if an object may possess it to varying degrees. For example, `heavy&#39; is a scaleable quality. We can describe objects as being `very heavy&#39;, or `more&#39; or `less&#39; heavy than other objects.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonVolitional -->
+
+    <owl:Class rdf:about="#NonVolitional">
+        <rdfs:subClassOf rdf:resource="#ModalQuality"/>
+        <owl:disjointWith rdf:resource="#Volitional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A nonvolitional process is one where the actor did not take, or is not expressed as taking, direct responsibility for the process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NumberFocusing -->
+
+    <owl:Class rdf:about="#NumberFocusing">
+        <rdfs:subClassOf rdf:resource="#QuantityAscription"/>
+        <owl:disjointWith rdf:resource="#Quantity"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation of being more specific about a quantity that is being ascribed. This contrasts with quantity, which provides no additional information concerning the quantity apart from its value.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#OneOrTwoDLocation -->
+
+    <owl:Class rdf:about="#OneOrTwoDLocation">
+        <rdfs:subClassOf rdf:resource="#SpaceInterval"/>
+        <owl:disjointWith rdf:resource="#ThreeDLocation"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A spatial object that is either a line or a plane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#OneOrTwoDTime -->
+
+    <owl:Class rdf:about="#OneOrTwoDTime">
+        <rdfs:subClassOf rdf:resource="#TimeInterval"/>
+        <owl:disjointWith rdf:resource="#Past"/>
+        <owl:disjointWith rdf:resource="#Present"/>
+        <owl:disjointWith rdf:resource="#ThreeDTime"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A temporal object that is a time interval or smaller scale succession of time intervals, e.g. a day (in opposition to a year). This is clearly a matter of the perspective that is being drawn in particular cases.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#OrderedObject -->
+
+    <owl:Class rdf:about="#OrderedObject">
+        <rdfs:subClassOf rdf:resource="#DecomposableObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of decomposable object whose parts have an intrinsic ordering of their own; for example, the elements of a list, the carriages of a train, etc. (Used to be &quot;Element&quot;.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#OrderedSet -->
+
+    <owl:Class rdf:about="#OrderedSet">
+        <rdfs:subClassOf rdf:resource="#OrderedObject"/>
+        <rdfs:subClassOf rdf:resource="#UMSet"/>
+        <owl:disjointWith rdf:resource="#SpaceInterval"/>
+        <owl:disjointWith rdf:resource="#TimeInterval"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A set whose elements are ordered.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#OwnedBy -->
+
+    <owl:Class rdf:about="#OwnedBy">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossessionInverse"/>
+        <owl:disjointWith rdf:resource="#PartOf"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The inverse of the Ownership relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Ownership -->
+
+    <owl:Class rdf:about="#Ownership">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossession"/>
+        <owl:disjointWith rdf:resource="#PartWhole"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This is a relation between the owner of an object and the object. It has the same roles as GeneralizedPossession, but the possessor role could be valuerestricted to ACTIVEENTITY. Ownership may be expressed as ``{possessor} `own&#39; {possessed&gt;}&#39; or ``{possessed} `belongs to&#39; {possessor}&#39;&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Part -->
+
+    <owl:Class rdf:about="#Part">
+        <rdfs:subClassOf rdf:resource="#PartWhole"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >One of the participants in a PartWhole relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#PartOf -->
+
+    <owl:Class rdf:about="#PartOf">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossessionInverse"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The inverse of the Part relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#PartWhole -->
+
+    <owl:Class rdf:about="#PartWhole">
+        <rdfs:subClassOf rdf:resource="#GeneralizedPossession"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This is a relation between an entity and its parts. It logically has two roles: WHOLE (the domain) and PART (the range). How this relation is expressed in the language seems to depend on the type of object that fills the WHOLE role. At the most general level, this relation can be expressed as: ``{Part} `be an element of&#39; {whole} or ``{part} `be a component of&#39; {whole}&#39;&#39;, or &quot;{whole} has {part}&quot;. (The latter is inherited from the superconcept GeneralizedPossession.)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Past -->
+
+    <owl:Class rdf:about="#Past">
+        <rdfs:subClassOf rdf:resource="#TimeInterval"/>
+        <owl:disjointWith rdf:resource="#Present"/>
+        <owl:disjointWith rdf:resource="#ThreeDTime"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A time interval taking place in the past.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Perception -->
+
+    <owl:Class rdf:about="#Perception">
+        <rdfs:subClassOf rdf:resource="#Internal"/>
+        <owl:disjointWith rdf:resource="#ReactionAndEmotion"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An involuntary mental process of perceiving a phenomenon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Person -->
+
+    <owl:Class rdf:about="#Person">
+        <rdfs:subClassOf rdf:resource="#ConsciousBeing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of conscious being pronominalizeable by `she&#39;, `he&#39;, etc. rather than by `it&#39;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#PolarQuality -->
+
+    <owl:Class rdf:about="#PolarQuality">
+        <rdfs:subClassOf rdf:resource="#MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="#TaxonomicQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A quality is polar if it has a corresponding quality describing its opposite or the absence of this quality entirely. A polar quality is not part of a larger taxonomy. E.g. `heavy&#39;/`light&#39;, `dead&#39;/`alive&#39;. All qualities which are not polar are taxonomic, i.e. the possible values can be listed. For example, the quality of being mammal is part of some taxonomy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Possibility -->
+
+    <owl:Class rdf:about="#Possibility">
+        <rdfs:subClassOf rdf:resource="#NonVolitional"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A general modal quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Present -->
+
+    <owl:Class rdf:about="#Present">
+        <rdfs:subClassOf rdf:resource="#TimeInterval"/>
+        <owl:disjointWith rdf:resource="#ThreeDTime"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A time interval taking place at present.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process -->
+
+    <owl:Class rdf:about="#Process">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+        <owl:disjointWith rdf:resource="#SimpleQuality"/>
+        <owl:disjointWith rdf:resource="#SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A Process is the linguistic construal of `goings-on&#39; or events. Processes are similar to Configurations, but factor out Participants, Circumstances, and other elements. As such, entities classified under Process can be expressed as verbs and are frequently the main verb in a clause.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Projection -->
+
+    <owl:Class rdf:about="#Projection">
+        <rdfs:subClassOf rdf:resource="#MultiConfiguration"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A semiotic projection such that a configuration of saying or thinking (the domain) &#39;projects&#39; another configuration (the range) onto a different plane of reality, that is, the `content plane&#39;, as in the reporting of what someone said or thought. The second is then dependent upon the first (HM 1999: 108, 111).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ProperVerbal -->
+
+    <owl:Class rdf:about="#ProperVerbal">
+        <rdfs:subClassOf rdf:resource="#External"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Unlike BehavioralVerbal this concept describes a configuration with a regular verbal process. We distinguish between addressee-oriented (e.g. &quot;tell&quot;) and non-addressee-oriented (e.g. &quot;say&quot;), message-oriented (e.g. &quot;prove&quot;) and non-message-oriented (e.g. &quot;inform&quot;).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#PropertyAscription -->
+
+    <owl:Class rdf:about="#PropertyAscription">
+        <rdfs:subClassOf rdf:resource="#Ascription"/>
+        <owl:disjointWith rdf:resource="#QuantityAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation describing membership in the set of entities having a particular property. This is expressed by a property that can be used as a set descriptor. For example, ``The students are intelligent.&#39;&#39; i.e. they belong to the class of intelligent ones. Note that &#39;intelligent&#39; is a quality. We need many specializations of property ascription corresponding to different types of qualities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#PropertyOf -->
+
+    <owl:Class rdf:about="#PropertyOf">
+        <rdfs:subClassOf rdf:resource="#AscriptionInverse"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The inverse of the PropertyAscription relation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ProvenanceClassQuality -->
+
+    <owl:Class rdf:about="#ProvenanceClassQuality">
+        <rdfs:subClassOf rdf:resource="#ClassQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Information that constrains reference by place, institution, social group or other social category of origin.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ProvenancePropertyAscription -->
+
+    <owl:Class rdf:about="#ProvenancePropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#ProvenanceClassQuality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#ScaledComparison"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation of ascribing a provenance class quality to an entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Quantity -->
+
+    <owl:Class rdf:about="#Quantity">
+        <rdfs:subClassOf rdf:resource="#QuantityAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation of ascribing a quantity to some entity. This contrasts with NumberFocusing, which provides information additional to the value of the quantity being ascribed, e.g. a range bounded by some value.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#QuantityAscription -->
+
+    <owl:Class rdf:about="#QuantityAscription">
+        <rdfs:subClassOf rdf:resource="#Ascription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relation of ascribing a quantity to an entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Quoting -->
+
+    <owl:Class rdf:about="#Quoting">
+        <rdfs:subClassOf rdf:resource="#Projection"/>
+        <owl:disjointWith rdf:resource="#Reporting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A Projection such the two configurations have equal status. The two have equal status as independent configurations; the projected configuration is thus projected as if it was still part of the same first-order reality (HM 1999: 111).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Raining -->
+
+    <owl:Class rdf:about="#Raining">
+        <rdfs:subClassOf rdf:resource="#Ambience"/>
+        <owl:disjointWith rdf:resource="#Snowing"/>
+        <owl:disjointWith rdf:resource="#Sunning"/>
+        <owl:disjointWith rdf:resource="#Winding"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process describing a raining condition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ReactionAndEmotion -->
+
+    <owl:Class rdf:about="#ReactionAndEmotion">
+        <rdfs:subClassOf rdf:resource="#Internal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An inactive mental process that captures an uncontrolled emotional response to something or some state of affairs in terms of its appeal. Examples would be FEARING and DISLIKING on the negative side, and LIKING on the positive side.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Relating -->
+
+    <owl:Class rdf:about="#Relating">
+        <rdfs:subClassOf rdf:resource="#BeingAndHaving"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#domain"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A configuration indicating a relation holding between two entities. A relating must contain at least a domain and an attribute.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Reporting -->
+
+    <owl:Class rdf:about="#Reporting">
+        <rdfs:subClassOf rdf:resource="#Projection"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A projection such the two configurations have unequal status. The latter is on a second-order plane of reality (HM 1999: 111).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#RolePlaying -->
+
+    <owl:Class rdf:about="#RolePlaying">
+        <rdfs:subClassOf rdf:resource="#Symbolization"/>
+        <owl:disjointWith rdf:resource="#Signification"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A circumstantial relationship that expresses a restriction in which a facet of one of the participants in a process is relevant for the actualization of the process. The participation of a participant which is specified in, and has a definite participant function (such as actor, goal, senser, and phenomenon to the process) is restricted to a particular role, part, or function within the particular participant function being performed. It is frequently realized in English by a prepositional phrase with the preposition `as&#39;; For example: ``As a president, he was terrible, although as a golfer he was not too bad.&#39;&#39;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SayingAndSensing -->
+
+    <owl:Class rdf:about="#SayingAndSensing">
+        <rdfs:subClassOf rdf:resource="#Configuration"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Configurations that can project symbolically. Projective sequences, ie Projections, construe SayingANDSensing on two levels: the level of SayingANDSensing cum Configuration and the level of content of SayingANDSensing (HM 1999: 128--129).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ScalableQuality -->
+
+    <owl:Class rdf:about="#ScalableQuality">
+        <rdfs:subClassOf rdf:resource="#MaterialWorldQuality"/>
+        <owl:disjointWith rdf:resource="#TaxonomicQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A quality is scaleable if an object may possess it to varying degrees. For example, `heavy&#39; is a scaleable quality. We can describe objects as being `very heavy&#39;, or `more&#39; or `less&#39; heavy than other objects. A nonscaleable quality is either possessed by an object or it is not. `Empty&#39; is a nonscaleable quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ScaledComparison -->
+
+    <owl:Class rdf:about="#ScaledComparison">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <owl:disjointWith rdf:resource="#SizePropertyAscription"/>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A relationship of comparison of an object with respect to its carrying a specified property to a greater or lesser degree.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SenseANDMeasureQuality -->
+
+    <owl:Class rdf:about="#SenseANDMeasureQuality">
+        <rdfs:subClassOf rdf:resource="#PolarQuality"/>
+        <rdfs:subClassOf rdf:resource="#ScalableQuality"/>
+        <rdfs:subClassOf rdf:resource="#StativeQuality"/>
+        <owl:disjointWith rdf:resource="#StatusQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >These are qualities that are sensed or measured by conscious beings. For example, this category would include qualities of age (young, old), of weight (light, heavy), price (expensive, cheap), etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Signification -->
+
+    <owl:Class rdf:about="#Signification">
+        <rdfs:subClassOf rdf:resource="#Symbolization"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Relations concerned with Signification are linguistically realized by verbs like &quot;represent&quot;, &quot;mean&quot;, &quot;express&quot;, e.g., &quot;green means go&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality -->
+
+    <owl:Class rdf:about="#SimpleQuality">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+        <owl:disjointWith rdf:resource="#SimpleThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Qualities are properties of SimpleThings and Processes. They participate in property ascription relations. Roughly speaking, qualities include anything that can be expressed as an English adjective.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing -->
+
+    <owl:Class rdf:about="#SimpleThing">
+        <rdfs:subClassOf rdf:resource="#Element"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An entity which may participate in a configuration.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Size -->
+
+    <owl:Class rdf:about="#Size">
+        <rdfs:subClassOf rdf:resource="#SenseANDMeasureQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A property of size.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SizePropertyAscription -->
+
+    <owl:Class rdf:about="#SizePropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#attribute"/>
+                <owl:allValuesFrom rdf:resource="#Size"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="#UsePropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relationship of ascribing a size to an entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Snowing -->
+
+    <owl:Class rdf:about="#Snowing">
+        <rdfs:subClassOf rdf:resource="#Ambience"/>
+        <owl:disjointWith rdf:resource="#Sunning"/>
+        <owl:disjointWith rdf:resource="#Winding"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process describing a snowing condition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Space -->
+
+    <owl:Class rdf:about="#Space">
+        <rdfs:subClassOf rdf:resource="#SpatialObject"/>
+        <rdfs:subClassOf rdf:resource="#Substance"/>
+        <owl:disjointWith rdf:resource="#SpaceInterval"/>
+        <owl:disjointWith rdf:resource="#SpacePoint"/>
+        <owl:disjointWith rdf:resource="#Time"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Space as an undecomposable mass.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpaceInterval -->
+
+    <owl:Class rdf:about="#SpaceInterval">
+        <rdfs:subClassOf rdf:resource="#OrderedObject"/>
+        <rdfs:subClassOf rdf:resource="#SpatialObject"/>
+        <owl:disjointWith rdf:resource="#SpacePoint"/>
+        <owl:disjointWith rdf:resource="#TimeInterval"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Space as a decomposible set of points, intervals, or volumes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpacePoint -->
+
+    <owl:Class rdf:about="#SpacePoint">
+        <rdfs:subClassOf rdf:resource="#NonDecomposableObject"/>
+        <rdfs:subClassOf rdf:resource="#SpatialObject"/>
+        <owl:disjointWith rdf:resource="#Substance"/>
+        <owl:disjointWith rdf:resource="#TimePoint"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Space as a point.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialObject -->
+
+    <owl:Class rdf:about="#SpatialObject">
+        <rdfs:subClassOf rdf:resource="#SpatialTemporal"/>
+        <owl:disjointWith rdf:resource="#TemporalObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The general concept of spatial objects, including all points, paths, volumes, undivided wholes, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal -->
+
+    <owl:Class rdf:about="#SpatialTemporal">
+        <rdfs:subClassOf rdf:resource="#NonConsciousThing"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The generalized timespace object, under which all time and space objects lie.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpecificMatter -->
+
+    <owl:Class rdf:about="#SpecificMatter">
+        <rdfs:subClassOf rdf:resource="#SubjectMatter"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Distinguish between explicit focus on referent, and more general, diffuse reference (from MUM 1994).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#StativeQuality -->
+
+    <owl:Class rdf:about="#StativeQuality">
+        <rdfs:subClassOf rdf:resource="#MaterialWorldQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Stative qualities hold regardless of any particular process. Dynamic qualities can be expressed using the present progressive tense, i.e. they can take the form: ``X is being *quality*.&#39;&#39; ``John is being clever/skillful/creative/enthusiastic.&#39;&#39; Stative qualities cannot. ``*John is being dead/German/tall.&#39;&#39; These can take the simple present only.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#StatusQuality -->
+
+    <owl:Class rdf:about="#StatusQuality">
+        <rdfs:subClassOf rdf:resource="#NonScalableQuality"/>
+        <rdfs:subClassOf rdf:resource="#PolarQuality"/>
+        <rdfs:subClassOf rdf:resource="#StativeQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >StatusQuality is a quality of an object, independent of the observer. For example, specializations of this category could be the quality LIFESTATUS which would be further broken down into the classes DEAD and ALIVE.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Striving -->
+
+    <owl:Class rdf:about="#Striving">
+        <rdfs:subClassOf rdf:resource="#Liking"/>
+        <owl:disjointWith rdf:resource="#Wanting"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of mental reaction that attempts to bring about some state of affairs or event.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SubjectMatter -->
+
+    <owl:Class rdf:about="#SubjectMatter">
+        <rdfs:subClassOf rdf:resource="#Circumstance"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Expressed as: be about, as in: &quot;This document is about the entity hierarchy.&#39;&#39; (from MUM 1994).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Substance -->
+
+    <owl:Class rdf:about="#Substance">
+        <rdfs:subClassOf rdf:resource="#NonConsciousThing"/>
+        <rdfs:subClassOf rdf:resource="#NonDecomposableObject"/>
+        <owl:disjointWith rdf:resource="#TimePoint"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >E.g., water, grass, flour, butter. The bounded region for substances is not in the domain of physical space, since they are in principle indefinitely expandable in space. Rather, their bounded region is in the domain of some quality spectrum (taste, color, texture, solidity, etc.).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Sunning -->
+
+    <owl:Class rdf:about="#Sunning">
+        <rdfs:subClassOf rdf:resource="#Ambience"/>
+        <owl:disjointWith rdf:resource="#Winding"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process describing a sunning condition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Symbolization -->
+
+    <owl:Class rdf:about="#Symbolization">
+        <rdfs:subClassOf rdf:resource="#Intensive"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >This category contains relations that hold between entities and other entities they `symbolize&#39;. Concepts in this class logically have two roles: SYMBOL (the domain) and SYMBOLIZED (the range). One relation in this category is the relation between an object and a name which identifies that object.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#TaxonomicQuality -->
+
+    <owl:Class rdf:about="#TaxonomicQuality">
+        <rdfs:subClassOf rdf:resource="#MaterialWorldQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >All qualities which are not polar are taxonomic, i.e. the possible values can be listed. For example, the quality of being mammal is part of some taxonomy.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#TemporalObject -->
+
+    <owl:Class rdf:about="#TemporalObject">
+        <rdfs:subClassOf rdf:resource="#SpatialTemporal"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The general concept of temporal objects, including all points, paths, volumes, undivided wholes, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Think -->
+
+    <owl:Class rdf:about="#Think">
+        <rdfs:subClassOf rdf:resource="#Cognition"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The mental process of thinking.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ThreeDLocation -->
+
+    <owl:Class rdf:about="#ThreeDLocation">
+        <rdfs:subClassOf rdf:resource="#SpaceInterval"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A three dimensional space.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ThreeDTime -->
+
+    <owl:Class rdf:about="#ThreeDTime">
+        <rdfs:subClassOf rdf:resource="#TimeInterval"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A portion of time that is being viewed as of sufficiently large scale to need expression as if it were a volume within which thing occured (e.g. in 1966), rather than a plane on which things occured (e.g. on that day).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Time -->
+
+    <owl:Class rdf:about="#Time">
+        <rdfs:subClassOf rdf:resource="#Substance"/>
+        <rdfs:subClassOf rdf:resource="#TemporalObject"/>
+        <owl:disjointWith rdf:resource="#TimeInterval"/>
+        <owl:disjointWith rdf:resource="#TimePoint"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Time as a general undecomposable substance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#TimeInterval -->
+
+    <owl:Class rdf:about="#TimeInterval">
+        <rdfs:subClassOf rdf:resource="#OrderedObject"/>
+        <rdfs:subClassOf rdf:resource="#TemporalObject"/>
+        <owl:disjointWith rdf:resource="#TimePoint"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A time interval.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#TimePoint -->
+
+    <owl:Class rdf:about="#TimePoint">
+        <rdfs:subClassOf rdf:resource="#NonDecomposableObject"/>
+        <rdfs:subClassOf rdf:resource="#TemporalObject"/>
+        <rdfs:comment rdf:datatype="&xsd;string">A time point.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#UMSet -->
+
+    <owl:Class rdf:about="#UMSet">
+        <rdfs:subClassOf rdf:resource="#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="#DecomposableObject"/>
+        <owl:disjointWith rdf:resource="#Word"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >An abstract assemblage of elements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#UsePropertyAscription -->
+
+    <owl:Class rdf:about="#UsePropertyAscription">
+        <rdfs:subClassOf rdf:resource="#PropertyAscription"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The relationship of ascribing a use to an entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Volitional -->
+
+    <owl:Class rdf:about="#Volitional">
+        <rdfs:subClassOf rdf:resource="#ModalQuality"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A modal quality concerned with the actor&#39;s active decision or volition in the performance of a process.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Wanting -->
+
+    <owl:Class rdf:about="#Wanting">
+        <rdfs:subClassOf rdf:resource="#Liking"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of mental reaction that wants to bring about some state of affairs or event.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Winding -->
+
+    <owl:Class rdf:about="#Winding">
+        <rdfs:subClassOf rdf:resource="#Ambience"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A process describing a winding condition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Word -->
+
+    <owl:Class rdf:about="#Word">
+        <rdfs:subClassOf rdf:resource="#Abstraction"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A type of abstraction for the representation and expression of ideas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ZeroDLocation -->
+
+    <owl:Class rdf:about="#ZeroDLocation">
+        <rdfs:subClassOf rdf:resource="#SpacePoint"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A point in space.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ZeroDTime -->
+
+    <owl:Class rdf:about="#ZeroDTime">
+        <rdfs:subClassOf rdf:resource="#TimePoint"/>
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A point in time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing">
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+
