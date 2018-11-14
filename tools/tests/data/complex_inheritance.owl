@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#"
+     xml:base="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#A -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#A">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Letter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#ABCandOne -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#ABCandOne">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#A"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#B"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#C"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#One"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#B -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#B">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Letter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#C -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#C">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Letter"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Letter -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Letter"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#LetterAndTwo -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#LetterAndTwo">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Letter"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Two"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Number -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Number"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#One -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#One">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Number"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Three -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Three">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Number"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Two -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Two">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/tools/tests/data/complex_inheritance.owl#Number"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

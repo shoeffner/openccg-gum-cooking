@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated automatically. Do not modify it manually. -->
+<types name="core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/OpenCCG/openccg/master/grammars/types.xsd">
+    <type name="test-Number" />
+    <type name="test-One" parents="test-Number" />
+    <type name="test-Two" parents="test-Number" />
+    <type name="test-Three" parents="test-Number" />
+    <type name="test-Letter" />
+    <type name="test-A" parents="test-Letter" />
+    <type name="test-B" parents="test-Letter" />
+    <type name="test-C" parents="test-Letter" />
+    <type name="test-ABCandOne" parents="test-A test-B test-C test-One" />
+    <type name="test-LetterAndTwo" parents="test-Letter test-Two" />
+</types>

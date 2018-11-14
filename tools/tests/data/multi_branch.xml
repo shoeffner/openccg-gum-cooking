@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated automatically. Do not modify it manually. -->
+<types name="core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/OpenCCG/openccg/master/grammars/types.xsd">
+    <type name="test-One" />
+    <type name="test-OneOne" parents="test-One" />
+    <type name="test-Two" />
+    <type name="test-TwoOne" parents="test-Two" />
+    <type name="test-Three" />
+    <type name="test-ThreeOne" parents="test-Three" />
+    <type name="test-ThreeTwoA" parents="test-ThreeOne" />
+    <type name="test-ThreeTwoB" parents="test-ThreeOne" />
+    <type name="test-ThreeTwoAOne" parents="test-ThreeTwoA" />
+</types>

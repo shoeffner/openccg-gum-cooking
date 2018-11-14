@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated automatically. Do not modify it manually. -->
+<types name="core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/OpenCCG/openccg/master/grammars/types.xsd">
+    <type name="test-ParentThing" />
+    <type name="test-ChildThing" parents="test-ParentThing" />
+    <type name="test-GrandChildThing" parents="test-ChildThing" />
+</types>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated automatically. Do not modify it manually. -->
+<types name="core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/OpenCCG/openccg/master/grammars/types.xsd">
+    <type name="test-Animal" />
+    <type name="test-Donkey" parents="test-Animal" />
+    <type name="test-Horse" parents="test-Animal" />
+    <type name="test-Mule" parents="test-Donkey test-Horse" />
+</types>
