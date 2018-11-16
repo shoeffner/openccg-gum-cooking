@@ -90,20 +90,21 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="V.prp" word="veering" stem="veer" class="slm-Veering" macros="@vform.inf-agr" />
   <entry pos="V" word="veered" stem="veer" class="slm-Veering" macros="@past" />
   <entry pos="V.main" word="veer" class="slm-Veering" />
-  
+
   <!-- transitive -->
+
   <entry pos="V" word="make" class="slm-Making" macros="@pres.habitual" />
   <entry pos="V" word="makes" stem="make" class="slm-Making" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="making" stem="make" class="slm-Making" macros="@vform.inf-agr" />
   <entry pos="V" word="made" stem="make" class="slm-Making" macros="@past" />
   <entry pos="V.main" word="make" class="slm-Making" />  
-  
+
   <entry pos="V" word="move" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="moves" stem="move" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="moving" stem="move" class="slm-Moving" macros="@vform.inf-agr" />
   <entry pos="V" word="moved" stem="move" class="slm-Moving" macros="@past" />
   <entry pos="V.main" word="move" class="slm-Moving" />
-  
+s
   <entry pos="V" word="ship" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="ships" stem="ship" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="shipping" stem="ship" class="slm-Moving" macros="@vform.inf-agr" />
@@ -315,6 +316,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="V" word="put" stem="put" class="slm-Putting" macros="@past" />
   <entry pos="V.main" word="put" class="slm-Putting" />
   
+  <entry pos="V" word="micorwave" class="slm-Microwaving" macros="@pres.habitual" />
+  <entry pos="V" word="microwaves" stem="microwave" class="slm-Microwaving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
+  <entry pos="V.prp" word="microwaving" stem="microwave" class="slm-Microwaving" macros="@vform.inf-agr" />
+  <entry pos="V" word="microwaved" stem="microwave" class="slm-Microwaving" macros="@past" />
+  <entry pos="V.main" word="microwave" class="slm-Microwaving" />
+  
   <entry pos="V" word="place" class="slm-Placing" macros="@pres.habitual" />
   <entry pos="V" word="places" stem="place" class="slm-Placing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="placing" stem="place" class="slm-Placing" macros="@vform.inf-agr" />
@@ -344,6 +351,24 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="V.prp" word="stirring" stem="stir" class="slm-Stirring" macros="@vform.inf-agr" />
   <entry pos="V" word="stirred" stem="stir" class="slm-Stirring" macros="@past" />
   <entry pos="V.main" word="stir" class="slm-Stirring" />
+
+  <entry pos="V" word="heat" class="slm-Heating" macros="@pres.habitual" />
+  <entry pos="V" word="heats" stem="heat" class="slm-Heating" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
+  <entry pos="V.prp" word="heating" stem="heat" class="slm-Heating" macros="@vform.inf-agr" />
+  <entry pos="V" word="heated" stem="heat" class="slm-Heating" macros="@past" />
+  <entry pos="V.main" word="heat" class="slm-Heating" />
+  
+  <entry pos="V" word="mix" class="slm-Stirring" macros="@pres.habitual" />
+  <entry pos="V" word="mixes" stem="mix" class="slm-Stirring" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
+  <entry pos="V.prp" word="mixing" stem="mix" class="slm-Stirring" macros="@vform.inf-agr" />
+  <entry pos="V" word="mixed" stem="mix" class="slm-Stirring" macros="@past" />
+  <entry pos="V.main" word="mix" class="slm-Stirring" />
+  
+  <entry pos="V" word="cut" class="slm-Cutting" macros="@pres.habitual" />
+  <entry pos="V" word="cuts" stem="cut" class="slm-Cutting" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
+  <entry pos="V.prp" word="cutting" stem="cut" class="slm-Cutting" macros="@vform.inf-agr" />
+  <entry pos="V" word="cut" stem="cut" class="slm-Cutting" macros="@past" />
+  <entry pos="V.main" word="cut" class="slm-Cutting" />
   
   <entry pos="V" word="swirl" class="slm-Stirring" macros="@pres.habitual" />
   <entry pos="V" word="swirls" stem="swirl" class="slm-Stirring" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
@@ -699,6 +724,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="N" word="elevators" stem="elevator" class="slm-Elevator" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="hat" class="slm-Hat" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="cup" class="slm-Cup" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="bowl" class="slm-Bowl" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="bowls" stem="bowl" class="slm-Bowl" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="lamp" class="slm-Lamp" macros="@num.sg @pers.3rd @case.non-gen" />
   <entry pos="N" word="trees" stem="tree" class="slm-Tree" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="duck" class="slm-Duck" macros="@num.sg @pers.3rd" />
@@ -727,8 +754,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="N" word="clues" stem="clue" class="slm-Clue" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="book" class="slm-Book" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="books" stem="book" class="slm-Book" macros="@num.pl @pers.3rd" />
-  <entry pos="N" word="phone" class="slm-Phone" macros="@num.sg
-						       @pers.3rd" />
+  <entry pos="N" word="phone" class="slm-Phone" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="phones" stem="book" class="slm-Phone" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="shelf" class="slm-Shelf" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="socks" stem="sock" class="slm-Sock" macros="@num.pl @pers.3rd" />
@@ -773,7 +799,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="N" word="box" class="slm-Box" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="boxcar" class="slm-Boxcar" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="apple" class="slm-Apple" macros="@num.sg @pers.3rd @case.non-gen" />
+  <entry pos="N" word="egg" class="slm-Egg" macros="@num.sg @pers.3rd @case.non-gen" />
+  <entry pos="N" word="eggs" class="slm-Egg" macros="@num.pl @pers.3rd " />
+  <entry pos="N" word="cheese" class="slm-Apple" macros="@num.sg @pers.3rd " />
+  <entry pos="N" word="cottage_cheese" class="slm-CottageCheese" macros="@num.sg @pers.3rd " />
+  <entry pos="N" word="parmesan_cheese" class="slm-ParmesanCheese" macros="@num.sg @pers.3rd " />
   <entry pos="N" word="water" class="slm-Water" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="coffee" class="slm-Coffee" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="pool" class="slm-Pool" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="camera" class="slm-Camera" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="needle" class="slm-Needle" macros="@num.sg @pers.3rd" />
@@ -811,12 +843,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="N" word="roundabout" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="grand_hotel" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="building" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />     
-  <entry pos="N" word="bananas" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
+  <entry pos="N" word="bananas" class="gum-SimpleThing" macros="@num.pl @pers.3rd" /> 
+  <entry pos="N" word="banana" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />    
   <entry pos="N" word="tanker" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="tankers" stem="tanker" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />  
   <entry pos="N" word="warehouse" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="warehouses" stem="warehouse" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="orange" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="cheese" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="oranges" stem="orange" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="juice" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="orange_juice" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
@@ -888,6 +922,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="N" word="seed" class="slm-Seed" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="group" class="slm-Group" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="crowd" class="slm-Crowd" macros="@num.sg @pers.3rd" />
+  <!--  Nouns for the cooking domain (sara 2018) -->
+  <entry pos="N" word="chocolate" class="gum-SimpleThing" macros="@num.sg @pers.3rd" /> 
   <!--  Nominalised orientation change processes -->
   <entry pos="NOMP" word="turn" class="slm-Turning" macros="@num.sg @pers.3rd" />  
   <!-- events -->
@@ -958,6 +994,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="NQ" word="semicircles" stem="semicircle" class="slm-SemiCircle" />
   <entry pos="NQ" word="semi_circles" stem="semicircle" class="slm-SemiCircle" />
   <entry pos="NQ" word="semi-circles" stem="semicircle" class="slm-SemiCircle" />
+   <!-- quantitative units/recipe (28.06.2018) -->
+  <entry pos="N.unit" word="tablespoon" class="slm-Spoon" />
+  <entry pos="N.unit" word="tablespoons" stem="tablespoon" class="slm-Spoon" />
   <!--  Nominalised orientation change processes -->
   <entry pos="NOMP" word="turn" class="slm-Turning" macros="@num.sg @pers.3rd" />
   <!-- Temporal Prepositions -->
@@ -1017,7 +1056,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   
   <!-- Named Roads -->
   <entry pos="N" word="B6114" class="slm-Road" macros="@num.sg @pers.3rd" />    
-  
   <entry pos="NP" word="pluto" class="slm-Pluto" macros="@num.sg" />
   <entry pos="NP" word="Pluto" stem="pluto" class="slm-Pluto" macros="@num.sg" />
   <entry pos="NP" word="town" class="slm-Town" macros="@num.sg" />
@@ -1027,6 +1065,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="NP" word="robert" class="slm-Robert" />
   <entry pos="NP" word="John" class="slm-John" />
   <entry pos="NP" word="John" class="slm-John" />
+
+
   <!-- Nominalised Directions -->
   <!-- e.g., the left of the cup -->
   <entry pos="NDIR" word="left" class="gs-LeftProjection" macros="@num.sg" />
@@ -1176,8 +1216,53 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="DCONN" word="," stem="well" />
   <entry pos="DCONN" word="next" stem="well" />
   <entry pos="DCONN" word="next," stem="well" />  
+
+
+
+
+  <!-- Entries introduced for a cooking domain. START -->
+
+
+
+  <!-- Fruit (29.06.2018) -->
+  <entry pos="NP" word="orange" class="slm-Food" macros="@num.sg @pers.3rd" />
+  <entry pos="NP" word="oranges" stem= "orange" class="slm-Food" macros="@num.pl @pers.3rd" />
+  
+
+  <!-- Liquids used for cooking (03.11.18) -->
+  <entry pos="N" word="oil" class="slm-Food" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="oils" stem= "oil" class="slm-Food" macros="@num.pl @pers.3rd" />
+
+  <!-- Kitchen tools and dishes (03.11.18) -->
+   <entry pos="N" word="pan" class="slm-Pan" macros="@num.sg @pers.3rd" />
+   <entry pos="N" word="pans" stem= "pan" class="slm-Pan" macros="@num.pl @pers.3rd" />
+   <entry pos="N" word="griddle_pan" class="slm-Pan" macros="@num.sg @pers.3rd" />
+   <entry pos="N" word="griddle_pans" stem= "pan" class="slm-Pan" macros="@num.pl @pers.3rd" />
+   <entry pos="N" word="saucepan" class="slm-Pan" macros="@num.sg @pers.3rd" />
+   <entry pos="N" word="saucepans" stem= "pan" class="slm-Pan" macros="@num.pl @pers.3rd" />
+
+
+   <entry pos="N" word="heat" class="slm-Heat" macros="@num.sg @pers.3rd" />
+   <entry pos="N" word="heat" stem= "heat" class="slm-Heat" macros="@num.pl @pers.3rd" />
   
       
+  <!-- Adjectives (03.11.18)
+
+   gum:SimpleQuality - Qualities are properties of SimpleThings and Processes. They participate in property ascription relations. Roughly speaking, qualities include anything that can be expressed as an English adjective.  --> 
+
+  <entry pos="ADJ" word="frying" class="gum-SimpleQuality" /> 
+
+  <entry pos="ADJ" word="vegetable" class="gum-SimpleQuality" /> 
+  <entry pos="ADJ" word="medium" class="gum-SimpleQuality" />  <!-- "medium" as  pos="QUAL-EXT"? -->
+
+
+
+
+
+ <!-- Entries introduced for a cooking domain. END -->
+
+
+
   <!-- Negation Triggers -->
   <entry pos="NEG" word="not" />
   <macro name="@verb.full">

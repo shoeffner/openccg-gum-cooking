@@ -795,7 +795,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
                      he (made) a semi-circle to the left
                      he (made) a 360 degree turn to the left
                      he (made) a turn
-    ============================================================================ 
+    ============================================================================ -->
+  
   <family pos="V" name="v.orientation.change.make.simple" closed="true">
     <entry name="nonaffecting-pp">
       <complexcat>
@@ -922,7 +923,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="make" pred="slm-Making" />
   </family>
-  -->
+ 
   <!-- ==============================================================================
     Family name:     v.simple.make
     Pos:             V
@@ -2020,7 +2021,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
     pos:             V.prp
     description:     Category of simple motions which do have an affectee in the infinite form
     Entries :        primary  :  s.prp/*np
-    Example Parse:   she was (stirring) the water 
+    Example Parse:   she was (stirring) the 
+
+
     ============================================================================ -->
   <family pos="V.prp" name="v.simple.motion.affecting.prp" closed="true">
     <entry name="primary">
@@ -2244,7 +2247,154 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="stir" />
     <member stem="swirl"  />
+	<member stem="cut"  />
+	<member stem="mix"  />
   </family>
+  
+  
+   <!-- ==============================================================================
+   ADDED CAT (03.11.18) created for a cooking domain
+    ============================================================================ -->
+
+  
+   <!-- ==============================================================================
+    family name:     v.simple.motion.affecting.main
+    pos:             V.main
+    description:     Category of simple motions which do have an affectee in the imperative // description must be changed
+
+    Entries:         primary  :  smain/*np
+    secondary:       smain/*np/*adv
+
+    Example Parse:   (heat) the oil 		smain/np
+
+                     (heat) the oil in a frying pan 	smain/np/pp
+
+
+					not parsed, in progress:
+                    (heat) half of the butter in a frying pan 		
+					(heat) 10 ml of the olive oil in a pan 
+                    (heat) it up // what about phrasal verbs which combine two or three words from different grammatical categories?
+                    (heat) the oil and butter in a heavy-based 	V+NP+KONJ+NP+PP
+    ============================================================================ -->
+  <family pos="V.main" name="v.simple.motion.affecting.main" closed="true">
+    <entry name="primary">
+      <complexcat>
+        <atomcat type="smain">
+          <fs id="1">
+            <feat attr="num">
+              <featvar name="NUM" />
+            </feat>
+            <feat attr="pers">
+              <featvar name="PERS" />
+            </feat>
+            <feat attr="index">
+              <lf>
+                <nomvar name="E" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+        <slash mode="*" dir="/" />
+        <atomcat type="np">
+          <fs id="3">
+            <feat attr="index">
+              <lf>
+                <nomvar name="A:gum-SimpleThing" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+        <lf>
+          <satop nomvar="E:gs-AffectingSimpleMotion">
+            <diamond mode="gum-processInConfiguration">
+              <nomvar name="P:gum-Process" />
+              <prop name="[*DEFAULT*]" />
+            </diamond>
+            <diamond mode="mood">
+              <nomvar name="imperative" />
+            </diamond>
+            <diamond mode="uio-hasSurfaceFunction">
+              <prop name="uio-Directive" />
+            </diamond>            
+            <diamond mode="gum-actee">
+              <nomvar name="A" />
+            </diamond>
+          </satop>
+        </lf>
+      </complexcat>
+    </entry>
+    <entry name="secondary">
+      <complexcat>
+        <atomcat type="smain">
+          <fs id="1">
+            <feat attr="num">
+              <featvar name="NUM" />
+            </feat>
+            <feat attr="pers">
+              <featvar name="PERS" />
+            </feat>
+            <feat attr="index">
+              <lf>
+                <nomvar name="E" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+        <slash mode="*" dir="/" />
+        <atomcat type="np">
+          <fs id="3">
+            <feat attr="index">
+              <lf>
+                <nomvar name="A:gum-SimpleThing" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+        <slash mode="*" dir="/" />
+        <atomcat type="adv">
+          <fs id="4">
+            <feat attr="index">
+              <lf>
+                <nomvar name="B:gs-SpatialModality" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+        <lf>
+          <satop nomvar="E:gs-AffectingSimpleMotion">
+            <diamond mode="gum-processInConfiguration">
+              <nomvar name="P:gum-Process" />
+              <prop name="[*DEFAULT*]" />
+            </diamond>
+            <diamond mode="mood">
+              <nomvar name="imperative" />
+            </diamond>
+            <diamond mode="uio-hasSurfaceFunction">
+              <prop name="uio-Directive" />
+            </diamond>            
+            <diamond mode="gs-orientationDirection">
+              <nomvar name="D:gs-GeneralizedLocation" />
+              <diamond mode="gs-hasSpatialModality">
+                <nomvar name="B" />
+              </diamond>
+            </diamond>
+            <diamond mode="gum-actee">
+              <nomvar name="A" />
+            </diamond>
+          </satop>
+        </lf>
+      </complexcat>
+    </entry>
+    <member stem="heat" />
+
+  </family>
+  
+  
+  
+  
+  
+  
+  
   <!-- ==============================================================================
     family name:     v.simple.motion.affecting.simple
     pos:             V
@@ -2382,6 +2532,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="stir"  />
     <member stem="swirl"  />
+	<member stem="mix"  />
   </family>
   <!-- ==============================================================================
     family name:     v.NonAffectingDirectedMotion.prp
@@ -5958,6 +6109,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
     Example Memeber: behind, beside, at, near....
     Example Parse:   the office is (beside) the lab :- pp/*np
                      the office (beside) the lab :- np\*np/*np
+
+                     -cooking domain (03.11.18)-
+
+                     Heat a large saucepan (over) a medium heat.	pp/*np
     ============================================================================ -->
   <family closed="true" pos="PREP.static" name="prep.static">
     <entry name="primary">
@@ -6448,10 +6603,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     Family name:     spatial-deixis
     Pos:             NP
-    Description:     catery which constructs a GeneralizedLocation out of expressions
+    Description:     category which constructs a GeneralizedLocation out of expressions
     like 'here' and 'there' 
-    Example Parse:   (here) is the kitchen
-    turn left (there)
+    Example Parse:  (here) is the kitchen
+    				turn left (there)
     ============================================================================ -->
   <family closed="false" pos="NP.space.deixis" name="spatial-deixis">
     <entry name="primary">
@@ -6517,6 +6672,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     description:     Static directional PPs: "on the left" 
     Example Memeber: on, at, in
     Example Parse:   the kitchen (on) the left :- np\*np/*np (noun modifying)
+    				 
     go to the kitchen (on) the left :- pp/*np (prepositional prases)
     ============================================================================ -->
   <family closed="true" pos="PREP2" name="prep.lateral">
@@ -6614,6 +6770,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="on"  />
     <member stem="at" />
     <member stem="in" />
+    <member stem="of" />
   </family>
   
   <!-- ==============================================================================
@@ -7710,13 +7867,28 @@ Licence:     This file is free software; you can redistribute it and/or modify
     route-segment    : r/*np/*pp_segment	  
     route-source-segment    : r/*np{/*pp_segment/*pp_source}
     Example Parse:   (to) the kitchen
-    (to) the kitche from the bathroom
+    (to) the kitchen from the bathroom
     (to) the kitchen along the stairs
     (to) the kitchen from the bathroom along the hallway
+
+    -for a cooking domain (03.11.18) not working, in progress-
+
+    Example Parse:
+    (until) al dente 		: pp/adj
+    (until) almost smooth
+	(until) hot
+	(until) crisp and golden-brown
+
+    (until) a breadcrumb sizzles 	: pp/s
+	(until) the base is set
+
+
+
     ============================================================================ -->
   <family closed="true" pos="PREP.dynamic" name="prep.dynamic">
     <entry name="primary">
       <complexcat>
+
         <atomcat type="pp">
           <fs id="1">
             <feat attr="ppkind" val="dynamic" />
@@ -7733,7 +7905,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </feat>
           </fs>
         </atomcat>
+
         <slash mode="*" dir="/" />
+
         <atomcat type="np">
           <fs id="2">
           <feat val="simple" attr="kind" />
@@ -7753,6 +7927,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </feat>
           </fs>
         </atomcat>
+
         <lf>
           <satop nomvar="P:gs-GeneralizedLocation">
             <diamond mode="gs-relatum">
@@ -7765,6 +7940,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
+
     </entry>
     <entry name="route-single">
       <complexcat>
@@ -8019,41 +8195,19 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="until"  />
     <member stem="to"  />
   </family>
-  
-  <!-- ==============================================================================
-    family name:     pron.interrogative.inv.loc
-    pos:             PRON
-    Entry "primary" : s/*np/*(s\*np/*pp)
-    description:     inverted question pronoun: where 
-    Example Memeber: where
-    Example Parse:   (where) is shis office?
-    ============================================================================ -->
-  <family pos="Q.where" name="pron.interrogative.inv.loc">
-    <entry name="primary">
-      <atomcat type="q.where">
-        <fs id="1">
-          <feat attr="index">
-            <lf>
-              <nomvar name="GL" />
-            </lf>
-          </feat>
-        </fs>
-        <lf>
-          <satop nomvar="GL:gs-GeneralizedLocation">
-            <prop name="[*DEFAULT*]" />
-          </satop>
-        </lf>
-      </atomcat>
-    </entry>
-  </family>
-  
+
+
+
+
+
+
   <!-- ==============================================================================
     family name:     pron.interrogative.loc
     pos:             PRON
     Entry "primary" : s/*(s/*pp)
     description:     interrogative pronoun: where 
     Example Memeber: where
-    Example Parse:   (where) is shis office?
+    Example Parse:   (where) is shis office? (04.11.18 not working)
     ============================================================================ -->
   <family closed="true" pos="PRON" name="pron.interrogative.loc">
     <entry name="primary">
@@ -8148,7 +8302,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </atomcat>
         </complexcat>
         <lf>
-          <satop nomvar="U">
+          <satop nomvar="U"> 
             <diamond mode="uio-required">
               <nomvar name="P:root" />
             </diamond>
@@ -8171,6 +8325,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
     Entry            spatial-relating-of :    np\*np/*np
     Example Parse:   the office is in front ((of) you) :- np\*np/*np
     the cup is to the right (of) the hat
+
+    -cooking domain (03.11.18) in progress-
+    a large saucepan (of) water  np/*np  			not parsing
     ============================================================================ -->
   <family pos="PREP.genetive" name="prep.genetive.spatial" indexRel="*NoSem*">
     <entry name="primary">
@@ -8182,7 +8339,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             <feat attr="case" val="gen" />
           </fs>
         </atomcat>
-        <slash mode="&lt;" dir="/" />
+        <slash mode="&lt;" dir="/" />      
         <atomcat type="np">
           <fs id="3">
             <feat attr="num">
@@ -8208,6 +8365,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     to left. Since we do not have any actual uses of "of" in a sense other than
     the setting of the relatum, I will leave the family out for now. I suspect there
     is a better way of organizing the genetive cases than our current approach. 
+
     <family pos="PREP.genetive" name="prep.genetive">
     <entry name="possessive-of">
     <complexcat>
@@ -8258,6 +8416,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     </family>
   -->
+
+
   <!-- ==============================================================================
     family name:     toinf
     pos:             TOINF
@@ -8429,22 +8589,28 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     det
     pos:             DET
-    Entry "primary": np/*n
+    Entry "primary": np/*n (DET is an entity looking for a noun 'n' on the right side in order to create a 'np')
     description:     Determiners
     Example Memeber: a, the, this, roberts
     Example Parse:   a (room)
-    Entry "secondary": np/*np
+    Entry "secondary": np/*np 
     description:     Determniners, followed by numbers 
                        not handled properly yet (as this allows e.g. "the" followed by "a")                
     Example Parse:   the two (boxcars)
+
+    -cooking domain-
+    this CAT allows any(?) adjectival modification of NPs and Ns
     ============================================================================ -->
   <family pos="DET" name="det" closed="true" indexRel="det">
     <entry name="primary">
       <complexcat>
+
         <atomcat type="np">
           <fs id="1"></fs>
         </atomcat>
+
         <slash mode="*" dir="/" />
+
         <atomcat type="n">
           <fs id="1">
             <feat attr="pers">
@@ -8463,6 +8629,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </feat>
           </fs>
         </atomcat>
+
         <lf>
           <satop nomvar="T:gum-UMThing">
             <diamond mode="det">
@@ -8534,6 +8701,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="these" />
     <member stem="that" />
     <member stem="those" />
+
+    <member stem="frying" />
+    <member stem="vegetable" />
   </family>
   <!-- ==============================================================================
     family name:     possessives
@@ -8623,7 +8793,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     description:     Adjectival modifications with color
     Example Memeber: red
     Example Parse:   the (red) room
-    ============================================================================ -->
+    ============================================================================ -->  
   <family pos="ADJ" closed="true" name="adj.color">
     <entry name="adj.full">
       <complexcat>
@@ -8683,8 +8853,95 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="black" />
     <member stem="brown" />
     <member stem="white" />
+
   </family>
+
+
+
   
+
+  <!-- ==============================================================================
+    NEW (added 03.11.18)
+    comment: redundant? 
+
+    family name:     adj_cook.attribut
+    pos:             ADJ
+    Entry "adj.property" : n/*n
+    np/*n/*n
+
+    until al dente : \prep
+
+    description:     Adjectival modifications of NPs 
+    Example Memeber: frying
+    Example Parse:   the (frying) pan
+ 					 the (vegetable) oil
+ 	============================================================================ -->
+
+  
+  <family pos="ADJ" closed="true" name="adj_cook.attribut">
+    <entry name="adj.full">
+      <complexcat>
+
+       <atomcat type="n">
+          <fs inheritsFrom="1">
+            <feat attr="index">
+              <lf>
+                <nomvar name="T" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+
+        <slash mode="*" dir="/" />
+
+        <atomcat type="n">
+            <fs id="1">
+            <feat attr="num">
+              <featvar name="NUM" />
+            </feat>
+            <feat attr="pers">
+              <featvar name="PERS" />
+            </feat>
+            <feat attr="case">
+              <featvar name="CASE" />
+            </feat>
+            <feat attr="index">
+              <lf>
+                <nomvar name="T:gum-SimpleThing" />
+              </lf>
+            </feat>
+          </fs>
+        </atomcat>
+
+        <lf>
+          <satop nomvar="U:gum-SimpleQuality">
+            <diamond mode="concrete">
+              <prop name="true"/>
+            </diamond>            
+            <diamond mode="gum-domain">
+              <nomvar name="T"/>
+            </diamond>
+            <diamond mode="gum-attribute">
+              <nomvar name="P:gum-SimpleQuality" />
+              <prop name="[*DEFAULT*]" />
+              <diamond mode="concrete">
+                <prop name="true"/>
+              </diamond>                          
+            </diamond>
+          </satop>          
+        </lf>
+      </complexcat>
+    </entry>        
+    <member stem="frying" />
+    <member stem="vegetable" />
+  
+ 
+  </family>
+
+
+
+
+
   <!-- ==============================================================================
     family name:     adj.spt
     pos:             ADJ.spt
@@ -8919,6 +9176,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="tiny" />
     <member stem="minute" />
     <member stem="little" />
+    <member stem="a_little" />
+    <member stem="medium" />
+
   </family>
   
   <!-- ==============================================================================
@@ -10523,7 +10783,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </lf>
       </complexcat>
     </entry>
-    <!-- incomplete generalized quantifier cateogry -->
+    <!-- incomplete generalized quantifier cateogry --> 
     <entry name="number">
       <complexcat> 
         <atomcat type="np">
@@ -10609,7 +10869,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="semicircle" />    
     <member stem="step" />
     <member stem="centimetre" />
-    <member stem="roomLength" />    
+    <member stem="roomLength" />
+	<member stem="tablespoon" />   
   </family>
   <!-- ==============================================================================
     family name:     distance_quantitative2
@@ -10928,6 +11189,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
     very (deep) within the forest
     (high) above the ground
     (far) above the ground
+
+
+    -cooking domain (03.11.18)-
+    Heat (a_little) of the oil  
     ============================================================================ -->
   <family closed="false" pos="QUAL-EXT" name="qualitative-extent2" indexRel="gs-qualitativeDistanceExtent">
     <entry name="primary">
