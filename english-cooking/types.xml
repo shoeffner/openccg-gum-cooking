@@ -18,7 +18,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
 	  
 	  Types file for the DiaSpace English CCG grammar.  
 	  
-      WARNING: This semantic type hierarchy within this file, i.e., gum-UMThing
+      WARNING: This semantic type hierarchy within this file, i.e.,  
 	  and everything under it is generated automatically from a real ontology 
 	  file. Therefore make sure to add new entries to the ontology file rather
 	  than to this derivative. 
@@ -331,6 +331,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Carton" parents="slm-Container" />
   <type name="slm-Cup" parents="slm-Container" />
   <type name="slm-Can" parents="slm-Container" />
+  <type name="slm-Bowl" parents="slm-Container" />
   <type name="slm-Screen" parents="slm-Furnishings" />
   <type name="slm-CokeMachine" parents="slm-Furnishings" />
   <type name="slm-Device" parents="gum-SpatialObject" />
@@ -442,6 +443,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Park" parents="gum-NonDecomposableObject" />
   <type name="slm-View" parents="gum-NonDecomposableObject" />
   <type name="slm-HotDogStand" parents="gum-NonDecomposableObject" />  
+  <type name="slm-CottageCheese" parents="gum-NonDecomposableObject" />
+    <type name="slm-ParmesanCheese" parents="gum-NonDecomposableObject" />
   <type name="slm-Macys" parents="gum-NonDecomposableObject" />    
   <type name="slm-TamilNadu" parents="gum-NonDecomposableObject" />      
   <type name="slm-India" parents="gum-NonDecomposableObject" />  
@@ -475,6 +478,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Walking" parents="gum-Process" />
   <type name="slm-Running" parents="gum-Process" />
   <type name="slm-Stirring" parents="gum-Process" />
+  <type name="slm-Heating" parents="gum-Process" />
   <type name="slm-Knowing" parents="gum-Process" />
   <type name="slm-Halting" parents="gum-Process" />
   <type name="slm-Passing" parents="gum-Process" />
@@ -756,4 +760,40 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="polarities" parents="root" />
   <type name="positive" parents="polarities" />
   <type name="negative" parents="polarities" />
+
+
+
+
+
+  
+  <!-- 
+  
+  Types added for cooking domain (28.06.2018)
+    
+  -->
+  <!--- Volume Units (in Bearbeitung) -->
+  
+  <type name="slm-Teaspoon" parents="slm-Spoon" />
+  <type name="slm-Tsp." parents="slm-Spoon" />
+  <type name="slm-Tablespoon" parents="slm-Spoon" />
+  <type name="slm-T" parents="slm-Spoon" />
+  <type name="slm-Tbl." parents="slm-Spoon" />
+  <type name="slm-Tbs." parents="slm-Spoon" />
+  <type name="slm-Tbsp." parents="slm-Spoon" />
+  
+  
+   <!--- Types introduced for a cooking domain (03.11.18)	-->
+  
+   <type name="slm-Egg" parents="gum-SimpleThing" />
+   <type name="slm-Eggs" parents="gum-SimpleThing" />
+   <type name="slm-Orange" parents="gum-SimpleThing" />
+   <type name="slm-Oranges" parents="gum-SimpleThing" />
+   <type name="slm-Oil" parents="gum-SimpleThing" />
+   <type name="slm-Oils" parents="gum-SimpleThing" />
+   <type name="slm-Pan" parents="gum-SimpleThing" />
+   <type name="slm-Pans" parents="gum-SimpleThing" />
+    
+
+
+  
 </types>
