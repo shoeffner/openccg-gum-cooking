@@ -1,8 +1,7 @@
-
 # -*- coding: utf-8 -*-
 from distutils.core import setup
 
-REPOSITORY = 'https://github.com/shoeffner/openccg-gum-cooking.git'
+REPOSITORY = 'https://github.com/shoeffner/openccg-gum-cooking'
 
 setup(
     name='owl2types',
