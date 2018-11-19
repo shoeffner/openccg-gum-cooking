@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from distutils.core import setup
+from setuptools import setup
 
 REPOSITORY = 'https://github.com/shoeffner/openccg-gum-cooking'
 
@@ -17,6 +17,9 @@ setup(
     },
     py_modules=['owl2types'],
     package_dir={'': 'tools'},
+    install_requires=[
+        'owlready2',
+    ],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Science/Research',
