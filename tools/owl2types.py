@@ -65,6 +65,9 @@ class OntologyArgument:
             self.uri = unquote(filename)
         else:
             self.uri = Path(filename).absolute().as_uri()
+            # Windows file URLs should only have two slashes for owlready2
+            if self.uri[9] == ':':
+                self.uri = self.uri.replace('///', '//')
 
         if prefix is not None:
             self.prefix = unique_prefix(prefix)
