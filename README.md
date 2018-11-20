@@ -13,21 +13,21 @@ If you are developing the grammars and changing the ontologies, you can use the 
 
 ### Install
 
-To install owl2types, we recommend using [pipenv](https://docs.pipenv.org/).
-Run it inside the root directory of this repository:
+To install owl2types, we recommend using pip (best inside a virtual environment, e.g. using pipenv):
 
-    pipenv install
+    pip install git+https://github.com/shoeffner/openccg-gum-cooking
 
-Remember to drop into the pipenv shell if you are working with owl2types, i.e.:
-
-    pipenv shell
-
-To convert our ontologies to the types.xml, either run `make`, if you have make available, or run:
+To convert our ontologies to the types.xml, either run `make`, if you have make available (on UNIXes), or run:
 
     owl2types --output english-cooking/types.xml \
               --exclude-owl-thing \
               --lookup ./ontologies \
               ./ontologies/SLM-cooking.owl:slm
+
+On Windows, the command should look like this:
+
+    owl2types --output english-cooking\types.xml --exclude-owl-thing --lookup ontologies ontologies\SLM-cooking.owl:slm
+
 
 To test the owl2types tool, run `make tests` or `python -m unittest discover tools/tests`.
 
