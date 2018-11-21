@@ -17,6 +17,13 @@ To install owl2types, we recommend using pip (best inside a virtual environment,
 
     pip install git+https://github.com/shoeffner/openccg-gum-cooking
 
+On Windows, we had troubles getting owlready2 directly from the setup.py, this you can use the following command to install it:
+
+    pip install -r requirements.txt
+
+
+### Converting owls
+
 To convert our ontologies to the types.xml, either run `make`, if you have make available (on UNIXes), or run:
 
     owl2types --output english-cooking/types.xml \
@@ -28,6 +35,8 @@ On Windows, the command should look like this:
 
     owl2types --output english-cooking\types.xml --exclude-owl-thing --lookup ontologies ontologies\SLM-cooking.owl:slm
 
+
+### Testing owl2types
 
 To test the owl2types tool, run `make tests` or `python -m unittest discover tools/tests`.
 
