@@ -1,0 +1,13 @@
+# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES
+feature {
+    test-Letter;
+    test-A[test-Letter];
+    test-B[test-Letter];
+    test-C[test-Letter];
+    test-ABCandOne[test-A test-B test-C test-One];
+    test-LetterAndTwo[test-Letter test-Two];
+    test-Number;
+    test-One[test-Number];
+    test-Three[test-Number];
+    test-Two[test-Number];
+}

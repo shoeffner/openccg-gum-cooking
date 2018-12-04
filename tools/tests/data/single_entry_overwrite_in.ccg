@@ -1,0 +1,15 @@
+feature {
+    a;
+    b c;
+}
+
+# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILE
+feature {
+    OverwriteThing
+}
+
+lexicon {
+}
+
+tesbed {
+}

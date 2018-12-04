@@ -1,14 +1,17 @@
 import argparse
 import re
-import sys
 import xml.etree.ElementTree as ET
 
-from xml.dom import minidom
+from collections import OrderedDict
 from pathlib import Path
 from urllib.parse import unquote
+from xml.dom import minidom
 
 
 import owlready2
+
+
+CCG_COMMENT = '# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES'
 
 
 def owl2types():
@@ -48,9 +51,23 @@ def owl2types():
     classes = extract_classes(ontologies, ontology_prefix_map)
     if arguments.exclude_owl_thing:
         classes = exclude_owl_thing(classes)
-    xml = classes2xml(classes, ontologies, ontology_prefix_map)
 
-    print(xml, file=arguments.output)
+    outfile = Path(arguments.output)
+
+    if arguments.format == 'xml':
+        output = classes2xml(classes, ontologies, ontology_prefix_map)
+
+    elif arguments.format == 'ccg':
+        output = classes2ccg(classes, ontologies, ontology_prefix_map)
+
+        if outfile.exists():
+            input_text = outfile.read_text()
+            output = insert_ccg_features(input_text, output)
+
+    if arguments.output != '-':
+        outfile.write_text(output)
+    else:
+        print(output)
 
 
 class OntologyArgument:
@@ -255,6 +272,34 @@ def classes2xml(classes, ontologies, ontology_prefix_map):
     return '\n'.join(lines)
 
 
+def classes2ccg(classes, ontologies, ontology_prefix_map):
+    """Generates the ccg feature string from the classes and ontologies.
+
+    Args:
+        classes: A class dictionary of a classname mapping to a list of parent
+                 classnames.
+        ontologies: The list of used ontologies.
+        ontology_prefix_map: A prefix map as returned by load_ontologies.
+
+    Returns:
+        A string which can be parsed as valid xml, in the format of the types.xml
+        needed for OpenCCG.
+    """
+    lines = [CCG_COMMENT]
+    features = OrderedDict()
+    ccg_string = 'feature {{\n{}\n}}'
+
+    for cls, parents in classes.items():
+        pass
+
+    return '\n'.join(lines)
+
+
+def insert_ccg_features(input_text, feature_string):
+    # TODO(shoeffner)
+    return feature_string
+
+
 def parse_args():
     """Defines and parses the command line arguments for the command line tool.
 
@@ -263,9 +308,8 @@ def parse_args():
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--output', nargs='?',
-                        type=argparse.FileType('w'),
-                        default=sys.stdout,
-                        help='The output file, defaults to STDOUT')
+                        type=str, default='-',
+                        help='The output file, defaults to - (STDOUT)')
     parser.add_argument('ontologies', nargs='+',
                         type=OntologyArgument.argument,
                         help='The list of ontologies and their mappings. '
@@ -279,6 +323,8 @@ def parse_args():
     parser.add_argument('-x', '--exclude-owl-thing', action='store_true',
                         help='Exclude owl:Thing as the top level element. '
                              'By default, it will be included.')
+    parser.add_argument('-f', '--format', nargs='?', default='xml',
+                        choices=['xml', 'ccg'])
     return parser.parse_args()
 
 
