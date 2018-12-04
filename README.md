@@ -41,6 +41,26 @@ On Windows, the command should look like this:
 To test the owl2types tool, run `make tests` or `python -m unittest discover tools/tests`.
 
 
-## References
+## Licenses, References and Acknowledgments
+
+### Acknowledgments
+
+The research/work done in this repository has been partially supported by the German Research Foundation DFG, as part of Collaborative Research Center (Sonderforschungsbereich) 1320 "EASE - Everyday Activity Science and Engineering", University of Bremen ([https://www.ease-crc.org/](https://www.ease-crc.org)). The research/work was conducted in subprojects P01 and H02.
+
+
+### License
+
+The content in this repository is released under various licenses.
+
+In general, you are allowed to use, reuse, remix, and build-upon all works in this repository, given that you give proper attribution.
+
+- The code (i.e. every file directly inside the root directory and everything inside tools directory) is licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- The ontologies inside the ontologies directory are licensed under the [Creative Commons (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/).
+- The original XML grammar files inside english-cooking are released under the [LGPL 3.0](https://opensource.org/licenses/LGPL-3.0), and as such, the derivative ccg-grammar file is released under the same license.
+
+You can find the full license texts in [LICENSE.md](LICENSE.md).
+
+
+### References
 
 > **Lamy JB.** [Owlready: Ontology-oriented programming in Python with automatic classification and high level constructs for biomedical ontologies](http://www.lesfleursdunormal.fr/_downloads/article_owlready_aim_2017.pdf). **Artificial Intelligence In Medicine 2017**;80:11-28

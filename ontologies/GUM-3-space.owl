@@ -13,9 +13,11 @@
         <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/ontologies/GUM-3-space.owl"/>
         <owl:imports rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is the spatial module of GUM 3.1 which extends &quot;GUM-3.owl&quot; with spatial notions.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">license: http://creativecommons.org/licenses/by-nc-nd/3.0/</owl:versionInfo>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developers: University of Bremen, SFB/TR8 Spatial Cognition, I1-[OntoSpace]
+https://www.ontospace.uni-bremen.de; SFB EASE, P01/H02 https://ease.informatik.uni-bremen.de</rdfs:comment>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.2</owl:versionInfo>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GUM 3 spatial extension.</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">license: http://creativecommons.org/licenses/by/4.0/</owl:versionInfo>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Generalized Upper Model 3.0 (GUM 3.0) is a linguistically motivated ontology,
 which aims primarily to mediate between natural language and application components.
 It is based on the semantic perspective of natural language as described in Halliday
@@ -25,8 +27,6 @@ domains. The complete model and all of its concepts and principles are described
 in detail in Bateman et al. [2006a], its underlying experimental linguistic results and
 language analysis are documented in Bateman et al. [2006b]. Currently, the Generalized
 Upper Model 3.0 is represented in OWL DL.</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developers: University of Bremen, SFB/TR8 Spatial Cognition, I1-[OntoSpace]
-https://www.ontospace.uni-bremen.de</rdfs:comment>
     </owl:Ontology>
     
 

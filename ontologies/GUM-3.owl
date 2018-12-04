@@ -10,7 +10,6 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl">
         <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/ontologies/GUM-3.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lisence: http://creativecommons.org/licenses/by-nc-nd/3.0/</owl:versionInfo>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GUM 3</rdfs:label>
         <rdfs:comment xml:lang="en">The Generalized Upper Model 3.0 (GUM 3.0) is a linguistically motivated ontology,
 which aims primarily to mediate between natural language and application components.
@@ -21,9 +20,10 @@ domains. The complete model and all of its concepts and principles are described
 in detail in Bateman et al. [2006a], its underlying experimental linguistic results and
 language analysis are documented in Bateman et al. [2006b]. Currently, the Generalized
 Upper Model 3.0 is represented in OWL DL.</rdfs:comment>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">license: https://creativecommons.org/licenses/by/4.0/</owl:versionInfo>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developers: University of Bremen, SFB/TR8 Spatial Cognition, I1-[OntoSpace]
-https://www.ontospace.uni-bremen.de</rdfs:comment>
+https://www.ontospace.uni-bremen.de; SFB EASE, P01/H02 https://ease.informatik.uni-bremen.de</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3.1</owl:versionInfo>
     </owl:Ontology>
     
 
