@@ -5008,7 +5008,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   there's a box
                      there's a halo beyond pluto
     ============================================================================ -->
-  <family pos="V.exist" name="v.is.existence.short" closed="false">
+  <family pos="V.exist" name="v.is.existence.short" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="s">
@@ -6622,7 +6622,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:  (here) is the kitchen
     				turn left (there)
     ============================================================================ -->
-  <family closed="false" pos="NP.space.deixis" name="spatial-deixis">
+  <family closed="true" pos="NP.space.deixis" name="spatial-deixis"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <atomcat type="pp">
         <fs id="1">
@@ -8343,7 +8343,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     -cooking domain (03.11.18) in progress-
     a large saucepan (of) water  np/*np  			not parsing
     ============================================================================ -->
-  <family pos="PREP.genetive" name="prep.genetive.spatial" indexRel="*NoSem*">
+  <family pos="PREP.genetive" name="prep.genetive.spatial" indexRel="*NoSem*" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="np">
@@ -8517,7 +8517,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Entry            "primary" :    np/*n
     Example Parse:   robert's cup
     ============================================================================ -->
-  <family pos="NP.possessive" name="NP.possessive.normal" indexRel="hasName">
+  <family pos="NP.possessive" name="NP.possessive.normal" indexRel="hasName" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="np">
@@ -8574,7 +8574,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Entry            spatial        :    np
     Example Parse:   (robert's) left
     ============================================================================ -->
-  <family pos="NP.possessive" name="NP.possessive.spatial">
+  <family pos="NP.possessive" name="NP.possessive.spatial" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="spatial">
       <atomcat type="np">
         <fs id="1">
@@ -8739,7 +8739,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   his (room)  :- ownership
     his (left)  :- spatial
     ============================================================================ -->
-  <family pos="POSSDET" name="possessives">
+  <family pos="POSSDET" name="possessives" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="ownership">
       <complexcat>
         <atomcat type="np">
@@ -8967,7 +8967,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   (central) district
                      (central) London
     ============================================================================ -->
-  <family pos="ADJ.spt" closed="false" name="adj.spt">
+  <family pos="ADJ.spt" closed="true" name="adj.spt"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="n">
@@ -9203,7 +9203,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   the (second) cup
     TODO:            make sure that the configuration type is correct.
     ============================================================================ -->
-  <family pos="ADJ.ordinal" closed="false" name="adj.number">
+  <family pos="ADJ.ordinal" closed="true" name="adj.number"> <!-- MOD: CLOSED=TRUE -->
     <entry name="adj.property.config">
       <complexcat>
         <atomcat type="n">
@@ -9257,7 +9257,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: around, forward
     Example Parse:   (drive forward) forward
     ============================================================================ -->
-  <family pos="ADV" closed="false" name="advadv">
+  <family pos="ADV" closed="true" name="advadv"> <!-- MOD: CLOSED=TRUE -->
     <entry name="adv.modif">
       <complexcat>
         <atomcat type="adv">
@@ -9290,7 +9290,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: around, forward
     Example Parse:   (drive) forward
     ============================================================================ -->
-  <family pos="ADV" name="adv">
+  <family pos="ADV" name="adv" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="adv">
       <atomcat type="adv">
         <fs id="3">
@@ -9341,7 +9341,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: around, behind
     Example Parse:   UNCLEAR
     ============================================================================ -->
-  <family closed="false" pos="ADV" name="adv.ppmodif" indexRel="proximity">
+  <family closed="true" pos="ADV" name="adv.ppmodif" indexRel="proximity"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="pp">
@@ -9428,7 +9428,7 @@ Important manual modifications: (Marked below with   MOD: key   )
                      the routes grammar.
     Example Parse:   (go to the) room
     ============================================================================ -->
-  <family name="Num" pos="Num">
+  <family name="Num" pos="Num" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="Primary">
       <atomcat type="num">
         <fs id="2">
@@ -9488,7 +9488,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: room
     Example Parse:   (go to the) room
     ============================================================================ -->
-  <family pos="N" name="n" closed="false">
+  <family pos="N" name="n" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <atomcat type="n">
         <fs id="1">
@@ -9576,7 +9576,7 @@ Important manual modifications: (Marked below with   MOD: key   )
                      (make a 360 degree) turn
     TODO - robertr - Look into the second cateogry.
     ============================================================================ -->
-  <family pos="NOMP" name="nomp">  
+  <family pos="NOMP" name="nomp" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="nonaffecting-pp">
       <complexcat>
         <atomcat type="nomp">
@@ -9701,7 +9701,7 @@ Important manual modifications: (Marked below with   MOD: key   )
                      (make a) step to the right
                      one semicircle
 ============================================================================ -->
-  <family pos="NQ" name="nq">  
+  <family pos="NQ" name="nq" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="nonaffecting-pp">
       <complexcat>
         <atomcat type="nq">
@@ -9838,7 +9838,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: lamp's, table's
     Example Parse:   the (lamp's) left
     ============================================================================ -->
-  <family pos="N.possessive" name="n.pos">
+  <family pos="N.possessive" name="n.pos" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <atomcat type="n">
         <fs id="1">
@@ -9911,7 +9911,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     the (right) of the cup
     the (north) of the vilage
     ============================================================================ -->
-  <family closed="false" pos="NDIR" name="ndir">
+  <family closed="true" pos="NDIR" name="ndir"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <atomcat type="n-spatial">
         <fs id="1">
@@ -10237,7 +10237,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: left, right
     Example Parse:   (go to the) left
     ============================================================================ -->
-  <family closed="false" pos="NDIR2" name="ndir.modifiable">
+  <family closed="true" pos="NDIR2" name="ndir.modifiable"> <!-- MOD: CLOSED=TRUE -->
     <entry name="default">
       <atomcat type="n">
         <fs id="1">
@@ -10320,7 +10320,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: front
     Example Parse:   (go to) front    (strnage entry)
     ============================================================================ -->
-  <family closed="false" pos="NPDIR" name="npdir">
+  <family closed="true" pos="NPDIR" name="npdir"> <!-- MOD: CLOSED=TRUE -->
     <entry name="default">
       <atomcat type="np">
         <fs id="1">
@@ -10365,7 +10365,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   way (to the kitchen)
     TODO - robertr - Work out a proper model for these semantics.
     ============================================================================ -->
-  <family closed="false" pos="NWAY" name="n.way.destinative">
+  <family closed="true" pos="NWAY" name="n.way.destinative"> <!-- MOD: CLOSED=TRUE -->
     <entry name="n.way.destinative">
       <complexcat>
         <atomcat type="n">
@@ -10420,7 +10420,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   (he) is going to the kitchen
     (this) is the kitchen
     ============================================================================ -->
-  <family pos="NP" name="np">
+  <family pos="NP" name="np" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="default">
       <atomcat type="np">
         <fs id="1">
@@ -10449,7 +10449,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: Dublin, London etc.
     Example Parse:   Dublin Ireland
     ============================================================================ -->
-  <family pos="NP" name="np.composite">
+  <family pos="NP" name="np.composite" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="default">
       <complexcat>
         <atomcat type="np">
@@ -10505,7 +10505,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     at five o'clock they went to the shop
     they went to the shop at five o'clock
     ============================================================================ -->
-  <family closed="false" pos="PREP.temporal" name="gen_time">
+  <family closed="true" pos="PREP.temporal" name="gen_time"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="pp">
@@ -10643,7 +10643,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: o'clock
     Example Parse:   at three (o'clock)
     ============================================================================ -->
-  <family closed="false" pos="N.time" name="time">
+  <family closed="true" pos="N.time" name="time"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="np">
@@ -10679,8 +10679,8 @@ Important manual modifications: (Marked below with   MOD: key   )
       </complexcat>
     </entry>
   </family>
-  
-  <family closed="false" pos="ADJ.cert" name="certanty">
+
+  <family closed="true" pos="ADJ.cert" name="certanty"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <atomcat type="adv.c">
         <fs>
@@ -10709,7 +10709,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Parse:   at (three) o'clock
                      engine two
     ============================================================================ -->
-  <family closed="false" pos="N.num" name="number">
+  <family closed="true" pos="N.num" name="number"> <!-- MOD: CLOSED=TRUE -->
     <!-- atomic cateogry for raw numbers -->
     <!-- this is used later in other cateogires to construct semantics for "two o'clock" or "two miles" -->
     <entry name="primary">
@@ -10884,7 +10884,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     <member stem="step" />
     <member stem="centimetre" />
     <member stem="roomLength" />
-	<member stem="tablespoon" />   
+	<member stem="tablespoon" />
   </family>
   <!-- ==============================================================================
     family name:     distance_quantitative2
@@ -11208,7 +11208,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     -cooking domain (03.11.18)-
     Heat (a_little) of the oil
     ============================================================================ -->
-  <family closed="false" pos="QUAL-EXT" name="qualitative-extent2" indexRel="gs-qualitativeDistanceExtent">
+  <family closed="true" pos="QUAL-EXT" name="qualitative-extent2" indexRel="gs-qualitativeDistanceExtent"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="pp">
@@ -11528,7 +11528,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: and, or, then
     Example Parse:   go forward and stop
     ============================================================================ -->
-  <family pos="C-COORD" name="COORD.s.imp">
+  <family pos="C-COORD" name="COORD.s.imp" closed="true"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="s">
@@ -11974,7 +11974,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: yes,no,ok
     Example Parse:   yes
     ============================================================================ -->
-  <family closed="false" pos="PARTICLE" name="particle">
+  <family closed="true" pos="PARTICLE" name="particle"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <atomcat type="s">
         <fs id="1">
@@ -12008,7 +12008,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     Example Memeber: yes,no,please,rolland
     Example Parse:   yes
     ============================================================================ -->
-  <family closed="false" pos="DCONN" name="dconn">
+  <family closed="true" pos="DCONN" name="dconn"> <!-- MOD: CLOSED=TRUE -->
     <entry name="primary">
       <complexcat>
         <atomcat type="smain">

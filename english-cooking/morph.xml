@@ -1112,7 +1112,7 @@ s
   <entry pos="V.exist" word="there's" />
 
   <!-- questions - act as pronominals -->
-  <entry pos="Q.where" word="where" />
+  <entry pos="PRON" word="where" />
   <entry pos="PRON" word="when" stem="interrogative" />
 
   <!-- Coordinating Words -->
@@ -1470,7 +1470,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="gender">
-          <prop name="male" />
+          <prop name="pers.male" />
         </diamond>
       </satop>
     </lf>
@@ -1479,7 +1479,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="gender">
-          <prop name="female" />
+          <prop name="pers.female" />
         </diamond>
       </satop>
     </lf>
@@ -1488,7 +1488,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="person">
-          <prop name="first" />
+          <prop name="pers.first" />
         </diamond>
       </satop>
     </lf>
@@ -1497,7 +1497,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="person">
-          <prop name="second" />
+          <prop name="pers.second" />
         </diamond>
       </satop>
     </lf>
@@ -1506,7 +1506,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="person">
-          <prop name="third" />
+          <prop name="pers.third" />
         </diamond>
       </satop>
     </lf>
@@ -1515,7 +1515,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="number">
-          <prop name="singular" />
+          <prop name="number.singular" />
         </diamond>
       </satop>
     </lf>
@@ -1524,7 +1524,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="number">
-          <prop name="plural" />
+          <prop name="number.plural" />
         </diamond>
       </satop>
     </lf>
@@ -1536,7 +1536,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Proximity">
-          <prop name="proximal" />
+          <prop name="lf.T.prox.proximal" />
         </diamond>
       </satop>
     </lf>
@@ -1545,7 +1545,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Proximity">
-          <prop name="distal" />
+          <prop name="lf.T.prox.distal" />
         </diamond>
       </satop>
     </lf>
@@ -1557,7 +1557,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Number">
-          <prop name="sg" />
+          <prop name="lf.T.num.sg" />
         </diamond>
       </satop>
     </lf>
@@ -1566,7 +1566,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Number">
-          <prop name="pl" />
+          <prop name="lf.T.num.pl" />
         </diamond>
       </satop>
     </lf>
@@ -1575,7 +1575,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="ident">
-          <prop name="specific" />
+          <prop name="lf.T.del.unique" />
         </diamond>
       </satop>
     </lf>
@@ -1584,7 +1584,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="ident">
-          <prop name="unspecific" />
+          <prop name="lf.T.del.exist" />
         </diamond>
       </satop>
     </lf>
@@ -1593,7 +1593,7 @@ s
     <lf>
       <satop nomvar="Q">
         <diamond mode="quant">
-          <prop name="plural" />
+          <prop name="lf.q.quant.nonsg" />
         </diamond>
       </satop>
     </lf>
@@ -1602,7 +1602,7 @@ s
     <lf>
       <satop nomvar="Q">
         <diamond mode="quant">
-          <prop name="singular" />
+          <prop name="lf.q.quant.sg" />
         </diamond>
       </satop>
     </lf>
@@ -1611,7 +1611,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="quant">
-          <prop name="plural" />
+          <prop name="lf.T.quant.pl" />
         </diamond>
       </satop>
     </lf>
@@ -1620,7 +1620,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="quant">
-          <prop name="singular" />
+          <prop name="lf.T.quant.sg" />
         </diamond>
       </satop>
     </lf>
@@ -1632,7 +1632,7 @@ s
     <lf>
       <satop nomvar="U">
         <diamond mode="polarity">
-          <prop name="positive" />
+          <prop name="pol.pos" />
         </diamond>
       </satop>
     </lf>
@@ -1641,7 +1641,7 @@ s
     <lf>
       <satop nomvar="U">
         <diamond mode="polarity">
-          <prop name="negative" />
+          <prop name="pol.neg" />
         </diamond>
       </satop>
     </lf>
@@ -1650,7 +1650,7 @@ s
     <lf>
       <satop nomvar="U">
         <diamond mode="polarity">
-          <prop name="medium" />
+          <prop name="pol.med" />
         </diamond>
       </satop>
     </lf>
@@ -1683,7 +1683,7 @@ s
     <lf>
       <satop nomvar="E">
         <diamond mode="tense">
-          <prop name="pres.simple" />
+          <prop name="pres.habitual" />
         </diamond>
       </satop>
     </lf>

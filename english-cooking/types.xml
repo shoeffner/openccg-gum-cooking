@@ -99,7 +99,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="gs-QualitativeDistance" parents="gs-SpatialDistanceModality" />
   <type name="gs-Distal" parents="gs-QualitativeDistance" />
   <type name="gs-Proximal" parents="gs-QualitativeDistance gs-Access" />
-  <type name="gs-Touching" parents="gs-Proximal gs-Access" />
+  <type name="gs-Touching" parents="gs-Proximal" /> <!-- @shoeffner: Removed redundant gs-Access parent, as it's already an indirect parent. -->
   <type name="gs-FunctionalSpatialModality" parents="gs-SpatialModality" />
   <type name="gs-Access" parents="gs-FunctionalSpatialModality" />
   <type name="gs-Control" parents="gs-FunctionalSpatialModality" />
@@ -331,7 +331,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Carton" parents="slm-Container" />
   <type name="slm-Cup" parents="slm-Container" />
   <type name="slm-Can" parents="slm-Container" />
-  <type name="slm-Bowl" parents="slm-Container" />
   <type name="slm-Screen" parents="slm-Furnishings" />
   <type name="slm-CokeMachine" parents="slm-Furnishings" />
   <type name="slm-Device" parents="gum-SpatialObject" />
@@ -437,14 +436,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Ship" parents="gum-NonDecomposableObject" />
   <type name="slm-Tunnel" parents="gum-NonDecomposableObject" />
   <type name="slm-Bird" parents="gum-NonDecomposableObject" />
-  <type name="slm-Bowl" parents="gum-NonDecomposableObject" />
+  <type name="slm-Bowl" parents="gum-NonDecomposableObject slm-Container" /> <!-- @shoeffner: added slm-Container, removed duplicate entry -->
   <type name="slm-Fire" parents="gum-NonDecomposableObject" />
   <type name="slm-Cell" parents="gum-NonDecomposableObject" />
   <type name="slm-Park" parents="gum-NonDecomposableObject" />
   <type name="slm-View" parents="gum-NonDecomposableObject" />
   <type name="slm-HotDogStand" parents="gum-NonDecomposableObject" />
   <type name="slm-CottageCheese" parents="gum-NonDecomposableObject" />
-    <type name="slm-ParmesanCheese" parents="gum-NonDecomposableObject" />
+  <type name="slm-ParmesanCheese" parents="gum-NonDecomposableObject" />
   <type name="slm-Macys" parents="gum-NonDecomposableObject" />
   <type name="slm-TamilNadu" parents="gum-NonDecomposableObject" />
   <type name="slm-India" parents="gum-NonDecomposableObject" />
@@ -772,7 +771,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
 
   -->
   <!--- Volume Units (in Bearbeitung) -->
-  
+
+  <type name="slm-Spoon" />
   <type name="slm-Teaspoon" parents="slm-Spoon" />
   <type name="slm-Tsp." parents="slm-Spoon" />
   <type name="slm-Tablespoon" parents="slm-Spoon" />
@@ -786,7 +786,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
 
    <type name="slm-Egg" parents="gum-SimpleThing" />
    <type name="slm-Eggs" parents="gum-SimpleThing" />
-   <type name="slm-Orange" parents="gum-SimpleThing" />
+   <!--type name="slm-Orange" parents="gum-SimpleThing" /--> <!-- TODO(@shoeffner): Removed because orange is already a color. -->
    <type name="slm-Oranges" parents="gum-SimpleThing" />
    <type name="slm-Oil" parents="gum-SimpleThing" />
    <type name="slm-Oils" parents="gum-SimpleThing" />
