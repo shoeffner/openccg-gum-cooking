@@ -15,13 +15,27 @@ Licence:     This file is free software; you can redistribute it and/or modify
 ======================================================================================== -->
 
 <!-- ====================================================================================
- 
- Lexicon file for the DiaSpace English CCG grammar.  
- 
- Author : Rob Ross 
+Important manual modifications: (Marked below with   MOD: key   )
+
+2018-11-27 key: CLOSED=TRUE
+    @shoeffner: marked all families as closed = true due to the comment in ccg.ply:
+
+            # Actually, we *always* need classes closed, due to a bizarreness in
+            # OpenCCG.
+
+    See also:
+    https://github.com/OpenCCG/openccg/blob/f35e058ec6939521653773a0a3bf788921966590/src/ccg2xml/ccg.ply#L2303-L2306
+===================================================================================== -->
+
+
+<!-- ====================================================================================
+
+ Lexicon file for the DiaSpace English CCG grammar.
+
+ Author : Rob Ross
           David Mautz
-          Niels Schütte    
-    
+          Niels Schütte
+
     family                                    entry                      examples
     =================================================================================================
     v.orienting.simple                           affecting-pp         he (pointed) a camera at her
@@ -31,7 +45,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     v.orienting.main                             affecting-pp         (point) a camera at her
                                                  affecting-adv        (point) the camera forward
                                                  nonaffecting-pp      (point) forward
-                                                 nonaffecting-adv     (point) at her 
+                                                 nonaffecting-adv     (point) at her
     v.orienting.preppart                         affecting-pp         he is (pointing) a camera at her
                                                  affecting-adv        he is (pointing) a camera forward
                                                  nonaffecting-pp      the camera is (pointing) at the box
@@ -39,7 +53,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     v.orientation.change.simple	                 affecting-pp         he (turns) it towards the kitchen
                                                  affecting-adv        he (turns) it leftwards
                                                  nonaffecting-pp      he (turned) towards the kitchen
-                                                 nonaffecting-adv     he (turned) leftwards	  
+                                                 nonaffecting-adv     he (turned) leftwards
     v.orientation.change.main                    affecting-pp         (turn) it towards the kitchen
                                                  affecting-adv        (turn) it leftwards
                                                  nonaffecting-pp      (turn) towards the kitchen
@@ -47,40 +61,40 @@ Licence:     This file is free software; you can redistribute it and/or modify
     v.orientation.change.prespart                nonaffecting-pp      he is (turning) to the kitchen
                                                  nonaffecting-adv     he is (turning) leftwards
                                                  affecting-pp         he is (turning) it leftwards
-                                                 affecting-adv        he is (turning) it to the kitchen	  	  
+                                                 affecting-adv        he is (turning) it to the kitchen
     v.simple.motion.nonaffecting.prespart        primary              she was (dancing)
-    v.simple.motion.nonaffecting.main            primary              (dance)	  
+    v.simple.motion.nonaffecting.main            primary              (dance)
     v.simple.motion.nonaffecting.simple          primary              she (danced)
-    v.simple.motion.affecting.prespart           primary              she was (stirring) the water	
-    v.simple.motion.affecting.main               primary              (stir) the water 	  
-    v.simple.motion.affecting.simple             primary              she (stirred) the water 	  
-    v.NonAffectingDirectedMotion.prespart        primary              we are (going) from the bathroom to the kitchen via the office	  
-    v.NonAffectingDirectedMotion.main            primary              (go) from the bathroom to the kitchen via the office	  
+    v.simple.motion.affecting.prespart           primary              she was (stirring) the water
+    v.simple.motion.affecting.main               primary              (stir) the water
+    v.simple.motion.affecting.simple             primary              she (stirred) the water
+    v.NonAffectingDirectedMotion.prespart        primary              we are (going) from the bathroom to the kitchen via the office
+    v.NonAffectingDirectedMotion.main            primary              (go) from the bathroom to the kitchen via the office
     v.NonAffectingDirectedMotion.simple          primary              she (went) from the bathroom to the kitchen via the office
     v.AffectingDirectedMotion.prespart           primary              I am (bringing) you from the bathroom to the kitchen via the office
                                                                       he is (moving) the apple onto the table
     v.AffectingDirectedMotion.main               primary              (bring) the box from the bathroom to the kitchen via the office
                                                                       (move) the apple onto the table
     v.AffectingDirectedMotion.simple             primary              i (brought) the box from the bathroom to the kitchen via the office
-                                                                      i (moved) the apple onto the table	  
+                                                                      i (moved) the apple onto the table
     v.AffectingDirectedMotion.dest.prespart      dynamic              he is (putting) the cup onto the table
-                                                 static               he is (putting) the cup on the table	 
+                                                 static               he is (putting) the cup on the table
     v.AffectingDirectedMotion.dest.main          dynamic              (put) the cup onto the table
-                                                 static               (put) the cup on the table	  
+                                                 static               (put) the cup on the table
     v.AffectingDirectedMotion.dest.simple        dynamic              he (put) the cup onto the table
-                                                 static               he (put) the cup on the table	  
-    
-    Glossary: 
-    s - main clauses in simple past or present 
+                                                 static               he (put) the cup on the table
+
+    Glossary:
+    s - main clauses in simple past or present
         "he pointed a camera at her"
-    smain - This form is equivalent to the imperative sentence type but is also used to construct infinitive 
-    clauses. We do not double up on entries for these two variants. 
+    smain - This form is equivalent to the imperative sentence type but is also used to construct infinitive
+    clauses. We do not double up on entries for these two variants.
         "point a camera at her"
         "i will (point a camera at her)"
         "did you (point a camera at her)"
     s.prp  - Used to capture the infinite part of an expression
-        "he is pointing a camera at her" 	  
-    
+        "he is pointing a camera at her"
+
     ============================================================================ -->
 
 <ccg-lexicon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../openccg/grammars/lexicon.xsd"
@@ -89,16 +103,16 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     Family name:     v.orienting.simple
     Pos:             V
-    Description:     Used to capture an affecting and non-affecting orientation 
-                     configuration in either the simple present or simple past tenses. 	  
+    Description:     Used to capture an affecting and non-affecting orientation
+                     configuration in either the simple present or simple past tenses.
     Entries :        affecting-pp: s\.np/>pp/>np
                      affecting-adv: s\.np/>pp/>np
                      nonaffecting-adv: s\.np/.adv
-                     nonaffecting-pp: s\.np/.pp	  
+                     nonaffecting-pp: s\.np/.pp
     Example Parse:   he (pointed) a camera at her
                      he (pointed) the camera forward
                      the camera (points) forward
-                     the camera (points) to the box	  
+                     the camera (points) to the box
     ============================================================================ -->
   <family pos="V" name="v.orienting.simple" closed="true">
     <entry name="affecting-pp">
@@ -350,17 +364,17 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     Family name:     v.orienting.main
     Pos:             V.main
-    Description:     Category of affecting and non-affecting orientation verbs in the 
-                     main verb form. The subject/actor of the main verb is not given 
-                     in either entry. Variants are given for forward composition with 
-                     either routes or directions. 
-                     This form is equivilent to the imperative sentence type but is 
-                     also used to construct infinitive clauses. We do not double up 
-                     on entires for these two variants. 
+    Description:     Category of affecting and non-affecting orientation verbs in the
+                     main verb form. The subject/actor of the main verb is not given
+                     in either entry. Variants are given for forward composition with
+                     either routes or directions.
+                     This form is equivilent to the imperative sentence type but is
+                     also used to construct infinitive clauses. We do not double up
+                     on entires for these two variants.
     Entries :        affecting-pp: smain/>pp/>np
                      affecting-adv: smain/>adv/>np
                      nonaffecting-adv: smain/.adv
-                     nonaffecting-pp: smain/.adv	  
+                     nonaffecting-pp: smain/.adv
     Example Parse:   (point) a camera at her
                      (point) the camera forward
                      (point) forward
@@ -576,14 +590,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     Family name:     v.orienting.prp
     Pos:             V.prp
-    Description:     Used to capture the infinite part of an affecting orientation 
-                     configuration 	  
+    Description:     Used to capture the infinite part of an affecting orientation
+                     configuration
     Entries :        affecting-pp: s.pop/>pp/>np
                      affecting-adv: s.pop/>adv/>np
                      nonaffecting-pp: s.pop/>pp
                      nonaffecting-adv: s.pop/>adv
     Example Parse:   he is (pointing) a camera at her
-                     he is (pointing) a camera forward	  
+                     he is (pointing) a camera forward
                      the camera is (pointing) at the box
                      the camera is (pointing) forward
     ============================================================================ -->
@@ -787,7 +801,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     Family name:     v.orientation.change.make.simple
     Pos:             V
     Description:     used to specify an orientation change with a make verb and a nominalised
-                     orientation process. This only works for non-affecting processes.   
+                     orientation process. This only works for non-affecting processes.
     Entries :        nonaffecting-pp: s\.np/*np/>pp
                      nonaffecting-adv: s\.np/*np/>adv
     Example Parse:   he (made) a turn towards the left
@@ -796,7 +810,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                      he (made) a 360 degree turn to the left
                      he (made) a turn
     ============================================================================ -->
-  
+
   <family pos="V" name="v.orientation.change.make.simple" closed="true">
     <entry name="nonaffecting-pp">
       <complexcat>
@@ -923,12 +937,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="make" pred="slm-Making" />
   </family>
- 
+
   <!-- ==============================================================================
     Family name:     v.simple.make
     Pos:             V
-    Description:     used for "make"-constructions that require a nominalised process. 
-                     This only works for non-affecting processes.   
+    Description:     used for "make"-constructions that require a nominalised process.
+                     This only works for non-affecting processes.
     Entries :        s./nomp*\np
                      s./nq*\np
     Example Parse:   (make) a turn
@@ -984,7 +998,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry> 
+    </entry>
     <entry name="secondary">
       <complexcat>
         <atomcat type="s">
@@ -1034,19 +1048,19 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry> 
+    </entry>
     <member stem="make" />
   </family>
-  
+
   <!-- ==============================================================================
     Family name:     v.orientation.change.simple
     Pos:             V
     Description:     used to specify an affecting orienting change in either the simple
-                     present or simple past tense. 	  
+                     present or simple past tense.
     Entries :        affecting-pp: s\.np/>pp/>np
                      affecting-adv: s\.np/>adv/>np
                      nonaffecting-pp: s\.np/>pp
-                     nonaffecting-adv: s\.np/>pp	  
+                     nonaffecting-adv: s\.np/>pp
     Example Parse:   he (turns) it towards the kitchen
                      he (turns) it leftwards
                      he (turned) towards the kitchen
@@ -1301,15 +1315,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="veer"/>
     <member stem="rotate"/>
   </family>
-  
+
   <!-- ==============================================================================
     Family name:     v.orientation.change.main
     Pos:             V.main
-    Description:     used to specify an orientation change in the imperative mood. 
+    Description:     used to specify an orientation change in the imperative mood.
     Entries :        affecting-pp: smain/>pp/>np
                      affecting-adv: smain/>adv/>np
                      nonaffecting-pp: smain/>pp
-                     nonaffecting-adv: smain/>pp	  
+                     nonaffecting-adv: smain/>pp
     Example Parse:   (turn) it towards the kitchen
                      (turn) it leftwards
                      (turn) towards the kitchen
@@ -1344,9 +1358,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <prop name="[*DEFAULT*]" />
             </diamond>
           </satop>
-        </lf>          
+        </lf>
         </atomcat>
-    </entry>  
+    </entry>
     <entry name="affecting-pp">
       <complexcat>
         <atomcat type="smain">
@@ -1450,10 +1464,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="mood">
               <prop name="imperative" />
-            </diamond>     
+            </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="D:gs-GeneralizedLocation" />
               <diamond mode="gs-hasSpatialModality">
@@ -1489,7 +1503,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
         <atomcat type="pp">
           <fs id="4">
           <!--  01/08
-            <feat attr="ppkind" val="dynamic" /> -->          
+            <feat attr="ppkind" val="dynamic" /> -->
             <feat attr="index">
               <lf>
                 <nomvar name="B:gs-GeneralizedLocation" />
@@ -1504,7 +1518,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="B" />
             </diamond>
@@ -1550,7 +1564,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="D:gs-GeneralizedLocation" />
               <diamond mode="gs-hasSpatialModality">
@@ -1599,7 +1613,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="D:gs-GeneralizedLocation" />
               <diamond mode="gs-quantitativeDistanceExtent">
@@ -1613,7 +1627,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry>    
+    </entry>
     <entry name="nonaffecting-ext-qual">
       <complexcat>
         <atomcat type="smain">
@@ -1648,7 +1662,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="D:gs-GeneralizedLocation" />
               <diamond mode="gs-qualitativeDistanceExtent">
@@ -1662,17 +1676,17 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry>        
+    </entry>
     <member stem="turn" />
     <member stem="veer"  />
     <member stem="rotate" />
   </family>
-  
+
   <!-- ==============================================================================
     Family name:     v.orientation.change.prp
     Pos:             V.prp
     Description:     used to specify an the infinite component of an affecting orienting
-                     change. 	  
+                     change.
     Entries :        nonaffecting-pp: s.prp/.pp
                      nonaffecting-adv: s.prp/.adv
                      affecting-pp: s.prp/>pp/>np
@@ -1879,12 +1893,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="veer"  />
     <member stem="rotate" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.simple.motion.nonaffecting.prp
     pos:             V.prp
     description:     Category of simple motions which do not receive directions.
-    Entries :        primary  : s.prp 
+    Entries :        primary  : s.prp
     Example Parse:   she was (dancing)
     ============================================================================ -->
   <family pos="V.prp" name="v.simple.motion.nonaffecting.prp" closed="true">
@@ -1920,8 +1934,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
   </family>
   <!-- ==============================================================================
     family name:     v.simple.motion.nonaffecting.main
-    pos:             V.main	  
-    description:     Category of simple motions which do not receive directions in the 
+    pos:             V.main
+    description:     Category of simple motions which do not receive directions in the
                      imperative
     Entries:         primary: smain
     Example Parse:   (dance)
@@ -1949,7 +1963,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
               <prop name="[*DEFAULT*]" />
@@ -1965,8 +1979,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     v.simple.motion.nonaffecting.simple
     pos:             V
-    description:     Category of simple motions which do not receive directions in 
-                     the simple past and simple present tenses. 
+    description:     Category of simple motions which do not receive directions in
+                     the simple past and simple present tenses.
     Entries:         primary: s\.np
     Example Parse:   she (dances)
                      she (danced)
@@ -2021,7 +2035,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     pos:             V.prp
     description:     Category of simple motions which do have an affectee in the infinite form
     Entries :        primary  :  s.prp/*np
-    Example Parse:   she was (stirring) the 
+    Example Parse:   she was (stirring) the
 
 
     ============================================================================ -->
@@ -2133,7 +2147,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     description:     Category of simple motions which do have an affectee in the imperative
     Entries:         primary  :  smain/*np
     secondary:       smain/*np/*adv
-    Example Parse:   (stir) the water 
+    Example Parse:   (stir) the water
                      (stir) the water around
     ============================================================================ -->
   <family pos="V.main" name="v.simple.motion.affecting.main" closed="true">
@@ -2175,7 +2189,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-actee">
               <nomvar name="A" />
             </diamond>
@@ -2231,7 +2245,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="D:gs-GeneralizedLocation" />
               <diamond mode="gs-hasSpatialModality">
@@ -2250,13 +2264,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
 	<member stem="cut"  />
 	<member stem="mix"  />
   </family>
-  
-  
+
+
    <!-- ==============================================================================
    ADDED CAT (03.11.18) created for a cooking domain
     ============================================================================ -->
 
-  
+
    <!-- ==============================================================================
     family name:     v.simple.motion.affecting.main
     pos:             V.main
@@ -2271,8 +2285,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
 
 
 					not parsed, in progress:
-                    (heat) half of the butter in a frying pan 		
-					(heat) 10 ml of the olive oil in a pan 
+                    (heat) half of the butter in a frying pan
+					(heat) 10 ml of the olive oil in a pan
                     (heat) it up // what about phrasal verbs which combine two or three words from different grammatical categories?
                     (heat) the oil and butter in a heavy-based 	V+NP+KONJ+NP+PP
     ============================================================================ -->
@@ -2315,7 +2329,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-actee">
               <nomvar name="A" />
             </diamond>
@@ -2371,7 +2385,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-orientationDirection">
               <nomvar name="D:gs-GeneralizedLocation" />
               <diamond mode="gs-hasSpatialModality">
@@ -2388,21 +2402,21 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="heat" />
 
   </family>
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   <!-- ==============================================================================
     family name:     v.simple.motion.affecting.simple
     pos:             V
     description:     Category of simple motions which do have an affectee in the simple
-                     past and habitual present tense. 
+                     past and habitual present tense.
     Entries :        primary:  s.prp/*np\*np
                      secondary: s.prp/.adv/*np\*np
-    Example Parse:   she (stirred) the water 
+    Example Parse:   she (stirred) the water
                      she (stirred) the water around
     ============================================================================ -->
   <family pos="V" name="v.simple.motion.affecting.simple" closed="true">
@@ -2538,15 +2552,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.NonAffectingDirectedMotion.prp
     pos:             V.prp
     description:     movement verbs in infinite form which forward bind to the prepositional
-                     phrase / Generalized Locations which make up a complete route structure. 
+                     phrase / Generalized Locations which make up a complete route structure.
                      Using a 'setarg' has the advantage that we do not have to create lots of
                      different entries for permutations of source, path entities, destinations
-                     and so forth. The disadvantage is that empty attachment points are left 
-                     if some of the variables were not found. On the other hand these empty 
-                     branches can then be filtered out by the application. 
+                     and so forth. The disadvantage is that empty attachment points are left
+                     if some of the variables were not found. On the other hand these empty
+                     branches can then be filtered out by the application.
                      Later, we may replace the setarg use here with a seperate route construction
-                     category which composes a route before it is combined with the verb at 
-                     this point. 
+                     category which composes a route before it is combined with the verb at
+                     this point.
     Entries:         primary: s.prp/.r
     Example Parse:   we are (going) from the bathroom to the kitchen via the office
     ============================================================================ -->
@@ -2612,15 +2626,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.NonAffectingDirectedMotion.main
     pos:             V.main
     description:     movement verbs in infinite form which forward bind to the prepositional
-                     phrase / Generalized Locaions which make up a complete route structure. 
+                     phrase / Generalized Locaions which make up a complete route structure.
                      Using a 'setarg' has the advantage that we do not have to create lots of
                      different entries for permutations of source, path entities, destinations
-                     and so forth. The disadvantage is that empty attachment points are left 
-                     if some of the variables were not found. On the other hand these empty 
-                     branches can then be filtered out by the application. 
+                     and so forth. The disadvantage is that empty attachment points are left
+                     if some of the variables were not found. On the other hand these empty
+                     branches can then be filtered out by the application.
                      Later, we may replace the setarg use here with a seperate route construction
-                     category which composes a route before it is combined with the verb at 
-                     this point. 
+                     category which composes a route before it is combined with the verb at
+                     this point.
     Entries:         primary: smain/.r
     Example Parse:   (go) from the bathroom to the kitchen via the office
     ============================================================================ -->
@@ -2659,7 +2673,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="A" />
             </diamond>
@@ -2706,12 +2720,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-pathPlacement">
                   <nomvar name="A" />
-              </diamond>  
+              </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
@@ -2720,7 +2734,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry>    
+    </entry>
     <member stem="go" />
     <member stem="drive" />
     <member stem="move" />
@@ -2735,21 +2749,21 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="walk"  />
     <member stem="carry_on" />
     <member stem="reach" />
-    <member stem="double_back" />    
+    <member stem="double_back" />
   </family>
   <!-- ==============================================================================
     family name:     v.NonAffectingDirectedMotion.simple
     pos:             V
     description:     movement verbs which forward bind to the prepositional
-                     phrase / Generalized Locaions which make up a complete route structure. 
+                     phrase / Generalized Locaions which make up a complete route structure.
                      Using a 'setarg' has the advantage that we do not have to create lots of
                      different entries for permutations of source, path entities, destinations
-                     and so forth. The disadvantage is that empty attachment points are left 
-                     if some of the variables were not found. On the other hand these empty 
-                     branches can then be filtered out by the application. 
+                     and so forth. The disadvantage is that empty attachment points are left
+                     if some of the variables were not found. On the other hand these empty
+                     branches can then be filtered out by the application.
                      Later, we may replace the setarg use here with a seperate route construction
-                     category which composes a route before it is combined with the verb at 
-                     this point. 
+                     category which composes a route before it is combined with the verb at
+                     this point.
     Entries:         primary : s/.r\*np
     Example Parse:   she (went) from the bathroom to the kitchen via the office
     ============================================================================ -->
@@ -2822,14 +2836,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="walk" />
     <member stem="carry_on" />
     <member stem="reach" />
-    <member stem="double_back" />    
+    <member stem="double_back" />
   </family>
   <!-- ==============================================================================
     family name:     v.AffectingDirectedMotion.prp
     pos:             V.prp
     description:     movement verbs in infinite form which forward bind to a noun phrase
     which plays the role of actee and a prepositional
-    phrase / Generalized Locaions which make up a complete route structure. 
+    phrase / Generalized Locaions which make up a complete route structure.
     Entries :        primary : s.prp/.r/*np
     Example Parse:   I am (bringing) you from the bathroom to the kitchen via the office
     he is (moving) the apple onto the table
@@ -2894,14 +2908,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="ship" />
     <member stem="get" />
     <member stem="take" />
-    <member stem="transport" />    
+    <member stem="transport" />
   </family>
   <!-- ==============================================================================
     family name:     v.AffectingDirectedMotion.main
     pos:             V.main
     description:     movement verbs in infinite form which forward bind to a noun phrase
     which plays the role of actee and a prepositional
-    phrase / Generalized Locaions which make up a complete route structure. 
+    phrase / Generalized Locaions which make up a complete route structure.
     Entries :        primary : smain/.r/*np
     Example Parse:   (bring) the box from the bathroom to the kitchen via the office
     (move) the apple onto the table
@@ -2957,7 +2971,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
               <prop name="[*DEFAULT*]" />
@@ -2974,14 +2988,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="direct"/>
     <member stem="ship" />
     <member stem="get" />
-    <member stem="transport" />    
+    <member stem="transport" />
   </family>
   <!-- ==============================================================================
     family name:     v.AffectingDirectedMotion.simple
     pos:             V
     description:     movement verbs which forward bind to a noun phrase
                      which plays the role of actee and a prepositional
-                     phrase / Generalized Locaions which make up a complete route structure. 
+                     phrase / Generalized Locaions which make up a complete route structure.
     Entries:         primary : s/.r/.np\*np
     Example Parse:   i (brought) the box from the bathroom to the kitchen via the office
                      i (moved) the apple onto the table
@@ -3061,23 +3075,23 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="direct"  />
     <member stem="ship" />
     <member stem="get" />
-    <member stem="transport" />    
+    <member stem="transport" />
   </family>
   <!-- ==============================================================================
     family name:     v.AffectingDirectedMotion.dest.prp
     pos:             V.prp
     description:     movement verbs in infinite form which forward bind to a noun phrase
     which plays the role of actee and a prepositional
-    phrase / Generalized Locaions which make up the destination only 
-    in a complete route structure. No sources or path entities are 
-    allowed with this sort of spatial movement. 
-    Unlike in the standard directed motion families, we have tow entires. 
-    The first of these is for standard 'dynamic' propeositions as in the 
+    phrase / Generalized Locaions which make up the destination only
+    in a complete route structure. No sources or path entities are
+    allowed with this sort of spatial movement.
+    Unlike in the standard directed motion families, we have tow entires.
+    The first of these is for standard 'dynamic' propeositions as in the
     case of other affecting actions, while the second entry accounts for
     the fact that classically static prepositions can play a dynamic role
     with these verbs. to illustrate
-    he is putting the cup onto the table	  
-    he is putting the cup on the table 
+    he is putting the cup onto the table
+    he is putting the cup on the table
     he is moving the cup onto the table
     *he is moving the cup on the table
     Entries :        dynamic : s.prp/>pp_dynamic/.np
@@ -3149,16 +3163,16 @@ Licence:     This file is free software; you can redistribute it and/or modify
     pos:             V.main
     description:     movement verbs in infinite form which forward bind to a noun phrase
                      which plays the role of actee and a prepositional
-                     phrase / Generalized Locaions which make up the destination only 
-                     in a complete route structure. No sources or path entities are 
-                     allowed with this sort of spatial movement. 
-                     Unlike in the standard directed motion families, we have tow entires. 
-                     The first of these is for standard 'dynamic' prepositions as in the 
+                     phrase / Generalized Locaions which make up the destination only
+                     in a complete route structure. No sources or path entities are
+                     allowed with this sort of spatial movement.
+                     Unlike in the standard directed motion families, we have tow entires.
+                     The first of these is for standard 'dynamic' prepositions as in the
                      case of other affecting actions, while the second entry accounts for
                      the fact that classically static prepositions can play a dynamic role
                      with these verbs. to illustrate
-                     put the cup onto the table	  
-                     put the up on the table 
+                     put the cup onto the table
+                     put the up on the table
                      move the cup onto the table
                      *move the cup on the table
     Entries:         dynamic: smain/*pp/*np
@@ -3219,7 +3233,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
               <prop name="[*DEFAULT*]" />
@@ -3236,16 +3250,16 @@ Licence:     This file is free software; you can redistribute it and/or modify
     pos:             V
     description:     movement verbs which forward bind to a noun phrase
                      which plays the role of actee and a prepositional
-                     phrase / Generalized Locaions which make up the destination only 
-                     in a complete route structure. No sources or path entities are 
-                     allowed with this sort of spatial movement. 
-                     Unlike in the standard directed motion families, we have tow entires. 
-                     The first of these is for standard 'dynamic' propeositions as in the 
+                     phrase / Generalized Locaions which make up the destination only
+                     in a complete route structure. No sources or path entities are
+                     allowed with this sort of spatial movement.
+                     Unlike in the standard directed motion families, we have tow entires.
+                     The first of these is for standard 'dynamic' propeositions as in the
                      case of other affecting actions, while the second entry accounts for
                      the fact that classically static prepositions can play a dynamic role
                      with these verbs. to illustrate
-                     he put the cup onto the table	  
-                     he put the up on the table 
+                     he put the cup onto the table
+                     he put the up on the table
                      he moved the cup onto the table
                      *he moved the cup on the table
     Entries:         dynamic: s/.pp/.np\*np
@@ -3329,7 +3343,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.move.dir
     pos:             V
     description:     Category of motion configurations that are specified with a direction
-                     only. 	  
+                     only.
     Entries :        primary: smain/.adv
     Example Parse:   (drive) forward
     ============================================================================ -->
@@ -3370,7 +3384,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-direction">
               <nomvar name="B:gs-GeneralizedLocation" />
               <diamond mode="gs-hasSpatialModality">
@@ -3405,7 +3419,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
         <slash mode="&gt;" dir="/" />
         <atomcat type="pp">
           <fs id="4">
-            <feat attr="kind" val="dir" />                
+            <feat attr="kind" val="dir" />
             <feat attr="index">
               <lf>
                 <nomvar name="B:gs-GeneralizedLocation" />
@@ -3420,7 +3434,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-direction">
               <nomvar name="B" />
             </diamond>
@@ -3431,7 +3445,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry>    
+    </entry>
     <member stem="go" />
     <member stem="drive" />
     <member stem="move" />
@@ -3448,7 +3462,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.move.dir.simple
     pos:             V
     description:     Category of motion configurations that are specified with a direction
-                     only. 	  
+                     only.
     Entries:         primary: s/.adv\.np
     Example Parse:   the man (walked) forward
     ============================================================================ -->
@@ -3525,15 +3539,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     v.pass.main
     pos:             V.main
-    description:     Imperative motion verbs which directly express the spatial 
-                     modality and can therefore directly apply to a noun phrase. 
+    description:     Imperative motion verbs which directly express the spatial
+                     modality and can therefore directly apply to a noun phrase.
                      Note: although similar to 'leave' and 'enter' we cannot combine
-                     this class with their classes since the role played within the 
+                     this class with their classes since the role played within the
                      GeneralizedRoute varies across all classes and cannot be directly
-                     provided by the semantics attached to the morphology entry.  	  
+                     provided by the semantics attached to the morphology entry.
     Entries:         primary: smain/.np
                      secondary: smain/.r
-    Example Parse:   (pass) the kitcen 
+    Example Parse:   (pass) the kitcen
     ============================================================================ -->
   <family closed="true" pos="V.main" name="v.pass.main">
     <entry name="primary">
@@ -3571,7 +3585,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="G:gs-GeneralizedRoute" />
               <diamond mode="gs-pathPlacement">
@@ -3582,7 +3596,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="M:gs-PathRepresentingExternal" />
                   <prop name="past" />
-                </diamond>                
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -3627,7 +3641,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="X" />
             </diamond>
@@ -3644,7 +3658,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     v.moving.prp
     pos:             V.prp
-    description:     infinite form of pass	  
+    description:     infinite form of pass
     Entries :        primary : s.prp/.np
     Example Parse:   we are (pssing) the kitchen
     ============================================================================ -->
@@ -3690,7 +3704,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="M:gs-PathRepresentingExternal" />
                   <prop name="past" />
-                </diamond>                
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -3703,16 +3717,16 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="pass" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.leave.main
     pos:             VL
     description:     Leaving something, implicit SOURCE
                      A second entry is given for the more unusual, but still grammatical
-                     leave from the office                
+                     leave from the office
     Entries :        primary: smain/.np
-                     secondary: smain/.pp	  
-    Example Parse:   exit the room 
+                     secondary: smain/.pp
+    Example Parse:   exit the room
                      exit from the office
     ============================================================================ -->
   <family pos="V.main" name="v.leave.main" closed="true">
@@ -3751,7 +3765,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="G:gs-GeneralizedRoute" />
               <diamond mode="gs-source">
@@ -3761,7 +3775,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                 </diamond>
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="SM:gs-GeneralDirectionalDistancing" />
-                </diamond>                
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -3807,7 +3821,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="G:gs-GeneralizedRoute" />
               <diamond mode="gs-source">
@@ -3848,14 +3862,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="G:gs-GeneralizedRoute" />
               <diamond mode="gs-source">
                 <nomvar name="H:gs-GeneralizedLocation" />
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="SM:gs-GeneralDirectionalDistancing" />
-                </diamond>                
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -3863,17 +3877,17 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <prop name="[*DEFAULT*]" />
             </diamond>
           </satop>
-        </lf>          
+        </lf>
       </atomcat>
     </entry>
     <member stem="leave" />
     <member stem="exit" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.follow.main
     pos:             V
-    description:     Following a route - implicit path segment       
+    description:     Following a route - implicit path segment
     Entries:         primary: smain/.np
                      secondary: smain/.pp
     Example Parse:   follow the road
@@ -3914,7 +3928,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-pathPlacement">
@@ -3925,7 +3939,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="M:gs-PathRepresentingExternal" />
                   <prop name="along" />
-                </diamond>                
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -3971,7 +3985,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-destination">
@@ -3988,11 +4002,11 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="follow" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.approach.main
     pos:             V
-    description:     Following a route - implicit path segment       
+    description:     Following a route - implicit path segment
     Entries:         primary: smain/.np
                      secondary: smain/.pp
     Example Parse:   approach the road
@@ -4032,7 +4046,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-pathPlacement">
@@ -4043,7 +4057,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="M:gs-GeneralDirectionalNearing" />
                   <prop name="towards" />
-                </diamond>                
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -4089,7 +4103,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-destination">
@@ -4105,15 +4119,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
       </complexcat>
     </entry>
     <member stem="approach" />
-  </family>  
-  
+  </family>
+
   <!-- ==============================================================================
     family name:     v.enter.main
     pos:             V
-    description:     Entering something, implicit SOURCE	  
+    description:     Entering something, implicit SOURCE
     Entries:         primary: smain/.np
                      secondary: smain/.pp
-    Example Parse:   (enter) the room 
+    Example Parse:   (enter) the room
                      (enter) into the room
     ============================================================================ -->
   <family pos="V.main" name="v.enter.main" closed="true">
@@ -4151,7 +4165,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-destination">
@@ -4161,7 +4175,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                 </diamond>
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="SM:gs-Containment" />
-                </diamond>                              
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -4207,7 +4221,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-destination">
@@ -4215,7 +4229,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               </diamond>
               <diamond mode="gs-hasSpatialModality">
                 <nomvar name="SM:gs-Containment" />
-              </diamond>              
+              </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
@@ -4247,14 +4261,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-route">
               <nomvar name="B:gs-GeneralizedRoute" />
               <diamond mode="gs-destination">
                 <nomvar name="C:gs-GeneralizedLocation" />
                 <diamond mode="gs-hasSpatialModality">
                   <nomvar name="SM:gs-Containment" />
-                </diamond>                              
+                </diamond>
               </diamond>
             </diamond>
             <diamond mode="gum-processInConfiguration">
@@ -4262,23 +4276,23 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <prop name="[*DEFAULT*]" />
             </diamond>
           </satop>
-        </lf>          
+        </lf>
         </atomcat>
-    </entry>    
+    </entry>
     <member stem="enter" />
-    <member stem="reach" />    
+    <member stem="reach" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.bring.main (transitive)
     pos:             V.main
-    description:     C	  
+    description:     C
     Entries :        primary   :   s/.r/.np
-    Example Parse:   bring me to the kitchen 
-    
-    TODO - find out why this was commented out. 
-    TODO - make sure the category documentation is correct. 
-    ============================================================================ 
+    Example Parse:   bring me to the kitchen
+
+    TODO - find out why this was commented out.
+    TODO - make sure the category documentation is correct.
+    ============================================================================
     <family pos="V.main" name="v.bring.main" closed="true">
     <entry name="bring-imp">
     <complexcat>
@@ -4299,14 +4313,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </atomcat>
     <slash mode="." dir="/"/>
     <atomcat type="r">
-    <fs id="3"> 
+    <fs id="3">
     <feat attr="index">
     <lf>
     <nomvar name="A:gs-GeneralizedRoute"/>
     </lf>
     </feat>
     </fs>
-    </atomcat>			  
+    </atomcat>
     <slash mode="." dir="/"/>
     <atomcat type="np">
     <fs id="2">
@@ -4324,36 +4338,36 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>    
+            </diamond>
     <diamond mode="actee">
     <nomvar name="O"/>
     </diamond>
     <diamond mode="gs-route">
-    <nomvar name="A"/>				    
-    </diamond>  
+    <nomvar name="A"/>
+    </diamond>
     <diamond mode="gum-processInConfiguration">
     <nomvar name="P:gum-Process"/>
-    <prop name="[*DEFAULT*]"/> 				  
-    </diamond>			 			  
+    <prop name="[*DEFAULT*]"/>
+    </diamond>
     </satop>
     </lf>
     </complexcat>
     </entry>
     <member stem="bring"   pred="slm-Bringing"/>
-    <member stem="guide"   pred="slm-Guiding"/>	  
-    <member stem="take"    pred="slm-Taking"/>	  
-    <member stem="drive"   pred="slm-Driving"/>	  	  
-    <member stem="direct"  pred="slm-Directing"/>	  	  	  
+    <member stem="guide"   pred="slm-Guiding"/>
+    <member stem="take"    pred="slm-Taking"/>
+    <member stem="drive"   pred="slm-Driving"/>
+    <member stem="direct"  pred="slm-Directing"/>
     </family> -->
-    
+
   <!-- ==============================================================================
     family name:     v.take.main
     pos:             V.main
     description:     Turning motion, special case of "take a turn" and "take a right"
     Entries :        taketurn  :  smain/*np
                      dironly   :  smain/.np
-    Example Parse:   take a turn 
-                     take a right 
+    Example Parse:   take a turn
+                     take a right
     ============================================================================ -->
   <family closed="true" pos="V.main" name="v.imp.take">
     <entry name="taketurn">
@@ -4391,7 +4405,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gs-direction">
               <nomvar name="P" />
             </diamond>
@@ -4430,7 +4444,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="P:root" />
               </lf>
-            </feat>            
+            </feat>
           </fs>
         </atomcat>
         <lf>
@@ -4443,7 +4457,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="F:gum-Process" />
               <prop name="[*DEFAULT*]" />
@@ -4454,11 +4468,11 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="take_turn" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.stop.main
     pos:             V
-    description:     "Stop" or "halt" as a atomic "motion command" 	  
+    description:     "Stop" or "halt" as a atomic "motion command"
     Entries :        primary  : s
     Example Parse:   (stop) now
     ============================================================================ -->
@@ -4485,7 +4499,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
               <prop name="[*DEFAULT*]" />
@@ -4495,7 +4509,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
       </atomcat>
     </entry>
     <entry name="secondary">
-      <complexcat>    
+      <complexcat>
         <atomcat type="smain">
         <fs id="1">
           <feat attr="num">
@@ -4528,10 +4542,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>      
+            </diamond>
             <diamond mode="gs-placement">
               <nomvar name="Z:root" />
-            </diamond>                  
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="P:gum-Process" />
               <prop name="[*DEFAULT*]" />
@@ -4600,7 +4614,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Statement" />
-            </diamond>            
+            </diamond>
             <diamond mode="actor">
               <nomvar name="h101" />
             </diamond>
@@ -4620,7 +4634,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     v.show.main
     pos:             V.main
-    description:     Imperatives to show or tell a user something, takes two objects	  
+    description:     Imperatives to show or tell a user something, takes two objects
     Entries :        showobj: smain/.np/.np
                      showsubcl: smain/*s/.np
                      simple: smain\.np
@@ -4709,7 +4723,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="beneficiary">
               <nomvar name="T:root" />
             </diamond>
@@ -4769,7 +4783,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>            
+            </diamond>
             <diamond mode="client">
               <nomvar name="T:root" />
             </diamond>
@@ -4787,7 +4801,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="show" />
     <member stem="tell" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.know.main
     pos:             V.main
@@ -4838,15 +4852,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
       <member stem="know" />
       <member stem="believe"  />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.inf.know
     pos:             V
-    description:     Imperatives to know or mean something, with one object	  
+    description:     Imperatives to know or mean something, with one object
     Entries:         showobj: s/.np
                      showsubcl: s/*s
-    Example Parse:   do you ((know) where christians office is)           
-                     do you ((mean) the left office or the right office)  
+    Example Parse:   do you ((know) where christians office is)
+                     do you ((mean) the left office or the right office)
     ============================================================================ -->
   <family closed="true" pos="V" name="v.inf.know">
     <entry name="showobj">
@@ -4945,8 +4959,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.is.existence
     pos:             V
     description:     Categoriy used for constructing existential configurationals around
-                     instances of the verb 'to be' 
-    Entries:        
+                     instances of the verb 'to be'
+    Entries:
     Example Parse:   there is a box
                      there is a halo beyond pluto
     ============================================================================ -->
@@ -4990,7 +5004,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     pos:             V
     description:     Categoriy used for constructing existential configurationals around
                      instances of the term 'there's'
-    Entries :        
+    Entries :
     Example Parse:   there's a box
                      there's a halo beyond pluto
     ============================================================================ -->
@@ -5059,15 +5073,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
                         primary-time-pref: s\.pp\.np/.pp
     description:        Give a spatial location for a thing
                         One question is whether all propositional phreases shold be
-                        allowed to unify into a spatial locating. If you allow all 
+                        allowed to unify into a spatial locating. If you allow all
                         propositional phrases to unify, then you have over generalized
                         to "the cup is into the box"
                         and "the kitchen is until the kitchen"
-    
-                        For now we will not allow these over generailizations. 
-                        We can stamp them out by requiring that the propositional 
-                        phrase has a kind = static rather than dynamic. 
-    
+
+                        For now we will not allow these over generailizations.
+                        We can stamp them out by requiring that the propositional
+                        phrase has a kind = static rather than dynamic.
+
                         Example Memeber: faces, surrounds, is, am, are
                         Example Parse:   the kitchen (is) to the left
                         to the left (is) the kitchen
@@ -5117,7 +5131,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           <satop nomvar="E:gs-SpatialLocating">
              <diamond mode="uio:hasSurfaceFunction">
               <prop name="uio:Statement" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-processInConfiguration">
               <nomvar name="G:root" />
               <prop name="[*DEFAULT*]" />
@@ -5175,7 +5189,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
           <satop nomvar="E:gs-SpatialLocating">
              <diamond mode="uio:hasSurfaceFunction">
               <prop name="uio:Statement" />
-            </diamond>                      
+            </diamond>
             <diamond mode="gs-locatum">
               <nomvar name="T:gum-SimpleThing" />
             </diamond>
@@ -5253,13 +5267,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="am" />
     <member stem="stand" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     v.temploc
     pos:             V
     Entries :        primary      : s\.np/.pp
     description:     Temporal locating expression with spatial element
-    
+
     Example Memeber: is
     Example Parse:   the meeting (is) at five o'clock
     ============================================================================ -->
@@ -5318,8 +5332,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.spattemploc
     pos:             V
     Entries :        primary      : s\.np/.pp/.pp
-    description:     Spatial temporal locating of an event. 
-    
+    description:     Spatial temporal locating of an event.
+
     Example Memeber: is
     Example Parse:   the meeting (is) at five o'clock in the building
     ============================================================================ -->
@@ -5517,7 +5531,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio:hasSurfaceFunction">
               <prop name="uio:Statement" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum-attribute">
               <nomvar name="Z:gum-SimpleThing" />
             </diamond>
@@ -5531,14 +5545,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="am" />
   </family>
-  <!-- ==============================================================================	  
+  <!-- ==============================================================================
     family name:        v.aux.be
     pos:                V
     Entry "indicative": s\.np/.s.prp
     Entry "question":   s/.s.prp/.np
-    description:        auxilary verbs for combining with infinite forms 
+    description:        auxilary verbs for combining with infinite forms
     Example Memeber:    is,am,are,aren't
-    Example Parse:      we (are) going to the shop 
+    Example Parse:      we (are) going to the shop
                         she (is) dancing
     ============================================================================ -->
   <family indexRel="tense" closed="true" pos="V" name="v.cont">
@@ -5595,7 +5609,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             <nomvar name="F:root"/>
             <diamond mode="actor">
             <nomvar name="S"/>
-            </diamond>	
+            </diamond>
             </diamond>
             </satop>
           -->
@@ -5659,7 +5673,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     v.imp
     pos:             V
     Entry "modal"    s\.np/.s.prp
-    description:     expression of attitude towards a process. 
+    description:     expression of attitude towards a process.
     Example Memeber: want
     Example Parse:   i (want) to go to the kitchen
     ============================================================================ -->
@@ -5818,7 +5832,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Directive" />
-            </diamond>              
+            </diamond>
               <diamond mode="gum-actor">
                 <nomvar name="h101" />
               </diamond>
@@ -5838,14 +5852,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     v.dummy
     pos:             V
-    description:     The dummy question which can be used to construct questions or 
-                     place emphasis on statements. 	  
+    description:     The dummy question which can be used to construct questions or
+                     place emphasis on statements.
     Entry            statement: s\.np/.s
                      question: s/.s/
-                     
-    Example Parse:   i (do) want to go to the shops 
+
+    Example Parse:   i (do) want to go to the shops
                      (do) you want to go to the shops
-                     
+
     ============================================================================ -->
   <family closed="true" pos="V" name="v.dummy" indexRel="hasSpeechFunction">
     <entry name="statement">
@@ -5886,14 +5900,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
             </diamond>
             <diamond mode="uio-hasSurfaceFunction">
               <prop name="uio-Statement" />
-            </diamond>            
+            </diamond>
             <diamond mode="gum:actor">
                 <nomvar name="Y" />
-            </diamond>			  	  
+            </diamond>
           </satop>
         </lf>
       </complexcat>
-    </entry>   
+    </entry>
     <entry name="question">
       <complexcat>
         <atomcat type="s">
@@ -5965,10 +5979,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     v.modal
     pos:             V
-    description:     modal adjects for constructing questions and future aspect sentences. 
+    description:     modal adjects for constructing questions and future aspect sentences.
     Entries          canq: s/.s/.np
                      indicative: s\.np/.s
-    Example Parse:   (can) we go to the kitchen 
+    Example Parse:   (can) we go to the kitchen
                      we can go to the kitchen
     ============================================================================ -->
   <family closed="true" pos="V.modal" name="v.modal">
@@ -6080,23 +6094,23 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="shall" />
     <member stem="will" />
   </family>
-  
-  <!-- ==============================================================================	
+
+  <!-- ==============================================================================
     PREPOSITIONS EXPECTING SPATIAL ENTITIES
-    
+
     Basically, there are some families:
     - static relations such as "beside", "behind"
     - dynamic relations such as "to a destination", "into"
     (some preps may take both aspects as with in: "jump in the box")
     - directional prepositions as "on" and "to" in "to the left"
-    
+
     Some of them (e.g. "in") can do (at least?) these things:
     - act as a verb complement (go to the thing, continue until the next door)
     (purely static as "inside" cannot)
     - modify a noun phrase (the door behind the kitchen)
     - modify a SpatialLocating (the door is behind the kitchen)
     (purely directional as "until" cannot)
-    
+
     Note: "on the left" is something else, since "beside the left" is wrong.
     "in front of you" likewise.
     ============================================================================ -->
@@ -6166,7 +6180,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
         </lf>
       </complexcat>
     </entry>
-      <!-- Entry for fragments such as "the cup on the table" -->    
+      <!-- Entry for fragments such as "the cup on the table" -->
     <entry name="prep.npmodif.2">
       <complexcat>
         <atomcat type="np">
@@ -6176,7 +6190,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="L" />
               </lf>
-            </feat>            
+            </feat>
             <feat attr="modality">
               <lf>
                 <nomvar name="M" />
@@ -6217,9 +6231,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
         </atomcat>
         <lf>
           <satop nomvar="SL:gs-SpatialLocating">
-            <diamond mode="gs-locatum">            
+            <diamond mode="gs-locatum">
                 <nomvar name="L" />
-              </diamond>            
+              </diamond>
             <diamond mode="gs-placement">
               <nomvar name="G:gs-GeneralizedLocation" />
               <diamond mode="gs-relatum">
@@ -6233,8 +6247,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry>    
-      <!-- Entry for fragments such as "the cup two feet above the table" -->    
+    </entry>
+      <!-- Entry for fragments such as "the cup two feet above the table" -->
     <entry name="prep.npmodif.2.ext">
       <complexcat>
         <atomcat type="np">
@@ -6244,7 +6258,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="L" />
               </lf>
-            </feat>            
+            </feat>
             <feat attr="modality">
               <lf>
                 <nomvar name="M" />
@@ -6262,7 +6276,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               </lf>
             </feat>
           </fs>
-        </atomcat>        
+        </atomcat>
         <slash mode="*" dir="\" />
         <atomcat type="q">
           <fs id="5">
@@ -6272,7 +6286,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               </lf>
             </feat>
           </fs>
-        </atomcat>        
+        </atomcat>
         <slash mode="*" dir="/" />
         <atomcat type="np">
           <fs id="3">
@@ -6295,27 +6309,27 @@ Licence:     This file is free software; you can redistribute it and/or modify
         </atomcat>
         <lf>
           <satop nomvar="SL:gs-SpatialLocating">
-            <diamond mode="gs-locatum">            
+            <diamond mode="gs-locatum">
                 <nomvar name="L" />
-              </diamond>            
+              </diamond>
             <diamond mode="gs-placement">
               <nomvar name="G:gs-GeneralizedLocation" />
               <diamond mode="gs-relatum">
                 <nomvar name="R:root" />
-              </diamond>      
+              </diamond>
               <diamond mode="gs-hasSpatialModality">
                 <nomvar name="M" />
                 <prop name="[*DEFAULT*]" />
                 <diamond mode="gum-hasQuantiativeExtent">
                   <nomvar name="G2" />
-                </diamond>                        
+                </diamond>
               </diamond>
             </diamond>
           </satop>
         </lf>
       </complexcat>
-    </entry>        
-      <!-- this entry allows composition for fragments such as "the cup on the table" 
+    </entry>
+      <!-- this entry allows composition for fragments such as "the cup on the table"
     <entry name="prep.npmodif.3">
       <complexcat>
         <atomcat type="np">
@@ -6325,7 +6339,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="SL" />
               </lf>
-            </feat>            
+            </feat>
             <feat attr="modality">
               <lf>
                 <nomvar name="M" />
@@ -6335,7 +6349,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="L" />
               </lf>
-            </feat>            
+            </feat>
           </fs>
         </atomcat>
         <slash mode="*" dir="\" />
@@ -6352,7 +6366,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
         <slash mode="*" dir="/" />
         <atomcat type="np">
           <fs id="3">
-            <feat attr="ppkind" val="static" />            
+            <feat attr="ppkind" val="static" />
             <feat attr="num">
               <featvar name="NUM" />
             </feat>
@@ -6372,19 +6386,19 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="M2" />
               </lf>
-            </feat>            
+            </feat>
             <feat attr="locatum">
               <lf>
                 <nomvar name="R" />
               </lf>
-            </feat>            
+            </feat>
           </fs>
         </atomcat>
         <lf>
           <satop nomvar="SL:gs-SpatialLocating">
-            <diamond mode="gs-locatum">            
+            <diamond mode="gs-locatum">
                 <nomvar name="L" />
-              </diamond>            
+              </diamond>
             <diamond mode="gs-placement">
               <nomvar name="G:gs-GeneralizedLocation" />
               <diamond mode="gs-relatum">
@@ -6398,9 +6412,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </satop>
         </lf>
       </complexcat>
-    </entry>        
+    </entry>
         -->
-         
+
     <entry name="circumstance-fwd">
       <complexcat>
         <atomcat type="smain">
@@ -6531,15 +6545,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="away_from" />
     <member stem="far_away_from" />
     <member stem="close_to"  />
-  </family>    
-  
+  </family>
+
   <!-- ==============================================================================
     Family name:     prep.static.incomplete
     Pos:             PREP.static
     Description:     Static prepositions which are incomplete without being complimented
                      by a distance extent
-                     Only the primary category has been left in place. A few more are 
-                     needed before 
+                     Only the primary category has been left in place. A few more are
+                     needed before
     Example Parse:   far (from) the door
                      close (to) the river
     ============================================================================ -->
@@ -6599,12 +6613,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="to"  />
     <member stem="from" />
   </family>
-  
+
   <!-- ==============================================================================
     Family name:     spatial-deixis
     Pos:             NP
     Description:     category which constructs a GeneralizedLocation out of expressions
-    like 'here' and 'there' 
+    like 'here' and 'there'
     Example Parse:  (here) is the kitchen
     				turn left (there)
     ============================================================================ -->
@@ -8495,11 +8509,11 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     Family name:     NP.possessive.normal
     Pos:             NP.possessive
-    Description:     genetive construction of proper nouns (noun phrases)	  
+    Description:     genetive construction of proper nouns (noun phrases)
     We have to treat two different entries. In one entry the posession
-    is simple and corresponds to a traditional semantics approach. 
-    In the other case we are working with abstract spatial relations, 
-    regions and must use a different mechanism for binding. 
+    is simple and corresponds to a traditional semantics approach.
+    In the other case we are working with abstract spatial relations,
+    regions and must use a different mechanism for binding.
     Entry            "primary" :    np/*n
     Example Parse:   robert's cup
     ============================================================================ -->
@@ -8552,11 +8566,11 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     Family name:     NP.possessive.spatial
     Pos:             NP.possessive
-    Description:     genetive construction of proper nouns (noun phrases)	  
+    Description:     genetive construction of proper nouns (noun phrases)
     We have to treat two different entries. In one entry the posession
-    is simple and corresponds to a traditional semantics approach. 
-    In the other case we are working with abstract spatial relations, 
-    regions and must use a different mechanism for binding. 
+    is simple and corresponds to a traditional semantics approach.
+    In the other case we are working with abstract spatial relations,
+    regions and must use a different mechanism for binding.
     Entry            spatial        :    np
     Example Parse:   (robert's) left
     ============================================================================ -->
@@ -8593,9 +8607,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
     description:     Determiners
     Example Memeber: a, the, this, roberts
     Example Parse:   a (room)
-    Entry "secondary": np/*np 
-    description:     Determniners, followed by numbers 
-                       not handled properly yet (as this allows e.g. "the" followed by "a")                
+    Entry "secondary": np/*np
+    description:     Determniners, followed by numbers
+                       not handled properly yet (as this allows e.g. "the" followed by "a")
     Example Parse:   the two (boxcars)
 
     -cooking domain-
@@ -8658,7 +8672,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="SM" />
               </lf>
-            </feat> -->            
+            </feat> -->
         </atomcat>
         <slash mode="*" dir="/" />
         <atomcat type="n-spatial">
@@ -8785,7 +8799,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
       </atomcat>
     </entry>
   </family>
-  
+
   <!-- ==============================================================================
     family name:     adj.color
     pos:             ADJ
@@ -8793,7 +8807,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     description:     Adjectival modifications with color
     Example Memeber: red
     Example Parse:   the (red) room
-    ============================================================================ -->  
+    ============================================================================ -->
   <family pos="ADJ" closed="true" name="adj.color">
     <entry name="adj.full">
       <complexcat>
@@ -8945,10 +8959,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <!-- ==============================================================================
     family name:     adj.spt
     pos:             ADJ.spt
-    description:     Adjectival modifications which implies spatial location 
-                     Two entries are provided. The first is based around proper places 
+    description:     Adjectival modifications which implies spatial location
+                     Two entries are provided. The first is based around proper places
                      such as "central London" while the other is for non-proper places
-                     that can be related to proper places "the central district of london". 
+                     that can be related to proper places "the central district of london".
     Entry            "adj.property" : n/*n
     Example Parse:   (central) district
                      (central) London
@@ -8997,12 +9011,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <diamond mode="gs-hasSpatialModality">
                 <nomvar name="W:gs-SpatialModality" />
                 <prop name="[*DEFAULT*]" />
-              </diamond> 
-            </diamond>            
-          </satop>          
+              </diamond>
+            </diamond>
+          </satop>
         </lf>
       </complexcat>
-    </entry>        
+    </entry>
     <entry name="secondary">
       <complexcat>
         <atomcat type="n">
@@ -9043,7 +9057,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
               </lf>
             </feat>
           </fs>
-        </atomcat>        
+        </atomcat>
         <lf>
           <satop nomvar="U:gs-SpatialLocating">
             <diamond mode="gs-locatum">
@@ -9180,14 +9194,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="medium" />
 
   </family>
-  
+
   <!-- ==============================================================================
     family name:     adj.number
     pos:             ADJ
     Entry "adj.property" : n/*n
     description:     Adjectival modifications by number
     Example Parse:   the (second) cup
-    TODO:            make sure that the configuration type is correct. 
+    TODO:            make sure that the configuration type is correct.
     ============================================================================ -->
   <family pos="ADJ.ordinal" closed="false" name="adj.number">
     <entry name="adj.property.config">
@@ -9221,16 +9235,16 @@ Licence:     This file is free software; you can redistribute it and/or modify
           </fs>
         </atomcat>
         <lf>
-          <satop nomvar="U:gum-NumberFocusing"> 
+          <satop nomvar="U:gum-NumberFocusing">
             <diamond mode="gum-domain">
               <nomvar name="T"/>
             </diamond>
             <diamond mode="gum-attribute">
               <nomvar name="P:root" />
-              <prop name="[*DEFAULT*]" />                
+              <prop name="[*DEFAULT*]" />
             </diamond>
-          </satop>          
-        </lf>        
+          </satop>
+        </lf>
       </complexcat>
     </entry>
   </family>
@@ -9239,7 +9253,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     pos:             ADV
     Entry "adv.modif" : adv/*adv
     description:     Modifiying adverbs (may cause adverbs effects, haha)
-    Dangerous. Must be followed up. 
+    Dangerous. Must be followed up.
     Example Memeber: around, forward
     Example Parse:   (drive forward) forward
     ============================================================================ -->
@@ -9302,28 +9316,28 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="up" />
     <member stem="forward" />
     <member stem="left" />
-    <member stem="leftwards" />    
+    <member stem="leftwards" />
     <member stem="right" />
-    <member stem="rightwards" />    
+    <member stem="rightwards" />
     <member stem="south" />
     <member stem="southwards" />
-    <member stem="southward" />        
+    <member stem="southward" />
     <member stem="west" />
     <member stem="westwards" />
     <member stem="westward" />
     <member stem="north" />
     <member stem="northwards" />
-    <member stem="northward" />        
+    <member stem="northward" />
     <member stem="east" />
     <member stem="eastwards" />
-    <member stem="eastward" />        
+    <member stem="eastward" />
     <member stem="over" />
   </family>
   <!-- ==============================================================================
     family name:     adv.ppmodif
     pos:             ADV
     Entry "primary" : pp/.pp
-    description:      
+    description:
     Example Memeber: around, behind
     Example Parse:   UNCLEAR
     ============================================================================ -->
@@ -9410,8 +9424,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     n
     pos:             N
     Entry "default": npt
-    description:     Numbers as structured as digits. Based on Mike White's entries in 
-                     the routes grammar. 
+    description:     Numbers as structured as digits. Based on Mike White's entries in
+                     the routes grammar.
     Example Parse:   (go to the) room
     ============================================================================ -->
   <family name="Num" pos="Num">
@@ -9519,9 +9533,9 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <lf>
                 <nomvar name="T" />
               </lf>
-            </feat>            
+            </feat>
         </fs>
-       </atomcat>        
+       </atomcat>
         <slash mode="&gt;" dir="/" />
         <atomcat type="pp">
           <fs id="4">
@@ -9560,7 +9574,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     Example Memeber: turn
     Example Parse:   (make a) turn
                      (make a 360 degree) turn
-    TODO - robertr - Look into the second cateogry. 
+    TODO - robertr - Look into the second cateogry.
     ============================================================================ -->
   <family pos="NOMP" name="nomp">  
     <entry name="nonaffecting-pp">
@@ -9670,15 +9684,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="turn" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     nq.qualitative.unit
     pos:             NQ
     Entry "default": nq
     description:     similar function as nomp-family. Used to specify qualitative units (without value),
                      which can similarly be used within a orientation change process, as well as a unit.
-    Note:            robertr - this is a total mess. I won't check the origins but this needs to be 
-                     removed quickly.  
+    Note:            robertr - this is a total mess. I won't check the origins but this needs to be
+                     removed quickly.
     Entries:         nonaffecting-pp: nq>\np>/pp
                      nonaffecting-np: nq.\np
                      unit: nq\*np
@@ -9815,13 +9829,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
     </entry>
     <member stem="semicircle" />
   </family>
-  
+
    <!-- ==============================================================================
     family name:     n.pos
     pos:             N
     Entry "default": n
-    description:     Nouns in the posessive case 
-    Example Memeber: lamp's, table's 
+    description:     Nouns in the posessive case
+    Example Memeber: lamp's, table's
     Example Parse:   the (lamp's) left
     ============================================================================ -->
   <family pos="N.possessive" name="n.pos">
@@ -9858,44 +9872,44 @@ Licence:     This file is free software; you can redistribute it and/or modify
                      "posessive2": np/.np_genetive
     TODO:            replace pn with something about the genetive construction
     description:     Nominalizd directions.
-    
+
     Nominalised directions lead to the creation of GeneralizedLocations
-    in the GUM semantics. Thus, nominalised directions are treated very 
+    in the GUM semantics. Thus, nominalised directions are treated very
     differently from nouns and other noun phrases both at the grammatical
-    and semantics levels. 
-    
+    and semantics levels.
+
     We have three quite different entries for the nominalised directions
-    
-    The first is used to capture nominalised directions which are used to 
+
+    The first is used to capture nominalised directions which are used to
     indicate the GeneralisedLocation's spatial modality but where no direct
     indication of the realtum is made. The semantics produced are a Generalized
-    Location with a spatial modality but no relatum. The resultant category 
-    is an 'n' which can subsequently combine normally with determiners to 
-    produce 'np' but is not allowed to combine with posessive pronouns or 
-    other posessive terms. 
-    
+    Location with a spatial modality but no relatum. The resultant category
+    is an 'n' which can subsequently combine normally with determiners to
+    produce 'np' but is not allowed to combine with posessive pronouns or
+    other posessive terms.
+
     Standard posessives like "roberts right" or "our right" are taken care of
     by the second entry. These cannot be processed with normal grammar rules
-    since the posessor in the GeneralizedLocation is actually modelled as a 
-    relatum rather thna a posessor as such. 
-    A GeneralizedLocation is created which has both the sptial modality and the 
-    relatum specified. 
-    The resultant category is a np 
-    
+    since the posessor in the GeneralizedLocation is actually modelled as a
+    relatum rather thna a posessor as such.
+    A GeneralizedLocation is created which has both the sptial modality and the
+    relatum specified.
+    The resultant category is a np
+
     The third entry takes care of the secondary variant on posessives like
     "right of robert"
     "north of the village"
     As with the second family the semantics produced is a GeneralizedLocation
-    and the resultant category is a np. 
+    and the resultant category is a np.
     Example Memeber: left, front, top, north
     Example Parse:   go to the (north)
-    
+
     the (right)
     the (left)
     roberts (left)
     roberts (right)
     the (right) of the cup
-    the (north) of the vilage     
+    the (north) of the vilage
     ============================================================================ -->
   <family closed="false" pos="NDIR" name="ndir">
     <entry name="primary">
@@ -9920,7 +9934,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
             <lf>
               <nomvar name="M:root" />
             </lf>
-          </feat>  
+          </feat>
         </fs>
         <lf>
           <satop nomvar="T:gs-GeneralizedLocation">
@@ -10255,10 +10269,10 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     dir.modifier
     pos:             DIRMODIF
     Entry "default" : n/*n
-    description:  modification of directions 
+    description:  modification of directions
     Example Memeber: front,back
     Example Parse:   UNCLEAR
-    ============================================================================ 
+    ============================================================================
     <family closed="true" pos="DIRMODIF" name="dir.modifier">
     <entry name="modifier">
     <complexcat>
@@ -10395,12 +10409,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="way" />
     <member stem="turn" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     np
     pos:             NP
     Entry "default" : np
-    description:     single-worded NPs, insatntiated by personal pronouns or 
+    description:     single-worded NPs, insatntiated by personal pronouns or
     demonstrative terms,
     Example Memeber: I,he,this,those,that
     Example Parse:   (he) is going to the kitchen
@@ -10425,14 +10439,14 @@ Licence:     This file is free software; you can redistribute it and/or modify
       </atomcat>
     </entry>
   </family>
-  
+
 
   <!-- ==============================================================================
     family name:     np.composite
     pos:             NP
     Entry            "default" : np
-    description:     single-worded NPs which can be constructed into locations. 
-    Example Memeber: Dublin, London etc. 
+    description:     single-worded NPs which can be constructed into locations.
+    Example Memeber: Dublin, London etc.
     Example Parse:   Dublin Ireland
     ============================================================================ -->
   <family pos="NP" name="np.composite">
@@ -10471,22 +10485,22 @@ Licence:     This file is free software; you can redistribute it and/or modify
               <diamond mode="gs-hasSpatialModality">
                 <nomvar name="W:gs-Containment" />
                 <prop name="gs-Containment" />
-              </diamond> 
-            </diamond>            
+              </diamond>
+            </diamond>
           </satop>
         </lf>
      </complexcat>
     </entry>
-  </family>  
-    
-  
+  </family>
+
+
   <!-- ==============================================================================
     family name:     gen_time
     pos:             PREP.temporal
-    description:     category for generalised time construction	  
+    description:     category for generalised time construction
     Entries:         primary              : pp/*np
     circumstance-fwd     : s/*s
-    circumstance-bwd     : s/*s	  
+    circumstance-bwd     : s/*s
     Example Parse:   (at) three o'clock
     at five o'clock they went to the shop
     they went to the shop at five o'clock
@@ -10625,7 +10639,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
     family name:     time
     pos:             n.time
     Entry "default" : np
-    description:     category for explict time construction. 	  
+    description:     category for explict time construction.
     Example Memeber: o'clock
     Example Parse:   at three (o'clock)
     ============================================================================ -->
@@ -10678,13 +10692,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
         </fs>
         <lf>
           <satop nomvar="X:gum-UMThing">
-            <prop name="[*DEFAULT*]" />       
+            <prop name="[*DEFAULT*]" />
           </satop>
         </lf>
       </atomcat>
     </entry>
-    </family>  
-    
+    </family>
+
         <!-- ==============================================================================
     family name:     number
     pos:             N.num
@@ -10693,7 +10707,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
                      category for numeral assignments/ naming
     Example Member:  one, two, three
     Example Parse:   at (three) o'clock
-                     engine two 
+                     engine two
     ============================================================================ -->
   <family closed="false" pos="N.num" name="number">
     <!-- atomic cateogry for raw numbers -->
@@ -10709,7 +10723,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
         </fs>
         <lf>
           <satop nomvar="X:gum-NaturalNumber">
-            <prop name="[*DEFAULT*]" />       
+            <prop name="[*DEFAULT*]" />
           </satop>
         </lf>
       </atomcat>
@@ -11192,7 +11206,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
 
 
     -cooking domain (03.11.18)-
-    Heat (a_little) of the oil  
+    Heat (a_little) of the oil
     ============================================================================ -->
   <family closed="false" pos="QUAL-EXT" name="qualitative-extent2" indexRel="gs-qualitativeDistanceExtent">
     <entry name="primary">
@@ -11950,13 +11964,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
     <member stem="then" />
     <member stem="," />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     particle
     pos:             PARTICLE
     description:     speech act indicating discourse particle
     Entry "primary": s/.s
-    Entry "backwards": s\*s 
+    Entry "backwards": s\*s
     Example Memeber: yes,no,ok
     Example Parse:   yes
     ============================================================================ -->
@@ -11984,13 +11998,13 @@ Licence:     This file is free software; you can redistribute it and/or modify
       </atomcat>
     </entry>
   </family>
-  
+
   <!-- ==============================================================================
     family name:     dconn
     pos:             DCONN
     description:     propositionally empty discourse units
     Entry "primary": s/.s
-    Entry "backwards": s\*s 
+    Entry "backwards": s\*s
     Example Memeber: yes,no,please,rolland
     Example Parse:   yes
     ============================================================================ -->
@@ -12084,8 +12098,8 @@ Licence:     This file is free software; you can redistribute it and/or modify
                      auxilaries: s\.s/.s
     Example Memeber: not
     Example Parse    I don't know any lab
-                     "we are not" will parse but incorporating into a complete 
-                     construction is more difficult. 
+                     "we are not" will parse but incorporating into a complete
+                     construction is more difficult.
     ============================================================================ -->
   <family closed="true" pos="NEG" name="negation">
     <entry name="primary">
