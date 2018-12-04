@@ -9,7 +9,12 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl">
+        <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/ontologies/UIO.owl"/>
         <owl:imports rdf:resource="http://protege.stanford.edu/plugins/owl/protege"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">license: https://creativecommons.org/licenses/by/4.0/</owl:versionInfo>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developers: University of Bremen, SFB/TR8 Spatial Cognition, I1-[OntoSpace]
+https://www.ontospace.uni-bremen.de; SFB EASE, P01/H02 https://ease.informatik.uni-bremen.de</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
     </owl:Ontology>
     
 

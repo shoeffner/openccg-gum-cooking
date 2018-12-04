@@ -10,7 +10,8 @@
         <owl:versionIRI rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/ontologies/SLM-cooking.owl"/>
         <owl:imports rdf:resource="https://raw.githubusercontent.com/shoeffner/openccg-gum-cooking/master/ontologies/GUM-3-space.owl"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic lower model for the cooking domain is a flat model to add simple types for kitchen utensils, kitchen furniture, food items, containers etc. to the Generalized Upper Model. It is used to provide classes for the cooking domain, without introducing a complex overhead. Most concepts will thus be GUM&apos;s &quot;SimpleThing&quot;s.</rdfs:comment>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developers: University of Bremen, SFB EASE, P01/H02</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">developers: University of Bremen, SFB EASE, P01/H02, https://ease.informatik.uni-bremen.de</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">license: https://creativecommons.org/licenses/by/4.0/</owl:versionInfo>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is the cooking module of GUM 3.1, which extends &quot;GUM-3-space.owl&quot; with classes modeling the cooking domain.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GUM-3-space cooking extension</rdfs:label>
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
