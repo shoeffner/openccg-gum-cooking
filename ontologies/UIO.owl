@@ -1,0 +1,935 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.diaspace.uni-bremen.de/UIO.owl#"
+     xml:base="http://www.diaspace.uni-bremen.de/UIO.owl"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl">
+        <owl:imports rdf:resource="http://protege.stanford.edu/plugins/owl/protege"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#alpha -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#alpha">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInComplex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#rhetoricalrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#backwardLookingRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#backwardLookingRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#discourseRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#beta -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#beta">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInComplex"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#condition -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#condition">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#logical"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#conjunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#conjunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#logical"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#content -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#content">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInDialogueAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#discourseRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#discourseRelation"/>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#discourseRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#discourseRole"/>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#disjunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#disjunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#logical"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#elaboratedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#elaboratedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#forwardLookingRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#elaboration -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#elaboration">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#logical"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#exemplification -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#exemplification">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#elaboration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#forwardLookingRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#forwardLookingRole">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#discourseRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#hasDiscourseFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#hasDiscourseFunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInDialogueAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#hasSpeechFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#hasSpeechFunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInDialogueAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#hasSurfaceFunction -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#hasSurfaceFunction">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#isAnswerTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#isAnswerTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#backwardLookingRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#isAnsweredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#isAnsweredBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#forwardLookingRole"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#logical -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#logical">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#discourseRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#participantInComplex -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#participantInComplex"/>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#participantInConfiguration -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#participantInConfiguration"/>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#participantInDialogueAct -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#participantInDialogueAct"/>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#required -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#required">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#participantInDialogueAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#restatement -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#restatement">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#elaboration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rhetoricalrelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rhetoricalrelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#discourseRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstConcessive -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstConcessive">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstContrastive -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstContrastive">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#symmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstElaboration -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstElaboration">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstEnablement -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstEnablement">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstMeans -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstMeans">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstMotivation -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstMotivation">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstNonVolitionalCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstNonVolitionalCause">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstNonVolitionalResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstNonVolitionalResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstPurpose -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstPurpose">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstSequence -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstSequence">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#symmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstVolitionalCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstVolitionalCause">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#rstVolitionalResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#rstVolitionalResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#asymmetricRhetoricalRelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#symmetricRhetoricalRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#symmetricRhetoricalRelation">
+        <rdfs:subPropertyOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#rhetoricalrelation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#AND -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#AND">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Accept -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Accept">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Inform"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Instruct"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Offer"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Query"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Reject"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Acceptance -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Acceptance">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#SpeechFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#ChQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Confirmation"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Defunct"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Denial"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Directive"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of &apos;okay&apos; in English</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Affirmation -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Affirmation">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#TruthAttribution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Answer -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Answer">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Assertion -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Assertion">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#ChQuestion -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#ChQuestion">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Confirmation"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Denial"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Directive"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Confirmation -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Confirmation">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#SpeechFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Defunct"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Denial"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Directive"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of &apos;yes&apos; in englsh</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Defunct -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Defunct">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Denial"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Directive"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Denial -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Denial">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#TruthAttribution"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Directive"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of &apos;no&apos; in English</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#DialogueAct -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#DialogueAct">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalUnit"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The conceptual semantic correlate of an atomic discourse contribution.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#DialogueMove -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#DialogueMove">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalUnit"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The unit of meaningul update of agentive state.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#DialogueParticipant -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#DialogueParticipant">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Directive -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Directive">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PrimarySpeechFunctions"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The surface speech function typically associated with utterances that have an imperative mood.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseRelation -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseRelation">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Elaboration -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Elaboration">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Greeting -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Greeting">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Social"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of a minor clause used to covey a greeting, e.g., &quot;hello&quot;, &quot;hi&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Hearer -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Hearer">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DialogueParticipant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Hedging -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Hedging">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#TruthAttribution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Inform -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Inform">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Instruct"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Offer"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Query"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Reject"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Instruct -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Instruct">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Offer"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Query"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Reject"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalFeature -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalFeature">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The class of features used in populating the interpersonal semantics of interpersonal units.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalThing -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalThing">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalUnit -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalUnit">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Containers for interpersonal meaning.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#LeaveTaking">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Social"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of a minor clause used to acknowledge departing, e.g., &quot;bye&quot;, &quot;c&apos;ya&quot;,</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Literal -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Literal">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Monitoring -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Monitoring">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#SurfaceSpeechFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Negative -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Negative">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Polarity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#NonUnderstandingSignal">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Defunct"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of speech particles like &apos;partdon?&apos; &apos;&apos;what?&apos; &apos;sorry?&apos;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#OR -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#OR">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Offer -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Offer">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Query"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Reject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#PolarQuestion">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Polarity -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Polarity">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#PolarityVariable -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#PolarityVariable">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Polarity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Positive -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Positive">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Polarity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#PrimarySpeechFunctions -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#PrimarySpeechFunctions">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#SurfaceSpeechFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Query -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Query">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Reject"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Question -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Question">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PrimarySpeechFunctions"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Reject -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Reject">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#MoveFunction"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Rejection -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Rejection">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#RequireConfirmation -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#RequireConfirmation">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#SEQ -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#SEQ">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DiscourseRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#ShortStatement -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#ShortStatement">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Statement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The ShortStatement type is  assigned to sub-sentientials and phrases where no clear speech function can be detected through any other means.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#SignalHold -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#SignalHold">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#SignalNonUnderstanding -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#SignalNonUnderstanding">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Monitoring"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Social -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Social">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#SurfaceSpeechFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Speaker -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Speaker">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#DialogueParticipant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#SpeechFunction -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#SpeechFunction">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Defunct"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The class of features which describe the interpersonal contribution of a given interpersonal unit as observable direectly from the surface form. Note that assigned terms are typically nominal forms whereas MoveFunction types take a verbal form.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Statement -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Statement">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#PrimarySpeechFunctions"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of a statement as typically indicated through an indicative mood in English.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#SurfaceSpeechFunction -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#SurfaceSpeechFunction">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#InterpersonalThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#TruthAttribution -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#TruthAttribution">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#SurfaceSpeechFunction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#UIOThing">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#UnderstandingSignal">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Monitoring"/>
+        <owl:disjointWith rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The semantic import of speech particles like &apos;aha&quot;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#Wh-Question -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#Wh-Question">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Defunct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion -->
+
+    <owl:Class rdf:about="http://www.diaspace.uni-bremen.de/UIO.owl#WhQuestion">
+        <rdfs:subClassOf rdf:resource="http://www.diaspace.uni-bremen.de/UIO.owl#Question"/>
+        <protege:subclassesDisjoint rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protege:subclassesDisjoint>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
