@@ -1,0 +1,2674 @@
+################## english-cooking.ccg ##################
+#
+# This grammar was automatically generated from OpenCCG
+# xml files using the xml2ccg tool.
+#
+# Conversion date: 2018-12-04T14:51:16.605327
+#
+# For a tutorial on using this file, please refer to
+# http://www.utcompling.com/wiki/openccg/visccg-tutorial
+#
+
+###################### Features #########################
+
+feature {
+  root: gum-UMThing {
+    gum-Element {
+      gum-TemporalModality {
+        gum-TemporalAt gum-TemporalBefore gum-TemporalAfter gum-TemporalFrom
+      }
+       gs-SpatialModality {
+        gs-RelativeSpatialModality {
+          gs-Connection {
+            gum-ExternalConnection gum-Overlap {
+              gs-PathRepresentingInternal[gs-PathRepresenting] gum-Part {
+                gs-BackProjectionInternal[gs-BackProjection] gs-BelowProjectionInternal[gs-BelowProjection]
+              }
+
+            }
+
+          }
+           gs-ProjectionRelation {
+            gs-VerticalProjection {
+              gs-BelowProjection {
+                gs-BelowProjectionExternal[gs-SpatialDistanceModality gs-Disjointness]
+              }
+               gs-AboveProjection {
+                gs-AboveProjectionInternal[gum-Part]
+              }
+
+            }
+             gs-HorizontalProjection {
+              gs-FrontalProjection {
+                gs-BackProjection gs-FrontProjection {
+                  gs-FrontProjectionInternal[gum-Part] gs-FrontProjectionExternal[gs-Access gs-SpatialDistanceModality gs-Disjointness]
+                }
+
+              }
+               gs-LateralProjection {
+                gs-LeftProjection {
+                  gs-LeftProjectionInternal[gum-Part]
+                }
+                 gs-RightProjection {
+                  gs-RightProjectionInternal[gum-Part]
+                }
+
+              }
+
+            }
+
+          }
+           gs-ShapeCommitting {
+            gs-PathRepresenting
+          }
+           gs-Distribution {
+            slm-Among slm-Between
+          }
+           gs-Disjointness {
+            gs-AboveProjectionExternal[gs-AboveProjection gs-SpatialDistanceModality] gs-BackProjectionExternal[gs-BackProjection gs-SpatialDistanceModality] gs-Sequential[gs-Containment] {
+              slm-Succession slm-Precedence
+            }
+             gs-DirectionalRelation {
+              gs-GeneralDirectional {
+                gs-MultipleDirectional gs-GeneralDirectionalDistancing gs-GeneralDirectionalNearing
+              }
+               gs-SpecificDirectional {
+                gs-CardinalDirectional {
+                  gs-East gs-West gs-South gs-North
+                }
+                 gs-TopographicDirectional
+              }
+
+            }
+
+          }
+
+        }
+         gs-SpatialDistanceModality {
+          gs-OverProjectionExternal[gs-VerticalProjection gs-Disjointness gs-Access] gs-UnderProjectionExternal[gs-Disjointness gs-Access gs-VerticalProjection] gs-LeftProjectionExternal[gs-LeftProjection gs-Disjointness] gs-RightProjectionExternal[gs-Disjointness gs-RightProjection] gs-PathRepresentingExternal[gs-PathRepresenting] gs-NonProjectionAxial[gs-Disjointness] {
+            gum-Height-NonProjectionAxial gs-RelativeNonProjectionAxial
+          }
+           gs-QuantitativeDistance gs-QualitativeDistance {
+            gs-Distal gs-Proximal[gs-Access] {
+              gs-Touching
+            }
+
+          }
+
+        }
+         gs-FunctionalSpatialModality {
+          gs-DenialOfFunctionalControl[gs-Disjointness] gs-Access {
+            gs-Surrounding[gs-ShapeCommitting]
+          }
+           gs-Control {
+            gs-Containment {
+              gum-FunctionalControlledInternal[gum-Overlap]
+            }
+             gs-Support {
+              gum-FunctionalControlledExternal[gum-ExternalConnection]
+            }
+
+          }
+
+        }
+
+      }
+       gum-Circumstance {
+        gum-GeneralizedTime gs-GeneralizedLocation {
+          gs-GeneralizedPathLocation gs-GeneralizedComplexLocation
+        }
+         gs-GeneralizedRoute gum-SubjectMatter {
+          gum-SpecificMatter gum-DiffuseMatter
+        }
+
+      }
+       gum-NewTimePoint gum-Event {
+        slm-Meeting slm-Party
+      }
+       gs-QualitativeSpatialTemporal {
+        slm-HugeExtent slm-LargeExtent slm-MediumExtent slm-SmallExtent slm-TinyExtent slm-Below
+      }
+       gs-QuantitativeSpatialTemporal slm-DisjointThing {
+        slm-District
+      }
+       slm-CertantyEval {
+        slm-Approx slm-Exact
+      }
+       gum-SimpleThing {
+        slm-Metre slm-Mile slm-Inch slm-Bit slm-SemiCircle slm-Degree slm-Foot slm-RoomLength slm-Step slm-Turn slm-Centimeter slm-Engine gum-NamedObject {
+          slm-Australia slm-NewYork slm-London slm-City {
+            slm-Dublin slm-Tirunelveli
+          }
+           slm-Country {
+            slm-Ireland
+          }
+           slm-Continuent {
+            slm-Europe
+          }
+           slm-Salzburg slm-AustrianAlps slm-Washington slm-Bremen
+        }
+         gum-ConsciousBeing {
+          gum-Person {
+            gum-Female gum-Male
+          }
+           slm-Robot slm-Pedestrian
+        }
+         gum-NonConsciousThing {
+          gum-SpatialTemporal {
+            gum-AbsoluteSpatialTemporal gum-RelativeSpatialTemporal gum-SpatialObject {
+              gum-Space[gum-Substance] gum-SpaceInterval[gum-OrderedObject] {
+                gum-OneOrTwoDLocation gum-ThreeDLocation {
+                  slm-Building {
+                    slm-Library slm-Cinema slm-Bakery slm-AcademicBuilding {
+                      slm-GeoScienceBuilding slm-ChemistryBuilding slm-ComputerScienceBuilding slm-SocialScienceBuilding
+                    }
+                     slm-AdministrationBuilding slm-Restaurant
+                  }
+                   slm-BuildingComponent {
+                    slm-Window slm-Door slm-Wall slm-Floor slm-Ceiling
+                  }
+                   slm-BuildingSpace {
+                    slm-FloorArea slm-Lobby slm-Hall slm-Stairway slm-Closet slm-Junction slm-Corner slm-Room {
+                      slm-ConferenceRoom slm-StoreRoom slm-Bathroom slm-Office slm-Bar slm-Classroom slm-Laboratory slm-ToiletRoom {
+                        slm-MensToilets slm-LadiesToilets
+                      }
+                       slm-Kitchen slm-PostRoom slm-CopyRoom slm-Stairwell slm-MainStairwell slm-PostOffice slm-Bridge slm-Fountain slm-LectureHall
+                    }
+                     slm-Hallway slm-DoorWay slm-Corridor slm-Elevator
+                  }
+
+                }
+
+              }
+               gum-SpacePoint[gum-NonDecomposableObject] {
+                gum-ZeroDLocation
+              }
+               slm-Furnishings {
+                slm-Patchcabinet slm-Book slm-Phone slm-Furniture {
+                  slm-Chair {
+                    slm-Stool slm-OfficeChair slm-ArmChair
+                  }
+                   slm-Table slm-Pen slm-Desk slm-CoatRack slm-Sofa slm-Picture
+                }
+                 slm-Trashcan slm-Cabinet slm-Lamp slm-Duck slm-Head slm-Board {
+                  slm-Blackboard slm-Whiteboard
+                }
+                 slm-Toy {
+                  slm-Ball slm-Block
+                }
+                 slm-Container {
+                  slm-Jar slm-Mug slm-Box slm-Tree slm-Apple slm-Water slm-Pool slm-Camera slm-Needle slm-CompassNeedle slm-Bucket slm-Carton slm-Cup slm-Can
+                }
+                 slm-Screen slm-CokeMachine
+              }
+               slm-Device {
+                slm-Electronics {
+                  slm-ElectricityCord slm-Projector {
+                    slm-OverheadProjector slm-ComputerProjector
+                  }
+                   slm-ComputerEquipment {
+                    slm-Computer slm-Monitor slm-Printer slm-Keyboard slm-Mouse slm-Speakers
+                  }
+                   slm-Photocopier
+                }
+                 slm-Appliance {
+                  slm-Refridgerator slm-Microwave slm-CoffeeMaker
+                }
+
+              }
+               slm-Fixture {
+                slm-Sink slm-Faucet slm-Bathtub slm-Toilet slm-Urinal
+              }
+               slm-Obstacle
+            }
+             slm-Way gum-TemporalObject {
+              gum-Time[gum-Substance] gum-TimeInterval[gum-OrderedObject] {
+                gum-Future gum-OneOrTwoDTime gum-Present gum-ThreeDTime gum-Past
+              }
+
+            }
+
+          }
+           gum-Abstraction {
+            gum-NaturalNumber gum-Word {
+              gum-Name {
+                slm-Rolland slm-John slm-Robert slm-Shi slm-Tilman slm-Christian
+              }
+
+            }
+
+          }
+
+        }
+         gum-NonDecomposableObject {
+          slm-Bag slm-Grass slm-Sock slm-CorridorEnd slm-Guard slm-Target slm-Flour slm-Deer slm-Fish slm-Dog slm-Cat slm-Gold slm-Flock slm-Drawer slm-Shelf slm-Wire slm-Garden slm-Halo slm-Pluto slm-Train slm-Class_1 slm-Flower slm-Seed slm-Rug slm-Freeway slm-Base slm-Mountain slm-Barnacle slm-Hat slm-Hut slm-Graffiti slm-Clue slm-Road slm-Canal slm-Bend slm-OldPines slm-Motorway slm-Lake slm-Dwelling slm-Tablecloth slm-Monk slm-SocialRole {
+            slm-Professor slm-Secretary slm-Student slm-Administrator
+          }
+           slm-Car slm-Boxcar slm-Vase slm-Cliff slm-Nail slm-Nurse slm-Squirrel slm-Line slm-Shoe slm-Prisoner gum-Substance[gum-NonConsciousThing] gum-TimePoint[gum-TemporalObject] {
+            gum-ZeroDTime
+          }
+           slm-Librarian slm-Couple slm-Salesman slm-Thought slm-Street slm-Rifle slm-Dish slm-House slm-Site slm-Sheet slm-Detective slm-Blanket slm-Mark slm-Lid slm-Prison slm-Cathedral slm-Compass slm-Dune slm-Border slm-Man slm-Field slm-Lion slm-Plain slm-Town slm-Shop slm-Rooftop slm-Area slm-Fuselage slm-Toes slm-Rack slm-Mall slm-Cemetary slm-LivingThing {
+            slm-Animal slm-Plant
+          }
+           slm-Cupboard slm-Jogger slm-River slm-Tarmack slm-Fence slm-Runner slm-Rabbit slm-Temple slm-Mammoth slm-Fibre slm-Cargo slm-Famine slm-Checkpoint slm-Hole slm-Ship slm-Tunnel slm-Bird slm-Bowl[slm-Container] slm-Fire slm-Cell slm-Park slm-View slm-HotDogStand slm-CottageCheese slm-ParmesanCheese slm-Macys slm-TamilNadu slm-India slm-Bedroom
+        }
+         gum-DecomposableObject {
+          slm-Group slm-Crowd slm-Ground gum-UMSet[gum-Abstraction] {
+            gum-DisjunctiveSet
+          }
+           gum-OrderedObject {
+            gum-OrderedSet[gum-UMSet]
+          }
+
+        }
+         slm-Egg slm-Eggs slm-Oranges slm-Oil slm-Oils slm-Pan slm-Pans
+      }
+       gum-Process {
+        slm-Putting slm-Standing slm-Placing slm-Dancing slm-Rotating slm-Bringing slm-Turning slm-Making slm-Proceeding slm-Swimming slm-Entering slm-Approaching slm-Continuing slm-Exiting slm-Being slm-Directing slm-Sleeping slm-Going slm-Meaning slm-Facing slm-Pointing slm-Driving slm-Jumping slm-Leaping slm-Fleeing slm-Walking slm-Running slm-Stirring slm-Heating slm-Knowing slm-Halting slm-Passing slm-Telling slm-Returning slm-Taking slm-Leaving slm-Showing slm-Stopping slm-Moving slm-Racing
+      }
+       gum-SimpleQuality {
+        gum-ClassAscription gum-LogicalQuality {
+          gum-LogicalUniqueness
+        }
+         gum-MaterialWorldQuality {
+          gum-ScalableQuality gum-PolarQuality {
+            gum-EvaluativeQuality[gum-StativeQuality gum-ScalableQuality]
+          }
+           gum-StativeQuality {
+            gum-SenseANDMeasureQuality[gum-PolarQuality gum-ScalableQuality] {
+              gum-Color {
+                slm-Yellow slm-Black slm-White slm-Pink slm-Blue slm-Brown slm-Red slm-Green slm-Orange
+              }
+               gum-Size {
+                slm-Big slm-Small
+              }
+               gum-Age
+            }
+             gum-StatusQuality[gum-NonScalableQuality gum-PolarQuality] gum-ClassQuality[gum-TaxonomicQuality gum-NonScalableQuality] {
+              gum-ProvenanceClassQuality gum-MaterialClassQuality
+            }
+
+          }
+           gum-DynamicQuality {
+            gum-BehavioralQuality[gum-PolarQuality gum-ScalableQuality]
+          }
+           gum-TaxonomicQuality gum-NonScalableQuality
+        }
+         gum-ModalQuality {
+          gum-NonVolitional {
+            gum-Necessity gum-Possibility {
+              gum-Ability gum-GeneralPossibility
+            }
+
+          }
+           gum-NonConditional gum-Volitional gum-Conditional
+        }
+
+      }
+
+    }
+     gum-MultiConfiguration {
+      gum-Expansion {
+        gum-Extension gum-Enhancement gum-Elaboration
+      }
+       gum-Disjunction gum-Conjunction slm-Sequencing gum-Projection {
+        gum-LocutionProjection {
+          gum-LocutionQuoting[gum-Quoting]
+        }
+         gum-Reporting {
+          gum-LocutionReporting[gum-LocutionProjection] gum-IdeaReporting[gum-IdeaProjection]
+        }
+         gum-Quoting {
+          gum-IdeaQuoting[gum-IdeaProjection]
+        }
+         gum-IdeaProjection
+      }
+
+    }
+     gum-Configuration {
+      gum-DoingANDHappening {
+        gum-NonAffectingAction {
+          gum-Ambience {
+            gum-Snowing gum-Raining gum-Sunning gum-Winding gum-Hailing
+          }
+           gum-NonAffectingDoing {
+            gs-AffectingSimpleMotion gs-NonAffectingSimpleMotion gs-NonAffectingDirectedMotion gs-AffectingDirectedMotion gs-NonAffectingSpatialDoing {
+              gum-Orienting gum-Motion {
+                gum-OrientationChange gum-SimpleMotion gum-DirectedMotion
+              }
+
+            }
+
+          }
+           gum-NonAffectingHappening
+        }
+         gs-AffectingOrientationChange gs-AffectingOrienting gs-NonAffectingOrienting gs-NonAffectingOrientationChange gum-AffectingAction {
+          gum-CreativeMaterialAction gum-DispositiveMaterialAction
+        }
+
+      }
+       gum-SayingANDSensing {
+        gum-Internal {
+          gum-Perception gum-Intention gum-Cognition {
+            gum-Think gum-Believe gum-Know
+          }
+           gum-ReactionAndEmotion {
+            gum-Liking {
+              gum-Striving gum-Wanting
+            }
+             gum-Disliking gum-Fearing
+          }
+           gum-MentalInactive gum-MentalActive
+        }
+         gum-External {
+          gum-NameEvent[gum-DispositiveMaterialAction] gum-BehavioralVerbal {
+            gum-Addressing gum-NonAddressing
+          }
+           gum-ProperVerbal {
+            gum-MessageOriented gum-NonAddresseeOriented {
+              gum-MessageTransfer[gum-MessageOriented]
+            }
+             gum-NonMessageOriented {
+              gum-CommunicativeAttitude[gum-NonAddresseeOriented]
+            }
+             gum-AddresseeOriented {
+              gum-AddressingVerbal[gum-NonMessageOriented]
+            }
+
+          }
+
+        }
+
+      }
+       gum-BeingANDHaving {
+        gum-Existence gum-Relating {
+          gum-GeneralizedPossessionInverse {
+            gum-PartOf {
+              gum-ElementOf
+            }
+             gum-OwnedBy
+          }
+           gum-Circumstantial {
+            gum-GeneralizedLocating {
+              gs-SpatialLocating {
+                gs-SpatialTemporalLocating[gs-TemporalLocating]
+              }
+               gs-TemporalLocating
+            }
+             gum-Causal gum-CircumstantialOther
+          }
+           gum-Intensive {
+            gum-Symbolization {
+              gum-Signification gum-NameRelation gum-RolePlaying
+            }
+             gum-Identity gum-Ascription {
+              gum-QuantityAscription {
+                gum-NumberFocusing {
+                  gum-AtLeast gum-LessThan gum-GreaterThan gum-AtMost gum-Exactly
+                }
+                 gum-Quantity
+              }
+               gum-PropertyAscription {
+                gum-ColorPropertyAscription gum-SizePropertyAscription gum-ModalPropertyAscription gum-LogicalPropertyAscription gum-MaterialPropertyAscription gum-UsePropertyAscription gum-AgePropertyAscription gum-ProvenancePropertyAscription gum-ScaledComparison {
+                  gum-GreaterThanComparison gum-LessThanComparison
+                }
+
+              }
+
+            }
+
+          }
+           gum-GeneralizedPossession {
+            gum-Ownership gum-AscriptionInverse {
+              gum-PropertyOf
+            }
+             gum-NameOf gum-GeneralizedRoleRelation gum-PartWhole {
+              gum-_Part {
+                gum-ElementList
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+   uio-UIOThing {
+    uio-InterpersonalThing[gum-ConsciousBeing] {
+      uio-SurfaceSpeechFunction {
+        uio-Social {
+          uio-Greeting uio-LeaveTaking
+        }
+         uio-Monitoring {
+          uio-SignalHold uio-SignalNonUnderstanding
+        }
+         uio-TruthAttribution {
+          uio-Denial uio-Affirmation uio-Hedging
+        }
+         uio-PrimarySpeechFunctions {
+          uio-Directive uio-Statement uio-Question
+        }
+
+      }
+       uio-DialogueParticipant {
+        uio-Hearer uio-Speaker
+      }
+
+    }
+
+  }
+   residue {
+    ling ppdest Conj-list Disj-list Du {
+      Greeting Ack Reject
+    }
+
+  }
+   linguistic {
+    inf not-inf RealizationClassName {
+      OrdinalNumber YesNoQuestion ContinuousForm
+    }
+     static dynamic ppkinds {
+      pptime ppnondir {
+        goal landmark source segment loc[ppnongoal]
+      }
+       ppnongoal {
+        dir[npkinds] {
+          front xxy
+        }
+         modifdir
+      }
+       ppadd
+    }
+     npkinds {
+      npnondir {
+        simple {
+          spatial {
+            takable
+          }
+
+        }
+         person
+      }
+
+    }
+     temporal cats {
+      adv s n np pp
+    }
+     moods {
+      imp ind ing
+    }
+     defness {
+      definite indefinite
+    }
+     obsolete cases {
+      gen non-gen {
+        acc nom dat pos
+      }
+
+    }
+     of verbs {
+      full aux
+    }
+     number {
+      sg pl
+    }
+
+  }
+   slm-NatNum polarities {
+    positive negative
+  }
+  ;
+
+  slm-Spoon: slm-Teaspoon 'slm-Tsp.' slm-Tablespoon slm-T 'slm-Tbl.' 'slm-Tbs.' 'slm-Tbsp.';
+
+  'pers.male'<C:gender>: 'pers.male';
+
+  'pers.female'<C:gender>: 'pers.female';
+
+  'pers.first'<C:person>: 'pers.first';
+
+  'pers.second'<C:person>: 'pers.second';
+
+  'pers.third'<C:person>: 'pers.third';
+
+  'number.singular'<C:number>: 'number.singular';
+
+  'number.plural'<C:number>: 'number.plural';
+
+  'lf.T.prox.proximal'<T:Proximity>: 'lf.T.prox.proximal';
+
+  'lf.T.prox.distal'<T:Proximity>: 'lf.T.prox.distal';
+
+  'lf.T.num.sg'<T:Number>: 'lf.T.num.sg';
+
+  'lf.T.num.pl'<T:Number>: 'lf.T.num.pl';
+
+  'lf.T.del.unique'<T:ident>: 'lf.T.del.unique';
+
+  'lf.T.del.exist'<T:ident>: 'lf.T.del.exist';
+
+  'lf.q.quant.nonsg'<Q:quant>: 'lf.q.quant.nonsg';
+
+  'lf.q.quant.sg'<Q:quant>: 'lf.q.quant.sg';
+
+  'lf.T.quant.pl'<T:quant>: 'lf.T.quant.pl';
+
+  'lf.T.quant.sg'<T:quant>: 'lf.T.quant.sg';
+
+  'pol.pos'<U:polarity>: 'pol.pos';
+
+  'pol.neg'<U:polarity>: 'pol.neg';
+
+  'pol.med'<U:polarity>: 'pol.med';
+
+  past<E:tense>: past;
+
+  pres<E:tense>: pres;
+
+  'pres.habitual'<E:tense>: 'pres.habitual';
+
+  verb<1>: 'verb.full':full;
+
+  abstract<1>: 'abstract.true':true;
+
+  pform<3>: 'pform.3.with':with;
+
+  xform<0>: 'expl.0.it':it;
+
+  xform<0>: 'expl.0.there':there;
+
+  kind<1>: 'syn.kind.dir':dir;
+
+  kind<1>: 'syn.kind.nondir':nondir;
+
+  kind<1>: 'syn.kind.simple':simple;
+
+  kind<1>: 'syn.kind.takable':takable;
+
+  kind<2>: 'syn.2.kind.dir':dir;
+
+  kind<3>: 'syn.3.kind.dir':dir;
+
+  type<1>: 'type.event':event;
+
+  type<1>: 'type.physical':physical;
+
+  modifdir<1>: 'modif.left':left;
+
+  modifdir<1>: 'modif.right':right;
+
+  kind<1>: 'prep.goal':goal;
+
+  kind<1>: 'prep.landmark':landmark;
+
+  kind<1>: 'prep.segment':segment;
+
+  kind<1>: 'prep.source':source;
+
+  kind<1>: 'prep.static':static;
+
+  kind<1>: 'prep.temporal':temporal;
+
+  lex<1>: natural_number:natnum;
+
+  case<1>: 'case.nom':nom;
+
+  case<1>: 'case.dat':dat;
+
+  case<1>: 'case.acc':acc;
+
+  case<1>: 'case.pos':pos;
+
+  case<1>: 'case.gen':gen;
+
+  case<1>: 'case.non-gen':non-gen;
+
+  pers<1>: 'pers.1st':1st;
+
+  pers<1>: 'pers.2nd':2nd;
+
+  pers<1>: 'pers.3rd':3rd;
+
+  form<2>: 'pper.2.deictic':deictic;
+
+  num<1>: 'num.sg':sg;
+
+  num<2>: 'num.2.sg':sg;
+
+  num<1>: 'num.pl':pl;
+
+  num<1>: 'num.sg-agr':sg;
+
+  num<1>: 'num.sg-agr13':sg;
+
+  num<1>: 'num.sg-agr123':sg;
+
+  num<1>: 'num.pl-agr':pl;
+
+  num<1>: 'num.pl-agr13':pl;
+
+  num<1>: 'num.pl-agr123':pl;
+
+  pers<1>: 'pers.1st-agr':1st;
+
+  pers<1>: 'pers.2nd-agr':2nd;
+
+  pers<1>: 'pers.3rd-agr':3rd;
+
+  vform<1>: 'vform.inf-agr':inf;
+
+  pers<1>: imp_ignorePersNum:2nd;
+}
+
+######################## Words ##########################
+
+word drive:V(slm-Driving) {
+  drive: 'pres.habitual';
+  drives: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  drove: past;
+}
+word drive:'V.prp'(slm-Driving) {
+  driving: 'vform.inf-agr';
+}
+word drive:'V.main'(slm-Driving);
+word turn:V(slm-Turning) {
+  turn: 'pres.habitual';
+  turns: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  turned: past;
+}
+word turn:'V.prp'(slm-Turning) {
+  turning: 'vform.inf-agr';
+}
+word turn:'V.main'(slm-Turning);
+word rotate:V(slm-Rotating) {
+  rotate: 'pres.habitual';
+  rotates: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  rotated: past;
+}
+word rotate:'V.prp'(slm-Rotating) {
+  rotating: 'vform.inf-agr';
+}
+word rotate:'V.main'(slm-Rotating) {
+  rotating;
+}
+word veer:V(slm-Veering) {
+  veer: 'pres.habitual';
+  veers: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  veered: past;
+}
+word veer:'V.prp'(slm-Veering) {
+  veering: 'vform.inf-agr';
+}
+word veer:'V.main'(slm-Veering);
+word make:V(slm-Making) {
+  make: 'pres.habitual';
+  makes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  made: past;
+}
+word make:'V.prp'(slm-Making) {
+  making: 'vform.inf-agr';
+}
+word make:'V.main'(slm-Making);
+word move:V(slm-Moving) {
+  move: 'pres.habitual';
+  moves: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  moved: past;
+}
+word move:'V.prp'(slm-Moving) {
+  moving: 'vform.inf-agr';
+}
+word move:'V.main'(slm-Moving);
+word ship:V(slm-Moving) {
+  ship: 'pres.habitual';
+  ships: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  shipped: past;
+}
+word ship:'V.prp'(slm-Moving) {
+  shipping: 'vform.inf-agr';
+}
+word ship:'V.main'(slm-Moving);
+word get:V(slm-Moving) {
+  get: 'pres.habitual';
+  gets: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  got: past;
+}
+word get:'V.prp'(slm-Moving) {
+  getting: 'vform.inf-agr';
+}
+word get:'V.main'(slm-Moving);
+word take:V(slm-Moving) {
+  take: 'pres.habitual';
+  takes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  took: past;
+}
+word take:'V.prp'(slm-Moving) {
+  taking: 'vform.inf-agr';
+}
+word take:'V.main'(slm-Moving);
+word take_turn:V(slm-Taking) {
+  take: 'pres.habitual';
+  takes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  ook: past;
+}
+word take_turn:'V.prp'(slm-Taking) {
+  taking: 'vform.inf-agr';
+}
+word take_turn:'V.main'(slm-Taking) {
+  take;
+}
+word transport:V(slm-Moving) {
+  transport: 'pres.habitual';
+  transports: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  transported: past;
+}
+word transport:'V.prp'(slm-Moving) {
+  transporting: 'vform.inf-agr';
+}
+word transport:'V.main'(slm-Moving);
+word swim:V(slm-Swimming) {
+  swim: 'pres.habitual';
+  swims: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  swam: past;
+}
+word swim:'V.prp'(slm-Swimming) {
+  swimming: 'vform.inf-agr';
+}
+word swim:'V.main'(slm-Swimming);
+word flee:V(slm-Fleeing) {
+  flee: 'pres.habitual';
+  flees: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  fled: past;
+}
+word flee:'V.prp'(slm-Fleeing) {
+  fleeing: 'vform.inf-agr';
+}
+word flee:'V.main'(slm-Fleeing);
+word leap:V(slm-Leaping) {
+  leap: 'pres.habitual';
+  leaps: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  lept: past;
+}
+word leap:'V.prp'(slm-Leaping) {
+  leaping: 'vform.inf-agr';
+}
+word leap:'V.main'(slm-Leaping);
+word jump:V(slm-Jumping) {
+  jump: 'pres.habitual';
+  jumps: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  jumped: past;
+}
+word jump:'V.prp'(slm-Jumping) {
+  jumping: 'vform.inf-agr';
+}
+word jump:'V.main'(slm-Jumping);
+word go:V(slm-Going) {
+  go: 'pres.habitual';
+  goes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  went: past;
+}
+word go:'V.prp'(slm-Going) {
+  going: 'vform.inf-agr';
+}
+word go:'V.main'(slm-Going);
+word double_back:V(slm-Going) {
+  double_back: 'pres.habitual';
+  doubles_back: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  doubled_back: past;
+}
+word double_back:'V.prp'(slm-Going) {
+  doubling_back: 'vform.inf-agr';
+}
+word double_back:'V.main'(slm-Going);
+word reach:V(slm-Going) {
+  reach: 'pres.habitual';
+  reaches: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  reached: past;
+}
+word reach:'V.prp'(slm-Going) {
+  reaching: 'vform.inf-agr';
+}
+word reach:'V.main'(slm-Going);
+word carry_on:V(slm-Going) {
+  carry_on: 'pres.habitual';
+  carries_on: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  carried_on: past;
+}
+word carry_on:'V.prp'(slm-Going) {
+  carrying_on: 'vform.inf-agr';
+}
+word carry_on:'V.main'(slm-Going);
+word proceed:V(slm-Proceeding) {
+  proceed: 'pres.habitual';
+  proceeds: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  proceeded: past;
+}
+word proceed:'V.prp'(slm-Proceeding) {
+  proceeding: 'vform.inf-agr';
+}
+word proceed:'V.main'(slm-Proceeding);
+word race:V(slm-Racing) {
+  race: 'pres.habitual';
+  races: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  raced: past;
+}
+word race:'V.prp'(slm-Racing) {
+  racing: 'vform.inf-agr';
+}
+word race:'V.main'(slm-Racing);
+word continue:V(slm-Continuing) {
+  continue: 'pres.habitual';
+  continues: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  continued: past;
+}
+word continue:'V.prp'(slm-Proceeding) {
+  continuing: 'vform.inf-agr';
+}
+word continue:'V.main'(slm-Continuing);
+word pass:V(slm-Passing) {
+  pass: 'pres.habitual';
+  passes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  passed: past;
+}
+word pass:'V.prp'(slm-Passing) {
+  passing: 'vform.inf-agr';
+}
+word pass:'V.main'(slm-Passing);
+word leave:V(slm-Leaving) {
+  leave: 'pres.habitual';
+  leaves: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  left: past;
+}
+word leave:'V.prp'(slm-Leaving) {
+  leaving: 'vform.inf-agr';
+}
+word leave:'V.main'(slm-Leaving);
+word stop:V(slm-Stopping) {
+  stop: 'pres.habitual';
+  stops: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  stopped: past;
+}
+word stop:'V.prp'(slm-Stopping) {
+  stopping: 'vform.inf-agr';
+}
+word stop:'V.main'(slm-Stopping);
+word halt:V(slm-Halting) {
+  halt: 'pres.habitual';
+  halts: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  halted: past;
+}
+word halt:'V.prp'(slm-Halting) {
+  halting: 'vform.inf-agr';
+}
+word halt:'V.main'(slm-Halting);
+word pause:V(slm-Pausing) {
+  pause: 'pres.habitual';
+  pausees: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  paused: past;
+}
+word pause:'V.prp'(slm-Pausing) {
+  pausing: 'vform.inf-agr';
+}
+word pause:'V.main'(slm-Pausing);
+word wait:V(slm-Waiting) {
+  wait: 'pres.habitual';
+  waits: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  waited: past;
+}
+word wait:'V.prp'(slm-Waiting) {
+  waiting: 'vform.inf-agr';
+}
+word wait:'V.main'(slm-Waiting);
+word exit:V(slm-Exiting) {
+  exit: 'pres.habitual';
+  exits: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  exited: past;
+}
+word exit:'V.prp'(slm-Exiting) {
+  exiting: 'vform.inf-agr';
+}
+word exit:'V.main'(slm-Exiting);
+word enter:V(slm-Entering) {
+  enter: 'pres.habitual';
+  enters: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  entered: past;
+}
+word enter:'V.prp'(slm-Entering) {
+  entering: 'vform.inf-agr';
+}
+word enter:'V.main'(slm-Entering);
+word approach:V(slm-Approaching) {
+  approach: 'pres.habitual';
+  approaches: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  approached: past;
+}
+word approach:'V.prp'(slm-Approaching) {
+  approaching: 'vform.inf-agr';
+}
+word approach:'V.main'(slm-Approaching);
+word follow:V(gum-Process) {
+  follow: 'pres.habitual';
+  follows: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  followed: past;
+}
+word follow:'V.prp'(gum-Process) {
+  following: 'vform.inf-agr';
+}
+word follow:'V.main'(gum-Process);
+word bring:V(slm-Bringing) {
+  bring: 'pres.habitual';
+  brings: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  brought: past;
+}
+word bring:'V.prp'(slm-Bringing) {
+  bringing: 'vform.inf-agr';
+}
+word bring:'V.main'(slm-Bringing);
+word direct:V(slm-Directing) {
+  direct: 'pres.habitual';
+  directs: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  directed: past;
+}
+word direct:'V.prp'(slm-Directing) {
+  directing: 'vform.inf-agr';
+}
+word direct:'V.main'(slm-Directing);
+word walk:V(slm-Walking) {
+  walk: 'pres.habitual';
+  walks: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  walked: past;
+}
+word walk:'V.prp'(slm-Walking) {
+  walking: 'vform.inf-agr';
+}
+word walk:'V.main'(slm-Walking);
+word run:V(slm-Running) {
+  run: 'pres.habitual';
+  runs: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  ran: past;
+}
+word run:'V.prp'(slm-Running) {
+  running: 'vform.inf-agr';
+}
+word run:'V.main'(slm-Running);
+word sleep:V(slm-Sleeping) {
+  sleep: 'pres.habitual';
+  sleeps: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  slept: past;
+}
+word sleep:'V.prp'(slm-Sleeping) {
+  sleeping: 'vform.inf-agr';
+}
+word sleep:'V.main'(slm-Sleeping);
+word show:V(slm-Showing) {
+  show: 'pres.habitual';
+  shows: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  showed: past;
+}
+word show:'V.prp'(slm-Showing) {
+  showing: 'vform.inf-agr';
+}
+word show:'V.main'(slm-Showing);
+word guide:V(slm-Guiding) {
+  guide: 'pres.habitual';
+  guides: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  guided: past;
+}
+word guide:'V.prp'(slm-Guiding) {
+  guiding: 'vform.inf-agr';
+}
+word guide:'V.main'(slm-Guiding);
+word tell:V(slm-Telling) {
+  tell: 'pres.habitual';
+  tells: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  told: past;
+}
+word tell:'V.prp'(slm-Telling) {
+  telling: 'vform.inf-agr';
+}
+word tell:'V.main'(slm-Telling);
+word put:V(slm-Putting) {
+  put: 'pres.habitual';
+  puts: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  put: past;
+}
+word put:'V.prp'(slm-Putting) {
+  putting: 'vform.inf-agr';
+}
+word put:'V.main'(slm-Putting);
+word micorwave:V(slm-Microwaving): 'pres.habitual';
+word microwave:V(slm-Microwaving) {
+  microwaves: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  microwaved: past;
+}
+word microwave:'V.prp'(slm-Microwaving) {
+  microwaving: 'vform.inf-agr';
+}
+word microwave:'V.main'(slm-Microwaving);
+word place:V(slm-Placing) {
+  place: 'pres.habitual';
+  places: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  placed: past;
+}
+word place:'V.prp'(slm-Placing) {
+  placing: 'vform.inf-agr';
+}
+word place:'V.main'(slm-Placing);
+word dance:V(slm-Dancing) {
+  dance: 'pres.habitual';
+  dances: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  danced: past;
+  dance: 'pres.habitual';
+  dance: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  dancing: past;
+}
+word dance:'V.prp'(slm-Dancing) {
+  dancing: 'vform.inf-agr';
+  dancing: 'vform.inf-agr';
+}
+word dance:'V.main'(slm-Dancing) {
+  dance;
+  dance;
+}
+word stand:V(slm-Standing) {
+  stand: 'pres.habitual';
+  stands: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  stood: past;
+}
+word stand:'V.prp'(slm-Standing) {
+  standing: 'vform.inf-agr';
+}
+word stand:'V.main'(slm-Standing);
+word point:V(slm-Pointing) {
+  point: 'pres.habitual';
+  points: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  pointed: past;
+}
+word point:'V.prp'(slm-Pointing) {
+  pointing: 'vform.inf-agr';
+}
+word point:'V.main'(slm-Pointing);
+word stir:V(slm-Stirring) {
+  stir: 'pres.habitual';
+  stirs: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  stirred: past;
+}
+word stir:'V.prp'(slm-Stirring) {
+  stirring: 'vform.inf-agr';
+}
+word stir:'V.main'(slm-Stirring);
+word heat:V(slm-Heating) {
+  heat: 'pres.habitual';
+  heats: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  heated: past;
+}
+word heat:'V.prp'(slm-Heating) {
+  heating: 'vform.inf-agr';
+}
+word heat:'V.main'(slm-Heating);
+word mix:V(slm-Stirring) {
+  mix: 'pres.habitual';
+  mixes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  mixed: past;
+}
+word mix:'V.prp'(slm-Stirring) {
+  mixing: 'vform.inf-agr';
+}
+word mix:'V.main'(slm-Stirring);
+word cut:V(slm-Cutting) {
+  cut: 'pres.habitual';
+  cuts: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  cut: past;
+}
+word cut:'V.prp'(slm-Cutting) {
+  cutting: 'vform.inf-agr';
+}
+word cut:'V.main'(slm-Cutting);
+word swirl:V(slm-Stirring) {
+  swirl: 'pres.habitual';
+  swirls: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  swirled: past;
+}
+word swirl:'V.prp'(slm-Stirring) {
+  swirling: 'vform.inf-agr';
+}
+word swirl:'V.main'(slm-Stirring);
+word want:V(gum-Liking) {
+  want: 'pres.habitual';
+  wants: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  wanted: past;
+}
+word want:'V.main'(gum-Liking);
+word need:V(slm-Needing) {
+  need: 'pres.habitual';
+  needs: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  needed: past;
+}
+word need:'V.main'(slm-Needing);
+word would_like:V(gum-Liking): 'pres.habitual';
+word need:V(gum-Liking) {
+  would_like: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+}
+word like:V(slm-Liking) {
+  like: 'pres.habitual';
+  likes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  liked: past;
+}
+word like:'V.main'(slm-Liking);
+word mean:V(slm-Meaning) {
+  mean: 'pres.habitual';
+  means: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  meant: past;
+}
+word mean:'V.main'(slm-Meaning);
+word know:V(slm-Knowing) {
+  know: 'pres.habitual';
+  knows: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  knew: past;
+}
+word know:'V.main'(slm-Knowing);
+word believe:V(slm-Believing) {
+  believe: 'pres.habitual';
+  believes: 'num.sg-agr' 'pers.3rd-agr' 'pres.habitual';
+  believd: past;
+}
+word believe:'V.main'(slm-Believing);
+word faces:V(slm-Facing): 'num.sg';
+word surrounds:V(gs-Surrounding) {
+  surrounds: 'num.sg';
+  surrounded: 'num.sg';
+}
+word am:V(slm-Being) {
+  am: 'num.sg-agr' 'pers.1st-agr' pres;
+  are: 'num.sg-agr' 'pers.2nd-agr' pres;
+  is: 'num.sg-agr' 'pers.3rd-agr' pres;
+  are: 'num.pl-agr' 'pers.1st-agr' pres;
+  are: 'num.pl-agr' 'pers.3rd-agr' pres;
+  "aren't": 'num.sg-agr' 'pers.2nd-agr' 'pol.neg' pres;
+  "isn't": 'num.sg-agr' 'pers.1st-agr' 'pol.neg' pres;
+  "aren't": 'num.pl-agr' 'pol.neg' pres;
+  was: 'num.sg' 'pers.1st-agr' past;
+  were: 'num.sg' 'pers.2nd-agr' past;
+  was: 'num.sg' 'pers.3rd-agr' past;
+  were: 'num.pl' 'pers.1st-agr' past;
+  were: 'num.pl' 'pers.2nd-agr' past;
+  were: 'num.pl' 'pers.3rd-agr' past;
+}
+word do:V(gum-YesNoQuestion) {
+  do: 'num.sg' 'pers.1st';
+  dont: 'num.sg' 'pers.1st' 'pol.neg';
+  dont: 'num.sg' 'pers.2nd' 'pol.neg';
+  dont: 'num.pl' 'pol.neg';
+  does: 'num.sg' 'pers.3rd';
+  dont: 'num.sg' 'pers.1st' 'pol.neg';
+  dont: 'num.sg' 'pers.2nd' 'pol.neg';
+  dont: 'num.pl' 'pol.neg';
+  does: 'num.sg' 'pers.3rd';
+}
+word can:'V.modal'(gum-Ability) {
+  can;
+  cant: 'pol.neg';
+}
+word shall:'V.modal'(gum-Necessity) {
+  shall;
+  should;
+  shouldnt: 'pol.neg';
+}
+word will:'V.modal'(gum-ModalQuality) {
+  will;
+  would;
+  wont: 'pol.neg';
+  wouldnt: 'pol.neg';
+}
+word behind:'PREP.static'(gs-BackProjection): 'prep.static';
+word in-front-of:'PREP.static'(gs-FrontProjection): 'prep.static';
+word on:'PREP.static'(gs-Support): 'prep.static';
+word off:'PREP.static'(gs-DenialOfFunctionalControl): 'prep.static';
+word beside:'PREP.static'(gs-RelativeNonProjectionAxial): 'prep.static';
+word beyond:'PREP.static'(gs-RelativeNonProjectionAxial): 'prep.static';
+word next-to:'PREP.static'(gs-RelativeNonProjectionAxial): 'prep.static';
+word far_from:'PREP.static'(gs-Distal): 'prep.static';
+word away_from:'PREP.static'(gs-Distal): 'prep.static';
+word far_away_from:'PREP.static'(gs-Distal): 'prep.static';
+word close_to:'PREP.static'(gs-Proximal): 'prep.static';
+word near:'PREP.static'(gs-Proximal): 'prep.static';
+word by:'PREP.static'(gs-Proximal): 'prep.static';
+word against:'PREP.static'(gs-Touching): 'prep.static';
+word in:'PREP.static'(gs-Containment): 'prep.static';
+word under:'PREP.static'(gs-UnderProjectionExternal): 'prep.static';
+word over:'PREP.static'(gs-OverProjectionExternal): 'prep.static';
+word above:'PREP.static'(gs-AboveProjection): 'prep.static';
+word below:'PREP.static'(gs-BelowProjection): 'prep.static';
+word before:'PREP.static'(slm-Precedence): 'prep.static';
+word after:'PREP.static'(slm-Succession): 'prep.static';
+word among:'PREP.static'(gs-Distribution): 'prep.static';
+word between:'PREP.static'(gs-Distribution): 'prep.static';
+word at:'PREP.static'(gs-Proximal): 'prep.static';
+word behind:'PREP.dynamic'(gs-BackProjection): 'prep.goal';
+word in-front-of:'PREP.dynamic'(gs-FrontProjection): 'prep.goal';
+word off:'PREP.dynamic'(gs-DenialOfFunctionalControl): 'prep.goal';
+word beside:'PREP.dynamic'(gs-RelativeNonProjectionAxial): 'prep.goal';
+word beyond:'PREP.dynamic'(gs-RelativeNonProjectionAxial): 'prep.goal';
+word next-to:'PREP.dynamic'(gs-RelativeNonProjectionAxial): 'prep.goal';
+word far_from:'PREP.dynamic'(gs-Distal): 'prep.goal';
+word away_from:'PREP.dynamic'(gs-Distal): 'prep.goal';
+word far_away_from:'PREP.dynamic'(gs-Distal): 'prep.goal';
+word close_to:'PREP.dynamic'(gs-Proximal): 'prep.goal';
+word near:'PREP.dynamic'(gs-Proximal): 'prep.goal';
+word under:'PREP.dynamic'(gs-UnderProjectionExternal): 'prep.goal';
+word over:'PREP.dynamic'(gs-OverProjectionExternal): 'prep.goal';
+word above:'PREP.dynamic'(gs-AboveProjection): 'prep.goal';
+word below:'PREP.dynamic'(gs-BelowProjection): 'prep.goal';
+word before:'PREP.dynamic'(slm-Precedence): 'prep.goal';
+word after:'PREP.dynamic'(slm-Succession): 'prep.goal';
+word among:'PREP.dynamic'(gs-Distribution): 'prep.goal';
+word between:'PREP.dynamic'(gs-Distribution): 'prep.goal';
+word to:'PREP.static.directional';
+word towards:'PREP.static.directional';
+word on:'PREP.static.directional';
+word until:'PREP.dynamic'(gs-GeneralDirectionalNearing): 'prep.goal';
+word to:'PREP.dynamic'(gs-GeneralDirectionalNearing): 'prep.goal';
+word towards:'PREP.dynamic'(gs-GeneralDirectionalNearing): 'prep.goal';
+word onto:'PREP.dynamic'(gs-Support): 'prep.goal';
+word into:'PREP.dynamic'(gs-Containment) {
+  into: 'prep.segment';
+  inside: 'prep.segment';
+}
+word in:'PREP.dynamic'(gs-Containment): 'prep.segment';
+word across:'PREP.dynamic'(gs-PathRepresentingInternal): 'prep.segment';
+word along:'PREP.dynamic'(gs-PathRepresentingExternal): 'prep.segment';
+word through:'PREP.dynamic'(gs-PathRepresentingInternal): 'prep.segment';
+word around:'PREP.dynamic'(gs-PathRepresentingExternal) {
+  around: 'prep.segment';
+  round: 'prep.segment';
+}
+word past:'PREP.dynamic'(gs-PathRepresentingExternal): 'prep.landmark';
+word by:'PREP.dynamic'(gs-PathRepresentingExternal): 'prep.landmark';
+word via:'PREP.dynamic'(gs-PathRepresentingExternal): 'prep.landmark';
+word out:'PREP.dynamic'(gs-PathRepresentingExternal): 'prep.landmark';
+word out_of:'PREP.dynamic'(gs-GeneralDirectionalDistancing): 'prep.landmark';
+word down:'PREP.dynamic'(gs-SpecificDirectional): 'prep.landmark';
+word up:'PREP.dynamic'(gs-SpecificDirectional): 'prep.landmark';
+word out_from:'PREP.dynamic'(gs-GeneralDirectionalDistancing): 'prep.source';
+word from:'PREP.dynamic'(gs-GeneralDirectionalDistancing): 'prep.source';
+word to:TOINF;
+word of:'PREP.genetive';
+word a:DET: 'num.sg' 'lf.T.quant.sg' 'lf.T.del.exist';
+word any:DET: 'num.sg' 'lf.T.quant.sg' 'lf.T.del.exist';
+word an:DET: 'num.sg' 'lf.T.quant.sg' 'lf.T.del.exist';
+word the:DET {
+  the: 'num.sg' 'lf.T.quant.sg' 'lf.T.del.unique';
+  the: 'num.pl' 'lf.T.quant.pl' 'lf.T.del.unique';
+}
+word this:DET: 'num.sg' 'lf.T.quant.sg' 'lf.T.del.unique';
+word that:DET: 'num.sg' 'lf.T.quant.sg' 'lf.T.del.unique';
+word these:DET: 'num.pl' 'lf.T.quant.pl' 'lf.T.del.unique';
+word those:DET: 'num.pl' 'lf.T.quant.pl' 'lf.T.del.unique';
+word Robert:'NP.possessive'(slm-Robert) {
+  "Robert's";
+  "robert's";
+}
+word John:'NP.possessive'(slm-John) {
+  "John's";
+  "john's";
+}
+word Shi:'NP.possessive'(slm-Shi) {
+  "Shi's";
+  "shi's";
+}
+word Christian:'NP.possessive'(slm-Christian) {
+  "Christian's";
+  "christian's";
+}
+word my:POSSDET(uio-Speaker): 'pers.first' 'number.singular';
+word your:POSSDET(uio-Hearer): 'pers.second' 'number.singular';
+word our:POSSDET(gum-ConsciousBeing): 'pers.first' 'number.plural';
+word her:POSSDET(gum-Female): 'pers.female' 'pers.third' 'number.singular';
+word his:POSSDET(gum-Male): 'pers.male' 'pers.third' 'number.singular';
+word its:POSSDET(gum-ConsciousBeing): 'pers.third' 'number.singular';
+word first:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word second:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word third:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word fourth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word fifth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word sixth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word seventh:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word eighth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word ninth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word tenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word eleventh:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word tweleveth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word thirteenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word fourteenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word fifteenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word sixteenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word seventeenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word eighteenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word nineteenth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word twentieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word thirtieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word fortieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word fiftieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word sixtieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word seventieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word eightieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word ninetieth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word hundredth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word thousandth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word millionth:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word next:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word last:'ADJ.ordinal'(gum-NaturalNumber): natural_number;
+word backwards:ADV(gs-BackProjection);
+word forward:ADV(gs-FrontProjection);
+word forwards:ADV(gs-FrontProjection);
+word further:ADV(gs-FrontProjection);
+word more:ADV(gs-FrontProjection);
+word leftwards:ADV(gs-LeftProjection);
+word rightwards:ADV(gs-RightProjection);
+word straight:ADV(gs-FrontProjection);
+word straight-ahead:ADV(gs-FrontProjection);
+word south:ADV(gs-South);
+word southwards:ADV(gs-South);
+word southward:ADV(gs-South);
+word west:ADV(gs-West);
+word westwards:ADV(gs-West);
+word westward:ADV(gs-West);
+word north:ADV(gs-North);
+word northwards:ADV(gs-North);
+word northward:ADV(gs-North);
+word east:ADV(gs-East);
+word eastwards:ADV(gs-East);
+word eastward:ADV(gs-East);
+word up:ADV(gs-SpecificDirectional) {
+  up;
+  upwards;
+  upward;
+}
+word down:ADV(gs-SpecificDirectional) {
+  down;
+  downwards;
+  downward;
+}
+word over:ADV(gs-SpecificDirectional);
+word around:ADV(gs-BackProjection);
+word back:ADV(gs-BackProjection);
+word left:ADV(gs-LeftProjection);
+word right:ADV(gs-RightProjection);
+word some:'ADJ.cert'(slm-Approx);
+word roughly:'ADJ.cert'(slm-Approx);
+word approximatly:'ADJ.cert'(slm-Approx);
+word exactly:'ADJ.cert'(slm-Exact);
+word directly:ADV {
+  directly;
+  just;
+  exactly;
+  somewhere;
+  almost;
+  approximately;
+}
+word end_of_the_corridor:N(slm-CorridorEnd): 'num.sg' 'pers.3rd';
+word end_of_the_hallway:N(slm-CorridorEnd): 'num.sg' 'pers.3rd';
+word end_of_the_hall:N(slm-CorridorEnd): 'num.sg' 'pers.3rd';
+word "Austrian_Alps's":N(slm-AustrianAlps): 'num.sg' 'pers.3rd';
+word "Macy's":N(slm-Macys): 'num.sg' 'pers.3rd';
+word hot_dog_stand:N(slm-HotDogStand): 'num.sg' 'pers.3rd';
+word way:N(slm-Way): 'num.sg' 'pers.3rd';
+word engine:N(slm-Engine): 'num.sg' 'pers.3rd';
+word junction:N(slm-Junction): 'num.sg' 'pers.3rd';
+word one:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word area:N(slm-Area): 'num.sg' 'pers.3rd';
+word cabinet:N(slm-Cabinet): 'num.sg' 'pers.3rd';
+word corridor:N(slm-Corridor) {
+  corridor: 'num.sg' 'pers.3rd';
+  hall: 'num.sg' 'pers.3rd';
+  hallway: 'num.sg' 'pers.3rd';
+}
+word door:N(slm-Door): 'num.sg' 'pers.3rd';
+word wall:N(slm-Wall): 'num.sg' 'pers.3rd';
+word elevator:N(slm-Elevator) {
+  elevator: 'num.sg' 'pers.3rd';
+  elevators: 'num.pl' 'pers.3rd';
+}
+word kitchen:N(slm-Kitchen): 'num.sg' 'pers.3rd';
+word post_office:N(slm-PostOffice): 'num.sg' 'pers.3rd';
+word post_room:N(slm-PostRoom): 'num.sg' 'pers.3rd';
+word photocopy_room:N(slm-CopyRoom): 'num.sg' 'pers.3rd';
+word copy_room:N(slm-CopyRoom): 'num.sg' 'pers.3rd';
+word copyroom:N(slm-CopyRoom): 'num.sg' 'pers.3rd';
+word main_stairwell:N(slm-MainStairwell): 'num.sg' 'pers.3rd';
+word main_staircase:N(slm-MainStairwell): 'num.sg' 'pers.3rd';
+word stairwell:N(slm-Stairwell): 'num.sg' 'pers.3rd';
+word staircase:N(slm-Stairwell): 'num.sg' 'pers.3rd';
+word stairs:N(slm-Stairwell): 'num.sg' 'pers.3rd';
+word target:N(slm-Room): 'num.sg' 'pers.3rd';
+word destination:N(slm-Room): 'num.sg' 'pers.3rd';
+word bathroom:N(slm-Bathroom): 'num.sg' 'pers.3rd';
+word bridge:N(slm-Bridge): 'num.sg' 'pers.3rd';
+word fountain:N(slm-Fountain): 'num.sg' 'pers.3rd';
+word office:N(slm-Office) {
+  office: 'num.sg' 'pers.3rd';
+  offices: 'num.pl' 'pers.3rd';
+}
+word bar:N(slm-Bar): 'num.sg' 'pers.3rd';
+word toilet:N(slm-Toilet) {
+  toilet: 'num.sg' 'pers.3rd';
+  toilets: 'num.pl' 'pers.3rd';
+}
+word room:N(slm-Room) {
+  room: 'num.sg' 'pers.3rd';
+  rooms: 'num.pl' 'pers.3rd';
+}
+word lab:N(slm-Laboratory): 'num.sg' 'pers.3rd';
+word laboratory:N(slm-Laboratory): 'num.sg' 'pers.3rd';
+word hat:N(slm-Hat): 'num.sg' 'pers.3rd';
+word cup:N(slm-Cup): 'num.sg' 'pers.3rd';
+word bowl:N(slm-Bowl) {
+  bowl: 'num.sg' 'pers.3rd';
+  bowls: 'num.pl' 'pers.3rd';
+  bowl: 'num.sg' 'pers.3rd';
+}
+word lamp:N(slm-Lamp): 'num.sg' 'pers.3rd' 'case.non-gen';
+word tree:N(slm-Tree) {
+  trees: 'num.pl' 'pers.3rd';
+}
+word duck:N(slm-Duck): 'num.sg' 'pers.3rd';
+word head:N(slm-Head): 'num.sg' 'pers.3rd';
+word rack:N(slm-Rack): 'num.sg' 'pers.3rd';
+word ground:N(slm-Ground): 'num.sg' 'pers.3rd';
+word floor:N(slm-Floor): 'num.sg' 'pers.3rd';
+word desk:N(slm-Desk): 'num.sg' 'pers.3rd';
+word window:N(slm-Window): 'num.sg' 'pers.3rd';
+word lake:N(slm-Lake): 'num.sg' 'pers.3rd';
+word town:N(slm-Town) {
+  town: 'num.sg' 'pers.3rd';
+  town: 'num.sg' 'pers.3rd';
+}
+word road:N(slm-Road): 'num.sg' 'pers.3rd';
+word old_pine:N(slm-OldPines): 'num.sg' 'pers.3rd';
+word old_pines:N(slm-OldPines): 'num.pl' 'pers.3rd';
+word bend:N(slm-Bend): 'num.sg' 'pers.3rd';
+word canal:N(slm-Canal): 'num.sg' 'pers.3rd';
+word motorway:N(slm-Motorway): 'num.sg' 'pers.3rd';
+word view:N(slm-View): 'num.sg' 'pers.3rd';
+word prisoner:N(slm-Prisoner): 'num.sg' 'pers.3rd';
+word prisoner:N(slm-Prisoners) {
+  prisoners: 'num.pl' 'pers.3rd';
+}
+word prison:N(slm-Prison): 'num.sg' 'pers.3rd';
+word guard:N(slm-Guard): 'num.sg' 'pers.3rd';
+word cell:N(slm-Cell): 'num.sg' 'pers.3rd';
+word fence:N(slm-Fence): 'num.sg' 'pers.3rd';
+word building:N(slm-Building): 'num.sg' 'pers.3rd';
+word clue:N(slm-Clue) {
+  clues: 'num.pl' 'pers.3rd';
+}
+word book:N(slm-Book) {
+  book: 'num.sg' 'pers.3rd';
+  books: 'num.pl' 'pers.3rd';
+}
+word phone:N(slm-Phone): 'num.sg' 'pers.3rd';
+word book:N(slm-Phone) {
+  phones: 'num.pl' 'pers.3rd';
+}
+word shelf:N(slm-Shelf): 'num.sg' 'pers.3rd';
+word sock:N(slm-Sock) {
+  socks: 'num.pl' 'pers.3rd';
+}
+word drawer:N(slm-Drawer): 'num.sg' 'pers.3rd';
+word shoe:N(slm-Shoe) {
+  shoes: 'num.pl' 'pers.3rd';
+}
+word cupboard:N(slm-Cupboard): 'num.sg' 'pers.3rd';
+word house:N(slm-House): 'num.sg' 'pers.3rd';
+word street:N(slm-Street): 'num.sg' 'pers.3rd';
+word compass:N(slm-Compass): 'num.sg' 'pers.3rd';
+word rifle:N(slm-Rifle): 'num.sg' 'pers.3rd';
+word lion:N(slm-Lion) {
+  lions: 'num.pl' 'pers.3rd';
+}
+word plain:N(slm-Plain): 'num.sg' 'pers.3rd';
+word jogger:N(slm-Jogger): 'num.sg' 'pers.3rd';
+word park:N(slm-Park): 'num.sg' 'pers.3rd';
+word mountain:N(slm-Mountain): 'num.sg' 'pers.3rd';
+word monk:N(slm-Monk) {
+  monks: 'num.pl' 'pers.3rd';
+}
+word temple:N(slm-Temple): 'num.sg' 'pers.3rd';
+word thought:N(slm-Thought) {
+  thoughts: 'num.pl' 'pers.3rd';
+}
+word garden:N(slm-Garden): 'num.sg' 'pers.3rd';
+word halo:N(slm-Halo): 'num.sg' 'pers.3rd';
+word nurse:N(slm-Nurse): 'num.sg' 'pers.3rd';
+word runner:N(slm-Runner): 'num.sg' 'pers.3rd';
+word line:N(slm-Line): 'num.sg' 'pers.3rd';
+word checkpoint:N(slm-Checkpoint): 'num.sg' 'pers.3rd';
+word detective:N(slm-Detective): 'num.sg' 'pers.3rd';
+word man:N(slm-Man): 'num.sg' 'pers.3rd';
+word robot:N(slm-Robot): 'num.sg' 'pers.3rd';
+word flock:N(slm-Flock): 'num.sg' 'pers.3rd';
+word cargo:N(slm-Cargo): 'num.sg' 'pers.3rd';
+word barnacle:N(slm-Barnacle): 'num.sg' 'pers.3rd';
+word ship:N(slm-Ship): 'num.sg' 'pers.3rd';
+word mammoth:N(slm-Mammoth): 'num.sg' 'pers.3rd';
+word dwelling:N(slm-Dwelling): 'num.sg' 'pers.3rd';
+word site:N(slm-Site): 'num.sg' 'pers.3rd';
+word vase:N(slm-Vase): 'num.sg' 'pers.3rd';
+word bedroom:N(slm-Bedroom): 'num.sg' 'pers.3rd';
+word sofa:N(slm-Sofa): 'num.sg' 'pers.3rd';
+word dish:N(slm-Dish): 'num.sg' 'pers.3rd';
+word rug:N(slm-Rug): 'num.sg' 'pers.3rd';
+word bag:N(slm-Bag): 'num.sg' 'pers.3rd';
+word box:N(slm-Box): 'num.sg' 'pers.3rd';
+word boxcar:N(slm-Boxcar) {
+  boxcar: 'num.sg' 'pers.3rd';
+  boxcar: 'num.sg' 'pers.3rd';
+  boxcars: 'num.pl' 'pers.3rd';
+}
+word apple:N(slm-Apple): 'num.sg' 'pers.3rd' 'case.non-gen';
+word egg:N(slm-Egg): 'num.sg' 'pers.3rd' 'case.non-gen';
+word eggs:N(slm-Egg): 'num.pl' 'pers.3rd';
+word cheese:N(slm-Cheese): 'num.sg' 'pers.3rd';
+word cottage_cheese:N(slm-CottageCheese): 'num.sg' 'pers.3rd';
+word parmesan_cheese:N(slm-ParmesanCheese): 'num.sg' 'pers.3rd';
+word water:N(slm-Water): 'num.sg' 'pers.3rd';
+word coffee:N(slm-Coffee): 'num.sg' 'pers.3rd';
+word pool:N(slm-Pool): 'num.sg' 'pers.3rd';
+word camera:N(slm-Camera): 'num.sg' 'pers.3rd';
+word needle:N(slm-Needle): 'num.sg' 'pers.3rd';
+word compass_needle:N(slm-CompassNeedle): 'num.sg' 'pers.3rd';
+word cinema:N(slm-Cinema): 'num.sg' 'pers.3rd';
+word cinemas:N(slm-Cinema): 'num.pl' 'pers.3rd';
+word table:N(slm-Table): 'num.sg' 'pers.3rd';
+word pen:N(slm-Pen): 'num.sg' 'pers.3rd';
+word pens:N(slm-Pen): 'num.pl' 'pers.3rd';
+word dune:N(slm-Dune): 'num.sg' 'pers.3rd';
+word hut:N(slm-Hut): 'num.sg' 'pers.3rd';
+word bird:N(slm-Bird): 'num.sg' 'pers.3rd';
+word flower:N(slm-Flower): 'num.sg' 'pers.3rd';
+word mark:N(slm-Mark): 'num.sg' 'pers.3rd';
+word fibre:N(slm-Fibre): 'num.sg' 'pers.3rd';
+word sheet:N(slm-Sheet): 'num.sg' 'pers.3rd';
+word ball:N(slm-Ball): 'num.sg' 'pers.3rd';
+word grass:N(slm-Grass): 'num.sg' 'pers.3rd';
+word turn:N(slm-Turn): 'num.sg' 'pers.3rd';
+word district:N(slm-District): 'num.sg' 'pers.3rd';
+word boots:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word pizza_hut:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word tesco:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word derrys:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word wheatfields:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word safeways:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word pc_world:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word x:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word queens_pub:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word y:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word train_station:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word university:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word car_park:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word hospital:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word roundabout:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word grand_hotel:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word building:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word bananas:N(gum-SimpleThing): 'num.pl' 'pers.3rd';
+word banana:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word tanker:N(gum-SimpleThing) {
+  tanker: 'num.sg' 'pers.3rd';
+  tankers: 'num.pl' 'pers.3rd';
+}
+word warehouse:N(gum-SimpleThing) {
+  warehouse: 'num.sg' 'pers.3rd';
+  warehouses: 'num.pl' 'pers.3rd';
+}
+word orange:N(gum-SimpleThing) {
+  orange: 'num.sg' 'pers.3rd';
+  oranges: 'num.pl' 'pers.3rd';
+}
+word cheese:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word juice:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word orange_juice:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word tank:N(gum-SimpleThing) {
+  tank: 'num.sg' 'pers.3rd';
+  tanks: 'num.pl' 'pers.3rd';
+}
+word thing:N(gum-SimpleThing) {
+  thing: 'num.sg' 'pers.3rd';
+  things: 'num.pl' 'pers.3rd';
+}
+word start:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word hand_side:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word page:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word forge:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word cross:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word pine:N(gum-SimpleThing) {
+  pine: 'num.sg' 'pers.3rd';
+  pines: 'num.pl' 'pers.3rd';
+}
+word destination:N(gum-SimpleThing) {
+  destinations: 'num.pl' 'pers.3rd';
+}
+word pine_forest:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word outline:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word bay:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word arc:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word finish:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word forest:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word chimney:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word canal:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word rocket_warehouse:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word car:N(slm-Car): 'num.sg' 'pers.3rd';
+word mall:N(slm-Mail): 'num.sg' 'pers.3rd';
+word freeway:N(slm-Freeway): 'num.sg' 'pers.3rd';
+word river:N(slm-River): 'num.sg' 'pers.3rd';
+word border:N(slm-Border): 'num.sg' 'pers.3rd';
+word cemetary:N(slm-Cemetary): 'num.sg' 'pers.3rd';
+word fire:N(slm-Fire): 'num.sg' 'pers.3rd';
+word famine:N(slm-Famine): 'num.sg' 'pers.3rd';
+word flour:N(slm-Flour): 'num.sg' 'pers.3rd';
+word lid:N(slm-Lid): 'num.sg' 'pers.3rd';
+word gold:N(slm-Gold): 'num.sg' 'pers.3rd';
+word base:N(slm-Base): 'num.sg' 'pers.3rd';
+word cliff:N(slm-Cliff) {
+  cliff: 'num.sg' 'pers.3rd';
+  cliffs: 'num.pl' 'pers.3rd';
+}
+word graffiti:N(slm-Graffiti): 'num.sg' 'pers.3rd';
+word librarian:N(slm-Librarian): 'num.sg' 'pers.3rd';
+word nail:N(slm-Nail): 'num.sg' 'pers.3rd';
+word fuselage:N(slm-Fuselage): 'num.sg' 'pers.3rd';
+word tarmack:N(slm-Tarmack): 'num.sg' 'pers.3rd';
+word shop:N(slm-Shop): 'num.sg' 'pers.3rd';
+word bakery:N(slm-Bakery): 'num.sg' 'pers.3rd';
+word corner:N(slm-Corner): 'num.sg' 'pers.3rd';
+word rabbit:N(slm-Rabbit): 'num.sg' 'pers.3rd';
+word hole:N(slm-Hole): 'num.sg' 'pers.3rd';
+word rooftop:N(slm-Roofing): 'num.sg' 'pers.3rd';
+word wire:N(slm-Wire): 'num.sg' 'pers.3rd';
+word tablecloth:N(slm-Tablecloth): 'num.sg' 'pers.3rd';
+word toe:N(slm-Toe) {
+  toes: 'num.pl' 'pers.3rd';
+}
+word blanket:N(slm-Blanket): 'num.sg' 'pers.3rd';
+word chair:N(slm-Chair): 'num.sg' 'pers.3rd';
+word cathedral:N(slm-Cathedral): 'num.sg' 'pers.3rd';
+word salesman:N(slm-Salesman): 'num.sg' 'pers.3rd';
+word train:N(slm-Train): 'num.sg' 'pers.3rd';
+word tunnel:N(slm-Tunnel): 'num.sg' 'pers.3rd';
+word couple:N(slm-Couple): 'num.sg' 'pers.3rd';
+word deer:N(slm-Deer): 'num.sg' 'pers.3rd';
+word fish:N(slm-Fish): 'num.sg' 'pers.3rd';
+word dog:N(slm-Dog): 'num.sg' 'pers.3rd';
+word field:N(slm-Field): 'num.sg' 'pers.3rd';
+word cat:N(slm-Cat): 'num.sg' 'pers.3rd';
+word squirrel:N(slm-Squirrel): 'num.sg' 'pers.3rd';
+word seed:N(slm-Seed): 'num.sg' 'pers.3rd';
+word group:N(slm-Group): 'num.sg' 'pers.3rd';
+word crowd:N(slm-Crowd): 'num.sg' 'pers.3rd';
+word chocolate:N(gum-SimpleThing): 'num.sg' 'pers.3rd';
+word turn:NOMP(slm-Turning) {
+  turn: 'num.sg' 'pers.3rd';
+  turn: 'num.sg' 'pers.3rd';
+}
+word meeting:N(slm-Meeting): 'num.sg' 'pers.3rd';
+word party:N(slm-Party): 'num.sg' 'pers.3rd';
+word pedestrian:N(slm-Pedestrian): 'num.sg' 'pers.3rd';
+word pedestrians:N(slm-Pedestrian): 'num.pl' 'pers.3rd';
+word one:'N.num'(gum-NaturalNumber): natural_number;
+word two:'N.num'(gum-NaturalNumber): natural_number;
+word three:'N.num'(gum-NaturalNumber): natural_number;
+word four:'N.num'(gum-NaturalNumber): natural_number;
+word five:'N.num'(gum-NaturalNumber): natural_number;
+word six:'N.num'(gum-NaturalNumber): natural_number;
+word seven:'N.num'(gum-NaturalNumber): natural_number;
+word eight:'N.num'(gum-NaturalNumber): natural_number;
+word nine:'N.num'(gum-NaturalNumber): natural_number;
+word ten:'N.num'(gum-NaturalNumber): natural_number;
+word eleven:'N.num'(gum-NaturalNumber): natural_number;
+word tweleve:'N.num'(gum-NaturalNumber): natural_number;
+word thirteen:'N.num'(gum-NaturalNumber): natural_number;
+word fourteen:'N.num'(gum-NaturalNumber): natural_number;
+word fifteen:'N.num'(gum-NaturalNumber): natural_number;
+word sixteen:'N.num'(gum-NaturalNumber): natural_number;
+word seventeen:'N.num'(gum-NaturalNumber): natural_number;
+word eighteen:'N.num'(gum-NaturalNumber): natural_number;
+word nineteen:'N.num'(gum-NaturalNumber): natural_number;
+word twenty:'N.num'(gum-NaturalNumber): natural_number;
+word thirty:'N.num'(gum-NaturalNumber): natural_number;
+word fourty:'N.num'(gum-NaturalNumber): natural_number;
+word fifty:'N.num'(gum-NaturalNumber): natural_number;
+word sixty:'N.num'(gum-NaturalNumber): natural_number;
+word seventy:'N.num'(gum-NaturalNumber): natural_number;
+word eighty:'N.num'(gum-NaturalNumber): natural_number;
+word ninety:'N.num'(gum-NaturalNumber): natural_number;
+word three_hundred_sixty:'N.num'(gum-NaturalNumber): natural_number;
+word hundred:'N.num'(gum-NaturalNumber): natural_number;
+word thousand:'N.num'(gum-NaturalNumber): natural_number;
+word million:'N.num'(gum-NaturalNumber): natural_number;
+word '[*NUM*]':'N.num'(gum-NaturalNumber): natural_number;
+word o_clock:'N.time'(gum-NewTimePoint) {
+  "o'clock": 'abstract.true';
+  o_clock: 'abstract.true';
+}
+word foot:'N.unit'(slm-Foot) {
+  foot;
+  feet;
+}
+word roomLength:'N.unit'(slm-RoomLength) {
+  room;
+  rooms;
+}
+word metre:'N.unit'(slm-Metre) {
+  metre;
+  metres;
+}
+word mile:'N.unit'(slm-Mile) {
+  mile;
+  miles;
+}
+word inch:'N.unit'(slm-Inch) {
+  inch;
+  inches;
+}
+word centimetre:'N.unit'(slm-Inch) {
+  centimetre;
+  centimetres;
+  cm;
+}
+word bit:'N.unit'(slm-Bit);
+word degree:'N.unit'(slm-Degree) {
+  degree;
+  degrees;
+}
+word step:'N.unit'(slm-Step) {
+  step;
+  steps;
+}
+word semicircle:NQ(slm-SemiCircle) {
+  semicircle;
+  semi-circle;
+  semi_circle;
+  semicircles;
+  semi_circles;
+  semi-circles;
+}
+word tablespoon:'N.unit'(slm-Spoon) {
+  tablespoon;
+  tablespoons;
+}
+word at:'PREP.temporal'(gum-TemporalAt): 'prep.temporal';
+word before:'PREP.temporal'(gum-TemporalBefore): 'prep.temporal';
+word earlier_than:'PREP.temporal'(gum-TemporalBefore): 'prep.temporal';
+word by:'PREP.temporal'(gum-TemporalBefore): 'prep.temporal';
+word from:'PREP.temporal'(gum-TemporalFrom): 'prep.temporal';
+word after:'PREP.temporal'(gum-TemporalAfter): 'prep.temporal';
+word "lamp's":'N.possessive'(slm-Lamp): 'num.sg' 'case.gen';
+word way:NWAY(gum-SpatialObject) {
+  way: 'num.sg';
+  route: 'num.sg';
+  trajectory: 'num.sg';
+}
+word turn:NWAY(gum-SpatialObject): 'num.sg' 'syn.kind.takable';
+word australia:NP(slm-Australia) {
+  Australia: 'num.sg';
+  australia: 'num.sg';
+}
+word london:NP(slm-London) {
+  London: 'num.sg';
+  london: 'num.sg';
+}
+word bremen:NP(slm-Bremen) {
+  Bremen: 'num.sg';
+  bremen: 'num.sg';
+}
+word new_york:NP(slm-NewYork) {
+  New_York: 'num.sg';
+  new_york: 'num.sg';
+}
+word washington:NP(slm-Washington) {
+  Washington: 'num.sg';
+  washington: 'num.sg';
+}
+word plymoth_university:NP(gum-NamedObject): 'num.sg';
+word bath:NP(gum-NamedObject): 'num.sg';
+word avon:NP(gum-NamedObject): 'num.sg';
+word dansville:NP(gum-NamedObject): 'num.sg';
+word coming:NP(gum-NamedObject): 'num.sg';
+word elmira:NP(gum-NamedObject): 'num.sg';
+word crane_bay:NP(gum-NamedObject): 'num.sg';
+word boots:NP(gum-NamedObject): 'num.sg';
+word pizza_hut:NP(gum-NamedObject): 'num.sg';
+word tesco:NP(gum-NamedObject): 'num.sg';
+word wheatfields:NP(gum-NamedObject): 'num.sg';
+word derrys:NP(gum-NamedObject): 'num.sg';
+word safeways:NP(gum-NamedObject): 'num.sg';
+word pc_world:NP(gum-NamedObject): 'num.sg';
+word x:NP(gum-NamedObject): 'num.sg';
+word queens_pub:NP(gum-NamedObject): 'num.sg';
+word y:NP(gum-NamedObject): 'num.sg';
+word Salzburg:NP(slm-Salzburg): 'num.sg';
+word Austrian_Alps:NP(slm-AustrianAlps): 'num.sg';
+word Tirunelveli:NP(slm-Tirunelveli): 'num.sg';
+word Tamil_Nadu:NP(slm-TamilNadu): 'num.sg';
+word India:NP(slm-India): 'num.sg';
+word Dublin:NP(slm-Dublin): 'num.sg';
+word Ireland:NP(slm-Ireland): 'num.sg';
+word Europe:NP(slm-Europe): 'num.sg';
+word Scammonden_Water:NP(gum-NamedObject): 'num.sg';
+word Broadway:NP(gum-NamedObject): 'num.sg';
+word B6114:N(slm-Road): 'num.sg' 'pers.3rd';
+word pluto:NP(slm-Pluto) {
+  pluto: 'num.sg';
+  Pluto: 'num.sg';
+}
+word town:NP(slm-Town): 'num.sg';
+word rolland:NP(gum-ConsciousBeing);
+word Rolland:NP(gum-ConsciousBeing);
+word Robert:NP(slm-Robert);
+word robert:NP(slm-Robert);
+word John:NP(slm-John) {
+  John;
+  John;
+}
+word left:NDIR(gs-LeftProjection): 'num.sg';
+word right:NDIR(gs-RightProjection): 'num.sg';
+word front:NDIR(gs-FrontProjection): 'num.sg';
+word back:NDIR(gs-BackProjection): 'num.sg';
+word top:NDIR(slm-TopProjection): 'num.sg';
+word bottom:NDIR(gum-BottomProjection): 'num.sg';
+word north:NDIR(gs-North): 'num.sg';
+word south:NDIR(gs-South): 'num.sg';
+word west:NDIR(gs-West): 'num.sg';
+word east:NDIR(gs-East): 'num.sg';
+word npdir:NPDIR(gum-SpatialObject) {
+  front: 'num.sg';
+}
+word this:NP(gum-SpatialObject): 'num.sg' 'number.singular';
+word that:NP(gum-SpatialObject): 'num.sg' 'number.singular';
+word these:NP(gum-SpatialObject): 'num.pl' 'number.plural';
+word those:NP(gum-SpatialObject): 'num.pl' 'number.plural';
+word there:NP(gum-SpatialObject);
+word there:'NP.space.deixis'(gs-SpatialModality);
+word here:'NP.space.deixis'(gs-SpatialModality);
+word I:NP(uio-Speaker): 'num.sg' 'case.nom' 'pers.1st' 'pers.first' 'number.singular';
+word i:NP(uio-Speaker): 'num.sg' 'case.nom' 'pers.1st' 'pers.first' 'number.singular';
+word me:NP(uio-Speaker): 'num.sg' 'pers.1st' 'pers.first' 'number.singular';
+word you:NP(uio-Hearer): 'pers.2nd' 'pers.second' 'number.singular';
+word she:NP(gum-Female): 'num.sg' 'case.nom' 'pers.3rd' 'pers.third' 'number.singular' 'pers.female';
+word her:NP(gum-Female): 'num.sg' 'pers.3rd' 'pers.third' 'number.singular' 'pers.female';
+word it:NP(gum-NonConsciousThing): 'num.sg' 'pers.3rd' 'pers.third' 'number.singular';
+word he:NP(gum-Male): 'num.sg' 'case.nom' 'pers.3rd' 'pers.third' 'number.singular' 'pers.male';
+word him:NP(gum-Male): 'num.sg' 'pers.3rd' 'pers.third' 'number.singular' 'pers.male';
+word we:NP(gum-ConsciousBeing): 'num.pl' 'case.nom' 'pers.1st' 'pers.first' 'number.singular';
+word us:NP(gum-ConsciousBeing): 'num.pl' 'pers.1st' 'pers.first' 'number.plural';
+word they:NP(gum-ConsciousBeing): 'num.pl' 'case.nom' 'pers.3rd' 'pers.third' 'number.singular';
+word them:NP(gum-ConsciousBeing): 'num.pl' 'pers.3rd' 'pers.third' 'number.singular';
+word there:EXIST;
+word "there's":'V.exist';
+word where:PRON;
+word interrogative:PRON {
+  when;
+}
+word and:COORD;
+word or:COORD;
+word then:COORD {
+  then;
+  and_then;
+}
+word with:COORD;
+word ',':COORD;
+word and:C-COORD(gum-Conjunction);
+word or:C-COORD(gum-Disjunction);
+word then:C-COORD(slm-Sequencing);
+word and_then:C-COORD(slm-Sequencing);
+word COMMA:C-COORD(slm-Sequencing) {
+  ',';
+}
+word yes:PARTICLE(uio-Affirmation);
+word yeah:PARTICLE(uio-Affirmation);
+word sure:PARTICLE(uio-Affirmation);
+word yep:PARTICLE(uio-Affirmation);
+word okay:PARTICLE(uio-Affirmation);
+word ok:PARTICLE(uio-Affirmation);
+word no:PARTICLE(uio-Denial);
+word nope:PARTICLE(uio-Denial);
+word maybe:PARTICLE(uio-Hedging);
+word possibly:PARTICLE(uio-Hedging);
+word probably:PARTICLE(uio-Hedging);
+word pardon:PARTICLE(uio-SignalNonUnderstanding);
+word what:PARTICLE(uio-SignalNonUnderstanding);
+word sorry:PARTICLE(uio-SignalNonUnderstanding);
+word emm:PARTICLE(uio-SignalHold);
+word hold_on:PARTICLE(uio-SignalHold);
+word bye:PARTICLE(uio-LeaveTaking);
+word goodbye:PARTICLE(uio-LeaveTaking);
+word bye_bye:PARTICLE(uio-LeaveTaking);
+word "b'bye":PARTICLE(uio-LeaveTaking);
+word hi:PARTICLE(uio-Greeting);
+word hello:PARTICLE(uio-Greeting);
+word '?':'Q.particle';
+word blue:ADJ(slm-Blue);
+word red:ADJ(slm-Red);
+word green:ADJ(slm-Green);
+word yellow:ADJ(slm-Yellow);
+word pink:ADJ(slm-Pink);
+word black:ADJ(slm-Black);
+word brown:ADJ(slm-Brown);
+word white:ADJ(slm-White);
+word huge:ADJ(gum-Size);
+word massive:ADJ(gum-Size);
+word big:ADJ(gum-Size);
+word large:ADJ(gum-Size);
+word small:ADJ(gum-Size);
+word tiny:ADJ(gum-Size);
+word minute:ADJ(gum-Size);
+word little:ADJ(gum-Size);
+word deep:ADJ(slm-Below);
+word deep:ADJ(gs-QualitativeSpatialTemporal) {
+  deeper;
+  deepest;
+  furthest;
+  closest;
+}
+word a_tiny_bit:QUAL-EXT(slm-TinyExtent);
+word a_bit:QUAL-EXT(slm-TinyExtent);
+word a_little:QUAL-EXT(slm-SmallExtent);
+word a_little_bit:QUAL-EXT(slm-SmallExtent);
+word a_short_way:QUAL-EXT(slm-SmallExtent);
+word half_way:QUAL-EXT(slm-MediumExtent);
+word a_good_bit:QUAL-EXT(slm-LargeExtent);
+word all_the_way:QUAL-EXT(slm-HugeExtent);
+word central:'ADJ.spt'(gs-Distribution);
+word southern:'ADJ.spt'(gs-South);
+word northern:'ADJ.spt'(gs-North);
+word western:'ADJ.spt'(gs-West);
+word eastern:'ADJ.spt'(gs-East);
+word well:DCONN {
+  now;
+  then;
+  well;
+  sorry;
+  just;
+  please;
+  and;
+  ok;
+  'ok,';
+  ',';
+  next;
+  'next,';
+}
+word orange:NP(slm-Food) {
+  orange: 'num.sg' 'pers.3rd';
+  oranges: 'num.pl' 'pers.3rd';
+}
+word oil:N(slm-Food) {
+  oil: 'num.sg' 'pers.3rd';
+  oils: 'num.pl' 'pers.3rd';
+}
+word pan:N(slm-Pan) {
+  pan: 'num.sg' 'pers.3rd';
+  pans: 'num.pl' 'pers.3rd';
+  griddle_pans: 'num.pl' 'pers.3rd';
+  saucepans: 'num.pl' 'pers.3rd';
+}
+word griddle_pan:N(slm-Pan): 'num.sg' 'pers.3rd';
+word saucepan:N(slm-Pan): 'num.sg' 'pers.3rd';
+word heat:N(slm-Heat) {
+  heat: 'num.sg' 'pers.3rd';
+  heat: 'num.pl' 'pers.3rd';
+}
+word frying:ADJ(gum-SimpleQuality);
+word vegetable:ADJ(gum-SimpleQuality);
+word medium:ADJ(gum-SimpleQuality);
+word not:NEG;
+
+######################## Rules ##########################
+
+rule {
+  no;
+  app +-;
+  comp +-;
+  xcomp +-;
+  sub +-;
+  xsub +-;
+  typeraise +;
+}
+
+################# Lexicon/Categories ####################
+
+family 'v.orienting.simple'(V) {
+  entry affecting-pp: s<1>[NUM PERS] /* pp<4> /* np<3> \. np<2>: E:gs-AffectingOrienting(<gum-actor>C <gum-actee>A <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-adv: s<1>[NUM PERS] /* adv<3> /* np<4> \. np<2>: E:gs-AffectingOrienting(<gum-actor>C <gum-actee>A <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-adv: s<1>[NUM PERS] /. adv<3> \* np<2>: E:gs-NonAffectingOrienting(<actor>C <gs-orientationDirection>(B:gs-GeneralizedLocation ^ <gs-hasSpatialModality>A) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-pp: s<1>[NUM PERS] / pp<4> \. np<2>: E:gs-NonAffectingOrienting(<actor>C <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.orienting.main'('V.main') {
+  entry affecting-pp: smain<1>[NUM PERS] /* pp<4> /* np<3>: E:gs-AffectingOrienting(<time-profile>not-past <gum-actee>A <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-adv: smain<1>[NUM PERS] /. adv<3> /. np<4>: E:gs-AffectingOrienting(<time-profile>not-past <gum-actee>A <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-adv: smain<1>[NUM PERS] /. adv<3>: E:gs-NonAffectingOrienting(<gs-orientationDirection>(B:gs-GeneralizedLocation ^ <gs-hasSpatialModality>A) <time-profile>not-past <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-pp: smain<1>[NUM PERS] / pp<4>: E:gs-NonAffectingOrienting(<gs-orientationDirection>B <time-profile>not-past <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.orienting.prp'('V.prp') {
+  entry affecting-pp: 's.prp'<1>[NUM PERS] / pp<4> / np<3>: E:gs-AffectingOrienting(<gum-actee>A <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-adv: 's.prp'<1>[NUM PERS] / adv<3> / np<4>: E:gs-AffectingOrienting(<gum-actee>A <gs-orientationDirection>(C:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-pp: 's.prp'<1>[NUM PERS] / pp<4>: E:gs-NonAffectingOrienting(<gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-adv: 's.prp'<1>[NUM PERS] / adv<3>: E:gs-NonAffectingOrienting(<gs-orientationDirection>(C:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.orientation.change.make.simple'(V) {
+  entry nonaffecting-pp: s<1>[NUM PERS] /* pp<4> /* np<5>[kind=turning] \ np<2>: E:gs-AffectingOrientationChange(<gum-actor>C <gs-orientationDirection>(B ^ <gum-hasExtent>F) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-adv: s<1>[NUM PERS] / adv<4> \. np<2>: E:gs-AffectingOrientationChange(<gum-actor>C <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.simple.make'(V) {
+  entry primary: s<1>[NUM PERS] /* nomp<5> \. np<2>: E:gum-simpleThing(<gum-actor>C <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: s<1>[NUM PERS] /* nq<5> \. np<2>: E:gum-simpleThing(<gum-actor>C <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.orientation.change.simple'(V) {
+  entry affecting-pp: s<1>[NUM PERS] / pp<4> / np<3> \ np<2>: E:gs-AffectingOrientationChange(<gum-actor>C <gum-actee>A <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-adv: s<1>[NUM PERS] / adv<4> / np<3> \. np<2>: E:gs-AffectingOrientationChange(<gum-actor>C <gum-actee>A <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-pp: s<1>[NUM PERS] / pp<4> \ np<2>: E:gs-NonAffectingOrientationChange(<gum-actor>C <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-adv: s<1>[NUM PERS] / adv<4> \. np<2>: E:gs-NonAffectingOrientationChange(<gum-actor>C <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.orientation.change.main'('V.main') {
+  entry simple: smain<1>[NUM PERS]: E:gs-NonAffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-pp: smain<1>[NUM PERS] / pp<4> / np<3>: E:gs-AffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-actee>A <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-adv: smain<1>[NUM PERS] / adv<4> / np<3>: E:gs-AffectingOrientationChange(<gum-actee>A <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-pp: smain<1>[NUM PERS] / pp<4>: E:gs-NonAffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-adv: smain<1>[NUM PERS] / adv<4>: E:gs-NonAffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-ext: smain<1>[NUM PERS] / q<4>: E:gs-NonAffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-quantitativeDistanceExtent>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-ext-qual: smain<1>[NUM PERS] / q<4>: E:gs-NonAffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-qualitativeDistanceExtent>B) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.orientation.change.prp'('V.prp') {
+  entry nonaffecting-pp: 's.prp'<1>[NUM PERS] /. pp<2>: E:gs-NonAffectingOrientationChange(<gs-direction>P:root <gum-processInConfiguration>(H:gum-Process ^ *));
+  entry nonaffecting-adv: 's.prp'<1>[NUM PERS] /. adv<2>: E:gs-NonAffectingOrientationChange(<gs-direction>(G:gs-GeneralizedLocation ^ <gs-hasSpatialModality>P:root) <gum-processInConfiguration>(H:gum-Process ^ *));
+  entry affecting-pp: 's.prp'<1>[NUM PERS] / pp<4> / np<3>: E:gs-AffectingOrientationChange(<gum-actee>A <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry affecting-adv: 's.prp'<1>[NUM PERS] /. adv<2> / np<3>: E:gs-AffectingOrientationChange(<gum-actee>A <gs-orientationDirection>(G:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B:root) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.simple.motion.nonaffecting.prp'('V.prp') {
+  entry primary: 's.prp'<1>[NUM PERS vform=inf]: E:gs-NonAffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.simple.motion.nonaffecting.imp'('V.main') {
+  entry primary: smain<1>[NUM PERS]: E:gs-NonAffectingSimpleMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.simple.motion.nonaffecting.simple'(V) {
+  entry primary: s<1>[NUM PERS] \* np<2>: E:gs-NonAffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <gum-actee>A);
+
+}
+
+family 'v.simple.motion.affecting.prp'('V.prp') {
+  entry primary: 's.prp'<1>[NUM PERS vform=inf] /* np<3>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <gum-actee>A);
+  entry secondary: 's.prp'<1>[NUM PERS vform=inf] /* np<3> /* adv<4>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-actee>A);
+
+}
+
+family 'v.simple.motion.affecting.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /* np<3>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-actee>A);
+  entry secondary: smain<1>[NUM PERS] /* np<3> /* adv<4>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-actee>A);
+
+}
+
+family 'v.simple.motion.affecting.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /* np<3>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-actee>A);
+  entry secondary: smain<1>[NUM PERS] /* np<3> /* adv<4>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>B) <gum-actee>A);
+
+}
+
+family 'v.simple.motion.affecting.simple'(V) {
+  entry primary: 's.prp'<1>[NUM PERS vform=inf] /* np<3> \* np<2>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <gum-actee>A <gum-actor>B);
+  entry secondary: 's.prp'<1>[NUM PERS vform=inf] /. adv<4> /* np<3> \* np<2>: E:gs-AffectingSimpleMotion(<gum-processInConfiguration>(P:gum-Process ^ *) <gum-actee>A <gs-orientationDirection>(D:gs-GeneralizedLocation ^ <gs-hasSpatialModality>C) <gum-actor>B);
+
+}
+
+family 'v.NonAffectingDirectedMotion.prp'('V.prp') {
+  entry primary: 's.prp'<1>[NUM PERS] /. r<3>: E:gs-NonAffectingDirectedMotion(<gs-route>A <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.NonAffectingDirectedMotion.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /. r<3>: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>A <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. pp<3>[ppkind=dynamic]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-pathPlacement>A) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.NonAffectingDirectedMotion.simple'(V) {
+  entry primary: s<1>[NUM PERS] /. r<3> \* np<2>: E:gs-NonAffectingDirectedMotion(<gs-route>A <gum-actor>D <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.AffectingDirectedMotion.prp'('V.prp') {
+  entry primary: 's.prp'<1>[NUM PERS] /. r<3> /. np<6>: E:gs-AffectingDirectedMotion(<gs-route>A:gs-GeneralizedRoute <gum-actee>F <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.AffectingDirectedMotion.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /. r<3> /. np<6>: E:gs-AffectingDirectedMotion(<gs-route>A <gum-actee>F <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.AffectingDirectedMotion.imp'(V) {
+  entry primary: s<1>[NUM PERS] /. r<3> /. np<6> \* np<2>: E:gs-AffectingDirectedMotion(<gs-route>A:gs-GeneralizedRoute <gum-actee>F <gum-actor>G <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.AffectingDirectedMotion.dest.prp'('V.prp') {
+  entry dynamic: 's.prp'<1>[NUM PERS] / pp<4>[kind=goal] /. np<6>: E:gs-AffectingDirectedMotion(<gs-route>(G:gs-GeneralizedRoute ^ <gs-destination>B) <gum-actee>F <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.AffectingDirectedMotion.dest.main'('V.main') {
+  entry dynamic: smain<1>[NUM PERS] /* pp<4>[kind=goal] /* np<6>: E:gs-AffectingDirectedMotion(<gs-route>(G:gs-GeneralizedRoute ^ <gs-destination>B) <gum-actee>F <mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.AffectingDirectedMotion.dest.simple'(V) {
+  entry dynamic: s<1>[NUM PERS] /. pp<4>[kind=goal] /. np<6> \* np<2>: E:gs-AffectingDirectedMotion(<gs-route>(G:gs-GeneralizedRoute ^ <gs-destination>B) <gum-actee>F <gum-actor>H <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.imp.move.dir'('V.main') {
+  entry primary: smain<1>[verb=partial NUM PERS mood=imp] /. adv<3>: E:gs-NonAffectingSpatialDoing(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-direction>(B:gs-GeneralizedLocation ^ <gs-hasSpatialModality>A) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-pp: smain<1>[NUM PERS] / pp<4>[kind=dir]: E:gs-NonAffectingSpatialDoing(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-direction>B <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.move.dir.simple'(V) {
+  entry primary: s<1>[NUM PERS] /. adv<3> \. np<2>: E:gs-NonAffectingSpatialDoing(<actor>C <gs-direction>(B:gs-GeneralizedLocation ^ <gs-hasSpatialModality>A) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.pass.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /. np<2>[kind=spatial]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(G:gs-GeneralizedRoute ^ <gs-pathPlacement>(R:gs-GeneralizedLocation ^ <gs-relatum>X:root ^ <gs-hasSpatialModality>(M:gs-PathRepresentingExternal ^ past))) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. r<2>: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>X <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.moving.prp'('V.prp') {
+  entry primary: 's.prp'<1>[NUM PERS] /. np<2>: E:gs-NonAffectingDirectedMotion(<gs-route>(Q ^ gs-GeneralizedRoute ^ <gs-pathPlacement>(R ^ gs-GeneralizedPathLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(M:gs-PathRepresentingExternal ^ past))) <gum-processInConfiguration>(F:gum-Process ^ *));
+
+}
+
+family 'v.leave.main'('V.main') {
+  entry primary: smain<1>[NUM PERS mood=imp] /. np<3>: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(G:gs-GeneralizedRoute ^ <gs-source>(H:gs-GeneralizedLocation ^ <gs-relatum>Z ^ <gs-hasSpatialModality>SM:gs-GeneralDirectionalDistancing)) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. pp<3>[kind=source]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(G:gs-GeneralizedRoute ^ <gs-source>Z ^ <gs-hasSpatialModality>SM:gs-GeneralDirectionalDistancing) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry tertiary: smain<1>[NUM PERS mood=imp]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(G:gs-GeneralizedRoute ^ <gs-source>(H:gs-GeneralizedLocation ^ <gs-hasSpatialModality>SM:gs-GeneralDirectionalDistancing)) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.follow.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /. np<3>: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-pathPlacement>(C:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(M:gs-PathRepresentingExternal ^ along))) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. pp<3>[kind=segment]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-destination>Z:root) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.approach.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /. np<3>: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-pathPlacement>(C:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(M:gs-GeneralDirectionalNearing ^ towards))) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. pp<3>[kind=segment]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-destination>Z:root) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.enter.main'('V.main') {
+  entry primary: smain<1>[NUM PERS] /. np<3>: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-destination>(C:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>SM:gs-Containment)) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. pp<3>[kind=segment]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-destination>Z:root ^ <gs-hasSpatialModality>SM:gs-Containment) <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry tertiary: smain<1>[NUM PERS]: E:gs-NonAffectingDirectedMotion(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-route>(B:gs-GeneralizedRoute ^ <gs-destination>(C:gs-GeneralizedLocation ^ <gs-hasSpatialModality>SM:gs-Containment)) <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.imp.take'('V.main') {
+  entry taketurn: smain<1>[NUM PERS] /* np<2>[kind=takable]: E:gs-NonAffectingOrientationChange(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-direction>P <gum-processInConfiguration>(F:gum-Process ^ *));
+  entry dironly: smain<1>[verb=full NUM PERS mood=imp] /. np<2>[kind=dir]: E:gs-NonAffectingOrientationChange(<mood>imperative <gs-orientationDirection>P <uio-hasSurfaceFunction>uio-Directive <gum-processInConfiguration>(F:gum-Process ^ *));
+
+}
+
+family 'v.imp.stop'(V) {
+  entry primary: smain<1>[NUM PERS]: E:gs-NonAffectingSpatialDoing(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry secondary: smain<1>[NUM PERS] /. pp<3>: E:gs-NonAffectingSpatialDoing(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <gs-placement>Z:root <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.doing'(V) {
+  entry ind: s<1>[verb=full NUM PERS mood=ind] \. np<2> /. pp<3>[kind=loc]: E:gs-NonAffectingSpatialDoing(<mood>indicative <uio-hasSurfaceFunction>uio-Statement <actor>h101 <gs-placement>Z:root <gum-processInConfiguration>(F:gum-Process ^ *));
+
+}
+
+family 'v.show.main'('V.main') {
+  entry simple: smain<1>[verb=full NUM PERS] \. np<3>: E:gum-SayingANDSensing(<gum-actor>X);
+  entry showobj: smain<1>[NUM PERS] /. np<3> /. np<4>: E:gum-SayingANDSensing(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <beneficiary>T:root <actee>Z:root <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry showsubcl: smain<1>[NUM PERS] /* s<3>[kind=relloc] /. np<4>: E:gum-SayingANDSensing(<mood>imperative <uio-hasSurfaceFunction>uio-Directive <client>T:root <actee>Z:root <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.know.main'('V.main') {
+  entry simple: smain<1>[verb=full NUM PERS] \. np<3>: E:gum-Cognition(<gum-actor>X);
+
+}
+
+family 'v.inf.know'(V) {
+  entry showobj: s<1>[verb=full NUM PERS mood=inf] /. np<3>: E:gum-Configuration(<actee>Z:root <gum-processInConfiguration>(F:gum-Process ^ *));
+  entry showsubcl: s<1>[verb=full NUM PERS mood=inf] /* s<3>[kind=relloc]: E:gum-Configuration(<actee>Z:root <gum-processInConfiguration>(F:gum-Process ^ *));
+
+}
+
+family 'v.is.existence'(V) {
+  entry primary: s<1> \. 'exists.there' /. np<3>: E:gum-Existence(<gum-existent>A:root);
+
+}
+
+family 'v.is.existence.short'('V.exist') {
+  entry primary: s<1> /. np<3>: E:gum-Existence(<gum-existent>A:root);
+
+}
+
+family 'exists.there'(EXIST) {
+  entry primary: 'exists.there'<1>;
+
+}
+
+family 'v.spatloc'(V) {
+  entry primary: s<1>[NUM PERS] /* pp<3>[ppkind=static] \* np<2>: E:gs-SpatialLocating(<'uio:hasSurfaceFunction'>uio:Statement <gum-processInConfiguration>(G:root ^ *) <gs-locatum>T:gum-SimpleThing <gs-placement>A:gs-GeneralizedLocation);
+  entry secondary: s<1>[kind=spatloc NUM PERS] /* np<2> \* pp<3>[ppkind=static]: E:gs-SpatialLocating(<'uio:hasSurfaceFunction'>uio:Statement <gs-locatum>T:gum-SimpleThing <gs-placement>Z:root <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry simple-q: s<1>[kind=spatloc NUM PERS] /* np<2> \* 'q.where'<3>: E:gs-SpatialLocating(<uio-hasSurfaceFunction>uio-Wh-Question <uio-required>GL <gs-locatum>T:gum-SimpleThing <gs-placement>GL <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family 'v.temploc'(V) {
+  entry primary: s<1> \. np<2> /. pp<3>: E:gs-TemporalLocating(<gum-processInConfiguration>(G:root ^ *) <gs-locatum>T:gum-Event <gum-temporalPlacement>A:gum-GeneralizedTime);
+
+}
+
+family 'v.spattemploc'(V) {
+  entry primary: s<1> \. np<2>{ /. pp<3> /. pp<4>}: E:gs-SpatialTemporalLocating(<gum-processInConfiguration>(G:root ^ *) <gs-locatum>T:gum-Event <gum-temporalPlacement>A:gum-GeneralizedTime <gs-placement>B:gs-GeneralizedLocation);
+
+}
+
+family 'v.spatloc.obj'(V) {
+  entry locating: s<1>[NUM PERS verb=aux] \. np<2> /. np<3>[kind=spatial]: E:gs-SpatialLocating(<gs-locatum>T:root <gs-placement>(L:gs-GeneralizedLocation ^ <gs-hasSpatialModality>(F:gs-SpatialModality ^ *) ^ <gs-relatum>Z:gum-SimpleThing) <gum-processInConfiguration>H:slm-Being);
+
+}
+
+family 'v.equate'(V) {
+  entry equus: s<1>[NUM PERS verb=aux] \* np<2> /* np<3>: E:gum-Identity(<gum-domain>O <'uio:hasSurfaceFunction'>uio:Statement <gum-attribute>Z:gum-SimpleThing <gum-processInConfiguration>(F:gum-Process ^ *));
+
+}
+
+family 'v.cont'(V, indexRel="tense") {
+  entry indicative: s<1>[NUM PERS] /* 's.prp'<3>[vform=inf] \. np<2>: E(<test>yesme <gum-actor>X);
+  entry question: s<1>[NUM PERS verb=aux] /* s<3>[form=ing] /* np<4>: U:uio-Question(<uio-content>(E:root ^ <gum-actor>S));
+
+}
+
+family 'v.imp'(V) {
+  entry event: s<~2> \. np<1> /. sinf<2>: E(* <gum-wanting>U <actor>C);
+  entry object: s<~2> \. np<1> /. np<2>: E(* <gum-wanting>U <actor>C);
+
+}
+
+family 'v.want.np'(V) {
+  entry primary: s<1>[verb=full NUM PERS mood=imp] \. np<2>[NUM PERS] /. np<3>: U:uio-Statement(<uio-content>(E:gum-Wanting ^ <mood>imperative ^ <uio-hasSurfaceFunction>uio-Directive ^ <gum-actor>h101 ^ <gum-patient>X:root));
+
+}
+
+family 'v.dummy'(V, indexRel="hasSpeechFunction") {
+  entry statement: s<~1> /. s<1> \. np<1>: E:root(<mood>indicative <uio-hasSurfaceFunction>uio-Statement <'gum:actor'>Y);
+  entry question: s<~2> /* s<2>: E(<hasSurfaceFunction>uio-Question);
+  entry question-x: s<~2> /* part<3>[lex='?'] /* s<2>: E(<uio-hasSurfaceFunction>uio-Question);
+
+}
+
+family 'v.modal'('V.modal') {
+  entry canq: s<1>[NUM PERS verb=aux] /. smain<3>[mood=imp verb=full] /. np<4>: U:uio-Question(<uio-content>(E:root ^ <gum-actor>S));
+  entry indicative: smain<1>[NUM PERS verb=aux] \. np<4> /. smain<3>[mood=imp verb=full]: U:uio-Statement(<uio-content>(E:root ^ <gum-actor>S));
+
+}
+
+family 'prep.static'('PREP.static') {
+  entry primary: pp<1>[ppkind=static] /* np<2>[NUM PERS CASE abstract=false]: P:gs-GeneralizedLocation(<gs-relatum>Z:gum-SimpleThing <gs-hasSpatialModality>(F:root ^ *));
+  entry 'prep.npmodif.2': np<1>[ppkind=static] \* np<2>[kind=npnondir] /* np<3>[NUM PERS CASE abstract=false]: SL:gs-SpatialLocating(<gs-locatum>L <gs-placement>(G:gs-GeneralizedLocation ^ <gs-relatum>R:root ^ <gs-hasSpatialModality>(M ^ *)));
+  entry 'prep.npmodif.2.ext': np<1>[ppkind=static] \* np<2>[kind=npnondir] \* q<5> /* np<3>[NUM PERS CASE abstract=false]: SL:gs-SpatialLocating(<gs-locatum>L <gs-placement>(G:gs-GeneralizedLocation ^ <gs-relatum>R:root ^ <gs-hasSpatialModality>(M ^ * ^ <gum-hasQuantiativeExtent>G2)));
+  entry circumstance-fwd: smain<1> /. smain<2> /. np<3>: E(<gs-placement>(B:gs-GeneralizedLocation ^ <gs-hasSpatialModality>(Z:gs-SpatialModality ^ *) ^ <gs-relatum>Y));
+
+}
+
+family 'prep.static.incomplete'('PREP.static') {
+  entry primary: pp-incon<1>[ppkind=static] /* np<2>[NUM PERS CASE abstract=false]: P:gs-GeneralizedLocation(<gs-relatum>Z:gum-SimpleThing <gs-hasSpatialModality>(F:root ^ *));
+
+}
+
+family spatial-deixis('NP.space.deixis') {
+  entry primary: pp<1>[ppkind=static]: P:gs-GeneralizedLocation(<gs-hasSpatialModality>(Z:gs-SpatialModality ^ *));
+  entry circumstance-bwd: s<1> \. s<2>: E(<gs-placement>(B:gs-GeneralizedLocation ^ <gs-hasSpatialModality>(Z:gs-SpatialModality ^ *)));
+
+}
+
+family 'prep.lateral'(PREP2) {
+  entry pp-lateral-spatloc: pp<1>[kind=loc] /* np<2>[NUM PERS CASE abstract=false form=definite kind=dir]: P(*);
+  entry 'prep.npmodif': np<~1> \* np<1>[kind=npnondir] /* np<2>[kind=dir NUM PERS CASE abstract=false form=definite]: P:gum-UMThing(<gum-inverse-relatum>(Z:gs-GeneralizedLocation ^ gs-GeneralizedLocation));
+
+}
+
+family 'prep.static.directional'('PREP.static.directional', indexRel="*NoSem*") {
+  entry primary: pp<~3>[lex='*' ppkind=static] /< np<3>[NUM PERS CASE form=definite kind=dir]: P(<form>definite);
+
+}
+
+family 'prep.static.directional.sl'('PREP.static.directional') {
+  entry primary: np<~1>[kind=spatial] \* np<1>[kind=npnondir] /* np<2>[kind=dir NUM PERS CASE form=definite]: U:gs-SpatialLocating(<gs-locatum>P <gs-placement>Z);
+
+}
+
+family 'prep.dynamic.source'('PREP.dynamic') {
+  entry primary: pp<1> /* np<2>[NUM PERS CASE]: Q:gs-GeneralizedLocation(<gs-relatum>Z:root <gs-hasSpatialModality>(F:root ^ *));
+  entry route: r<1> /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-source>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)));
+  entry route-dest: r<1> /* pp<6>[kind=goal] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-source>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)) <gs-destination>D);
+  entry route-path: r<1> /* pp<6>[kind=segment] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-source>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)) <gs-pathPlacement>D);
+  entry route-path-dest: r<1>{ /* pp<3>[kind=goal] /* pp<4>[kind=segment]} /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-source>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)) <gs-pathPlacement>D <gs-destination>E);
+
+}
+
+family 'prep.dynamic.complex'('PREP.dynamic') {
+  entry primary: pp<1>[ppkind=dynamic] /* np<2>[NUM PERS CASE]: P:gs-GeneralizedLocation(<gs-relatum>Z:root <gs-hasSpatialModality>(F:root ^ *));
+  entry sequence: pp<1> /* pp<3>[kind=segment] /* np<2>[NUM PERS CASE]: P:gs-GeneralizedPathLocation(<gs-relatum>Z:root <gs-hasSpatialModality>(F:root ^ *) <gs-nextPathPlacement>X);
+  entry route-single: r<1> /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *)));
+  entry route-segment: r<1> /* pp<3>[kind=segment] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *) ^ <gs-nextPathPlacement>X));
+  entry route-destination: r<1> /* pp<3>[kind=goal] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *)) <gs-destination>X:root);
+  entry route-source: r<1> /* pp<3>[kind=source] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *)) <gs-source>X:root);
+  entry route-source-dest: r<1> /* pp<3>[kind=source] /* pp<3>[kind=goal] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *)) <gs-source>X:root <gs-destination>W);
+  entry route-segment-goal: r<1> /* pp<4>[kind=goal] /* pp<3>[kind=segment] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *) ^ <gs-nextPathPlacement>X) <gum-goal>W);
+  entry route-segment-source: r<1> /* pp<4>[kind=source] /* pp<3>[kind=segment] /* np<2>[NUM PERS CASE]: R:gs-GeneralizedRoute(<gs-pathPlacement>(Q:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(P:root ^ *) ^ <gs-nextPathPlacement>X) <gs-source>W);
+
+}
+
+family 'prep.dynamic'('PREP.dynamic') {
+  entry primary: pp<1>[ppkind=dynamic] /* np<2>[kind=simple NUM PERS CASE]: P:gs-GeneralizedLocation(<gs-relatum>Z:root <gs-hasSpatialModality>(F:root ^ *));
+  entry route-single: r<1>[ppkind=dynamic] /* np<2>[kind=simple NUM PERS CASE]: P:gs-GeneralizedRoute(<gs-destination>(A:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)));
+  entry route-source: r<1>[ppkind=dynamic] /* pp<3>[kind=source] /* np<2>[kind=simple NUM PERS CASE]: P:gs-GeneralizedRoute(<gs-source>C <gs-destination>(A:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)));
+  entry route-segment: r<1>[ppkind=dynamic] /* pp<3>[kind=segment] /* np<2>[kind=simple NUM PERS CASE]: P:gs-GeneralizedRoute(<gum-PathPlacement>C <gs-destination>(A:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)));
+  entry route-source-segment: r<1>[ppkind=dynamic]{ /* pp<3>[kind=segment] /* pp<4>[kind=source]} /* np<2>[kind=simple NUM PERS CASE]: P:gs-GeneralizedRoute(<gum-pathPlacement>C <gs-source>D <gs-destination>(A:gs-GeneralizedLocation ^ <gs-relatum>Z:root ^ <gs-hasSpatialModality>(F:root ^ *)));
+
+}
+
+family 'pron.interrogative.loc'(PRON) {
+  entry primary: s<~1>[kind=relloc] /* s<1>[kind=spatloc] /* pp<3>[kind=ppnondir]: U(<uio-required>P:root);
+
+}
+
+family 'pron.interrogative.time'(PRON) {
+  entry primary: s<~1>[kind=relloc] /* s<1>[kind=temploc] /* pp<3>[kind=pptime]: U(<uio-required>P:root);
+
+}
+
+family 'prep.genetive.spatial'('PREP.genetive', indexRel="*NoSem*") {
+  entry primary: np<~3>[lex=of case=gen] /< np<3>[NUM PERS CASE];
+
+}
+
+family toinf(TOINF, indexRel="*NoSem*") {
+  entry primary: sinf /* smain<2>;
+  entry secondary: sinf /* smain<2> \* np<3>: T(<gum-Actor>A);
+
+}
+
+family 'NP.possessive.normal'('NP.possessive', indexRel="hasName") {
+  entry primary: np<~1> /* n<1>[kind=dir PERS KIND CASE]: T(<hasOwner>(C:gum-Person ^ <hasName>(D:gum-Name ^ *)));
+
+}
+
+family 'NP.possessive.spatial'('NP.possessive') {
+  entry spatial: np<1>[kind=simple case=gen NUM PERS]: U:gum-UMThing(*);
+
+}
+
+family det(DET, indexRel="det") {
+  entry primary: np<1> /* n<1>[PERS KIND CASE]: T:gum-UMThing(<det>*);
+  entry secondary: np<1> /* np<1>;
+  entry tertiary: np<1> /* n-spatial<1>[PERS KIND CASE]: T:gs-GeneralizedLocation(<det>*);
+
+}
+
+family possessives(POSSDET) {
+  entry ownership: np<~1>[form=definite] /* n<1>[kind=simple PERS CASE]: T(<hasOwner>(C:gum-SimpleThing ^ *));
+  entry spatial: np-s<1>[kind=simple case=gen NUM PERS]: C:gum-UMThing(*);
+
+}
+
+family 'adj.color'(ADJ) {
+  entry 'adj.full': n<~1> /* n<1>[NUM PERS CASE]: U:gum-ColorPropertyAscription(<concrete>true <gum-domain>T <gum-attribute>(P:gum-Color ^ * ^ <concrete>true));
+
+}
+
+family 'adj_cook.attribut'(ADJ) {
+  entry 'adj.full': n<~1> /* n<1>[NUM PERS CASE]: U:gum-SimpleQuality(<concrete>true <gum-domain>T <gum-attribute>(P:gum-SimpleQuality ^ * ^ <concrete>true));
+
+}
+
+family 'adj.spt'('ADJ.spt') {
+  entry primary: n<~1> /* n<1>[NUM PERS CASE]: U:gs-SpatialLocating(<gs-locatum>T <gs-placement>(D:gs-GeneralizedLocation ^ <gs-relatum>V ^ <gs-hasSpatialModality>(W:gs-SpatialModality ^ *)));
+  entry secondary: n<~1> /* np<3>[case=gen] /* n<1>[NUM PERS CASE]: U:gs-SpatialLocating(<gs-locatum>T <gs-placement>(D:gs-GeneralizedLocation ^ <gs-relatum>V ^ <gs-hasSpatialModality>(W:gs-SpatialModality ^ *)));
+  entry tertiary: np<~1> /* np<1>[NUM PERS CASE]: U:gs-SpatialLocating(<gs-locatum>X:root <gs-placement>(D:gs-GeneralizedLocation ^ <gs-relatum>T ^ <gs-hasSpatialModality>(W:gs-SpatialModality ^ *)));
+
+}
+
+family 'adj.size'(ADJ) {
+  entry 'adj.property.config': n<~1> /* n<1>[NUM PERS CASE]: T(<hasAttribute>(U:gum-SizePropertyAscription ^ <gum-omain>T ^ <gum-attribute>(P:root ^ *)));
+
+}
+
+family 'adj.number'('ADJ.ordinal') {
+  entry 'adj.property.config': n<~1> /* n<1>[NUM PERS CASE]: U:gum-NumberFocusing(<gum-domain>T <gum-attribute>(P:root ^ *));
+
+}
+
+family advadv(ADV) {
+  entry 'adv.modif': adv<~1> /* adv<1>: S(*);
+
+}
+
+family adv(ADV) {
+  entry adv: adv<3>: SP(*);
+
+}
+
+family 'adv.ppmodif'(ADV, indexRel="proximity") {
+  entry primary: pp<~1> /* pp<1>: Z(<proximity>*);
+  entry modification: np<1>[ppkind=static] \* np<2>[kind=npnondir] /* pp<3>: P:gum-UMThing(<gum-hasPlacement>(Z:gs-GeneralizedLocation ^ <proximity>*));
+
+}
+
+family Num {
+  entry Primary: num<2>[NUM]: X:num(*);
+  entry Adjectival: n<2> /^ n<2>: X:sem-obj(<Card>(N:num ^ *));
+
+}
+
+family n(N) {
+  entry primary: n<1>[kind=simple NUM PERS CASE]: T:gum-UMThing(*);
+  entry secondary: n<1>[kind=simple NUM PERS CASE] / pp<4>[dir]: SL:gs-SpatialLocating(<gs-locatum>(T:gum-UMThing ^ *) <gs-placement>B);
+
+}
+
+family nomp(NOMP) {
+  entry nonaffecting-pp: nomp<1>[NUM PERS] / pp<4> \ np<2>: E:gs-NonAffectingOrientationChange(<gum-actor>C <gs-orientationDirection>B <gum-processInConfiguration>(P:gum-Process ^ *));
+  entry nonaffecting-np: nomp<1>[NUM PERS] \. np<2>: E:gs-NonAffectingOrientationChange(<gum-actor>C <gs-GeneralizedLocation>D <gum-hasExtent>P <gum-hasValue>P <gs-hasSpatialModality>D <gum-processInConfiguration>(P:gum-Process ^ *));
+
+}
+
+family nq(NQ) {
+  entry nonaffecting-pp: nq<1>[NUM PERS] / pp<4> \ np<2>: E:gum-SimpleThing(<gum-actor>C <gs-orientationDirection>B);
+  entry nonaffecting-np: nq<1>[NUM PERS] \. np<2>: E:gum-SimpleThing(<gum-actor>C <gs-GeneralizedLocation>D <gs-hasSpatialModality>D);
+  entry unit: nq<1> \* np<2>: Z:gs-QuantitativeSpatialTemporal(<slm-value>Y <slm-unit>(X ^ *));
+
+}
+
+family 'n.pos'('N.possessive') {
+  entry primary: n<1>[kind=simple NUM PERS]: T:gum-UMThing(*);
+
+}
+
+family ndir(NDIR) {
+  entry primary: n-spatial<1>[kind=xxy NUM PERS CASE]: T:gs-GeneralizedLocation(<gs-hasSpatialModality>(M:gs-SpatialModality ^ *));
+  entry possessive: np<1>[kind=dir NUM PERS CASE] \. np<2>[case=gen]: T:gs-GeneralizedLocation(<gs-hasSpatialModality>(M:gs-SpatialModality ^ *) <gs-relatum>U);
+  entry possessive-s: np<1>[kind=dir NUM PERS CASE] \. np-s<2>[case=gen]: T:gs-GeneralizedLocation(<gs-hasSpatialModality>(M:gs-SpatialModality ^ *) <gs-relatum>U);
+  entry genetive-of: n<1>[kind=dir NUM PERS CASE] /. np<2>[case=gen]: T:gs-GeneralizedLocation(<gs-hasSpatialModality>(M:gs-SpatialModality ^ *) <gs-relatum>U);
+  entry pp-construct: pp<1>[kind=dir NUM PERS CASE] /. np<2>[case=gen]: T:gs-GeneralizedLocation(<gs-hasSpatialModality>(M:gs-SpatialModality ^ *) <gs-relatum>U);
+  entry sl-construct: np<~2>[kind=dir NUM PERS CASE] \* np<2>[kind=npnondir] \* q<5> /. np<3>[case=gen]: SL:gs-SpatialLocating(<gs-locatum>L <gs-placement>(G:gs-GeneralizedLocation ^ <gs-relatum>U ^ <gs-hasSpatialModality>(M ^ * ^ <gum-hasQuantiativeExtent>G2)));
+
+}
+
+family 'ndir.modifiable'(NDIR2) {
+  entry default: n<1>[kind=modifdir NUM PERS CASE]: X(*);
+
+}
+
+family npdir(NPDIR) {
+  entry default: np<1>[kind=front NUM PERS CASE]: T:gum-UMThing(<gs-hasSpatialModality>(SP ^ gs-FrontProjection) <gs-relatum>REL:root);
+
+}
+
+family 'n.way.destinative'(NWAY) {
+  entry 'n.way.destinative': n<1>[kind=way NUM PERS CASE] /. pp<3>: T:gum-UMThing(<gum-path>Z:root);
+
+}
+
+family np(NP) {
+  entry default: np<1>[kind=person]: C:root(*);
+
+}
+
+family 'np.composite'(NP) {
+  entry default: np<1> /* np<2>: C:gs-SpatialLocating(<gs-locatum>(A ^ *) <gs-placement>(D:gs-GeneralizedLocation ^ <gs-relatum>B ^ <gs-hasSpatialModality>(W:gs-Containment ^ gs-Containment)));
+
+}
+
+family gen_time('PREP.temporal') {
+  entry primary: pp<1> /* np: B:gum-GeneralizedTime(<gum-hasTemporalModality>(Z:gum-TemporalModality ^ *) <gum-hasTemporalRelatum>Y);
+  entry circumstance-fwd: s<1> /. s<2> /. np<3>: E(<gum-hasTemporalPlacement>(B:gum-GeneralizedTime ^ <gum-hasTemporalModality>(Z:gum-TemporalModality ^ *) ^ <gum-hasTemporalRelatum>Y));
+  entry circumstance-bwd: s<1> \. s<2> /. np<3>: E(<gum-hasTemporalPlacement>(B:gum-GeneralizedTime ^ <gum-hasTemporalModality>(Z:gum-TemporalModality ^ *) ^ <gum-hasTemporalRelatum>Y));
+
+}
+
+family time('N.time') {
+  entry primary: np<1>[ABSTRACT] \* np: X:gum-NewTimePoint(* <gum-time>Y);
+
+}
+
+family certanty('ADJ.cert') {
+  entry primary: 'adv.c': X:gum-UMThing(*);
+
+}
+
+family number('N.num') {
+  entry primary: np: X:gum-NaturalNumber(*);
+  entry primary-conf: np<1> \* 'adv.c'<2>: X:gum-NaturalNumber(* <confidence>Y);
+  entry assignment: np \* n[PERS NUM]: B(<number>*);
+  entry number: np /. n[PERS NUM]: X:gum-UMThing(*);
+
+}
+
+family distance_quantitative('N.unit') {
+  entry primary: q<1> \* np<2>: Z:gs-QuantitativeSpatialTemporal(<slm-value>Y <slm-unit>(X ^ *));
+
+}
+
+family distance_quantitative2('N.unit', indexRel="gs-QuantitativeDistanceExtent") {
+  entry pp: pp<~3> /* pp<3> \* np<2>: SM(<gs-quantitativeDistanceExtent>(Z:gs-QuantitativeSpatialTemporal ^ <slm-value>Y ^ <slm-unit>(X ^ *)));
+  entry adv: adv<~3> /* adv<3> \* np<2>: SM(<gs-quantitativeDistanceExtent>(Z:gs-QuantitativeSpatialTemporal ^ <slm-value>Y ^ <slm-unit>(X ^ *)));
+
+}
+
+family distance_quantitative2(ADJ, indexRel="gs-QuantitativeDistanceExtent") {
+  entry secondary: pp<~3> /* pp<3> \* np<2>: SM(<gs-quantitativeDistanceExtent>(Z:gs-QuantitativeSpatialTemporal ^ <slm-value>Y ^ <slm-unit>(X ^ *)));
+
+}
+
+family qualitative-extent(ADJ, indexRel="gs-qualitativeDistanceExtent") {
+  entry primary: pp<~3> /* pp<3>: SM(<gs-qualitativeDistanceExtent>(Z:gs-QualitativeSpatialTemporal ^ *));
+  entry secondary: pp<~3> /* pp-incon<3>: SM(<gs-qualitativeDistanceExtent>(Z:gs-QualitativeSpatialTemporal ^ *));
+
+}
+
+family qualitative-extent2(QUAL-EXT, indexRel="gs-qualitativeDistanceExtent") {
+  entry primary: pp<~3> /* pp<3>: SM(<gs-qualitativeDistanceExtent>(Z:gs-QualitativeSpatialTemporal ^ *));
+  entry tertiary: q<1>: Z:gs-QualitativeSpatialTemporal(*);
+  entry pp: pp<~3> /* pp<3>: SM(<gs-qualitativeDistanceExtent>(Z:gs-QualitativeSpatialTemporal ^ *));
+  entry adv: adv<~3> /* adv<3>: SM(<gs-qualitativeDistanceExtent>(Z:gs-QualitativeSpatialTemporal ^ *));
+
+}
+
+family 'Q.particle'(indexRel="*NoSem*") {
+  entry primary: part<1>[lex='?'];
+
+}
+
+family 'COORD.pp.route'(COORD) {
+  entry basic: pp<~2> \* pp<2> /* pp<3>: A:gs-GeneralizedLocation(<nextPathPlacement>B);
+  entry route: r<~2> \* pp<2> /* pp<3>: C:gs-GeneralizedRoute(<pathPlacement>(A ^ <nextPathPlacement>B));
+
+}
+
+family 'COORD.conj'(COORD) {
+  entry primary: np<1>[complex=true] \* np<2>[complex=false] /* np<3>: C:gum-SimpleThing(<relation>* <item1>X <item2>Y);
+
+}
+
+family 'COORD.s.imp'(C-COORD) {
+  entry primary: s<1>[form=coord] \* s<4> /* s<5>: C:gum-MultiConfiguration(* <gum-alphaParticipantInMultiConfiguration>A <gum-betaParticipantInMultiConfiguration>B);
+  entry secondary: smain<1>[form=coord] \. smain<4>[form=notcoord] /. smain<5>: C:gum-MultiConfiguration(* <gum-alphaParticipantInMultiConfiguration>A <gum-betaParticipantInMultiConfiguration>B);
+  entry tertiary: smain<1>[form=coord] \. s<4>[form=notcoord] /. smain<5>: C:gum-MultiConfiguration(* <gum-alphaParticipantInMultiConfiguration>A <gum-betaParticipantInMultiConfiguration>B);
+
+}
+
+family 'COORD.conj.pp'(COORD) {
+  entry primary: pp<~3> \* pp<4> /* pp<3>[PERS]: C:root(* <first>(S1:struct ^ elem ^ <Item>X:root ^ <next>(S2:struct ^ elem ^ <item>Y:root)) <last>(L:struct ^ elem));
+  entry secondary: np<~1> \* np \* np<4> \* np<5> /* np<1>[PERS] \* np<2>: C:root(* <first>(S1:struct ^ elem ^ <Item>X:root ^ <next>(S2:struct ^ elem ^ <item>Y:root)) <last>(L:struct ^ elem));
+  entry tertiary: pp<~1> /* np<~2> \* pp<4> /* np<5> /* pp<1>[PERS] /* np<2>: C:root(* <first>(S1:struct ^ elem ^ <Item>X:root ^ <next>(S2:struct ^ elem ^ <item>Y:root)) <last>(L:struct ^ elem));
+
+}
+
+family 'COORD.conj.adv'(COORD) {
+  entry primary: adv<~3> \* adv<~3> /* adv<3>[PERS]: C:root(* <first>(S1:struct ^ elem ^ <Item>X:root ^ <next>(S2:struct ^ elem ^ <item>Y:root)) <last>(L:struct ^ elem));
+
+}
+
+family particle(PARTICLE) {
+  entry primary: s<1>: U:gum-Configuration(<mood>minor <uio-hasSurfaceFunction>(X:uio-SurfaceSpeechFunction ^ *));
+
+}
+
+family dconn(DCONN) {
+  entry primary: smain<~1> /. smain<1>[NUM PERS MOOD]: U(<additive>true);
+  entry backwards: s<~1> \* s<1>[NUM PERS MOOD]: U(<additive>true);
+
+}
+
+family negation(NEG) {
+  entry primary: s<~1> \. s<1>[verb=aux]: U:gum-UMThing(<polarity>negative);
+  entry auxilaries: s<~1> \. s<1>[verb=aux] /. s<1>[verb=aux]: U:gum-UMThing(<polarity>negative);
+
+}
+
+####################### Testbed #########################
+
+testbed {
+}
+
