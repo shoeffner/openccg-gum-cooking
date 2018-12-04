@@ -48,7 +48,7 @@ def owl2types():
     classes = extract_classes(ontologies, ontology_prefix_map)
     if arguments.exclude_owl_thing:
         classes = exclude_owl_thing(classes)
-    xml = classes2xml(classes, ontologies)
+    xml = classes2xml(classes, ontologies, ontology_prefix_map)
 
     print(xml, file=arguments.output)
 
@@ -220,13 +220,14 @@ def exclude_owl_thing(classes):
     return classes
 
 
-def classes2xml(classes, ontologies):
+def classes2xml(classes, ontologies, ontology_prefix_map):
     """Generates the XML string from the classes and ontologies.
 
     Args:
         classes: A class dictionary of a classname mapping to a list of parent
                  classnames.
         ontologies: The list of used ontologies.
+        ontology_prefix_map: A prefix map as returned by load_ontologies.
 
     Returns:
         A string which can be parsed as valid xml, in the format of the types.xml
@@ -245,7 +246,9 @@ def classes2xml(classes, ontologies):
     pretty = minidom.parseString(ET.tostring(root)).toprettyxml(indent=' ' * 4, encoding='UTF-8').decode('utf-8')
     pretty = pretty.replace('"/>', '" />')
     comment = '<!-- This file was generated automatically. Do not modify it manually. -->'
-    comment_ontologies = '<!-- Ontologies used:\n    ' + '\n    '.join(o.base_iri for o in ontologies) + '\n-->'
+    comment_ontologies = '<!-- Ontologies used:\n     ' + \
+                         '\n     '.join('{}: {}'.format(ontology_prefix_map[o.name], o.base_iri) for o in ontologies) + \
+                         '\n-->'
     lines = pretty.splitlines()
     lines.insert(1, comment_ontologies)
     lines.insert(1, comment)
