@@ -6683,10 +6683,10 @@ Important manual modifications: (Marked below with   MOD: key   )
     pos:             PREP2
     Entry "pp-lateral-spatloc": pp/*np
     Entry "prep.npmodif": np\*np/*np
-    description:     Static directional PPs: "on the left" 
+    description:     Static directional PPs: "on the left"
     Example Memeber: on, at, in
     Example Parse:   the kitchen (on) the left :- np\*np/*np (noun modifying)
-    				 
+
     go to the kitchen (on) the left :- pp/*np (prepositional prases)
     ============================================================================ -->
   <family closed="true" pos="PREP2" name="prep.lateral">
@@ -6786,30 +6786,30 @@ Important manual modifications: (Marked below with   MOD: key   )
     <member stem="in" />
     <member stem="of" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     prep.static.directional
     pos:             PREP.static.directional
-    Entry            primary :  pp/*np	  
+    Entry            primary :  pp/*np
     description:     Dynamic directional PPs: "to the left" etc.
                      'to' is treated seperately to other static spatial preopositons
-                     in that it can only be applied to abstract spatial regions which 
-                     themselves always provide the actual spatial relation. 
-    
+                     in that it can only be applied to abstract spatial regions which
+                     themselves always provide the actual spatial relation.
+
                      Currently cases like
                         "the cup is to the right"
                         "the cup is to roberts right"
                      are handled.
-                     
-                     The semantics produced for this propositional phrase is a 
+
+                     The semantics produced for this propositional phrase is a
                      GeranalizedLocation.
-                      
-                     The GeneralizedLocation will actually be provided by 
+
+                     The GeneralizedLocation will actually be provided by
                         'the right'
-                        or  'roberts right' 
-                     and will not be added here. 
-    
-    Example Memeber: to 
+                        or  'roberts right'
+                     and will not be added here.
+
+    Example Memeber: to
     Example Parse:   the kitchen ((is) to the right)    :- pp/*np
     ============================================================================ -->
   <family pos="PREP.static.directional" closed="true" indexRel="*NoSem*" name="prep.static.directional">
@@ -6859,33 +6859,33 @@ Important manual modifications: (Marked below with   MOD: key   )
     <member stem="to" />
     <member stem="towards" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     prep.static.directional.sl
     pos:             PREP.static.directional
     Entry            primary : np\*np/*np
     description:     Dynamic directional PPs: "to the left" etc but used in rank-shifted
-                     SpatialLocating configurations. 
-    
+                     SpatialLocating configurations.
+
                      The family handles noun phrases like
                          "(the cup to the right)"
                      which ideally produces a complete spatial locating configuration.
                      In practice though for the time being we will not produce a complete
-                     SpatailConfiguration, but instead an invested configuration similar 
-                     to how we currently deal with "blue cups" and so forth. It goes something 
+                     SpatailConfiguration, but instead an invested configuration similar
+                     to how we currently deal with "blue cups" and so forth. It goes something
                      like:
-                        Cup 
+                        Cup
                            hasLocation GeneralizedLocation
                            modality Right
                            relatum  whatever
-    
-    
-                     The GeneralizedLocation will actually be provided by 
+
+
+                     The GeneralizedLocation will actually be provided by
                          'the right'
-                     or  'roberts right' 
-                    and will not be added here. 
-    
-    Example Memeber: to 
+                     or  'roberts right'
+                    and will not be added here.
+
+    Example Memeber: to
     Example Parse:   (the cup (to) the right) is blue  :- np\*np/*np
     ============================================================================ -->
   <family pos="PREP.static.directional" closed="true" name="prep.static.directional.sl">
@@ -6932,23 +6932,23 @@ Important manual modifications: (Marked below with   MOD: key   )
           <satop nomvar="U:gs-SpatialLocating">
             <diamond mode="gs-locatum">
               <nomvar name="P" />
-            </diamond>          
+            </diamond>
             <diamond mode="gs-placement">
               <nomvar name="Z" />
             </diamond>
           </satop>
-        </lf>        
+        </lf>
       </complexcat>
     </entry>
     <member stem="to" />
-    <member stem="on" />    
+    <member stem="on" />
   </family>
-  
+
   <!-- ==============================================================================
     Family name:     prep.dynamic.source
     Pos:             PREP.dynamic
-    Description:     Category of segment (path entity) like prepositions which typically 
-    form the path entities within a GeneralizedRoute. 	  
+    Description:     Category of segment (path entity) like prepositions which typically
+    form the path entities within a GeneralizedRoute.
     Entry            primary        : pp/*np
     route          : r/*pp
     route-dest     : r/*pp_goal/*np
@@ -7259,8 +7259,8 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     Family name:     prep.dynamic.segment
     Pos:             PREP.dynamic
-    Description:     Category of segment (path entity) like prepositions which typically 
-                     form the path entities within a GeneralizedRoute. 	  
+    Description:     Category of segment (path entity) like prepositions which typically
+                     form the path entities within a GeneralizedRoute.
     Entries          primary               : pp/*np
     sequence              : pp/*pp_segment/*np
     route-single          : r/*np
@@ -7273,9 +7273,9 @@ Important manual modifications: (Marked below with   MOD: key   )
     (along) the corridor past the kitchen
     (along) the corridor to the kitchen
     (along) the corridor from the kitchen
-    (along) the corridor past the kitchen from the elevator	  
+    (along) the corridor past the kitchen from the elevator
     (along) the corridor past the kitchen to my office
-    
+
     ============================================================================ -->
   <family closed="true" pos="PREP.dynamic" name="prep.dynamic.complex">
     <entry name="primary">
@@ -7873,12 +7873,12 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     Family name:     prep.dynamic.goal
     Pos:             PREP.dynamic
-    Description:     Category of goal (destination) like prepositions which typically 
-    form the destination within a GeneralizedRoute. 	  
+    Description:     Category of goal (destination) like prepositions which typically
+    form the destination within a GeneralizedRoute.
     Entry            primary          : pp/*np
     route-single     : r/*np
     route-source     : r/*np/*pp_source
-    route-segment    : r/*np/*pp_segment	  
+    route-segment    : r/*np/*pp_segment
     route-source-segment    : r/*np{/*pp_segment/*pp_source}
     Example Parse:   (to) the kitchen
     (to) the kitchen from the bathroom
@@ -8219,7 +8219,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     family name:     pron.interrogative.loc
     pos:             PRON
     Entry "primary" : s/*(s/*pp)
-    description:     interrogative pronoun: where 
+    description:     interrogative pronoun: where
     Example Memeber: where
     Example Parse:   (where) is shis office? (04.11.18 not working)
     ============================================================================ -->
@@ -8274,7 +8274,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     family name:     pron.interrogative.time
     pos:             PRON
     Entry "primary" : s/*(s/*pp)
-    description:     interrogative pronoun: when 
+    description:     interrogative pronoun: when
     Example Memeber: when
     Example Parse:   UNCLEAR
     ============================================================================ -->
@@ -8316,7 +8316,7 @@ Important manual modifications: (Marked below with   MOD: key   )
           </atomcat>
         </complexcat>
         <lf>
-          <satop nomvar="U"> 
+          <satop nomvar="U">
             <diamond mode="uio-required">
               <nomvar name="P:root" />
             </diamond>
@@ -8329,13 +8329,13 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     Family name:     prep.of.spatial
     Pos:             PREP
-    Description:     "of": something belongig to something else 
-    In this family of we will deal with 'of' in the genetive or 
-    possessive case. In the most common usage we can just use it to 
-    signify the owner of an object. 
+    Description:     "of": something belongig to something else
+    In this family of we will deal with 'of' in the genetive or
+    possessive case. In the most common usage we can just use it to
+    signify the owner of an object.
     However due to the very particular semantics of GeneralizedLocations
-    we must provide a second entry for the family which will be used to 
-    add a relatum to the object in question. 
+    we must provide a second entry for the family which will be used to
+    add a relatum to the object in question.
     Entry            spatial-relating-of :    np\*np/*np
     Example Parse:   the office is in front ((of) you) :- np\*np/*np
     the cup is to the right (of) the hat
@@ -8353,7 +8353,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             <feat attr="case" val="gen" />
           </fs>
         </atomcat>
-        <slash mode="&lt;" dir="/" />      
+        <slash mode="&lt;" dir="/" />
         <atomcat type="np">
           <fs id="3">
             <feat attr="num">
@@ -8371,14 +8371,14 @@ Important manual modifications: (Marked below with   MOD: key   )
     </entry>
     <member stem="of" />
   </family>
-  <!-- not curently included. 	
+  <!-- not curently included.
     It was resulting in too many parses for examples like
-    "the cup to the left of robert" 
+    "the cup to the left of robert"
     in that "the cup to the left" was first being parsed to a noun phrase
     and then "of" was being attached directly to the noun phrase rather than
     to left. Since we do not have any actual uses of "of" in a sense other than
     the setting of the relatum, I will leave the family out for now. I suspect there
-    is a better way of organizing the genetive cases than our current approach. 
+    is a better way of organizing the genetive cases than our current approach.
 
     <family pos="PREP.genetive" name="prep.genetive">
     <entry name="possessive-of">
@@ -8436,8 +8436,8 @@ Important manual modifications: (Marked below with   MOD: key   )
     family name:     toinf
     pos:             TOINF
     Entry "any" :    s.prp/(s\np)
-    description:     Structural "to": infinitive construction 
-    Example Memeber: to 
+    description:     Structural "to": infinitive construction
+    Example Memeber: to
     Example Parse:   (to) drive forward
     ============================================================================ -->
   <family closed="true" pos="TOINF" name="toinf" indexRel="*NoSem*">
@@ -8690,12 +8690,12 @@ Important manual modifications: (Marked below with   MOD: key   )
               <lf>
                 <nomvar name="T" />
               </lf>
-            </feat>            
+            </feat>
             <feat attr="modality">
               <lf>
                 <nomvar name="SM:gs-SpatialModality" />
               </lf>
-            </feat>            
+            </feat>
           </fs>
         </atomcat>
         <lf>
@@ -8722,19 +8722,19 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     family name:     possessives
     pos:             POSSDET
-    description:     Entry for posessive pronouns. Because of the strange semantics of 
-    GeneralizedLocatings we must have two different entries for the 
-    posessive pronouns. 
+    description:     Entry for posessive pronouns. Because of the strange semantics of
+    GeneralizedLocatings we must have two different entries for the
+    posessive pronouns.
     The first, primary, entry is used for normal posessive relationships
-    and leads to the associated noun being linked to the posessor 
-    via a standard ownership relation (configuration eventually). 
+    and leads to the associated noun being linked to the posessor
+    via a standard ownership relation (configuration eventually).
     The second, spatial, entry is used in conjunction with categories
     for GeneralizedLocations to provide a relatum rather than an owner
-    for the generalized location. 
-    
+    for the generalized location.
+
     We will just do posessive pronouns in this family. Named posessors
-    are handld in a different family. 
-    Entry            "ownership" : np/*n		
+    are handld in a different family.
+    Entry            "ownership" : np/*n
     "sptailrelating" : np/*n
     Example Parse:   his (room)  :- ownership
     his (left)  :- spatial
@@ -8843,7 +8843,7 @@ Important manual modifications: (Marked below with   MOD: key   )
           <satop nomvar="U:gum-ColorPropertyAscription">
             <diamond mode="concrete">
               <prop name="true"/>
-            </diamond>            
+            </diamond>
             <diamond mode="gum-domain">
               <nomvar name="T"/>
             </diamond>
@@ -8852,12 +8852,12 @@ Important manual modifications: (Marked below with   MOD: key   )
               <prop name="[*DEFAULT*]" />
               <diamond mode="concrete">
                 <prop name="true"/>
-              </diamond>                          
+              </diamond>
             </diamond>
-          </satop>          
+          </satop>
         </lf>
       </complexcat>
-    </entry>        
+    </entry>
     <member stem="blue" />
     <member stem="red" />
     <member stem="green" />
@@ -8872,11 +8872,11 @@ Important manual modifications: (Marked below with   MOD: key   )
 
 
 
-  
+
 
   <!-- ==============================================================================
     NEW (added 03.11.18)
-    comment: redundant? 
+    comment: redundant?
 
     family name:     adj_cook.attribut
     pos:             ADJ
@@ -8885,13 +8885,13 @@ Important manual modifications: (Marked below with   MOD: key   )
 
     until al dente : \prep
 
-    description:     Adjectival modifications of NPs 
+    description:     Adjectival modifications of NPs
     Example Memeber: frying
     Example Parse:   the (frying) pan
  					 the (vegetable) oil
  	============================================================================ -->
 
-  
+
   <family pos="ADJ" closed="true" name="adj_cook.attribut">
     <entry name="adj.full">
       <complexcat>
@@ -8931,7 +8931,7 @@ Important manual modifications: (Marked below with   MOD: key   )
           <satop nomvar="U:gum-SimpleQuality">
             <diamond mode="concrete">
               <prop name="true"/>
-            </diamond>            
+            </diamond>
             <diamond mode="gum-domain">
               <nomvar name="T"/>
             </diamond>
@@ -8940,16 +8940,16 @@ Important manual modifications: (Marked below with   MOD: key   )
               <prop name="[*DEFAULT*]" />
               <diamond mode="concrete">
                 <prop name="true"/>
-              </diamond>                          
+              </diamond>
             </diamond>
-          </satop>          
+          </satop>
         </lf>
       </complexcat>
-    </entry>        
+    </entry>
     <member stem="frying" />
     <member stem="vegetable" />
-  
- 
+
+
   </family>
 
 
@@ -9071,12 +9071,12 @@ Important manual modifications: (Marked below with   MOD: key   )
               <diamond mode="gs-hasSpatialModality">
                 <nomvar name="W:gs-SpatialModality" />
                 <prop name="[*DEFAULT*]" />
-              </diamond> 
-            </diamond>            
-          </satop>          
+              </diamond>
+            </diamond>
+          </satop>
         </lf>
       </complexcat>
-    </entry>      
+    </entry>
     <entry name="tertiary">
       <complexcat>
         <atomcat type="np">
@@ -9120,14 +9120,14 @@ Important manual modifications: (Marked below with   MOD: key   )
               <diamond mode="gs-hasSpatialModality">
                 <nomvar name="W:gs-SpatialModality" />
                 <prop name="[*DEFAULT*]" />
-              </diamond> 
-            </diamond>            
-          </satop>          
+              </diamond>
+            </diamond>
+          </satop>
         </lf>
       </complexcat>
-    </entry>                  
-  </family>  
-  
+    </entry>
+  </family>
+
     <!-- ==============================================================================
     family name:     adj.size
     pos:             ADJ
@@ -9551,7 +9551,7 @@ Important manual modifications: (Marked below with   MOD: key   )
         </atomcat>
         <lf>
           <satop nomvar="SL:gs-SpatialLocating">
-            <diamond mode="gs-locatum">            
+            <diamond mode="gs-locatum">
                 <nomvar name="T:gum-UMThing"/>
                 <prop name="[*DEFAULT*]" />
             </diamond>
@@ -9559,11 +9559,11 @@ Important manual modifications: (Marked below with   MOD: key   )
               <nomvar name="B" />
             </diamond>
           </satop>
-        </lf>                    
+        </lf>
         </complexcat>
-    </entry>        
+    </entry>
   </family>
-      
+
     <!-- ==============================================================================
     family name:     nomp.nominalised.process
     pos:             NOMP
@@ -9969,7 +9969,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             <lf>
               <nomvar name="M:root" />
             </lf>
-          </feat>              
+          </feat>
           </fs>
         </atomcat>
         <slash mode="." dir="\" />
@@ -9991,7 +9991,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             </diamond>
             <diamond mode="gs-relatum">
               <nomvar name="U" />
-            </diamond>            
+            </diamond>
           </satop>
         </lf>
       </complexcat>
@@ -10019,7 +10019,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             <lf>
               <nomvar name="M:root" />
             </lf>
-          </feat>              
+          </feat>
           </fs>
         </atomcat>
         <slash mode="." dir="\" />
@@ -10041,7 +10041,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             </diamond>
             <diamond mode="gs-relatum">
               <nomvar name="U" />
-            </diamond>   
+            </diamond>
           </satop>
         </lf>
       </complexcat>
@@ -10069,7 +10069,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             <lf>
               <nomvar name="M:root" />
             </lf>
-          </feat>              
+          </feat>
           </fs>
         </atomcat>
         <slash mode="." dir="/" />
@@ -10091,7 +10091,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             </diamond>
             <diamond mode="gs-relatum">
               <nomvar name="U" />
-            </diamond>   
+            </diamond>
           </satop>
         </lf>
       </complexcat>
@@ -10119,7 +10119,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             <lf>
               <nomvar name="M:root" />
             </lf>
-          </feat>              
+          </feat>
           </fs>
         </atomcat>
         <slash mode="." dir="/" />
@@ -10141,12 +10141,12 @@ Important manual modifications: (Marked below with   MOD: key   )
             </diamond>
             <diamond mode="gs-relatum">
               <nomvar name="U" />
-            </diamond>               
+            </diamond>
           </satop>
         </lf>
       </complexcat>
-    </entry>    
-      <!-- Entry for fragments such as "the twon two miles north of London " -->        
+    </entry>
+      <!-- Entry for fragments such as "the twon two miles north of London " -->
     <entry name="sl-construct">
       <complexcat>
         <atomcat type="np">
@@ -10170,7 +10170,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             <lf>
               <nomvar name="M:root" />
             </lf>
-          </feat>              
+          </feat>
           </fs>
         </atomcat>
         <slash mode="*" dir="\" />
@@ -10183,7 +10183,7 @@ Important manual modifications: (Marked below with   MOD: key   )
               </lf>
             </feat>
           </fs>
-        </atomcat>        
+        </atomcat>
         <slash mode="*" dir="\" />
         <atomcat type="q">
           <fs id="5">
@@ -10193,7 +10193,7 @@ Important manual modifications: (Marked below with   MOD: key   )
               </lf>
             </feat>
           </fs>
-        </atomcat>                
+        </atomcat>
         <slash mode="." dir="/" />
         <atomcat type="np">
           <fs id="3">
@@ -10205,11 +10205,11 @@ Important manual modifications: (Marked below with   MOD: key   )
             </feat>
           </fs>
         </atomcat>
-        <lf>        
+        <lf>
           <satop nomvar="SL:gs-SpatialLocating">
-            <diamond mode="gs-locatum">            
+            <diamond mode="gs-locatum">
                 <nomvar name="L" />
-            </diamond>             
+            </diamond>
             <diamond mode="gs-placement">
               <nomvar name="G:gs-GeneralizedLocation" />
               <diamond mode="gs-relatum">
@@ -10220,15 +10220,15 @@ Important manual modifications: (Marked below with   MOD: key   )
                 <prop name="[*DEFAULT*]" />
                 <diamond mode="gum-hasQuantiativeExtent">
                   <nomvar name="G2" />
-                </diamond>                        
+                </diamond>
               </diamond>
             </diamond>
           </satop>
         </lf>
       </complexcat>
-    </entry>                  
+    </entry>
   </family>
-  
+
   <!-- ==============================================================================
     family name:     ndir.modifiable
     pos:             NDIR2
@@ -10355,7 +10355,7 @@ Important manual modifications: (Marked below with   MOD: key   )
     </entry>
     <member stem="npdir" />
   </family>
-  
+
   <!-- ==============================================================================
     family name:     n.way.destinative
     pos:             NWAY
@@ -10461,7 +10461,7 @@ Important manual modifications: (Marked below with   MOD: key   )
             </feat>
           </fs>
         </atomcat>
-        <slash mode="*" dir="/" />          
+        <slash mode="*" dir="/" />
         <atomcat type="np">
           <fs id="2">
             <feat attr="index">
@@ -10470,7 +10470,7 @@ Important manual modifications: (Marked below with   MOD: key   )
               </lf>
             </feat>
           </fs>
-        </atomcat>                        
+        </atomcat>
         <lf>
           <satop nomvar="C:gs-SpatialLocating">
             <diamond mode="gs-locatum">
@@ -10739,7 +10739,7 @@ Important manual modifications: (Marked below with   MOD: key   )
           </feat>
         </fs>
         </atomcat>
-        <slash mode="*" dir="\" />        
+        <slash mode="*" dir="\" />
         <atomcat type="adv.c">
         <fs id="2">
           <feat attr="index">
@@ -10748,21 +10748,21 @@ Important manual modifications: (Marked below with   MOD: key   )
             </lf>
           </feat>
         </fs>
-        </atomcat>        
+        </atomcat>
         <lf>
           <satop nomvar="X:gum-NaturalNumber">
-            <prop name="[*DEFAULT*]" />       
+            <prop name="[*DEFAULT*]" />
               <diamond mode="confidence">
                 <nomvar name="Y"/>
-              </diamond>            
+              </diamond>
           </satop>
-        </lf>        
+        </lf>
       </complexcat>
-    </entry>    
+    </entry>
     <!-- category fro assigning a number of an object, wagon two -->
     <!-- confidence measurements cannot be made to these -->
     <entry name="assignment">
-      <complexcat> 
+      <complexcat>
         <atomcat type="np">
           <fs>
             <feat attr="index">
@@ -10791,15 +10791,15 @@ Important manual modifications: (Marked below with   MOD: key   )
            <lf>
             <satop nomvar="B">
               <diamond mode="number">
-                <prop name="[*DEFAULT*]" />                
+                <prop name="[*DEFAULT*]" />
               </diamond>
             </satop>
           </lf>
       </complexcat>
     </entry>
-    <!-- incomplete generalized quantifier cateogry --> 
+    <!-- incomplete generalized quantifier cateogry -->
     <entry name="number">
-      <complexcat> 
+      <complexcat>
         <atomcat type="np">
           <fs>
             <feat attr="index">
@@ -10824,15 +10824,15 @@ Important manual modifications: (Marked below with   MOD: key   )
             <satop nomvar="X:gum-UMThing">
               <prop name="[*DEFAULT*]" />
             </satop>
-          </lf>        
-      </complexcat>      
+          </lf>
+      </complexcat>
     </entry>
   </family>
-      
+
   <!-- ==============================================================================
     family name:     distance_quantitative
     pos:             N
-    description:     category for explict quantitative distance construction	  
+    description:     category for explict quantitative distance construction
     Entries:         primary: q\*np
                      secondary : pp\*pp\*np
     Example Parse:   three (meters)
@@ -10873,14 +10873,14 @@ Important manual modifications: (Marked below with   MOD: key   )
           </satop>
         </lf>
       </complexcat>
-    </entry>   
+    </entry>
     <member stem="metre" />
     <member stem="inch" />
     <member stem="degree" />
     <member stem="bit" />
     <member stem="foot" />
     <member stem="mile" />
-    <member stem="semicircle" />    
+    <member stem="semicircle" />
     <member stem="step" />
     <member stem="centimetre" />
     <member stem="roomLength" />
@@ -10889,7 +10889,7 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     family name:     distance_quantitative2
     pos:             N
-    description:     category for explict quantitative distance construction	  
+    description:     category for explict quantitative distance construction
     Entries:         primary: q\*np
                      secondary: pp\*pp\*np
                      tertiary: q\*s
@@ -11008,24 +11008,24 @@ Important manual modifications: (Marked below with   MOD: key   )
     <member stem="bit" />
     <member stem="foot" />
     <member stem="mile" />
-    <member stem="semicircle" />    
+    <member stem="semicircle" />
     <member stem="step" />
     <member stem="centimetre" />
-    <member stem="roomLength" />    
+    <member stem="roomLength" />
   </family>
-  
-  
-  
+
+
+
   <!-- ==============================================================================
     Family name:     distance_quantitative2
     Pos:             N
-    
+
     DELETE THIS ONE i THINK
-    
-    
-    Description:     category for explict quantitative distance construction	  
+
+
+    Description:     category for explict quantitative distance construction
     Entries:         primary : pp\*pp\*np
-    Example Parse:   (far away) from here 
+    Example Parse:   (far away) from here
     ============================================================================ -->
   <family closed="true" pos="ADJ" name="distance_quantitative2" indexRel="gs-QuantitativeDistanceExtent">
     <entry name="secondary">
@@ -11099,8 +11099,8 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     Family name:     qualitative-extent
     Pos:             ADJ
-    Description:     
-    Entries:         pp/*pp 
+    Description:
+    Entries:         pp/*pp
     Example Parse:   (deep) in the water
     (deepest) in the water
     very (deep) within the forest
@@ -11192,12 +11192,12 @@ Important manual modifications: (Marked below with   MOD: key   )
     </entry>
     <member stem="deep" />
   </family>
-  
+
   <!-- ==============================================================================
     Family name:     qualitative-extent
     Pos:             ADJ
-    Description:     
-    Entries:         pp/*pp 
+    Description:
+    Entries:         pp/*pp
     Example Parse:   (deep) in the water
     (deepest) in the water
     very (deep) within the forest
@@ -11261,11 +11261,11 @@ Important manual modifications: (Marked below with   MOD: key   )
           </fs>
         <lf>
           <satop nomvar="Z:gs-QualitativeSpatialTemporal">
-              <prop name="[*DEFAULT*]" />              
+              <prop name="[*DEFAULT*]" />
           </satop>
-        </lf>          
+        </lf>
         </atomcat>
-    </entry>     
+    </entry>
     <entry name="pp">
       <complexcat>
         <atomcat type="pp">
@@ -11301,7 +11301,7 @@ Important manual modifications: (Marked below with   MOD: key   )
           <satop nomvar="SM">
             <diamond mode="gs-qualitativeDistanceExtent">
               <nomvar name="Z:gs-QualitativeSpatialTemporal" />
-              <prop name="[*DEFAULT*]" /> 
+              <prop name="[*DEFAULT*]" />
             </diamond>
           </satop>
         </lf>
@@ -11337,15 +11337,15 @@ Important manual modifications: (Marked below with   MOD: key   )
           </satop>
         </lf>
       </complexcat>
-    </entry>    
-  </family>  
-  
+    </entry>
+  </family>
+
   <!-- ==============================================================================
     family name:     Q.particle
     pos:             Q.particle
     description:     coordinating noun phrases
-    Entry "extendable" : np\*np/*np			  
-    Example Parse:   do you want to go to the kitchen (?) 
+    Entry "extendable" : np\*np/*np
+    Example Parse:   do you want to go to the kitchen (?)
     ============================================================================ -->
   <family closed="true" pos="Q.particle" name="Q.particle" indexRel="*NoSem*">
     <entry name="primary">
@@ -11361,9 +11361,9 @@ Important manual modifications: (Marked below with   MOD: key   )
     family name:     COORD.pp.route
     pos:             COORD
     description:     construct path structures from segment elements which are conjoined
-    explicitly with conjunctive tersm. 
-    Entries:         "basic" : pp/*pp\*pp	
-    "route" : r/*pp\*pp	
+    explicitly with conjunctive tersm.
+    Entries:         "basic" : pp/*pp\*pp
+    "route" : r/*pp\*pp
     Example Parse:   along the wall and across the field
     along the wall and then across the field
     along the wall then across the field
@@ -11460,7 +11460,7 @@ Important manual modifications: (Marked below with   MOD: key   )
   <!-- ==============================================================================
     family name:     COORD.conj.pl
     pos:             COORD
-    Entry "extendable" : np\*np/*np		
+    Entry "extendable" : np\*np/*np
     description:     coordinating noun phrases
     Example Memeber: and,or,then
     Example Parse:   the elevator and the kitchen
@@ -11560,7 +11560,7 @@ Important manual modifications: (Marked below with   MOD: key   )
               </lf>
             </feat>
           </fs>
-        </atomcat>                
+        </atomcat>
         <lf>
           <satop nomvar="C:gum-MultiConfiguration">
             <prop name="[*DEFAULT*]" />
@@ -11665,7 +11665,7 @@ Important manual modifications: (Marked below with   MOD: key   )
           </satop>
         </lf>
       </complexcat>
-    </entry>    
+    </entry>
   </family>
   <!-- ==============================================================================
     family name:     COORD.conj.pp
