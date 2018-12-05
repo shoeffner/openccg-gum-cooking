@@ -1,11 +1,11 @@
+# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES
+feature {
+    test-SingleThing;
+}
+
 feature {
     a;
     b c;
-}
-
-# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES
-feature {
-    test-SingleThing
 }
 
 lexicon {

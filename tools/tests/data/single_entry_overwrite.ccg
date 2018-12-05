@@ -5,7 +5,7 @@ feature {
 
 # FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES
 feature {
-    test-SingleThing
+    test-SingleThing;
 }
 
 lexicon {

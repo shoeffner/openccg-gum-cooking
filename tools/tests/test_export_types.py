@@ -182,7 +182,17 @@ def load_ccg(name):
 
 def compare_ccg(actual, expected):
     """Compares to ccg files."""
-    return actual.strip() == expected.strip()
+    def clean_up(i):
+        lines = i.splitlines()
+        # Remove trailing whitespaces
+        lines = map(lambda s: s.strip(), lines)
+        # Remove empty lines
+        lines = filter(lambda s: len(s) != 0, lines)
+        # Remove comments
+        lines = filter(lambda s: not s.startswith('#'), lines)
+        return '\n'.join(lines)
+
+    return clean_up(actual) == clean_up(expected)
 
 
 def ccg_test(expected_name, *owls, existing_ccg=False):
@@ -246,9 +256,6 @@ def ccg_test(expected_name, *owls, existing_ccg=False):
                     f'\n\nExpected:\n\n{expected}\n\nActual:\n\n{actual}\n\n'
             finally:
                 outfile.unlink()
-                if existing_ccg:
-                    Path(expected_name + '_out.ccg.bak').unlink()
-
         return test
     return decorator
 
