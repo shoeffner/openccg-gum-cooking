@@ -11,458 +11,419 @@
 
 ###################### Features #########################
 
+# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES
 feature {
-  root: gum-UMThing {
-    gum-Element {
-      gum-TemporalModality {
-        gum-TemporalAt gum-TemporalBefore gum-TemporalAfter gum-TemporalFrom
-      }
-       gs-SpatialModality {
+# Ontologies used:
+# slm: https://www.ontospace.uni-bremen.de/ontology/stable/SLM-cooking.owl#
+# uio: http://www.diaspace.uni-bremen.de/UIO.owl#
+# gs: https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#
+# gum: https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#
+# : http://protege.stanford.edu/plugins/owl/protege#
+    uio-UIOThing: uio-Defunct {
+        uio-NonUnderstandingSignal uio-SpeechFunction {
+            uio-Acceptance uio-Confirmation
+        }
+        uio-Wh-Question
+    }
+    uio-DiscourseFunction {
+        uio-Answer uio-Assertion uio-Elaboration uio-Rejection uio-RequireConfirmation
+    }
+    uio-InterpersonalFeature {
+        uio-DiscourseRelation {
+            uio-AND uio-OR uio-SEQ
+        }
+        uio-Literal uio-Polarity {
+            uio-Negative uio-PolarityVariable uio-Positive
+        }
+
+    }
+    uio-InterpersonalThing {
+        uio-DialogueParticipant {
+            uio-Hearer uio-Speaker
+        }
+        uio-SurfaceSpeechFunction {
+            uio-Monitoring {
+                uio-SignalHold uio-SignalNonUnderstanding uio-UnderstandingSignal
+            }
+            uio-PrimarySpeechFunctions {
+                uio-Directive uio-Question {
+                    uio-ChQuestion uio-PolarQuestion uio-WhQuestion
+                }
+                uio-Statement {
+                    uio-ShortStatement
+                }
+
+            }
+            uio-Social {
+                uio-Greeting uio-LeaveTaking
+            }
+            uio-TruthAttribution {
+                uio-Affirmation uio-Denial uio-Hedging
+            }
+
+        }
+
+    }
+    uio-InterpersonalUnit {
+        uio-DialogueAct uio-DialogueMove
+    }
+    uio-MoveFunction {
+        uio-Accept uio-Inform uio-Instruct uio-Offer uio-Query uio-Reject
+    }
+   ;
+
+    gs-Circumstance: gs-GeneralizedLocation {
+        gs-GeneralizedComplexLocation gs-GeneralizedPathLocation
+    }
+    gs-GeneralizedRoute;
+
+    gs-ClassAscription;
+
+    gs-DispositiveMaterialAction: gs-AffectingSpatialAction {
+        gs-AffectingMotion {
+            gs-AffectingDirectedMotion gs-AffectingOrientationChange gs-AffectingSimpleMotion
+        }
+        gs-AffectingOrienting
+    }
+   ;
+
+    gs-Element: gs-SpatialModality {
+        gs-FunctionalSpatialModality {
+            gs-Access {
+                gs-FrontProjectionExternal[gs-Disjointness gs-FrontProjection gs-Proximal] gs-OverProjectionExternal[gs-Disjointness gs-Proximal gs-VerticalProjection] gs-Sequential[gs-Disjointness] gs-Surrounding[gs-ShapeCommitting] gs-UnderProjectionExternal[gs-Disjointness gs-Proximal gs-VerticalProjection]
+            }
+            gs-Control {
+                gs-Containment gs-Support
+            }
+
+        }
         gs-RelativeSpatialModality {
-          gs-Connection {
-            gum-ExternalConnection gum-Overlap {
-              gs-PathRepresentingInternal[gs-PathRepresenting] gum-Part {
-                gs-BackProjectionInternal[gs-BackProjection] gs-BelowProjectionInternal[gs-BelowProjection]
-              }
-
-            }
-
-          }
-           gs-ProjectionRelation {
-            gs-VerticalProjection {
-              gs-BelowProjection {
-                gs-BelowProjectionExternal[gs-SpatialDistanceModality gs-Disjointness]
-              }
-               gs-AboveProjection {
-                gs-AboveProjectionInternal[gum-Part]
-              }
-
-            }
-             gs-HorizontalProjection {
-              gs-FrontalProjection {
-                gs-BackProjection gs-FrontProjection {
-                  gs-FrontProjectionInternal[gum-Part] gs-FrontProjectionExternal[gs-Access gs-SpatialDistanceModality gs-Disjointness]
-                }
-
-              }
-               gs-LateralProjection {
-                gs-LeftProjection {
-                  gs-LeftProjectionInternal[gum-Part]
-                }
-                 gs-RightProjection {
-                  gs-RightProjectionInternal[gum-Part]
-                }
-
-              }
-
-            }
-
-          }
-           gs-ShapeCommitting {
-            gs-PathRepresenting
-          }
-           gs-Distribution {
-            slm-Among slm-Between
-          }
-           gs-Disjointness {
-            gs-AboveProjectionExternal[gs-AboveProjection gs-SpatialDistanceModality] gs-BackProjectionExternal[gs-BackProjection gs-SpatialDistanceModality] gs-Sequential[gs-Containment] {
-              slm-Succession slm-Precedence
-            }
-             gs-DirectionalRelation {
-              gs-GeneralDirectional {
-                gs-MultipleDirectional gs-GeneralDirectionalDistancing gs-GeneralDirectionalNearing
-              }
-               gs-SpecificDirectional {
-                gs-CardinalDirectional {
-                  gs-East gs-West gs-South gs-North
-                }
-                 gs-TopographicDirectional
-              }
-
-            }
-
-          }
-
-        }
-         gs-SpatialDistanceModality {
-          gs-OverProjectionExternal[gs-VerticalProjection gs-Disjointness gs-Access] gs-UnderProjectionExternal[gs-Disjointness gs-Access gs-VerticalProjection] gs-LeftProjectionExternal[gs-LeftProjection gs-Disjointness] gs-RightProjectionExternal[gs-Disjointness gs-RightProjection] gs-PathRepresentingExternal[gs-PathRepresenting] gs-NonProjectionAxial[gs-Disjointness] {
-            gum-Height-NonProjectionAxial gs-RelativeNonProjectionAxial
-          }
-           gs-QuantitativeDistance gs-QualitativeDistance {
-            gs-Distal gs-Proximal[gs-Access] {
-              gs-Touching
-            }
-
-          }
-
-        }
-         gs-FunctionalSpatialModality {
-          gs-DenialOfFunctionalControl[gs-Disjointness] gs-Access {
-            gs-Surrounding[gs-ShapeCommitting]
-          }
-           gs-Control {
-            gs-Containment {
-              gum-FunctionalControlledInternal[gum-Overlap]
-            }
-             gs-Support {
-              gum-FunctionalControlledExternal[gum-ExternalConnection]
-            }
-
-          }
-
-        }
-
-      }
-       gum-Circumstance {
-        gum-GeneralizedTime gs-GeneralizedLocation {
-          gs-GeneralizedPathLocation gs-GeneralizedComplexLocation
-        }
-         gs-GeneralizedRoute gum-SubjectMatter {
-          gum-SpecificMatter gum-DiffuseMatter
-        }
-
-      }
-       gum-NewTimePoint gum-Event {
-        slm-Meeting slm-Party
-      }
-       gs-QualitativeSpatialTemporal {
-        slm-HugeExtent slm-LargeExtent slm-MediumExtent slm-SmallExtent slm-TinyExtent slm-Below
-      }
-       gs-QuantitativeSpatialTemporal slm-DisjointThing {
-        slm-District
-      }
-       slm-CertantyEval {
-        slm-Approx slm-Exact
-      }
-       gum-SimpleThing {
-        slm-Metre slm-Mile slm-Inch slm-Bit slm-SemiCircle slm-Degree slm-Foot slm-RoomLength slm-Step slm-Turn slm-Centimeter slm-Engine gum-NamedObject {
-          slm-Australia slm-NewYork slm-London slm-City {
-            slm-Dublin slm-Tirunelveli
-          }
-           slm-Country {
-            slm-Ireland
-          }
-           slm-Continuent {
-            slm-Europe
-          }
-           slm-Salzburg slm-AustrianAlps slm-Washington slm-Bremen
-        }
-         gum-ConsciousBeing {
-          gum-Person {
-            gum-Female gum-Male
-          }
-           slm-Robot slm-Pedestrian
-        }
-         gum-NonConsciousThing {
-          gum-SpatialTemporal {
-            gum-AbsoluteSpatialTemporal gum-RelativeSpatialTemporal gum-SpatialObject {
-              gum-Space[gum-Substance] gum-SpaceInterval[gum-OrderedObject] {
-                gum-OneOrTwoDLocation gum-ThreeDLocation {
-                  slm-Building {
-                    slm-Library slm-Cinema slm-Bakery slm-AcademicBuilding {
-                      slm-GeoScienceBuilding slm-ChemistryBuilding slm-ComputerScienceBuilding slm-SocialScienceBuilding
+            gs-Connection gs-Disjointness {
+                gs-DenialOfFunctionalControl[gs-FunctionalSpatialModality] gs-DirectionalRelation {
+                    gs-GeneralDirectional {
+                        gs-GeneralDirectionalDistancing gs-GeneralDirectionalNearing gs-MultipleDirectional
                     }
-                     slm-AdministrationBuilding slm-Restaurant
-                  }
-                   slm-BuildingComponent {
-                    slm-Window slm-Door slm-Wall slm-Floor slm-Ceiling
-                  }
-                   slm-BuildingSpace {
-                    slm-FloorArea slm-Lobby slm-Hall slm-Stairway slm-Closet slm-Junction slm-Corner slm-Room {
-                      slm-ConferenceRoom slm-StoreRoom slm-Bathroom slm-Office slm-Bar slm-Classroom slm-Laboratory slm-ToiletRoom {
-                        slm-MensToilets slm-LadiesToilets
-                      }
-                       slm-Kitchen slm-PostRoom slm-CopyRoom slm-Stairwell slm-MainStairwell slm-PostOffice slm-Bridge slm-Fountain slm-LectureHall
+                    gs-SpecificDirectional {
+                        gs-ArcDirectional gs-CardinalDirectional {
+                            gs-East {
+                                gs-EastInternal[gs-Parthood]
+                            }
+                            gs-North {
+                                gs-NorthInternal[gs-Parthood]
+                            }
+                            gs-South gs-West
+                        }
+                        gs-TopographicDirectional
                     }
-                     slm-Hallway slm-DoorWay slm-Corridor slm-Elevator
-                  }
 
                 }
-
-              }
-               gum-SpacePoint[gum-NonDecomposableObject] {
-                gum-ZeroDLocation
-              }
-               slm-Furnishings {
-                slm-Patchcabinet slm-Book slm-Phone slm-Furniture {
-                  slm-Chair {
-                    slm-Stool slm-OfficeChair slm-ArmChair
-                  }
-                   slm-Table slm-Pen slm-Desk slm-CoatRack slm-Sofa slm-Picture
+                gs-EastExternal[gs-East] gs-LeftProjectionExternal[gs-LeftProjection gs-Proximal] gs-NonProjectionAxial[gs-SpatialDistanceModality] {
+                    gs-HeightNonProjectionAxial gs-RelativeNonProjectionAxial
                 }
-                 slm-Trashcan slm-Cabinet slm-Lamp slm-Duck slm-Head slm-Board {
-                  slm-Blackboard slm-Whiteboard
-                }
-                 slm-Toy {
-                  slm-Ball slm-Block
-                }
-                 slm-Container {
-                  slm-Jar slm-Mug slm-Box slm-Tree slm-Apple slm-Water slm-Pool slm-Camera slm-Needle slm-CompassNeedle slm-Bucket slm-Carton slm-Cup slm-Can
-                }
-                 slm-Screen slm-CokeMachine
-              }
-               slm-Device {
-                slm-Electronics {
-                  slm-ElectricityCord slm-Projector {
-                    slm-OverheadProjector slm-ComputerProjector
-                  }
-                   slm-ComputerEquipment {
-                    slm-Computer slm-Monitor slm-Printer slm-Keyboard slm-Mouse slm-Speakers
-                  }
-                   slm-Photocopier
-                }
-                 slm-Appliance {
-                  slm-Refridgerator slm-Microwave slm-CoffeeMaker
-                }
-
-              }
-               slm-Fixture {
-                slm-Sink slm-Faucet slm-Bathtub slm-Toilet slm-Urinal
-              }
-               slm-Obstacle
+                gs-NorthExternal[gs-North] gs-RightProjectionExternal[gs-Proximal gs-RightProjection] gs-SouthExternal[gs-South] gs-WestExternal[gs-West]
             }
-             slm-Way gum-TemporalObject {
-              gum-Time[gum-Substance] gum-TimeInterval[gum-OrderedObject] {
-                gum-Future gum-OneOrTwoDTime gum-Present gum-ThreeDTime gum-Past
-              }
+            gs-Distribution gs-Parthood {
+                gs-Central gs-Peripheral gs-RightProjectionInternal[gs-RightProjection] gs-SouthInternal[gs-South] gs-WestInternal[gs-West]
+            }
+            gs-ProjectionRelation {
+                gs-HorizontalProjection {
+                    gs-FrontalProjection {
+                        gs-BackProjection {
+                            gs-BackProjectionExternal[gs-Disjointness gs-Proximal] gs-BackProjectionInternal[gs-Parthood]
+                        }
+                        gs-FrontProjection {
+                            gs-FrontProjectionInternal[gs-Parthood]
+                        }
+
+                    }
+                    gs-LateralProjection {
+                        gs-LeftProjection {
+                            gs-LeftProjectionInternal[gs-Parthood]
+                        }
+                        gs-RightProjection
+                    }
+
+                }
+                gs-VerticalProjection {
+                    gs-AboveProjection {
+                        gs-AboveProjectionExternal[gs-Disjointness gs-Proximal] gs-AboveProjectionInternal[gs-Parthood]
+                    }
+                    gs-BelowProjection {
+                        gs-BelowProjectionExternal[gs-Disjointness gs-Proximal] gs-BelowProjectionInternal[gs-Parthood]
+                    }
+
+                }
+
+            }
+            gs-ShapeCommitting {
+                gs-PathRepresenting {
+                    gs-PathRepresentingExternal[gs-SpatialDistanceModality] gs-PathRepresentingInternal[gs-Support]
+                }
 
             }
 
-          }
-           gum-Abstraction {
-            gum-NaturalNumber gum-Word {
-              gum-Name {
-                slm-Rolland slm-John slm-Robert slm-Shi slm-Tilman slm-Christian
-              }
-
+        }
+        gs-SpatialDistanceModality {
+            gs-QualitativeDistance {
+                gs-Distal gs-Proximal
             }
-
-          }
-
+            gs-QuantitativeDistance
         }
-         gum-NonDecomposableObject {
-          slm-Bag slm-Grass slm-Sock slm-CorridorEnd slm-Guard slm-Target slm-Flour slm-Deer slm-Fish slm-Dog slm-Cat slm-Gold slm-Flock slm-Drawer slm-Shelf slm-Wire slm-Garden slm-Halo slm-Pluto slm-Train slm-Class_1 slm-Flower slm-Seed slm-Rug slm-Freeway slm-Base slm-Mountain slm-Barnacle slm-Hat slm-Hut slm-Graffiti slm-Clue slm-Road slm-Canal slm-Bend slm-OldPines slm-Motorway slm-Lake slm-Dwelling slm-Tablecloth slm-Monk slm-SocialRole {
-            slm-Professor slm-Secretary slm-Student slm-Administrator
-          }
-           slm-Car slm-Boxcar slm-Vase slm-Cliff slm-Nail slm-Nurse slm-Squirrel slm-Line slm-Shoe slm-Prisoner gum-Substance[gum-NonConsciousThing] gum-TimePoint[gum-TemporalObject] {
-            gum-ZeroDTime
-          }
-           slm-Librarian slm-Couple slm-Salesman slm-Thought slm-Street slm-Rifle slm-Dish slm-House slm-Site slm-Sheet slm-Detective slm-Blanket slm-Mark slm-Lid slm-Prison slm-Cathedral slm-Compass slm-Dune slm-Border slm-Man slm-Field slm-Lion slm-Plain slm-Town slm-Shop slm-Rooftop slm-Area slm-Fuselage slm-Toes slm-Rack slm-Mall slm-Cemetary slm-LivingThing {
-            slm-Animal slm-Plant
-          }
-           slm-Cupboard slm-Jogger slm-River slm-Tarmack slm-Fence slm-Runner slm-Rabbit slm-Temple slm-Mammoth slm-Fibre slm-Cargo slm-Famine slm-Checkpoint slm-Hole slm-Ship slm-Tunnel slm-Bird slm-Bowl[slm-Container] slm-Fire slm-Cell slm-Park slm-View slm-HotDogStand slm-CottageCheese slm-ParmesanCheese slm-Macys slm-TamilNadu slm-India slm-Bedroom
-        }
-         gum-DecomposableObject {
-          slm-Group slm-Crowd slm-Ground gum-UMSet[gum-Abstraction] {
-            gum-DisjunctiveSet
-          }
-           gum-OrderedObject {
-            gum-OrderedSet[gum-UMSet]
-          }
-
-        }
-         slm-Egg slm-Eggs slm-Oranges slm-Oil slm-Oils slm-Pan slm-Pans
-      }
-       gum-Process {
-        slm-Putting slm-Standing slm-Placing slm-Dancing slm-Rotating slm-Bringing slm-Turning slm-Making slm-Proceeding slm-Swimming slm-Entering slm-Approaching slm-Continuing slm-Exiting slm-Being slm-Directing slm-Sleeping slm-Going slm-Meaning slm-Facing slm-Pointing slm-Driving slm-Jumping slm-Leaping slm-Fleeing slm-Walking slm-Running slm-Stirring slm-Heating slm-Knowing slm-Halting slm-Passing slm-Telling slm-Returning slm-Taking slm-Leaving slm-Showing slm-Stopping slm-Moving slm-Racing
-      }
-       gum-SimpleQuality {
-        gum-ClassAscription gum-LogicalQuality {
-          gum-LogicalUniqueness
-        }
-         gum-MaterialWorldQuality {
-          gum-ScalableQuality gum-PolarQuality {
-            gum-EvaluativeQuality[gum-StativeQuality gum-ScalableQuality]
-          }
-           gum-StativeQuality {
-            gum-SenseANDMeasureQuality[gum-PolarQuality gum-ScalableQuality] {
-              gum-Color {
-                slm-Yellow slm-Black slm-White slm-Pink slm-Blue slm-Brown slm-Red slm-Green slm-Orange
-              }
-               gum-Size {
-                slm-Big slm-Small
-              }
-               gum-Age
-            }
-             gum-StatusQuality[gum-NonScalableQuality gum-PolarQuality] gum-ClassQuality[gum-TaxonomicQuality gum-NonScalableQuality] {
-              gum-ProvenanceClassQuality gum-MaterialClassQuality
-            }
-
-          }
-           gum-DynamicQuality {
-            gum-BehavioralQuality[gum-PolarQuality gum-ScalableQuality]
-          }
-           gum-TaxonomicQuality gum-NonScalableQuality
-        }
-         gum-ModalQuality {
-          gum-NonVolitional {
-            gum-Necessity gum-Possibility {
-              gum-Ability gum-GeneralPossibility
-            }
-
-          }
-           gum-NonConditional gum-Volitional gum-Conditional
-        }
-
-      }
 
     }
-     gum-MultiConfiguration {
-      gum-Expansion {
-        gum-Extension gum-Enhancement gum-Elaboration
-      }
-       gum-Disjunction gum-Conjunction slm-Sequencing gum-Projection {
-        gum-LocutionProjection {
-          gum-LocutionQuoting[gum-Quoting]
-        }
-         gum-Reporting {
-          gum-LocutionReporting[gum-LocutionProjection] gum-IdeaReporting[gum-IdeaProjection]
-        }
-         gum-Quoting {
-          gum-IdeaQuoting[gum-IdeaProjection]
-        }
-         gum-IdeaProjection
-      }
+   ;
 
+    gs-GeneralizedLocating: gs-SpatialLocating {
+        gs-SpatialTemporalLocating[gs-TemporalLocating]
     }
-     gum-Configuration {
-      gum-DoingANDHappening {
-        gum-NonAffectingAction {
-          gum-Ambience {
-            gum-Snowing gum-Raining gum-Sunning gum-Winding gum-Hailing
-          }
-           gum-NonAffectingDoing {
-            gs-AffectingSimpleMotion gs-NonAffectingSimpleMotion gs-NonAffectingDirectedMotion gs-AffectingDirectedMotion gs-NonAffectingSpatialDoing {
-              gum-Orienting gum-Motion {
-                gum-OrientationChange gum-SimpleMotion gum-DirectedMotion
-              }
+    gs-TemporalLocating;
 
-            }
+    gs-LogicalQuality;
 
-          }
-           gum-NonAffectingHappening
+    gs-MaterialWorldQuality;
+
+    gs-ModalQuality;
+
+    gs-NameEvent;
+
+    gs-NonAffectingDoing: gs-NonAffectingSpatialDoing {
+        gs-NonAffectingMotion {
+            gs-NonAffectingDirectedMotion gs-NonAffectingOrientationChange gs-NonAffectingSimpleMotion
         }
-         gs-AffectingOrientationChange gs-AffectingOrienting gs-NonAffectingOrienting gs-NonAffectingOrientationChange gum-AffectingAction {
-          gum-CreativeMaterialAction gum-DispositiveMaterialAction
-        }
+        gs-NonAffectingOrienting
+    }
+   ;
 
-      }
-       gum-SayingANDSensing {
-        gum-Internal {
-          gum-Perception gum-Intention gum-Cognition {
-            gum-Think gum-Believe gum-Know
-          }
-           gum-ReactionAndEmotion {
-            gum-Liking {
-              gum-Striving gum-Wanting
-            }
-             gum-Disliking gum-Fearing
-          }
-           gum-MentalInactive gum-MentalActive
-        }
-         gum-External {
-          gum-NameEvent[gum-DispositiveMaterialAction] gum-BehavioralVerbal {
-            gum-Addressing gum-NonAddressing
-          }
-           gum-ProperVerbal {
-            gum-MessageOriented gum-NonAddresseeOriented {
-              gum-MessageTransfer[gum-MessageOriented]
-            }
-             gum-NonMessageOriented {
-              gum-CommunicativeAttitude[gum-NonAddresseeOriented]
-            }
-             gum-AddresseeOriented {
-              gum-AddressingVerbal[gum-NonMessageOriented]
-            }
+    gs-Process;
 
-          }
+    gs-SimpleQuality: gs-SequentialQuality;
 
-        }
+    gs-SimpleThing;
 
-      }
-       gum-BeingANDHaving {
-        gum-Existence gum-Relating {
-          gum-GeneralizedPossessionInverse {
-            gum-PartOf {
-              gum-ElementOf
-            }
-             gum-OwnedBy
-          }
-           gum-Circumstantial {
-            gum-GeneralizedLocating {
-              gs-SpatialLocating {
-                gs-SpatialTemporalLocating[gs-TemporalLocating]
-              }
-               gs-TemporalLocating
-            }
-             gum-Causal gum-CircumstantialOther
-          }
-           gum-Intensive {
-            gum-Symbolization {
-              gum-Signification gum-NameRelation gum-RolePlaying
-            }
-             gum-Identity gum-Ascription {
-              gum-QuantityAscription {
-                gum-NumberFocusing {
-                  gum-AtLeast gum-LessThan gum-GreaterThan gum-AtMost gum-Exactly
+    gs-SpatialTemporal: gs-DeicticSpatialTemporal gs-NonDeicticSpatialTemporal gs-QualitativeSpatialTemporal gs-QuantitativeSpatialTemporal;
+
+    gs-SubjectMatter;
+
+    gum-GUMThing: gum-Configuration {
+        gum-BeingAndHaving {
+            gum-Existence gum-Relating {
+                gum-Circumstantial {
+                    gum-Causal gum-CircumstantialOther gum-GeneralizedLocating
                 }
-                 gum-Quantity
-              }
-               gum-PropertyAscription {
-                gum-ColorPropertyAscription gum-SizePropertyAscription gum-ModalPropertyAscription gum-LogicalPropertyAscription gum-MaterialPropertyAscription gum-UsePropertyAscription gum-AgePropertyAscription gum-ProvenancePropertyAscription gum-ScaledComparison {
-                  gum-GreaterThanComparison gum-LessThanComparison
+                gum-GeneralizedPossession {
+                    gum-AscriptionInverse {
+                        gum-PropertyOf
+                    }
+                    gum-GeneralizedRoleRelation gum-NameOf gum-Ownership gum-PartWhole {
+                        gum-Part {
+                            gum-ElementList
+                        }
+
+                    }
+
+                }
+                gum-GeneralizedPossessionInverse {
+                    gum-OwnedBy gum-PartOf {
+                        gum-ElementOf
+                    }
+
+                }
+                gum-Intensive {
+                    gum-Ascription {
+                        gum-PropertyAscription {
+                            gum-AgePropertyAscription gum-ColorPropertyAscription gum-LogicalPropertyAscription gum-MaterialPropertyAscription gum-ModalPropertyAscription gum-ProvenancePropertyAscription gum-ScaledComparison {
+                                gum-GreaterThanComparison gum-LessThanComparison
+                            }
+                            gum-SizePropertyAscription gum-UsePropertyAscription
+                        }
+                        gum-QuantityAscription {
+                            gum-NumberFocusing {
+                                gum-AtLeast gum-AtMost gum-Exactly gum-GreaterThan gum-LessThan
+                            }
+                            gum-Quantity
+                        }
+
+                    }
+                    gum-Identity gum-Symbolization {
+                        gum-NameRelation gum-RolePlaying gum-Signification
+                    }
+
                 }
 
-              }
-
             }
-
-          }
-           gum-GeneralizedPossession {
-            gum-Ownership gum-AscriptionInverse {
-              gum-PropertyOf
-            }
-             gum-NameOf gum-GeneralizedRoleRelation gum-PartWhole {
-              gum-_Part {
-                gum-ElementList
-              }
-
-            }
-
-          }
 
         }
+        gum-DoingAndHappening {
+            gum-AffectingAction {
+                gum-CreativeMaterialAction gum-DispositiveMaterialAction {
+                    gum-NameEvent[gum-External]
+                }
 
-      }
+            }
+            gum-NonAffectingAction {
+                gum-Ambience {
+                    gum-Hailing gum-Raining gum-Snowing gum-Sunning gum-Winding
+                }
+                gum-NonAffectingDoing gum-NonAffectingHappening
+            }
+
+        }
+        gum-SayingAndSensing {
+            gum-External {
+                gum-BehavioralVerbal {
+                    gum-Addressing gum-NonAddressing
+                }
+                gum-ProperVerbal {
+                    gum-AddresseeOriented {
+                        gum-AddressingVerbal[gum-NonMessageOriented]
+                    }
+                    gum-MessageOriented {
+                        gum-MessageTransfer[gum-NonAddresseeOriented]
+                    }
+                    gum-NonAddresseeOriented {
+                        gum-CommunicativeAttitude[gum-NonMessageOriented]
+                    }
+                    gum-NonMessageOriented
+                }
+
+            }
+            gum-Internal {
+                gum-Cognition {
+                    gum-Believe gum-Know gum-Think
+                }
+                gum-Intention gum-MentalActive gum-MentalInactive gum-Perception gum-ReactionAndEmotion {
+                    gum-Disliking gum-Fearing gum-Liking {
+                        gum-Striving gum-Wanting
+                    }
+
+                }
+
+            }
+
+        }
 
     }
+    gum-Element {
+        gum-Circumstance {
+            gum-SubjectMatter {
+                gum-DiffuseMatter gum-SpecificMatter
+            }
 
-  }
-   uio-UIOThing {
-    uio-InterpersonalThing[gum-ConsciousBeing] {
-      uio-SurfaceSpeechFunction {
-        uio-Social {
-          uio-Greeting uio-LeaveTaking
         }
-         uio-Monitoring {
-          uio-SignalHold uio-SignalNonUnderstanding
-        }
-         uio-TruthAttribution {
-          uio-Denial uio-Affirmation uio-Hedging
-        }
-         uio-PrimarySpeechFunctions {
-          uio-Directive uio-Statement uio-Question
-        }
+        gum-Process gum-SimpleQuality {
+            gum-ClassAscription gum-LogicalQuality {
+                gum-LogicalUniqueness
+            }
+            gum-MaterialWorldQuality {
+                gum-DynamicQuality {
+                    gum-BehavioralQuality[gum-PolarQuality gum-ScalableQuality]
+                }
+                gum-NonScalableQuality {
+                    gum-ClassQuality[gum-StativeQuality gum-TaxonomicQuality] {
+                        gum-MaterialClassQuality gum-ProvenanceClassQuality
+                    }
+                    gum-StatusQuality[gum-PolarQuality gum-StativeQuality]
+                }
+                gum-PolarQuality {
+                    gum-EvaluativeQuality[gum-ScalableQuality gum-StativeQuality] gum-SenseANDMeasureQuality[gum-ScalableQuality gum-StativeQuality] {
+                        gum-Age gum-Color gum-Size
+                    }
 
-      }
-       uio-DialogueParticipant {
-        uio-Hearer uio-Speaker
-      }
+                }
+                gum-ScalableQuality gum-StativeQuality gum-TaxonomicQuality
+            }
+            gum-ModalQuality {
+                gum-Conditional gum-NonConditional gum-NonVolitional {
+                    gum-Necessity gum-Possibility {
+                        gum-Ability gum-GeneralPossibility
+                    }
+
+                }
+                gum-Volitional
+            }
+
+        }
+        gum-SimpleThing {
+            gum-ConsciousBeing {
+                gum-Person {
+                    gum-Female gum-Male
+                }
+
+            }
+            gum-DecomposableObject {
+                gum-OrderedObject {
+                    gum-OrderedSet[gum-UMSet] gum-SpaceInterval[gum-SpatialObject] {
+                        gum-OneOrTwoDLocation gum-ThreeDLocation
+                    }
+                    gum-TimeInterval[gum-TemporalObject] {
+                        gum-Future gum-OneOrTwoDTime gum-Past gum-Present gum-ThreeDTime
+                    }
+
+                }
+
+            }
+            gum-NamedObject gum-NonConsciousThing {
+                gum-Abstraction {
+                    gum-NaturalNumber gum-UMSet[gum-DecomposableObject] {
+                        gum-DisjunctiveSet
+                    }
+                    gum-Word {
+                        gum-Name
+                    }
+
+                }
+                gum-SpatialTemporal {
+                    gum-SpatialObject {
+                        gum-Space[gum-Substance]
+                    }
+                    gum-TemporalObject
+                }
+                gum-Substance[gum-NonDecomposableObject] {
+                    gum-Time[gum-TemporalObject]
+                }
+
+            }
+            gum-NonDecomposableObject {
+                gum-SpacePoint[gum-SpatialObject] {
+                    gum-ZeroDLocation
+                }
+                gum-TimePoint[gum-TemporalObject] {
+                    gum-ZeroDTime
+                }
+
+            }
+
+        }
 
     }
+    gum-MultiConfiguration {
+        gum-Expansion {
+            gum-Elaboration gum-Enhancement gum-Extension {
+                gum-Conjunction gum-Disjunction
+            }
 
-  }
-   residue {
+        }
+        gum-Projection {
+            gum-IdeaProjection {
+                gum-IdeaQuoting[gum-Quoting] gum-IdeaReporting[gum-Reporting]
+            }
+            gum-LocutionProjection {
+                gum-LocutionQuoting[gum-Quoting] gum-LocutionReporting[gum-Reporting]
+            }
+            gum-Quoting gum-Reporting
+        }
+
+    }
+   ;
+
+    -DIRECTED-BINARY-RELATION;
+
+    -PAL-CONSTRAINT;
+}
+
+# Other linguistic features
+feature {
+   root: residue {
     ling ppdest Conj-list Disj-list Du {
       Greeting Ack Reject
     }
@@ -2671,4 +2632,3 @@ family negation(NEG) {
 
 testbed {
 }
-
