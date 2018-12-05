@@ -12,6 +12,7 @@ import owlready2
 
 
 CCG_COMMENT = '# FEATURE SECTION AUTO GENERATED FROM ONTOLOGY FILES'
+INDENT = ' ' * 4
 
 
 def owl2types():
@@ -58,11 +59,18 @@ def owl2types():
         output = classes2xml(classes, ontologies, ontology_prefix_map)
 
     elif arguments.format == 'ccg':
-        output = classes2ccg(classes, ontologies, ontology_prefix_map)
+        input_text = ''
 
         if outfile.exists():
             input_text = outfile.read_text()
-            output = insert_ccg_features(input_text, output)
+            if arguments.backup:
+                backup = Path(arguments.output + '.bak')
+                if backup.exists():
+                    raise ValueError('A backup file ({}) already exists, please delete it!'.format(backup.name))
+                backup.write_text(input_text)
+
+        output = classes2ccg(classes, ontologies, ontology_prefix_map)
+        output = insert_ccg_features(input_text, output)
 
     if arguments.output != '-':
         outfile.write_text(output)
@@ -285,19 +293,104 @@ def classes2ccg(classes, ontologies, ontology_prefix_map):
         A string which can be parsed as valid xml, in the format of the types.xml
         needed for OpenCCG.
     """
-    lines = [CCG_COMMENT]
+    blocks = [CCG_COMMENT]
     features = OrderedDict()
-    ccg_string = 'feature {{\n{}\n}}'
+    ccg_string = 'feature {{\n{}\n{}{}\n}}'
 
     for cls, parents in classes.items():
-        pass
+        feature = Feature(cls, sorted(parents))
+        features[feature.name] = feature
 
-    return '\n'.join(lines)
+    for feature in features.values():
+        parents = sorted(classes[feature.name])
+        if parents:
+            if len(parents) > 1:
+                feature.additional_parents += list(parents)[1:]
+            features[list(parents)[0]].children.append(feature)
+
+    tree = '\n\n{}'.format(INDENT).join(str(f) for f in features.values() if f.toplevel)
+
+    ontology_strings = ['{}: {}'.format(ontology_prefix_map[o.name], o.base_iri) for o in ontologies]
+    comment_ontologies = '\n'.join('# ' + s for s in ['Ontologies used:'] + ontology_strings)
+
+    blocks.append(ccg_string.format(comment_ontologies, INDENT, tree))
+
+    return '\n'.join(blocks)
+
+
+class Feature:
+    def __init__(self, name, parents=None):
+        if parents is None:
+            parents = list()
+        self.name = name
+        self.toplevel = len(parents) == 0
+
+        self.children = []
+        self.additional_parents = []
+
+    def __str__(self, depth=0):
+        fmt = '{name}{parents}{colon}{children}{semicolon}'
+
+        parents = ''
+        colon = ''
+        children = ' '.join(child.__str__(depth+1) for child in self.children)
+        semicolon = ''
+
+        if self.toplevel:
+            if self.children:
+                colon = ': '
+            semicolon = ';'
+        else:
+            if self.additional_parents:
+                parents = '[{}]'.format(' '.join(self.additional_parents))
+            if children:
+                if depth > 0:
+                    children = ' {{\n{indent}{spaces}{children}\n{spaces}}}\n{spaces}'\
+                        .format(indent=INDENT, spaces=INDENT * depth, children=children)[:-1]
+                else:
+                    children = ' {{{}}} '.format(children)
+
+        return fmt.format(name=self.name,
+                          parents=parents,
+                          colon=colon,
+                          children=children,
+                          semicolon=semicolon)
 
 
 def insert_ccg_features(input_text, feature_string):
-    # TODO(shoeffner)
-    return feature_string
+    """Inserts into or replaces an existing feature string in input_text.
+
+    If the CCG_COMMENT line is found inside input_text, the following
+    feature section is considered created by this tool and replaced.
+    If such a comment line is not found, a new feature section is created and
+    prepended to input_text.
+
+    Args:
+        input_text: The text from the original file.
+        feature_string: The ccg feature string containing the ontology information.
+    """
+    lines = input_text.splitlines()
+
+    # Search for CCG_COMMENT and determine the feature section's lines
+    comment_line = -1
+    end_line = -1
+    brace_count = 0
+    for i, line in enumerate(input_text.splitlines()):
+        if comment_line > -1:
+            brace_count = brace_count + line.count('{') - line.count('}')
+        if CCG_COMMENT in line:
+            comment_line = i
+        elif comment_line > -1 and brace_count == 0:
+            end_line = i
+            break
+
+    # Cut and replace exist feature section or prepend new section
+    if comment_line > -1 and end_line > -1:
+        output = lines[:comment_line] + [feature_string] + lines[end_line + 1:]
+    else:
+        output = (feature_string, input_text)
+
+    return '\n'.join(output)
 
 
 def parse_args():
@@ -324,7 +417,13 @@ def parse_args():
                         help='Exclude owl:Thing as the top level element. '
                              'By default, it will be included.')
     parser.add_argument('-f', '--format', nargs='?', default='xml',
-                        choices=['xml', 'ccg'])
+                        choices=['xml', 'ccg'],
+                        help='Determines the output format: a types.xml to be '
+                             'used directly inside an OpenCCG grammar, or a '
+                             '*.ccg file.')
+    parser.add_argument('-b', '--backup', action='store_true',
+                        help='Creates a backup of the input file, only used in '
+                             'conjunction with --format ccg.')
     return parser.parse_args()
 
 
