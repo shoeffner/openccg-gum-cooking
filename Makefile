@@ -5,7 +5,6 @@
 		--lookup ./ontologies \
 		./ontologies/SLM-cooking.owl:slm \
 		./ontologies/UIO.owl:uio
-	@-rm $@.bak
 
 ./english-cooking/types.xml: ./ontologies/*.owl
 	owl2types --output $@ \
