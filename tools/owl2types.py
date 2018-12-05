@@ -309,6 +309,7 @@ def classes2ccg(classes, ontologies, ontology_prefix_map):
             features[list(parents)[0]].children.append(feature)
 
     tree = '\n\n{}'.format(INDENT).join(str(f) for f in features.values() if f.toplevel)
+    tree = re.sub(r'\s+$', '', tree, flags=re.M)
 
     ontology_strings = ['{}: {}'.format(ontology_prefix_map[o.name], o.base_iri) for o in ontologies]
     comment_ontologies = '\n'.join('# ' + s for s in ['Ontologies used:'] + ontology_strings)
