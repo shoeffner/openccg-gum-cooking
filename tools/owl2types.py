@@ -63,7 +63,7 @@ def owl2types():
 
         if outfile.exists():
             input_text = outfile.read_text()
-            if arguments.backup:
+            if not arguments.nobackup:
                 backup = Path(arguments.output + '.bak')
                 if backup.exists():
                     raise ValueError('A backup file ({}) already exists, please delete it!'.format(backup.name))
@@ -421,8 +421,8 @@ def parse_args():
                         help='Determines the output format: a types.xml to be '
                              'used directly inside an OpenCCG grammar, or a '
                              '*.ccg file.')
-    parser.add_argument('-b', '--backup', action='store_true',
-                        help='Creates a backup of the input file, only used in '
+    parser.add_argument('-n', '--nobackup', action='store_true',
+                        help='Make no backup of the input file. Only used in '
                              'conjunction with --format ccg.')
     return parser.parse_args()
 

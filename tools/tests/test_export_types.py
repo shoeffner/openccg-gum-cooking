@@ -246,7 +246,7 @@ def ccg_test(expected_name, *owls, existing_ccg=False):
             if existing_ccg:
                 outfile.write_text(load_ccg(expected_name + '_in'))
 
-            with argv('--output', str(outfile), '--format', 'ccg', *owls):
+            with argv('--nobackup', '--output', str(outfile), '--format', 'ccg', *owls):
                 owl2types()
                 expected = load_ccg(expected_name)
             actual = outfile.read_text()
