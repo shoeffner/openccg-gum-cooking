@@ -42,46 +42,46 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute -->
 
-    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
-
-
-
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#circumstanceInConfiguration -->
-
-    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#circumstanceInConfiguration"/>
+    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#domain -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#circumstanceInConfiguration -->
 
-    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#domain"/>
-
-
-
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#gumrelation -->
-
-    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#gumrelation"/>
+    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#circumstanceInConfiguration"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#range -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#domain -->
 
-    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#range"/>
+    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#domain"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#spatialCircumstance -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#gumrelation -->
 
-    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#spatialCircumstance"/>
+    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#gumrelation"/>
+
+
+
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#range -->
+
+    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#range"/>
+
+
+
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#spatialCircumstance -->
+
+    <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#spatialCircumstance"/>
 
 
 
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#destination -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#destination">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedRoute"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The destination of a DirectedMotion, defines where the motion ends.</rdfs:comment>
@@ -92,7 +92,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#direction -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#direction">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -110,7 +110,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#hasSpatialModality -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#hasSpatialModality">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#gumrelation"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#gumrelation"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is the relation holding between a GeneralizedLocation and a SpatialModality. It defines the spatio-functional relation of a GeneralizedLocation.</rdfs:comment>
@@ -121,7 +121,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#locatum -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#locatum">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#domain"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#domain"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The object which is located in space in a spatial locating configuration.</rdfs:comment>
     </owl:ObjectProperty>
 
@@ -139,7 +139,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#nextPathIndication -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#nextPathIndication">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedPathLocation"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedPathLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nextPathIndication represents a composition of GeneralizedPathLocations, that forms a path out of a series of single pathIndications. It defines the successor of one GeneralizedPathLocation, which is again a GeneralizedPathLocation.</rdfs:comment>
@@ -150,7 +150,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#nextPathPlacement -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#nextPathPlacement">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedPathLocation"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedPathLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This concept represents a composition of GeneralizedPathLocations, that forms a path out of a series of single paths.</rdfs:comment>
@@ -190,7 +190,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#pathIndication -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#pathIndication">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedRoute"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedPathLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathIndication of a directed motion, defines a certain SpatialLocating which is indicating the path of the motion.</rdfs:comment>
@@ -201,7 +201,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#pathPlacement -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#pathPlacement">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedRoute"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedPathLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pathPlacement is used for a description of paths within a DirectedMotion configuration. GeneralizedRoutes can have pathPlacements, which are filled by GeneralizedPathLocations.</rdfs:comment>
@@ -212,7 +212,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#placement -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#placement">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -292,7 +292,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#relatum -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#relatum">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#range"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#range"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This encodes the reference object in spatial locatings, and holds between a place and a spatial object.</rdfs:comment>
     </owl:ObjectProperty>
@@ -302,7 +302,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#route -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#route">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -320,7 +320,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#source -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#source">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#attribute"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#attribute"/>
         <rdfs:domain rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedRoute"/>
         <rdfs:range rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The source of a motion process, defines where the motion starts.</rdfs:comment>
@@ -331,7 +331,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#spatialExtent -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#spatialExtent">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#spatialCircumstance"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#spatialCircumstance"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatio relation of specifying the extent in space taken (e.g. `for five miles&apos;).</rdfs:comment>
     </owl:ObjectProperty>
 
@@ -340,7 +340,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#spatialPerspective -->
 
     <owl:ObjectProperty rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#spatialPerspective">
-        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#circumstanceInConfiguration"/>
+        <rdfs:subPropertyOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#circumstanceInConfiguration"/>
     </owl:ObjectProperty>
 
 
@@ -419,111 +419,111 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstance -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Circumstance -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstance">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Circumstance">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ClassAscription -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#ClassAscription -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ClassAscription">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#ClassAscription">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SequentialQuality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DispositiveMaterialAction -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#DispositiveMaterialAction -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DispositiveMaterialAction"/>
-
-
-
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Element -->
-
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Element"/>
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#DispositiveMaterialAction"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedLocating -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Element -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedLocating"/>
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Element"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LogicalQuality -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#GeneralizedLocating -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#LogicalQuality">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#GeneralizedLocating"/>
+
+
+
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#LogicalQuality -->
+
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#LogicalQuality">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SequentialQuality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MaterialWorldQuality -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#MaterialWorldQuality -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#MaterialWorldQuality">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#MaterialWorldQuality">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SequentialQuality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalQuality -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#ModalQuality -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#ModalQuality">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#ModalQuality">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SequentialQuality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameEvent -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#NameEvent -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NameEvent">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#NameEvent">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#AffectingSpatialAction"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingDoing -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#NonAffectingDoing -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingDoing"/>
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#NonAffectingDoing"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Process -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Process">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Process">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SimpleQuality -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SimpleQuality">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SimpleThing -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SimpleThing">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality"/>
     </owl:Class>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SpatialTemporal -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal"/>
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SpatialTemporal"/>
 
 
 
-    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SubjectMatter -->
+    <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SubjectMatter -->
 
-    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SubjectMatter">
+    <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SubjectMatter">
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation"/>
     </owl:Class>
 
@@ -701,7 +701,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#AffectingSpatialAction -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#AffectingSpatialAction">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#DispositiveMaterialAction"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#DispositiveMaterialAction"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#placement"/>
@@ -888,7 +888,7 @@ Upper Model 4.0 is represented in OWL DL.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#DeicticSpatialTemporal -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#DeicticSpatialTemporal">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SpatialTemporal"/>
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#NonDeicticSpatialTemporal"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relationship of spatialtemporal locating that is classified as relative. Relative here refers to a posited property of temporal and spatial relationships concerning how they are treated by the grammar of a language. Relative spatiotemporal relationships are taken to `move along with&apos; an observer. This contrasts with absolute relationships which do not accompany the observer. As an example, the notion of `today&apos;, `tomorrow&apos;, etc. do not stand still and allow the observer to pass them by, they move with the observer; this is in contrast to the notion of a `Monday&apos;, which can come and pass the observer by.</rdfs:comment>
     </owl:Class>
@@ -1113,7 +1113,7 @@ than one entities. In addition, the accessibility to the speaker or listener can
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedLocation">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstance"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Circumstance"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#relatum"/>
@@ -1156,7 +1156,7 @@ than one entities. In addition, the accessibility to the speaker or listener can
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedRoute -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#GeneralizedRoute">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Circumstance"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Circumstance"/>
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1415,7 +1415,7 @@ than one entities. In addition, the accessibility to the speaker or listener can
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#NonAffectingSpatialDoing -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#NonAffectingSpatialDoing">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#NonAffectingDoing"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#NonAffectingDoing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#placement"/>
@@ -1430,7 +1430,7 @@ than one entities. In addition, the accessibility to the speaker or listener can
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#NonDeicticSpatialTemporal -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#NonDeicticSpatialTemporal">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SpatialTemporal"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relationship of spatialtemporal locating that is classified as absolute. Absolute here refers to a posited property of temporal and spatial relationships concerning how they are treated by the grammar of English. Absolute spatiotemporal relationships are taken to be unchanging with respect to the observer. A relative relationship is one that moves with the observer. As an example, the notion of `today&apos;, `tomorrow&apos;, etc. do not stand still and allow the observer to pass them by, they move with the observer; this is in contrast to the notion of a `Monday&apos;, which can come and pass the observer by.</rdfs:comment>
     </owl:Class>
 
@@ -1599,7 +1599,7 @@ indicates an overlap of both objects. Common prepositions are &quot;across&quot;
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#QualitativeSpatialTemporal -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#QualitativeSpatialTemporal">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SpatialTemporal"/>
         <owl:disjointWith rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#QuantitativeSpatialTemporal"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial or temporal entity, that gives a qualitative information within a configuration. In &quot;Turn slightly to the right&quot;, the term &quot;slightly&quot; would be represented by QualitativeSpatialTemporal.</rdfs:comment>
     </owl:Class>
@@ -1618,7 +1618,7 @@ indicates an overlap of both objects. Common prepositions are &quot;across&quot;
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#QuantitativeSpatialTemporal -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#QuantitativeSpatialTemporal">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SpatialTemporal"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SpatialTemporal"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spatial or temporal entity, that gives a quantitative information within a configuration. In &quot;Turn 45 degrees to the right&quot;, the term &quot;45 degrees&quot; would be represented by QuantitativeSpatialTemporal.</rdfs:comment>
     </owl:Class>
 
@@ -1691,7 +1691,7 @@ indicates an overlap of both objects. Common prepositions are &quot;across&quot;
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SequentialQuality -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SequentialQuality">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleQuality"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SimpleQuality"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">indicates spatial, sequential attributes of Elements that occur in spatial configurations, such as &quot;it is on the *second* floor&quot; or &quot;take the *next* turn&quot;.</rdfs:comment>
     </owl:Class>
 
@@ -1750,7 +1750,7 @@ indicates an overlap of both objects. Common prepositions are &quot;across&quot;
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialLocating -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialLocating">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedLocating"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#GeneralizedLocating"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#placement"/>
@@ -1769,7 +1769,7 @@ indicates an overlap of both objects. Common prepositions are &quot;across&quot;
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#locatum"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#SimpleThing"/>
+                <owl:onClass rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#SimpleThing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any configuration whose function it is to locate some physical object in space. Instances must have one locatum and one placement.</rdfs:comment>
@@ -1780,7 +1780,7 @@ indicates an overlap of both objects. Common prepositions are &quot;across&quot;
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#SpatialModality">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#Element"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#Element"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spatial modality is a reified spatial relation. It serves to define entities such as place by providing constraints that are relational in nature, that is, accompanied by a (potentially unspecified) relatum.</rdfs:comment>
     </owl:Class>
 
@@ -1830,7 +1830,7 @@ preposition is &quot;around&quot;.</rdfs:comment>
     <!-- https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#TemporalLocating -->
 
     <owl:Class rdf:about="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4-space.owl#TemporalLocating">
-        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-3.owl#GeneralizedLocating"/>
+        <rdfs:subClassOf rdf:resource="https://www.ontospace.uni-bremen.de/ontology/stable/GUM-4.owl#GeneralizedLocating"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any configuration whose function it is to locate some process in time.</rdfs:comment>
     </owl:Class>
 
