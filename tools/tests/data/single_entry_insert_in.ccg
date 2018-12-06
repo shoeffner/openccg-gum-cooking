@@ -1,0 +1,10 @@
+feature {
+    a;
+    b c;
+}
+
+lexicon {
+}
+
+tesbed {
+}

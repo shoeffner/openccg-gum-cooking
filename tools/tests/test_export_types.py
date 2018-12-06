@@ -173,3 +173,117 @@ class TestExportTypes(unittest.TestCase):
               owl('complex_import_d', 'd'))
     def test_complex_import(self):
         pass
+
+
+def load_ccg(name):
+    """Returns the expected ccg content."""
+    return Path(f'{TESTDATA}/{name}.ccg').read_text()
+
+
+def compare_ccg(actual, expected):
+    """Compares to ccg files."""
+    def clean_up(i):
+        lines = i.splitlines()
+        # Remove trailing whitespaces
+        lines = map(lambda s: s.strip(), lines)
+        # Remove empty lines
+        lines = filter(lambda s: len(s) != 0, lines)
+        # Remove comments
+        lines = filter(lambda s: not s.startswith('#'), lines)
+        return '\n'.join(lines)
+
+    return clean_up(actual) == clean_up(expected)
+
+
+def ccg_test(expected_name, *owls, existing_ccg=False):
+    """Wraps a class method to create a default test procedure.
+
+    A test consists of one or multiple owl file names inside the
+    TESTDATA directory. Owl files should be specified using the `owl` function:
+
+        @ccg_test('single_entry', owl('empty', 'a'), owl('single_entry'))
+
+    Here, the first single_entry refers to the expected output stored in
+    single_entry.ccg, while empty and single_entry inside the owl calls refer
+    to the respective .owl files. The entities in `empty` should be prefixed
+    with 'a' in the final types file.
+
+    The test prepares command line arguments as if owl2types would be called
+    from the command line and calls it:
+
+        (pseudo code)
+        if existing_ccg is True, create output file with content from _in file
+        with mocked command line args:
+            owl2types()
+        compare actual output with expected output
+        remove output file
+
+    The output is parsed in the same way as the expected file is parsed, to
+    ensure that even with different white space or formatting the content
+    is correct.
+
+    Note that the decorator discards the functionality of the method it
+    decorates.
+
+    Args:
+        expected_name: The name part of the ccg file inside TESTDATA. Will be
+                       used for both: if existing_ccg is true,
+                       expected_name_in.ccg is used as the import, while
+                       expected_name.ccg is used as the expected output.
+        owls: `owl(...)` calls to refer to the owl files inside TESTDATA and
+              provide prefixes.
+        existing_ccg: If this is true, the _out file will be created using the
+                      data from the _in file before calling owl2types.
+
+    Raises:
+        AssertionError: If the actual output does not match the expected
+            output.
+    """
+    def decorator(func):
+        @functools.wraps(func)
+        def test(self):
+            outfile = Path(expected_name + '_out.ccg')
+            if existing_ccg:
+                outfile.write_text(load_ccg(expected_name + '_in'))
+
+            with argv('--nobackup', '--output', str(outfile), '--format', 'ccg', *owls):
+                owl2types()
+                expected = load_ccg(expected_name)
+            actual = outfile.read_text()
+
+            try:
+                assert compare_ccg(actual, expected), \
+                    f'\n\nExpected:\n\n{expected}\n\nActual:\n\n{actual}\n\n'
+            finally:
+                outfile.unlink()
+        return test
+    return decorator
+
+
+class TestExportCCG(unittest.TestCase):
+    @ccg_test('empty',
+              owl('empty'))
+    def test_empty(self):
+        pass
+
+    @ccg_test('single_entry',
+              owl('single_entry', 's'))
+    def test_prefix(self):
+        pass
+
+    @ccg_test('complex_inheritance',
+              owl('complex_inheritance'))
+    def test_complex_inheritance(self):
+        pass
+
+    @ccg_test('single_entry_insert',
+              owl('single_entry'),
+              existing_ccg=True)
+    def test_insertion(self):
+        pass
+
+    @ccg_test('single_entry_overwrite',
+              owl('single_entry'),
+              existing_ccg=True)
+    def test_overwriting_insertion(self):
+        pass
