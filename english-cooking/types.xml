@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ====================================================================================
 Title:       types.xml
-Copyright:   Copyright (c) 2008-2014 SFB-TR 8. All rights reserved.
+Copyright:   Copyright (c) 2008 SFB-TR 8. All rights reserved.
 Licence:     This file is free software; you can redistribute it and/or modify
              it under the terms of the GNU Lesser General Public License as published by
              the Free Software Foundation; either version 2.1, or (at your option)
@@ -12,17 +12,21 @@ Licence:     This file is free software; you can redistribute it and/or modify
              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
              GNU Lesser General Public License for more details.
 
+             You should have received a copy of the GNU Lesser General Public License
+             along with Agent Factory; see the file COPYING.  If not, write to
+             the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+             Boston, MA 02111-1307, USA.
 ======================================================================================== -->
 
   <!-- ====================================================================================
-
-	  Types file for the DiaSpace English CCG grammar.
-
-      WARNING: This semantic type hierarchy within this file, i.e.,
-	  and everything under it is generated automatically from a real ontology
+	  
+	  Types file for the DiaSpace English CCG grammar.  
+	  
+      WARNING: This semantic type hierarchy within this file, i.e., gum-UMThing
+	  and everything under it is generated automatically from a real ontology 
 	  file. Therefore make sure to add new entries to the ontology file rather
-	  than to this derivative.
-
+	  than to this derivative. 
+	  
   ====================================================================================== -->
 <types name="core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../openccg/grammars/types.xsd">
   <type name="root" />
@@ -76,16 +80,12 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Between" parents="gs-Distribution" />
   <type name="gs-Disjointness" parents="gs-RelativeSpatialModality" />
   <type name="gs-Sequential" parents="gs-Disjointness gs-Containment" />
-  <type name="slm-Succession" parents="gs-Sequential"/>
-  <type name="slm-Precedence" parents="gs-Sequential"/>
   <type name="gs-NonProjectionAxial" parents="gs-SpatialDistanceModality gs-Disjointness" />
   <type name="gum-Height-NonProjectionAxial" parents="gs-NonProjectionAxial" />
   <type name="gs-RelativeNonProjectionAxial" parents="gs-NonProjectionAxial" />
   <type name="gs-DirectionalRelation" parents="gs-Disjointness" />
   <type name="gs-GeneralDirectional" parents="gs-DirectionalRelation" />
   <type name="gs-MultipleDirectional" parents="gs-GeneralDirectional" />
-  <type name="gs-GeneralDirectionalDistancing" parents="gs-GeneralDirectional" />
-  <type name="gs-GeneralDirectionalNearing" parents="gs-GeneralDirectional" />
   <type name="gs-SpecificDirectional" parents="gs-DirectionalRelation" />
   <type name="gs-CardinalDirectional" parents="gs-SpecificDirectional" />
   <type name="gs-East" parents="gs-CardinalDirectional" />
@@ -99,7 +99,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="gs-QualitativeDistance" parents="gs-SpatialDistanceModality" />
   <type name="gs-Distal" parents="gs-QualitativeDistance" />
   <type name="gs-Proximal" parents="gs-QualitativeDistance gs-Access" />
-  <type name="gs-Touching" parents="gs-Proximal" /> <!-- @shoeffner: Removed redundant gs-Access parent, as it's already an indirect parent. -->
   <type name="gs-FunctionalSpatialModality" parents="gs-SpatialModality" />
   <type name="gs-Access" parents="gs-FunctionalSpatialModality" />
   <type name="gs-Control" parents="gs-FunctionalSpatialModality" />
@@ -119,37 +118,29 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Meeting" parents="gum-Event" />
   <type name="slm-Party" parents="gum-Event" />
   <type name="gs-QualitativeSpatialTemporal" parents="gum-Element" />
-  <type name="slm-HugeExtent" parents="gs-QualitativeSpatialTemporal"/>
-  <type name="slm-LargeExtent" parents="gs-QualitativeSpatialTemporal"/>
-  <type name="slm-MediumExtent" parents="gs-QualitativeSpatialTemporal"/>
-  <type name="slm-SmallExtent" parents="gs-QualitativeSpatialTemporal"/>
-  <type name="slm-TinyExtent" parents="gs-QualitativeSpatialTemporal"/>
-
   <type name="slm-Below" parents="gs-QualitativeSpatialTemporal" /><!-- Deep -->
   <type name="gs-QuantitativeSpatialTemporal" parents="gum-Element" />
-
-  <type name="slm-DisjointThing" parents="gum-Element" />
-  <type name="slm-CertantyEval" parents="gum-Element" />
-  <type name="slm-Approx" parents="slm-CertantyEval" />
-  <type name="slm-Exact" parents="slm-CertantyEval" />
-  <type name="slm-District" parents="slm-DisjointThing" />
-
+  
+  <type name="slm-DisjointThing" parents="gum-Element" />      
+  <type name="slm-CertantyEval" parents="gum-Element" />      
+  <type name="slm-Approx" parents="slm-CertantyEval" />       
+  <type name="slm-Exact" parents="slm-CertantyEval" />         
+  <type name="slm-District" parents="slm-DisjointThing" />    
+  
   <type name="gum-SimpleThing" parents="gum-Element" />
   <type name="slm-Metre" parents="gum-SimpleThing" />
-  <type name="slm-Mile" parents="gum-SimpleThing" />
+  <type name="slm-Mile" parents="gum-SimpleThing" />  
   <type name="slm-Inch" parents="gum-SimpleThing" />
   <type name="slm-Bit" parents="gum-SimpleThing" />
   <type name="slm-SemiCircle" parents="gum-SimpleThing" />
   <type name="slm-Degree" parents="gum-SimpleThing" />
   <type name="slm-Foot" parents="gum-SimpleThing" />
-  <type name="slm-RoomLength" parents="gum-SimpleThing" />
   <type name="slm-Step" parents="gum-SimpleThing" />
   <type name="slm-Turn" parents="gum-SimpleThing"/>
   <type name="slm-Centimeter" parents="gum-SimpleThing" />
   <type name="slm-Bag" parents="gum-NonDecomposableObject" />
   <type name="slm-Grass" parents="gum-NonDecomposableObject" />
   <type name="slm-Sock" parents="gum-NonDecomposableObject" />
-  <type name="slm-CorridorEnd" parents="gum-NonDecomposableObject" />
   <type name="slm-Guard" parents="gum-NonDecomposableObject" />
   <type name="slm-Target" parents="gum-NonDecomposableObject" />
   <type name="slm-Flour" parents="gum-NonDecomposableObject" />
@@ -183,15 +174,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Australia" parents="gum-NamedObject" />
   <type name="slm-NewYork" parents="gum-NamedObject" />
   <type name="slm-London" parents="gum-NamedObject" />
-  <type name="slm-City" parents="gum-NamedObject" />
-  <type name="slm-Country" parents="gum-NamedObject" />
-  <type name="slm-Continuent" parents="gum-NamedObject" />
-  <type name="slm-Dublin" parents="slm-City" />
-  <type name="slm-Tirunelveli" parents="slm-City" />
-  <type name="slm-Ireland" parents="slm-Country" />
-  <type name="slm-Europe" parents="slm-Continuent" />
+  <type name="slm-City" parents="gum-NamedObject" />  
+  <type name="slm-Country" parents="gum-NamedObject" />    
+  <type name="slm-Continuent" parents="gum-NamedObject" />  
+  <type name="slm-Dublin" parents="slm-City" />  
+  <type name="slm-Tirunelveli" parents="slm-City" />  
+  <type name="slm-Ireland" parents="slm-Country" />    
+  <type name="slm-Europe" parents="slm-Continuent" />      
   <type name="slm-Salzburg" parents="gum-NamedObject" />
-  <type name="slm-AustrianAlps" parents="gum-NamedObject" />
+  <type name="slm-AustrianAlps" parents="gum-NamedObject" />  
   <type name="slm-Washington" parents="gum-NamedObject" />
   <type name="slm-Bremen" parents="gum-NamedObject" />
   <type name="gum-ConsciousBeing" parents="gum-SimpleThing" />
@@ -262,7 +253,7 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Stairway" parents="slm-BuildingSpace" />
   <type name="slm-Closet" parents="slm-BuildingSpace" />
   <type name="slm-Junction" parents="slm-BuildingSpace" />
-
+  
   <type name="slm-Corner" parents="slm-BuildingSpace" />
   <type name="slm-Room" parents="slm-BuildingSpace" />
   <type name="slm-ConferenceRoom" parents="slm-Room" />
@@ -276,10 +267,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-MensToilets" parents="slm-ToiletRoom" />
   <type name="slm-LadiesToilets" parents="slm-ToiletRoom" />
   <type name="slm-Kitchen" parents="slm-Room" />
-  <type name="slm-PostRoom" parents="slm-Room" />
-  <type name="slm-CopyRoom" parents="slm-Room" />
-  <type name="slm-Stairwell" parents="slm-Room" />
-  <type name="slm-MainStairwell" parents="slm-Room" />
   <type name="slm-PostOffice" parents="slm-Room" />
   <type name="slm-Bridge" parents="slm-Room" />
   <type name="slm-Fountain" parents="slm-Room" />
@@ -293,7 +280,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Furnishings" parents="gum-SpatialObject" />
   <type name="slm-Patchcabinet" parents="slm-Furnishings" />
   <type name="slm-Book" parents="slm-Furnishings" />
-  <type name="slm-Phone" parents="slm-Furnishings" />
   <type name="slm-Furniture" parents="slm-Furnishings" />
   <type name="slm-Chair" parents="slm-Furniture" />
   <type name="slm-Stool" parents="slm-Chair" />
@@ -436,17 +422,15 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Ship" parents="gum-NonDecomposableObject" />
   <type name="slm-Tunnel" parents="gum-NonDecomposableObject" />
   <type name="slm-Bird" parents="gum-NonDecomposableObject" />
-  <type name="slm-Bowl" parents="gum-NonDecomposableObject slm-Container" /> <!-- @shoeffner: added slm-Container, removed duplicate entry -->
+  <type name="slm-Bowl" parents="gum-NonDecomposableObject" />
   <type name="slm-Fire" parents="gum-NonDecomposableObject" />
   <type name="slm-Cell" parents="gum-NonDecomposableObject" />
   <type name="slm-Park" parents="gum-NonDecomposableObject" />
   <type name="slm-View" parents="gum-NonDecomposableObject" />
-  <type name="slm-HotDogStand" parents="gum-NonDecomposableObject" />
-  <type name="slm-CottageCheese" parents="gum-NonDecomposableObject" />
-  <type name="slm-ParmesanCheese" parents="gum-NonDecomposableObject" />
-  <type name="slm-Macys" parents="gum-NonDecomposableObject" />
-  <type name="slm-TamilNadu" parents="gum-NonDecomposableObject" />
-  <type name="slm-India" parents="gum-NonDecomposableObject" />
+  <type name="slm-HotDogStand" parents="gum-NonDecomposableObject" />  
+  <type name="slm-Macys" parents="gum-NonDecomposableObject" />    
+  <type name="slm-TamilNadu" parents="gum-NonDecomposableObject" />      
+  <type name="slm-India" parents="gum-NonDecomposableObject" />  
   <type name="slm-Bedroom" parents="gum-NonDecomposableObject" />
   <type name="gum-Process" parents="gum-Element" />
   <type name="slm-Putting" parents="gum-Process" />
@@ -460,7 +444,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Proceeding" parents="gum-Process" />
   <type name="slm-Swimming" parents="gum-Process" />
   <type name="slm-Entering" parents="gum-Process" />
-  <type name="slm-Approaching" parents="gum-Process" />
   <type name="slm-Continuing" parents="gum-Process" />
   <type name="slm-Exiting" parents="gum-Process" />
   <type name="slm-Being" parents="gum-Process" />
@@ -477,7 +460,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="slm-Walking" parents="gum-Process" />
   <type name="slm-Running" parents="gum-Process" />
   <type name="slm-Stirring" parents="gum-Process" />
-  <type name="slm-Heating" parents="gum-Process" />
   <type name="slm-Knowing" parents="gum-Process" />
   <type name="slm-Halting" parents="gum-Process" />
   <type name="slm-Passing" parents="gum-Process" />
@@ -537,7 +519,6 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="gum-Elaboration" parents="gum-Expansion" />
   <type name="gum-Disjunction" parents="gum-MultiConfiguration" />
   <type name="gum-Conjunction" parents="gum-MultiConfiguration" />
-  <type name="slm-Sequencing" parents="gum-MultiConfiguration" />
   <type name="gum-Projection" parents="gum-MultiConfiguration" />
   <type name="gum-LocutionProjection" parents="gum-Projection" />
   <type name="gum-LocutionReporting" parents="gum-Reporting gum-LocutionProjection" />
@@ -656,31 +637,16 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="gum-ElementList" parents="gum-_Part" />
   <!-- several types spontaneously introduced for testing the
     hypothesis that lack of typing causes realization problems.
-
+    
     should be inserted into the hierarchy some day.
-
+    
   -->
-  <type name="uio-UIOThing" parents="root" />
-  <type name="uio-InterpersonalThing" parents="uio-UIOThing gum-ConsciousBeing" />
-  <type name="uio-SurfaceSpeechFunction" parents="uio-InterpersonalThing" />
-  <type name="uio-DialogueParticipant" parents="uio-InterpersonalThing" />
-  <type name="uio-Hearer" parents="uio-DialogueParticipant" />
-  <type name="uio-Speaker" parents="uio-DialogueParticipant" />
-  <type name="uio-Social" parents="uio-SurfaceSpeechFunction" />
-  <type name="uio-Monitoring" parents="uio-SurfaceSpeechFunction" />
-  <type name="uio-TruthAttribution" parents="uio-SurfaceSpeechFunction" />
-  <type name="uio-PrimarySpeechFunctions" parents="uio-SurfaceSpeechFunction" />
-  <type name="uio-Greeting" parents="uio-Social" />
-  <type name="uio-LeaveTaking" parents="uio-Social" />
-  <type name="uio-SignalHold" parents="uio-Monitoring" />
-  <type name="uio-SignalNonUnderstanding" parents="uio-Monitoring" />
-  <type name="uio-Denial" parents="uio-TruthAttribution" />
-  <type name="uio-Affirmation" parents="uio-TruthAttribution" />
-  <type name="uio-Hedging" parents="uio-TruthAttribution" />
-  <type name="uio-Directive" parents="uio-PrimarySpeechFunctions" />
-  <type name="uio-Statement" parents="uio-PrimarySpeechFunctions" />
-  <type name="uio-Question" parents="uio-PrimarySpeechFunctions" />
-
+  <type name="uim" parents="root" />
+  <type name="uim-Statement" parents="uim" />
+  <type name="uim-Question" parents="uim" />
+  <type name="uim-Instruction" parents="uim" />
+  <type name="uim-required" parents="uim" />
+  <type name="uim-content" parents="uim" />
   <!-- Non GUM/SLM Elements. Must find a home for these. -->
   <type name="residue" parents="root" />
   <type name="ling" parents="residue" />
@@ -693,12 +659,11 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="Reject" parents="Du" />
   <!-- Types for intermediate linguistic features
     and ad-hoc class names for realization
-
+    
     might be renamed and/or relocated
-
+    
   -->
   <type name="linguistic" parents="root" />
-  <type name="slm-NatNum" parents="root" />
   <type name="inf" parents="linguistic" />
   <type name="not-inf" parents="linguistic" />
   <type name="RealizationClassName" parents="linguistic" />
@@ -759,41 +724,4 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <type name="polarities" parents="root" />
   <type name="positive" parents="polarities" />
   <type name="negative" parents="polarities" />
-
-
-
-
-
-
-  <!--
-
-  Types added for cooking domain (28.06.2018)
-
-  -->
-  <!--- Volume Units (in Bearbeitung) -->
-
-  <type name="slm-Spoon" />
-  <type name="slm-Teaspoon" parents="slm-Spoon" />
-  <type name="slm-Tsp." parents="slm-Spoon" />
-  <type name="slm-Tablespoon" parents="slm-Spoon" />
-  <type name="slm-T" parents="slm-Spoon" />
-  <type name="slm-Tbl." parents="slm-Spoon" />
-  <type name="slm-Tbs." parents="slm-Spoon" />
-  <type name="slm-Tbsp." parents="slm-Spoon" />
-
-
-   <!--- Types introduced for a cooking domain (03.11.18)	-->
-
-   <type name="slm-Egg" parents="gum-SimpleThing" />
-   <type name="slm-Eggs" parents="gum-SimpleThing" />
-   <!--type name="slm-Orange" parents="gum-SimpleThing" /--> <!-- TODO(@shoeffner): Removed because orange is already a color. -->
-   <type name="slm-Oranges" parents="gum-SimpleThing" />
-   <type name="slm-Oil" parents="gum-SimpleThing" />
-   <type name="slm-Oils" parents="gum-SimpleThing" />
-   <type name="slm-Pan" parents="gum-SimpleThing" />
-   <type name="slm-Pans" parents="gum-SimpleThing" />
-
-
-
-
 </types>

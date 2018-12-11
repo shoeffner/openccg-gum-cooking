@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- ====================================================================================
 Title:       morph.xml
-Copyright:   Copyright (c) 2008-2014 SFB-TR 8. All rights reserved.
+Copyright:   Copyright (c) 2008 SFB-TR 8. All rights reserved.
 Licence:     This file is free software; you can redistribute it and/or modify
              it under the terms of the GNU Lesser General Public License as published by
              the Free Software Foundation; either version 2.1, or (at your option)
@@ -12,57 +12,61 @@ Licence:     This file is free software; you can redistribute it and/or modify
              MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
              GNU Lesser General Public License for more details.
 
+             You should have received a copy of the GNU Lesser General Public License
+             along with Agent Factory; see the file COPYING.  If not, write to
+             the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+             Boston, MA 02111-1307, USA.
 ======================================================================================== -->
 
 <!-- ====================================================================================
-
-  Morphology file for the DiaSpace English CCG grammar.
-
-  This grammar was based roughly on the Moloko grammar developed by GJK in Saarbrucken.
-  While the semantics categories are entirely different some of the macros used have
-  been left as they were. Many thanks to GJK for these.
-
+    
+  Morphology file for the DiaSpace English CCG grammar.  
+    
+  This grammar was based roughly on the Moloko grammar developed by GJK in Saarbrucken. 
+  While the semantics categories are entirely different some of the macros used have 
+  been left as they were. Many thanks to GJK for these. 
+    
 ====================================================================================== -->
 <morph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../openccg/grammars/morph.xsd" name="begehung">
 
-<!-- The set of all movement verbs.
-
-    While all the movement verbs are put together here under one part of speech
-    and are generally all laid out the same way, their behaviour in analysis
-    can be quite different depending on what categories they are used within.
-    In general all the verb categories are closed meaning that of the set of
-    spatial verbs only a few of them are generally applicable within any one
-    category. This s to insure that very unspecified verbs like 'go' may only
+<!-- The set of all movement verbs. 
+    
+    While all the movement verbs are put together here under one part of speech 
+    and are generally all laid out the same way, their behaviour in analysis 
+    can be quite different depending on what categories they are used within. 
+    In general all the verb categories are closed meaning that of the set of 
+    spatial verbs only a few of them are generally applicable within any one 
+    category. This s to insure that very unspecified verbs like 'go' may only 
     be used in a category which requires roles to be filled out when needed, whereas
-    a far less generic movement like 'leave' cannot be used in a category that
-    would allow it to cross combine with a prepositional phrase which denotes a
-    destination, e.g.,
-
-    *leave to the kitchen
-
-    Having one POS type like this and forcing the categories to be closed and
-    choose between the verbs is one way to do it. A different way to do it would be
-    to have specific POS types for the different variants of spatial verbs, i.e., a
+    a far less generic movement like 'leave' cannot be used in a category that 
+    would allow it to cross combine with a prepositional phrase which denotes a 
+    destination, e.g., 
+    
+    *leave to the kitchen 
+    
+    Having one POS type like this and forcing the categories to be closed and 
+    choose between the verbs is one way to do it. A different way to do it would be 
+    to have specific POS types for the different variants of spatial verbs, i.e., a 
     special POS type for spatial verbs which cannot be cross combined with destination
-    propositional phrases. However, it is this sort of filtering that the cateogires
-    are exactly supposed to do. In general the semantics of the verbs themselves is
-    also the same, but it is only their combination with other entries which is
-    effected, therefore it makes sense to have only one POS type and used closed families.
-
+    propositional phrases. However, it is this sort of filtering that the cateogires 
+    are exactly supposed to do. In general the semantics of the verbs themselves is 
+    also the same, but it is only their combination with other entries which is 
+    effected, therefore it makes sense to have only one POS type and used closed families. 
+    
     As a rule it should be noted that the POS type is useful for disambiguating multiple
-    sense of the same word. If multiple sense do not have to be disambiguated, then the
-    same POS should be used. So, if we end up with two verbs which have the same form but
+    sense of the same word. If multiple sense do not have to be disambiguated, then the 
+    same POS should be used. So, if we end up with two verbs which have the same form but 
     have completely different literal meanings, then we will have to use a different POS
-    type.
-
+    type. 
+    
     While all the verbs are marked as V, there is some ordering to the subsequent entries:
     Firstly the verbs are arranged by tense, and then they are arranged by their rough
-    'type', i.e., movement, general action, modal verbs, etc.
-
+    'type', i.e., movement, general action, modal verbs, etc. 
+    
   -->
-
+  
     <!-- both transitive and intransitive -->
-
+  
   <entry pos="V" word="drive" class="slm-Driving" macros="@pres.habitual" />
   <!-- Note: assumption of present habitual is too strong -->
   <entry pos="V" word="drives" stem="drive" class="slm-Driving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
@@ -72,370 +76,339 @@ Licence:     This file is free software; you can redistribute it and/or modify
   <entry pos="V" word="drove" stem="drive" class="slm-Driving" macros="@past" />
   <!-- Preterite -->
   <entry pos="V.main" word="drive" class="slm-Driving" />
-
+  
   <entry pos="V" word="turn" class="slm-Turning" macros="@pres.habitual" />
   <entry pos="V" word="turns" stem="turn" class="slm-Turning" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="turning" stem="turn" class="slm-Turning" macros="@vform.inf-agr" />
   <entry pos="V" word="turned" stem="turn" class="slm-Turning" macros="@past" />
   <entry pos="V.main" word="turn" class="slm-Turning" />
-
-  <entry pos="V" word="rotate" stem="rotate" class="slm-Rotating" macros="@pres.habitual" />
+  
+  <entry pos="V" word="rotate" class="slm-Rotating" macros="@pres.habitual" />
   <entry pos="V" word="rotates" stem="rotate" class="slm-Rotating" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="rotating" stem="rotate" class="slm-Rotating" macros="@vform.inf-agr" />
   <entry pos="V" word="rotated" stem="rotate" class="slm-Rotating" macros="@past" />
-  <entry pos="V.main" word="rotating" stem="rotate" class="slm-Rotating" />
-
+  <entry pos="V.main" word="rotating" class="slm-Rotating" />
+  
   <entry pos="V" word="veer" class="slm-Veering" macros="@pres.habitual" />
   <entry pos="V" word="veers" stem="veer" class="slm-Veering" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="veering" stem="veer" class="slm-Veering" macros="@vform.inf-agr" />
   <entry pos="V" word="veered" stem="veer" class="slm-Veering" macros="@past" />
   <entry pos="V.main" word="veer" class="slm-Veering" />
-
+  
   <!-- transitive -->
-
   <entry pos="V" word="make" class="slm-Making" macros="@pres.habitual" />
   <entry pos="V" word="makes" stem="make" class="slm-Making" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="making" stem="make" class="slm-Making" macros="@vform.inf-agr" />
   <entry pos="V" word="made" stem="make" class="slm-Making" macros="@past" />
-  <entry pos="V.main" word="make" class="slm-Making" />
-
+  <entry pos="V.main" word="make" class="slm-Making" />  
+  
   <entry pos="V" word="move" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="moves" stem="move" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="moving" stem="move" class="slm-Moving" macros="@vform.inf-agr" />
   <entry pos="V" word="moved" stem="move" class="slm-Moving" macros="@past" />
   <entry pos="V.main" word="move" class="slm-Moving" />
-s
+  
   <entry pos="V" word="ship" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="ships" stem="ship" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="shipping" stem="ship" class="slm-Moving" macros="@vform.inf-agr" />
   <entry pos="V" word="shipped" stem="ship" class="slm-Moving" macros="@past" />
   <entry pos="V.main" word="ship" class="slm-Moving" />
-
+  
   <entry pos="V" word="get" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="gets" stem="get" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="getting" stem="get" class="slm-Moving" macros="@vform.inf-agr" />
   <entry pos="V" word="got" stem="get" class="slm-Moving" macros="@past" />
   <entry pos="V.main" word="get" class="slm-Moving" />
-
+  
   <entry pos="V" word="take" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="takes" stem="take" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="taking" stem="take" class="slm-Moving" macros="@vform.inf-agr" />
   <entry pos="V" word="took" stem="take" class="slm-Moving" macros="@past" />
   <entry pos="V.main" word="take" class="slm-Moving" />
-
-  <entry pos="V" word="take" stem="take_turn" class="slm-Taking" macros="@pres.habitual" />
-  <entry pos="V" word="takes" stem="take_turn" class="slm-Taking" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-  <entry pos="V.prp" word="taking" stem="take_turn" class="slm-Taking" macros="@vform.inf-agr" />
-  <entry pos="V" word="ook" stem="take_turn" class="slm-Taking" macros="@past" />
-  <entry pos="V.main" word="take" stem="take_turn" class="slm-Taking" />
-
+  
   <entry pos="V" word="transport" class="slm-Moving" macros="@pres.habitual" />
   <entry pos="V" word="transports" stem="transport" class="slm-Moving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="transporting" stem="transport" class="slm-Moving" macros="@vform.inf-agr" />
   <entry pos="V" word="transported" stem="transport" class="slm-Moving" macros="@past" />
-  <entry pos="V.main" word="transport" class="slm-Moving" />
-
+  <entry pos="V.main" word="transport" class="slm-Moving" />            
+  
   <!-- intransitive -->
   <entry pos="V" word="swim" class="slm-Swimming" macros="@pres.habitual" />
   <entry pos="V" word="swims" stem="swim" class="slm-Swimming" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="swimming" stem="swim" class="slm-Swimming" macros="@vform.inf-agr" />
   <entry pos="V" word="swam" stem="swim" class="slm-Swimming" macros="@past" />
   <entry pos="V.main" word="swim" class="slm-Swimming" />
-
+  
   <entry pos="V" word="flee" class="slm-Fleeing" macros="@pres.habitual" />
   <entry pos="V" word="flees" stem="flee" class="slm-Fleeing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="fleeing" stem="flee" class="slm-Fleeing" macros="@vform.inf-agr" />
   <entry pos="V" word="fled" stem="flee" class="slm-Fleeing" macros="@past" />
   <entry pos="V.main" word="flee" class="slm-Fleeing" />
-
+  
   <entry pos="V" word="leap" class="slm-Leaping" macros="@pres.habitual" />
   <entry pos="V" word="leaps" stem="leap" class="slm-Leaping" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="leaping" stem="leap" class="slm-Leaping" macros="@vform.inf-agr" />
   <entry pos="V" word="lept" stem="leap" class="slm-Leaping" macros="@past" />
   <entry pos="V.main" word="leap" class="slm-Leaping" />
-
+  
   <entry pos="V" word="jump" class="slm-Jumping" macros="@pres.habitual" />
   <entry pos="V" word="jumps" stem="jump" class="slm-Jumping" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="jumping" stem="jump" class="slm-Jumping" macros="@vform.inf-agr" />
   <entry pos="V" word="jumped" stem="jump" class="slm-Jumping" macros="@past" />
   <entry pos="V.main" word="jump" class="slm-Jumping" />
-
-  <entry pos="V" word="go"             class="slm-Going" macros="@pres.habitual" />
+  
+  <entry pos="V" word="go" class="slm-Going" macros="@pres.habitual" />
   <entry pos="V" word="goes" stem="go" class="slm-Going" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="going" stem="go" class="slm-Going" macros="@vform.inf-agr" />
   <entry pos="V" word="went" stem="go" class="slm-Going" macros="@past" />
   <entry pos="V.main" word="go" class="slm-Going" />
-
+  
   <entry pos="V" word="double_back" class="slm-Going" macros="@pres.habitual" />
   <entry pos="V" word="doubles_back" stem="double_back" class="slm-Going" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="doubling_back" stem="double_back" class="slm-Going" macros="@vform.inf-agr" />
   <entry pos="V" word="doubled_back" stem="double_back" class="slm-Going" macros="@past" />
   <entry pos="V.main" word="double_back" class="slm-Going" />
-
+  
   <entry pos="V" word="reach" class="slm-Going" macros="@pres.habitual" />
   <entry pos="V" word="reaches" stem="reach" class="slm-Going" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="reaching" stem="reach" class="slm-Going" macros="@vform.inf-agr" />
   <entry pos="V" word="reached" stem="reach" class="slm-Going" macros="@past" />
   <entry pos="V.main" word="reach" class="slm-Going" />
-
+  
   <entry pos="V" word="carry_on" class="slm-Going" macros="@pres.habitual" />
   <entry pos="V" word="carries_on" stem="carry_on" class="slm-Going" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="carrying_on" stem="carry_on" class="slm-Going" macros="@vform.inf-agr" />
   <entry pos="V" word="carried_on" stem="carry_on" class="slm-Going" macros="@past" />
-  <entry pos="V.main" word="carry_on" class="slm-Going" />
-
+  <entry pos="V.main" word="carry_on" class="slm-Going" />      
+  
   <entry pos="V" word="proceed" class="slm-Proceeding" macros="@pres.habitual" />
   <entry pos="V" word="proceeds" stem="proceed" class="slm-Proceeding" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="proceeding" stem="proceed" class="slm-Proceeding" macros="@vform.inf-agr" />
   <entry pos="V" word="proceeded" stem="proceed" class="slm-Proceeding" macros="@past" />
   <entry pos="V.main" word="proceed" class="slm-Proceeding" />
-
+  
   <entry pos="V" word="race" class="slm-Racing" macros="@pres.habitual" />
   <entry pos="V" word="races" stem="race" class="slm-Racing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="racing" stem="race" class="slm-Racing" macros="@vform.inf-agr" />
   <entry pos="V" word="raced" stem="race" class="slm-Racing" macros="@past" />
   <entry pos="V.main" word="race" class="slm-Racing" />
-
+  
   <entry pos="V" word="continue" class="slm-Continuing" macros="@pres.habitual" />
   <entry pos="V" word="continues" stem="continue" class="slm-Continuing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="continuing" stem="continue" class="slm-Proceeding" macros="@vform.inf-agr" />
   <entry pos="V" word="continued" stem="continue" class="slm-Continuing" macros="@past" />
   <entry pos="V.main" word="continue" class="slm-Continuing" />
-
+  
   <entry pos="V" word="pass" class="slm-Passing" macros="@pres.habitual" />
   <entry pos="V" word="passes" stem="pass" class="slm-Passing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="passing" stem="pass" class="slm-Passing" macros="@vform.inf-agr" />
   <entry pos="V" word="passed" stem="pass" class="slm-Passing" macros="@past" />
   <entry pos="V.main" word="pass" class="slm-Passing" />
-
+  
   <entry pos="V" word="leave" class="slm-Leaving" macros="@pres.habitual" />
   <entry pos="V" word="leaves" stem="leave" class="slm-Leaving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="leaving" stem="leave" class="slm-Leaving" macros="@vform.inf-agr" />
   <entry pos="V" word="left" stem="leave" class="slm-Leaving" macros="@past" />
   <entry pos="V.main" word="leave" class="slm-Leaving" />
-
+  
   <entry pos="V" word="stop" class="slm-Stopping" macros="@pres.habitual" />
   <entry pos="V" word="stops" stem="stop" class="slm-Stopping" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="stopping" stem="stop" class="slm-Stopping" macros="@vform.inf-agr" />
   <entry pos="V" word="stopped" stem="stop" class="slm-Stopping" macros="@past" />
   <entry pos="V.main" word="stop" class="slm-Stopping" />
-
+  
   <entry pos="V" word="halt" class="slm-Halting" macros="@pres.habitual" />
   <entry pos="V" word="halts" stem="halt" class="slm-Halting" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="halting" stem="halt" class="slm-Halting" macros="@vform.inf-agr" />
   <entry pos="V" word="halted" stem="halt" class="slm-Halting" macros="@past" />
   <entry pos="V.main" word="halt" class="slm-Halting" />
-
+  
   <entry pos="V" word="pause" class="slm-Pausing" macros="@pres.habitual" />
   <entry pos="V" word="pausees" stem="pause" class="slm-Pausing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="pausing" stem="pause" class="slm-Pausing" macros="@vform.inf-agr" />
   <entry pos="V" word="paused" stem="pause" class="slm-Pausing" macros="@past" />
   <entry pos="V.main" word="pause" class="slm-Pausing" />
-
+  
   <entry pos="V" word="wait" class="slm-Waiting" macros="@pres.habitual" />
   <entry pos="V" word="waits" stem="wait" class="slm-Waiting" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="waiting" stem="wait" class="slm-Waiting" macros="@vform.inf-agr" />
   <entry pos="V" word="waited" stem="wait" class="slm-Waiting" macros="@past" />
   <entry pos="V.main" word="wait" class="slm-Waiting" />
-
+  
   <entry pos="V" word="exit" class="slm-Exiting" macros="@pres.habitual" />
   <entry pos="V" word="exits" stem="exit" class="slm-Exiting" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="exiting" stem="exit" class="slm-Exiting" macros="@vform.inf-agr" />
   <entry pos="V" word="exited" stem="exit" class="slm-Exiting" macros="@past" />
   <entry pos="V.main" word="exit" class="slm-Exiting" />
-
+  
   <entry pos="V" word="enter" class="slm-Entering" macros="@pres.habitual" />
   <entry pos="V" word="enters" stem="enter" class="slm-Entering" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="entering" stem="enter" class="slm-Entering" macros="@vform.inf-agr" />
   <entry pos="V" word="entered" stem="enter" class="slm-Entering" macros="@past" />
   <entry pos="V.main" word="enter" class="slm-Entering" />
-
-  <entry pos="V" word="approach" class="slm-Approaching" macros="@pres.habitual" />
-  <entry pos="V" word="approaches" stem="approach" class="slm-Approaching" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-  <entry pos="V.prp" word="approaching" stem="approach" class="slm-Approaching" macros="@vform.inf-agr" />
-  <entry pos="V" word="approached" stem="approach" class="slm-Approaching" macros="@past" />
-  <entry pos="V.main" word="approach" class="slm-Approaching" />
-
+  
   <entry pos="V" word="follow" class="gum-Process" macros="@pres.habitual" />
   <entry pos="V" word="follows" stem="follow" class="gum-Process" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="following" stem="follow" class="gum-Process" macros="@vform.inf-agr" />
   <entry pos="V" word="followed" stem="follow" class="gum-Process" macros="@past" />
-  <entry pos="V.main" word="follow" class="gum-Process" />
-
+  <entry pos="V.main" word="follow" class="gum-Process" />  
+  
   <entry pos="V" word="bring" class="slm-Bringing" macros="@pres.habitual" />
   <entry pos="V" word="brings" stem="bring" class="slm-Bringing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="bringing" stem="bring" class="slm-Bringing" macros="@vform.inf-agr" />
   <entry pos="V" word="brought" stem="bring" class="slm-Bringing" macros="@past" />
   <entry pos="V.main" word="bring" class="slm-Bringing" />
-
+  
   <entry pos="V" word="direct" class="slm-Directing" macros="@pres.habitual" />
   <entry pos="V" word="directs" stem="direct" class="slm-Directing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="directing" stem="direct" class="slm-Directing" macros="@vform.inf-agr" />
   <entry pos="V" word="directed" stem="direct" class="slm-Directing" macros="@past" />
   <entry pos="V.main" word="direct" class="slm-Directing" />
-
+  
+  <entry pos="V" word="take" class="slm-Taking" macros="@pres.habitual" />
+  <entry pos="V" word="takes" stem="take" class="slm-Taking" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
+  <entry pos="V.prp" word="taking" stem="take" class="slm-Taking" macros="@vform.inf-agr" />
+  <entry pos="V" word="ook" stem="take" class="slm-Taking" macros="@past" />
+  <entry pos="V.main" word="take" class="slm-Taking" />
+  
   <entry pos="V" word="walk" class="slm-Walking" macros="@pres.habitual" />
   <entry pos="V" word="walks" stem="walk" class="slm-Walking" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="walking" stem="walk" class="slm-Walking" macros="@vform.inf-agr" />
   <entry pos="V" word="walked" stem="walk" class="slm-Walking" macros="@past" />
   <entry pos="V.main" word="walk" class="slm-Walking" />
-
+  
   <entry pos="V" word="run" class="slm-Running" macros="@pres.habitual" />
   <entry pos="V" word="runs" stem="run" class="slm-Running" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="running" stem="run" class="slm-Running" macros="@vform.inf-agr" />
   <entry pos="V" word="ran" stem="run" class="slm-Running" macros="@past" />
   <entry pos="V.main" word="run" class="slm-Running" />
-
+  
   <entry pos="V" word="sleep" class="slm-Sleeping" macros="@pres.habitual" />
   <entry pos="V" word="sleeps" stem="sleep" class="slm-Sleeping" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="sleeping" stem="sleep" class="slm-Sleeping" macros="@vform.inf-agr" />
   <entry pos="V" word="slept" stem="sleep" class="slm-Sleeping" macros="@past" />
   <entry pos="V.main" word="sleep" class="slm-Sleeping" />
-
+  
   <entry pos="V" word="show" class="slm-Showing" macros="@pres.habitual" />
   <entry pos="V" word="shows" stem="show" class="slm-Showing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="showing" stem="show" class="slm-Showing" macros="@vform.inf-agr" />
   <entry pos="V" word="showed" stem="show" class="slm-Showing" macros="@past" />
   <entry pos="V.main" word="show" class="slm-Showing" />
-
+  
   <entry pos="V" word="guide" class="slm-Guiding" macros="@pres.habitual" />
   <entry pos="V" word="guides" stem="guide" class="slm-Guiding" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="guiding" stem="guide" class="slm-Guiding" macros="@vform.inf-agr" />
   <entry pos="V" word="guided" stem="guide" class="slm-Guiding" macros="@past" />
   <entry pos="V.main" word="guide" class="slm-Guiding" />
-
+  
   <entry pos="V" word="tell" class="slm-Telling" macros="@pres.habitual" />
   <entry pos="V" word="tells" stem="tell" class="slm-Telling" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="telling" stem="tell" class="slm-Telling" macros="@vform.inf-agr" />
   <entry pos="V" word="told" stem="tell" class="slm-Telling" macros="@past" />
   <entry pos="V.main" word="tell" class="slm-Telling" />
-
+  
   <entry pos="V" word="put" class="slm-Putting" macros="@pres.habitual" />
   <entry pos="V" word="puts" stem="put" class="slm-Putting" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="putting" stem="put" class="slm-Putting" macros="@vform.inf-agr" />
   <entry pos="V" word="put" stem="put" class="slm-Putting" macros="@past" />
   <entry pos="V.main" word="put" class="slm-Putting" />
-
-  <entry pos="V" word="micorwave" class="slm-Microwaving" macros="@pres.habitual" />
-  <entry pos="V" word="microwaves" stem="microwave" class="slm-Microwaving" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-  <entry pos="V.prp" word="microwaving" stem="microwave" class="slm-Microwaving" macros="@vform.inf-agr" />
-  <entry pos="V" word="microwaved" stem="microwave" class="slm-Microwaving" macros="@past" />
-  <entry pos="V.main" word="microwave" class="slm-Microwaving" />
-
+  
   <entry pos="V" word="place" class="slm-Placing" macros="@pres.habitual" />
   <entry pos="V" word="places" stem="place" class="slm-Placing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="placing" stem="place" class="slm-Placing" macros="@vform.inf-agr" />
   <entry pos="V" word="placed" stem="place" class="slm-Placing" macros="@past" />
   <entry pos="V.main" word="place" class="slm-Placing" />
-
+  
   <entry pos="V" word="dance" class="slm-Dancing" macros="@pres.habitual" />
   <entry pos="V" word="dances" stem="dance" class="slm-Dancing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="dancing" stem="dance" class="slm-Dancing" macros="@vform.inf-agr" />
   <entry pos="V" word="danced" stem="dance" class="slm-Dancing" macros="@past" />
   <entry pos="V.main" word="dance" class="slm-Dancing" />
-
+  
   <entry pos="V" word="stand" class="slm-Standing" macros="@pres.habitual" />
   <entry pos="V" word="stands" stem="stand" class="slm-Standing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="standing" stem="stand" class="slm-Standing" macros="@vform.inf-agr" />
   <entry pos="V" word="stood" stem="stand" class="slm-Standing" macros="@past" />
   <entry pos="V.main" word="stand" class="slm-Standing" />
-
+  
   <entry pos="V" word="point" class="slm-Pointing" macros="@pres.habitual" />
   <entry pos="V" word="points" stem="point" class="slm-Pointing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="pointing" stem="point" class="slm-Pointing" macros="@vform.inf-agr" />
   <entry pos="V" word="pointed" stem="point" class="slm-Pointing" macros="@past" />
   <entry pos="V.main" word="point" class="slm-Pointing" />
-
+  
   <entry pos="V" word="stir" class="slm-Stirring" macros="@pres.habitual" />
   <entry pos="V" word="stirs" stem="stir" class="slm-Stirring" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="stirring" stem="stir" class="slm-Stirring" macros="@vform.inf-agr" />
   <entry pos="V" word="stirred" stem="stir" class="slm-Stirring" macros="@past" />
   <entry pos="V.main" word="stir" class="slm-Stirring" />
-
-  <entry pos="V" word="heat" class="slm-Heating" macros="@pres.habitual" />
-  <entry pos="V" word="heats" stem="heat" class="slm-Heating" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-  <entry pos="V.prp" word="heating" stem="heat" class="slm-Heating" macros="@vform.inf-agr" />
-  <entry pos="V" word="heated" stem="heat" class="slm-Heating" macros="@past" />
-  <entry pos="V.main" word="heat" class="slm-Heating" />
-
-  <entry pos="V" word="mix" class="slm-Stirring" macros="@pres.habitual" />
-  <entry pos="V" word="mixes" stem="mix" class="slm-Stirring" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-  <entry pos="V.prp" word="mixing" stem="mix" class="slm-Stirring" macros="@vform.inf-agr" />
-  <entry pos="V" word="mixed" stem="mix" class="slm-Stirring" macros="@past" />
-  <entry pos="V.main" word="mix" class="slm-Stirring" />
-
-  <entry pos="V" word="cut" class="slm-Cutting" macros="@pres.habitual" />
-  <entry pos="V" word="cuts" stem="cut" class="slm-Cutting" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-  <entry pos="V.prp" word="cutting" stem="cut" class="slm-Cutting" macros="@vform.inf-agr" />
-  <entry pos="V" word="cut" stem="cut" class="slm-Cutting" macros="@past" />
-  <entry pos="V.main" word="cut" class="slm-Cutting" />
-
+  
   <entry pos="V" word="swirl" class="slm-Stirring" macros="@pres.habitual" />
   <entry pos="V" word="swirls" stem="swirl" class="slm-Stirring" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="swirling" stem="swirl" class="slm-Stirring" macros="@vform.inf-agr" />
   <entry pos="V" word="swirled" stem="swirl" class="slm-Stirring" macros="@past" />
   <entry pos="V.main" word="swirl" class="slm-Stirring" />
-
+  
   <entry pos="V" word="dance" class="slm-Dancing" macros="@pres.habitual" />
   <entry pos="V" word="dance" stem="dance" class="slm-Dancing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V.prp" word="dancing" stem="dance" class="slm-Dancing" macros="@vform.inf-agr" />
   <entry pos="V" word="dancing" stem="dance" class="slm-Dancing" macros="@past" />
   <entry pos="V.main" word="dance" class="slm-Dancing" />
-
+  
   <!-- Expressions of wanting -->
   <entry pos="V" word="want" class="gum-Liking" macros="@pres.habitual" />
   <entry pos="V" word="wants" stem="want" class="gum-Liking" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V" word="wanted" stem="want" class="gum-Liking" macros="@past" />
   <entry pos="V.main" word="want" class="gum-Liking" />
-
+  
   <entry pos="V" word="need" class="slm-Needing" macros="@pres.habitual" />
   <entry pos="V" word="needs" stem="need" class="slm-Needing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V" word="needed" stem="need" class="slm-Needing" macros="@past" />
   <entry pos="V.main" word="need" class="slm-Needing" />
-
+  
   <entry pos="V" word="would_like" class="gum-Liking" macros="@pres.habitual" />
   <entry pos="V" word="would_like" stem="need" class="gum-Liking" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
-
+  
   <!-- expressions of attitude -->
   <entry pos="V" word="like" class="slm-Liking" macros="@pres.habitual" />
   <entry pos="V" word="likes" stem="like" class="slm-Liking" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V" word="liked" stem="like" class="slm-Liking" macros="@past" />
   <entry pos="V.main" word="like" class="slm-Liking" />
-
+  
   <!-- Expressions of knowning -->
   <entry pos="V" word="mean" class="slm-Meaning" macros="@pres.habitual" />
   <entry pos="V" word="means" stem="mean" class="slm-Meaning" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V" word="meant" stem="mean" class="slm-Meaning" macros="@past" />
   <entry pos="V.main" word="mean" class="slm-Meaning" />
-
+  
   <entry pos="V" word="know" class="slm-Knowing" macros="@pres.habitual" />
   <entry pos="V" word="knows" stem="know" class="slm-Knowing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V" word="knew" stem="know" class="slm-Knowing" macros="@past" />
   <entry pos="V.main" word="know" class="slm-Knowing" />
-
+  
   <entry pos="V" word="believe" class="slm-Believing" macros="@pres.habitual" />
   <entry pos="V" word="believes" stem="believe" class="slm-Believing" macros="@num.sg-agr @pers.3rd-agr @pres.habitual" />
   <entry pos="V" word="believd" stem="believe" class="slm-Believing" macros="@past" />
   <entry pos="V.main" word="believe" class="slm-Believing" />
-
+  
   <!-- Verbs used to express spatial arangements -->
   <entry pos="V" word="faces" class="slm-Facing" macros="@num.sg" />
   <entry pos="V" word="surrounds" class="gs-Surrounding" macros="@num.sg" />
-
+  
   <!-- NOTE : this is contributing a spatial modality not a process -->
   <entry pos="V" word="surrounded" stem="surrounds" class="gs-Surrounding" macros="@num.sg" />
-
+  
   <!-- NOTE : this is contributing a spatial modality not a process -->
   <!-- To Be - auxiliary and copula uses -->
-  <entry pos="V" word="am" stem="am" class="slm-Being" macros="@num.sg-agr @pers.1st-agr @pres" />
-  <entry pos="V" word="are" stem="am" class="slm-Being" macros="@num.sg-agr @pers.2nd-agr @pres" />
-  <entry pos="V" word="is" stem="am" class="slm-Being" macros="@num.sg-agr @pers.3rd-agr @pres" />
+  <entry pos="V" word="am" stem="am" class="slm-Being" macros="@num.sg-agr @pers.1st-agr @pres " />
+  <entry pos="V" word="are" stem="am" class="slm-Being" macros="@num.sg-agr @pers.2nd-agr @pres " />
+  <entry pos="V" word="is" stem="am" class="slm-Being" macros="@num.sg-agr @pers.3rd-agr @pres " />
   <entry pos="V" word="are" stem="am" class="slm-Being" macros="@num.pl-agr @pers.1st-agr @pres" />
   <entry pos="V" word="are" stem="am" class="slm-Being" macros="@num.pl-agr @pers.3rd-agr @pres" />
   <entry pos="V" word="aren't" stem="am" class="slm-Being" macros="@num.sg-agr @pers.2nd-agr @pol.neg @pres" />
   <entry pos="V" word="isn't" stem="am" class="slm-Being" macros="@num.sg-agr @pers.1st-agr @pol.neg @pres" />
   <entry pos="V" word="aren't" stem="am" class="slm-Being" macros="@num.pl-agr @pol.neg @pres" />
-
+  
   <!-- Preterites for to be -->
   <entry pos="V" word="was" stem="am" class="slm-Being" macros="@num.sg @pers.1st-agr @past" />
   <entry pos="V" word="were" stem="am" class="slm-Being" macros="@num.sg @pers.2nd-agr @past" />
@@ -443,7 +416,7 @@ s
   <entry pos="V" word="were" stem="am" class="slm-Being" macros="@num.pl @pers.1st-agr @past" />
   <entry pos="V" word="were" stem="am" class="slm-Being" macros="@num.pl @pers.2nd-agr @past" />
   <entry pos="V" word="were" stem="am" class="slm-Being" macros="@num.pl @pers.3rd-agr @past" />
-
+  
   <!-- The DUMMY -->
   <entry pos="V" word="do"             class="gum-YesNoQuestion" macros="@num.sg @pers.1st" />
   <entry pos="V" word="dont" stem="do" class="gum-YesNoQuestion" macros="@num.sg @pers.1st @pol.neg" />
@@ -454,7 +427,7 @@ s
   <entry pos="V" word="dont" stem="do" class="gum-YesNoQuestion" macros="@num.sg @pers.2nd @pol.neg" />
   <entry pos="V" word="dont" stem="do" class="gum-YesNoQuestion" macros="@num.pl @pol.neg" />
   <entry pos="V" word="does" stem="do" class="gum-YesNoQuestion" macros="@num.sg @pers.3rd" />
-
+  
   <!-- Nine Modal Auxillary Verbs: can, could, may, might, shall, should, will, would, and must. -->
   <entry pos="V.modal" word="can" class="gum-Ability" />
   <entry pos="V.modal" word="cant" stem="can" class="gum-Ability" macros="@pol.neg" />
@@ -465,12 +438,12 @@ s
   <entry pos="V.modal" word="would" stem="will" class="gum-ModalQuality" />
   <entry pos="V.modal" word="wont" stem="will" class="gum-ModalQuality" macros="@pol.neg" />
   <entry pos="V.modal" word="wouldnt" stem="will" class="gum-ModalQuality" macros="@pol.neg" />
-
+  
   <!-- static prepositions -->
   <!-- Object X is preposition object Y -->
   <entry pos="PREP.static" word="behind" class="gs-BackProjection" macros="@prep.static" />
   <entry pos="PREP.static" word="in-front-of" class="gs-FrontProjection" macros="@prep.static" />
-  <entry pos="PREP.static" word="on" class="gs-Support" macros="@prep.static" />
+  <entry pos="PREP.static" word="on" class="gum-FunctionalControlledExternal" macros="@prep.static" />
   <entry pos="PREP.static" word="off" class="gs-DenialOfFunctionalControl" macros="@prep.static" />
   <entry pos="PREP.static" word="beside" class="gs-RelativeNonProjectionAxial" macros="@prep.static" />
   <entry pos="PREP.static" word="beyond" class="gs-RelativeNonProjectionAxial" macros="@prep.static" />
@@ -480,27 +453,24 @@ s
   <entry pos="PREP.static" word="far_away_from" class="gs-Distal" macros="@prep.static" />
   <entry pos="PREP.static" word="close_to" class="gs-Proximal" macros="@prep.static" />
   <entry pos="PREP.static" word="near" class="gs-Proximal" macros="@prep.static" />
-  <entry pos="PREP.static" word="by" class="gs-Proximal"
-	 macros="@prep.static" />
-  <entry pos="PREP.static" word="against" class="gs-Touching" macros="@prep.static" />
-  <entry pos="PREP.static" word="in" class="gs-Containment" macros="@prep.static" />
+  <entry pos="PREP.static" word="by" class="gs-Proximal" macros="@prep.static" />
+  <entry pos="PREP.static" word="in" class="gum-FunctionalControlledInternal" macros="@prep.static" />
   <entry pos="PREP.static" word="under" class="gs-UnderProjectionExternal" macros="@prep.static" />
   <entry pos="PREP.static" word="over" class="gs-OverProjectionExternal" macros="@prep.static" />
   <entry pos="PREP.static" word="above" class="gs-AboveProjection" macros="@prep.static" />
   <entry pos="PREP.static" word="below" class="gs-BelowProjection" macros="@prep.static" />
-  <entry pos="PREP.static" word="before" class="slm-Precedence" macros="@prep.static" />
-  <entry pos="PREP.static" word="after" class="slm-Succession" macros="@prep.static" />
+  <entry pos="PREP.static" word="before" class="gs-SpatialModality" macros="@prep.static" />
+  <entry pos="PREP.static" word="after" class="gs-SpatialModality" macros="@prep.static" />
   <entry pos="PREP.static" word="among" class="gs-Distribution" macros="@prep.static" />
   <entry pos="PREP.static" word="between" class="gs-Distribution" macros="@prep.static" />
-
-  <!--  <entry pos="PREP.static" word="to" class="gs-Proximal" macros="@prep.static" />
-  <entry pos="PREP.static" word="from" class="gs-Distal" macros="@prep.static" />-->
+  <entry pos="PREP.static" word="to" class="gs-Proximal" macros="@prep.static" />
+  <entry pos="PREP.static" word="from" class="gs-Distal" macros="@prep.static" />
   <entry pos="PREP.static" word="at" class="gs-Proximal" macros="@prep.static" />
-
+  
   <!-- dynamic senses of static prepositions -->
   <entry pos="PREP.dynamic" word="behind" class="gs-BackProjection" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="in-front-of" class="gs-FrontProjection" macros="@prep.goal" />
-  <!--  <entry pos="PREP.dynamic" word="on" class="gs-Support" macros="@prep.goal" /> -->
+  <entry pos="PREP.dynamic" word="on" class="gum-FunctionalControlledExternal" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="off" class="gs-DenialOfFunctionalControl" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="beside" class="gs-RelativeNonProjectionAxial" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="beyond" class="gs-RelativeNonProjectionAxial" macros="@prep.goal" />
@@ -514,30 +484,27 @@ s
   <entry pos="PREP.dynamic" word="over" class="gs-OverProjectionExternal" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="above" class="gs-AboveProjection" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="below" class="gs-BelowProjection" macros="@prep.goal" />
-  <entry pos="PREP.dynamic" word="before" class="slm-Precedence" macros="@prep.goal" />
-  <entry pos="PREP.dynamic" word="after" class="slm-Succession" macros="@prep.goal" />
+  <entry pos="PREP.dynamic" word="before" class="gs-SpatialModality" macros="@prep.goal" />
+  <entry pos="PREP.dynamic" word="after" class="gs-SpatialModality" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="among" class="gs-Distribution" macros="@prep.goal" />
   <entry pos="PREP.dynamic" word="between" class="gs-Distribution" macros="@prep.goal" />
-
+  
   <!-- very special static spatial prepositions -->
   <!-- e.g., the cup is to the right            -->
   <!--       the cup is on your right           -->
   <!--       the cup is in front of you         -->
   <entry pos="PREP.static.directional" word="to" />
-  <entry pos="PREP.static.directional" word="towards" />
-  <entry pos="PREP.static.directional" word="on" />
-
+  
   <!--  <entry pos="PREP.static.directional" word="on"/> was PREP2 -->
   <!--  <entry pos="PREP.static.directional" word="in"/> was PREP2 -->
   <!-- Dynamic Prepositions -->
   <!-- TODO : Revise the classes and macros for these prepositions. Thye must be brought up to date -->
-  <entry pos="PREP.dynamic" word="until" class="gs-GeneralDirectionalNearing" macros="@prep.goal" />
-  <entry pos="PREP.dynamic" word="to" class="gs-GeneralDirectionalNearing" macros="@prep.goal" />
-  <entry pos="PREP.dynamic" word="towards" class="gs-GeneralDirectionalNearing" macros="@prep.goal" />
-  <entry pos="PREP.dynamic" word="onto" class="gs-Support" macros="@prep.goal" />
-  <entry pos="PREP.dynamic" word="into" class="gs-Containment" macros="@prep.segment" />
-  <entry pos="PREP.dynamic" word="inside" stem="into" class="gs-Containment" macros="@prep.segment" />
-  <entry pos="PREP.dynamic" word="in" class="gs-Containment" macros="@prep.segment" />
+  <entry pos="PREP.dynamic" word="until" class="gs-GeneralDirectional" macros="@prep.goal" />
+  <entry pos="PREP.dynamic" word="to" class="gs-GeneralDirectional" macros="@prep.goal" />
+  <entry pos="PREP.dynamic" word="towards" class="gs-GeneralDirectional" macros="@prep.goal" />
+  <entry pos="PREP.dynamic" word="onto" class="gum-FunctionalControlledExternal" macros="@prep.goal" />
+  <entry pos="PREP.dynamic" word="into" class="gum-FunctionalControlledInternal" macros="@prep.segment" />
+  <entry pos="PREP.dynamic" word="in" class="gum-FunctionalControlledInternal" macros="@prep.segment" />
   <entry pos="PREP.dynamic" word="across" class="gs-PathRepresentingInternal" macros="@prep.segment" />
   <entry pos="PREP.dynamic" word="along" class="gs-PathRepresentingExternal" macros="@prep.segment" />
   <entry pos="PREP.dynamic" word="through" class="gs-PathRepresentingInternal" macros="@prep.segment" />
@@ -547,18 +514,18 @@ s
   <entry pos="PREP.dynamic" word="by" class="gs-PathRepresentingExternal" macros="@prep.landmark" />
   <entry pos="PREP.dynamic" word="via" class="gs-PathRepresentingExternal" macros="@prep.landmark" />
   <entry pos="PREP.dynamic" word="out" class="gs-PathRepresentingExternal" macros="@prep.landmark" />
-  <entry pos="PREP.dynamic" word="out_of" class="gs-GeneralDirectionalDistancing" macros="@prep.landmark" />
+  <entry pos="PREP.dynamic" word="out_of" class="gs-PathRepresentingExternal" macros="@prep.landmark" />
   <entry pos="PREP.dynamic" word="down" class="gs-SpecificDirectional" macros="@prep.landmark" />
   <entry pos="PREP.dynamic" word="up" class="gs-SpecificDirectional" macros="@prep.landmark" />
-  <entry pos="PREP.dynamic" word="out_from" class="gs-GeneralDirectionalDistancing" macros="@prep.source" />
-  <entry pos="PREP.dynamic" word="from" class="gs-GeneralDirectionalDistancing" macros="@prep.source" />
-
+  <entry pos="PREP.dynamic" word="out_from" class="gs-PathRepresentingExternal" macros="@prep.source" />
+  <entry pos="PREP.dynamic" word="from" class="gs-PathRepresentingExternal" macros="@prep.source" />
+  
   <!-- "to" in an infinite usage -->
   <entry pos="TOINF" word="to" />
-
+  
   <!-- genetive preposition -->
   <entry pos="PREP.genetive" word="of" stem="of" />
-
+  
   <!-- standard determiners -->
   <entry pos="DET" word="a" macros="@num.sg @lf.T.quant.sg @lf.T.del.exist" />
   <entry pos="DET" word="any" macros="@num.sg @lf.T.quant.sg @lf.T.del.exist" />
@@ -569,7 +536,7 @@ s
   <entry pos="DET" word="that" macros="@num.sg @lf.T.quant.sg @lf.T.del.unique" />
   <entry pos="DET" word="these" macros="@num.pl @lf.T.quant.pl @lf.T.del.unique" />
   <entry pos="DET" word="those" macros="@num.pl @lf.T.quant.pl @lf.T.del.unique" />
-
+  
   <!-- posessive phrases -->
   <entry pos="NP.possessive" word="Robert's" stem="Robert" class="slm-Robert" />
   <entry pos="NP.possessive" word="robert's" stem="Robert" class="slm-Robert" />
@@ -579,17 +546,17 @@ s
   <entry pos="NP.possessive" word="shi's" stem="Shi" class="slm-Shi" />
   <entry pos="NP.possessive" word="Christian's" stem="Christian" class="slm-Christian" />
   <entry pos="NP.possessive" word="christian's" stem="Christian" class="slm-Christian" />
-
+  
   <!-- possessives ("your office") and spatial relatives ("your left") -->
-  <!-- For possessive pronouns like this it is generally easier to fill in the
+  <!-- For possessive pronouns like this it is generally easier to fill in the 
     semantic details using macros rather than using a single class element -->
-  <entry pos="POSSDET" word="my"   class="uio-Speaker" macros="@pers.first @number.singular" />
-  <entry pos="POSSDET" word="your" class="uio-Hearer" macros="@pers.second @number.singular" />
-  <entry pos="POSSDET" word="our"  class="gum-ConsciousBeing" macros="@pers.first @number.plural" />
-  <entry pos="POSSDET" word="her"  class="gum-Female" macros="@pers.female @pers.third @number.singular" />
-  <entry pos="POSSDET" word="his"  class="gum-Male" macros="@pers.male @pers.third @number.singular" />
-  <entry pos="POSSDET" word="its"  class="gum-ConsciousBeing" macros="@pers.third @number.singular" />
-
+  <entry pos="POSSDET" word="my" class="gum-ConsciousBeing" macros="@pers.first @number.singular" />
+  <entry pos="POSSDET" word="your" class="gum-ConsciousBeing" macros="@pers.second @number.singular" />
+  <entry pos="POSSDET" word="our" class="gum-ConsciousBeing" macros="@pers.first @number.plural" />
+  <entry pos="POSSDET" word="her" class="gum-ConsciousBeing" macros="@pers.female @pers.third @number.singular" />
+  <entry pos="POSSDET" word="his" class="gum-ConsciousBeing" macros="@pers.male @pers.third @number.singular" />
+  <entry pos="POSSDET" word="its" class="gum-ConsciousBeing" macros="@pers.third @number.singular" />
+  
   <!-- ordinal numbers -->
   <entry pos="ADJ.ordinal" word="first" class="gum-NaturalNumber" macros="@natural_number" />
   <entry pos="ADJ.ordinal" word="second" class="gum-NaturalNumber" macros="@natural_number" />
@@ -623,49 +590,41 @@ s
   <entry pos="ADJ.ordinal" word="millionth" class="gum-NaturalNumber" macros="@natural_number" />
   <entry pos="ADJ.ordinal" word="next" class="gum-NaturalNumber" macros="@natural_number" />
   <entry pos="ADJ.ordinal" word="last" class="gum-NaturalNumber" macros="@natural_number" />
-
+  
   <!-- Adverbs which may be used to express direction -->
   <entry pos="ADV" word="backwards" class="gs-BackProjection" />
   <entry pos="ADV" word="forward" class="gs-FrontProjection" />
   <entry pos="ADV" word="forwards" class="gs-FrontProjection" />
-  <entry pos="ADV" word="further" class="gs-FrontProjection" />
-  <entry pos="ADV" word="more" class="gs-FrontProjection" />
   <entry pos="ADV" word="leftwards" class="gs-LeftProjection" />
   <entry pos="ADV" word="rightwards" class="gs-RightProjection" />
   <entry pos="ADV" word="straight" class="gs-FrontProjection" />
   <entry pos="ADV" word="straight-ahead" class="gs-FrontProjection" />
   <entry pos="ADV" word="south" class="gs-South" />
-  <entry pos="ADV" word="southwards" class="gs-South" />
-  <entry pos="ADV" word="southward" class="gs-South" />
   <entry pos="ADV" word="west" class="gs-West" />
-  <entry pos="ADV" word="westwards" class="gs-West" />
-  <entry pos="ADV" word="westward" class="gs-West" />
   <entry pos="ADV" word="north" class="gs-North" />
-  <entry pos="ADV" word="northwards" class="gs-North" />
-  <entry pos="ADV" word="northward" class="gs-North" />
-  <entry pos="ADV" word="east" class="gs-East" />
-  <entry pos="ADV" word="eastwards" class="gs-East" />
-  <entry pos="ADV" word="eastward" class="gs-East" />
+  <entry pos="ADV" word="east" class="gs-West" />
   <entry pos="ADV" word="up" class="gs-SpecificDirectional" />
-  <entry pos="ADV" word="upwards" stem="up" class="gs-SpecificDirectional" />
-  <entry pos="ADV" word="upward"  stem="up" class="gs-SpecificDirectional" />
   <entry pos="ADV" word="down" class="gs-SpecificDirectional" />
-  <entry pos="ADV" word="downwards" stem="down" class="gs-SpecificDirectional" />
-  <entry pos="ADV" word="downward"  stem="down" class="gs-SpecificDirectional" />
-
   <entry pos="ADV" word="over" class="gs-SpecificDirectional" />
-
+  
   <!-- Adverbs which may be used to express orientation change -->
   <entry pos="ADV" word="around" class="gs-BackProjection" />
   <entry pos="ADV" word="back" class="gs-BackProjection" />
   <entry pos="ADV" word="left" class="gs-LeftProjection" />
   <entry pos="ADV" word="right" class="gs-RightProjection" />
-
-  <entry pos="ADJ.cert" word="some"         class="slm-Approx" />
-  <entry pos="ADJ.cert" word="roughly"      class="slm-Approx" />
-  <entry pos="ADJ.cert" word="approximatly" class="slm-Approx" />
-  <entry pos="ADJ.cert" word="exactly"      class="slm-Exact" />
-
+  
+  <entry pos="ADJ.cert" word="some"         class="slm-Approx" />  
+  <entry pos="ADJ.cert" word="roughly"      class="slm-Approx" />    
+  <entry pos="ADJ.cert" word="approximatly" class="slm-Approx" />      
+  <entry pos="ADJ.cert" word="exactly"      class="slm-Exact" />  
+  
+  <!-- directional modifiers 	
+    <entry pos="DIRMODIF" word="front" stem="dir.modifier" macros="@lm.frontleft @modif.left"/>
+    <entry pos="DIRMODIF" word="front" stem="dir.modifier" macros="@lm.frontright @modif.right"/>
+    <entry pos="DIRMODIF" word="back" stem="dir.modifier" macros="@lm.backleft @modif.left"/>
+    <entry pos="DIRMODIF" word="back" stem="dir.modifier" macros="@lm.backright @modif.right"/>
+  -->
+  
   <!-- spatial adverbial modifiers -->
   <entry pos="ADV" word="directly" />
   <entry pos="ADV" word="just" stem="directly" />
@@ -673,14 +632,11 @@ s
   <entry pos="ADV" word="somewhere" stem="directly" />
   <entry pos="ADV" word="almost" stem="directly" />
   <entry pos="ADV" word="approximately" stem="directly" />
-
+  
   <!-- Good old fashioned nouns -->
-  <entry pos="N" word="end_of_the_corridor" class="slm-CorridorEnd" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="end_of_the_hallway" class="slm-CorridorEnd" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="end_of_the_hall" class="slm-CorridorEnd" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="Austrian_Alps's" class="slm-AustrianAlps" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="Austrian_Alps's" class="slm-AustrianAlps" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="Macy's" class="slm-Macys" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="hot_dog_stand" class="slm-HotDogStand" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="hot_dog_stand" class="slm-HotDogStand" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="way" class="slm-Way" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="engine" class="slm-Engine" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="junction" class="slm-Junction" macros="@num.sg @pers.3rd" />
@@ -688,27 +644,10 @@ s
   <entry pos="N" word="area" class="slm-Area" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="cabinet" class="slm-Cabinet" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="corridor" class="slm-Corridor" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="hall" stem="corridor" class="slm-Corridor" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="hallway" stem="corridor" class="slm-Corridor" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="door" class="slm-Door" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="wall" class="slm-Wall" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="elevator" class="slm-Elevator" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="kitchen" class="slm-Kitchen" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="post_office" class="slm-PostOffice" macros="@num.sg @pers.3rd" />
-
-  <entry pos="N" word="post_room" class="slm-PostRoom" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="photocopy_room" class="slm-CopyRoom" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="copy_room" class="slm-CopyRoom" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="copyroom" class="slm-CopyRoom" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="main_stairwell" class="slm-MainStairwell" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="main_staircase" class="slm-MainStairwell" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="stairwell" class="slm-Stairwell" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="staircase" class="slm-Stairwell" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="stairs" class="slm-Stairwell" macros="@num.sg @pers.3rd" />
-
-  <entry pos="N" word="target" class="slm-Room" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="destination" class="slm-Room" macros="@num.sg @pers.3rd" />
-
   <entry pos="N" word="bathroom" class="slm-Bathroom" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="bridge" class="slm-Bridge" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="fountain" class="slm-Fountain" macros="@num.sg @pers.3rd" />
@@ -724,8 +663,6 @@ s
   <entry pos="N" word="elevators" stem="elevator" class="slm-Elevator" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="hat" class="slm-Hat" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="cup" class="slm-Cup" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="bowl" class="slm-Bowl" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="bowls" stem="bowl" class="slm-Bowl" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="lamp" class="slm-Lamp" macros="@num.sg @pers.3rd @case.non-gen" />
   <entry pos="N" word="trees" stem="tree" class="slm-Tree" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="duck" class="slm-Duck" macros="@num.sg @pers.3rd" />
@@ -738,7 +675,7 @@ s
   <entry pos="N" word="lake" class="slm-Lake" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="town" class="slm-Town" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="road" class="slm-Road" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="old_pine" class="slm-OldPines" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="old_pine" class="slm-OldPines" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="old_pines" class="slm-OldPines" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="bend" class="slm-Bend" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="canal" class="slm-Canal" macros="@num.sg @pers.3rd" />
@@ -754,8 +691,6 @@ s
   <entry pos="N" word="clues" stem="clue" class="slm-Clue" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="book" class="slm-Book" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="books" stem="book" class="slm-Book" macros="@num.pl @pers.3rd" />
-  <entry pos="N" word="phone" class="slm-Phone" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="phones" stem="book" class="slm-Phone" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="shelf" class="slm-Shelf" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="socks" stem="sock" class="slm-Sock" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="drawer" class="slm-Drawer" macros="@num.sg @pers.3rd" />
@@ -765,6 +700,7 @@ s
   <entry pos="N" word="street" class="slm-Street" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="compass" class="slm-Compass" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="rifle" class="slm-Rifle" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="target" class="slm-Target" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="lions" stem="lion" class="slm-Lion" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="plain" class="slm-Plain" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="jogger" class="slm-Jogger" macros="@num.sg @pers.3rd" />
@@ -799,13 +735,7 @@ s
   <entry pos="N" word="box" class="slm-Box" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="boxcar" class="slm-Boxcar" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="apple" class="slm-Apple" macros="@num.sg @pers.3rd @case.non-gen" />
-  <entry pos="N" word="egg" class="slm-Egg" macros="@num.sg @pers.3rd @case.non-gen" />
-  <entry pos="N" word="eggs" class="slm-Egg" macros="@num.pl @pers.3rd" />
-  <entry pos="N" word="cheese" class="slm-Cheese" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="cottage_cheese" class="slm-CottageCheese" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="parmesan_cheese" class="slm-ParmesanCheese" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="water" class="slm-Water" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="coffee" class="slm-Coffee" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="pool" class="slm-Pool" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="camera" class="slm-Camera" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="needle" class="slm-Needle" macros="@num.sg @pers.3rd" />
@@ -826,7 +756,7 @@ s
   <entry pos="N" word="grass" class="slm-Grass" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="turn" class="slm-Turn" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="district" class="slm-District" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="boots" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="boots" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="pizza_hut" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="tesco" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="derrys" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
@@ -842,39 +772,38 @@ s
   <entry pos="N" word="hospital" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="roundabout" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="grand_hotel" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="building" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="bananas" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
-  <entry pos="N" word="banana" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="building" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />     
+  <entry pos="N" word="bananas" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="tanker" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="tankers" stem="tanker" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
+  <entry pos="N" word="tankers" stem="tanker" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />  
   <entry pos="N" word="warehouse" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="warehouses" stem="warehouse" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="orange" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="cheese" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="oranges" stem="orange" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="juice" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="orange_juice" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="orange_juice" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="tank" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="tanks" stem="tank" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="thing" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="things" stem="thing" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
   <entry pos="N" word="start" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="hand_side" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="hand_side" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="page" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="forge" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="cross" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="pine" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="pines" stem="pine" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
-  <entry pos="N" word="destinations" stem="destination" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />
+  <entry pos="N" word="destination" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="destinations" stem="destination" class="gum-SimpleThing" macros="@num.pl @pers.3rd" />  
   <entry pos="N" word="pine_forest" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="outline" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="bay" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="arc" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="finish" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="finish" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />  
   <entry pos="N" word="forest" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="chimney" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="canal" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="rocket_warehouse" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="rocket_warehouse" class="gum-SimpleThing" macros="@num.sg @pers.3rd" /> 
   <entry pos="N" word="car" class="slm-Car" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="mall" class="slm-Mail" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="freeway" class="slm-Freeway" macros="@num.sg @pers.3rd" />
@@ -922,10 +851,8 @@ s
   <entry pos="N" word="seed" class="slm-Seed" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="group" class="slm-Group" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="crowd" class="slm-Crowd" macros="@num.sg @pers.3rd" />
-  <!--  Nouns for the cooking domain (sara 2018) -->
-  <entry pos="N" word="chocolate" class="gum-SimpleThing" macros="@num.sg @pers.3rd" />
   <!--  Nominalised orientation change processes -->
-  <entry pos="NOMP" word="turn" class="slm-Turning" macros="@num.sg @pers.3rd" />
+  <entry pos="NOMP" word="turn" class="slm-Turning" macros="@num.sg @pers.3rd" />  
   <!-- events -->
   <entry pos="N" word="meeting" class="slm-Meeting" macros="@num.sg @pers.3rd" />
   <entry pos="N" word="party" class="slm-Party" macros="@num.sg @pers.3rd" />
@@ -934,6 +861,8 @@ s
   <entry pos="N" word="pedestrians" class="slm-Pedestrian" macros="@num.pl @pers.3rd" />
   <!-- Cardinal Numbers -->
   <entry pos="N.num" word="one" class="gum-NaturalNumber" macros="@natural_number" />
+  <entry pos="N.num" word="a" stem="one" class="gum-NaturalNumber" macros="@natural_number" />
+  <entry pos="N.num" word="an" stem="one" class="gum-NaturalNumber" macros="@natural_number" />
   <entry pos="N.num" word="two" class="gum-NaturalNumber" macros="@natural_number" />
   <entry pos="N.num" word="three" class="gum-NaturalNumber" macros="@natural_number" />
   <entry pos="N.num" word="four" class="gum-NaturalNumber" macros="@natural_number" />
@@ -969,24 +898,22 @@ s
   <entry pos="N.time" word="o'clock" stem="o_clock" class="gum-NewTimePoint" macros="@abstract.true" />
   <entry pos="N.time" word="o_clock" stem="o_clock" class="gum-NewTimePoint" macros="@abstract.true" />
   <!-- quantitative units -->
-  <entry pos="N.unit" word="foot" class="slm-Foot" />
-  <entry pos="N.unit" word="feet" stem="foot" class="slm-Foot" />
-  <entry pos="N.unit" word="room" stem="roomLength" class="slm-RoomLength" />
-  <entry pos="N.unit" word="rooms" stem="roomLength" class="slm-RoomLength" />
-  <entry pos="N.unit" word="metre" class="slm-Metre" />
-  <entry pos="N.unit" word="metres" stem="metre" class="slm-Metre" />
-  <entry pos="N.unit" word="mile" class="slm-Mile" />
-  <entry pos="N.unit" word="miles" stem="mile" class="slm-Mile" />
-  <entry pos="N.unit" word="inch" class="slm-Inch" />
-  <entry pos="N.unit" word="inches" stem="inch" class="slm-Inch" />
-  <entry pos="N.unit" word="centimetre" class="slm-Inch" />
-  <entry pos="N.unit" word="centimetres" stem="centimetre" class="slm-Inch" />
-  <entry pos="N.unit" word="cm" stem="centimetre" class="slm-Inch" />
-  <entry pos="N.unit" word="bit" class="slm-Bit" />
-  <entry pos="N.unit" word="degree" class="slm-Degree" />
-  <entry pos="N.unit" word="degrees" stem="degree" class="slm-Degree" />
-  <entry pos="N.unit" word="step" class="slm-Step" />
-  <entry pos="N.unit" word="steps" stem="step" class="slm-Step" />
+  <entry pos="N" word="foot" class="slm-Foot" />
+  <entry pos="N" word="feet" stem="foot" class="slm-Foot" />
+  <entry pos="N" word="metre" class="slm-Metre" />
+  <entry pos="N" word="metres" stem="metre" class="slm-Metre" />
+  <entry pos="N" word="mile" class="slm-Mile" />  
+  <entry pos="N" word="miles" stem="mile" class="slm-Mile" />  
+  <entry pos="N" word="inch" class="slm-Inch" />
+  <entry pos="N" word="inches" stem="inch" class="slm-Inch" />
+  <entry pos="N" word="centimetre" class="slm-Inch" />
+  <entry pos="N" word="centimetres" stem="centimetre" class="slm-Inch" />
+  <entry pos="N" word="cm" stem="centimetre" class="slm-Inch" />
+  <entry pos="N" word="bit" class="slm-Bit" />
+  <entry pos="N" word="degree" class="slm-Degree" />
+  <entry pos="N" word="degrees" stem="degree" class="slm-Degree" />
+  <entry pos="N" word="step" class="slm-Step" />
+  <entry pos="N" word="steps" stem="step" class="slm-Step" />
   <!-- qualitative units -->
   <entry pos="NQ" word="semicircle" class="slm-SemiCircle" />
   <entry pos="NQ" word="semi-circle" stem="semicircle" class="slm-SemiCircle" />
@@ -994,9 +921,6 @@ s
   <entry pos="NQ" word="semicircles" stem="semicircle" class="slm-SemiCircle" />
   <entry pos="NQ" word="semi_circles" stem="semicircle" class="slm-SemiCircle" />
   <entry pos="NQ" word="semi-circles" stem="semicircle" class="slm-SemiCircle" />
-   <!-- quantitative units/recipe (28.06.2018) -->
-  <entry pos="N.unit" word="tablespoon" class="slm-Spoon" />
-  <entry pos="N.unit" word="tablespoons" stem="tablespoon" class="slm-Spoon" />
   <!--  Nominalised orientation change processes -->
   <entry pos="NOMP" word="turn" class="slm-Turning" macros="@num.sg @pers.3rd" />
   <!-- Temporal Prepositions -->
@@ -1024,12 +948,12 @@ s
   <entry pos="NP" word="new_york" class="slm-NewYork" macros="@num.sg" />
   <entry pos="NP" word="Washington" stem="washington" class="slm-Washington" macros="@num.sg" />
   <entry pos="NP" word="washington" class="slm-Washington" macros="@num.sg" />
-
+  
   <entry pos="NP" word="plymoth_university" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="bath" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="avon" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="dansville" class="gum-NamedObject" macros="@num.sg" />
-  <entry pos="NP" word="coming" class="gum-NamedObject" macros="@num.sg" />
+  <entry pos="NP" word="coming" class="gum-NamedObject" macros="@num.sg" />  
   <entry pos="NP" word="elmira" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="crane_bay" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="boots" class="gum-NamedObject" macros="@num.sg" />
@@ -1042,20 +966,21 @@ s
   <entry pos="NP" word="x" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="queens_pub" class="gum-NamedObject" macros="@num.sg" />
   <entry pos="NP" word="y" class="gum-NamedObject" macros="@num.sg" />
-
-  <entry pos="NP" word="Salzburg" class="slm-Salzburg" macros="@num.sg" />
-  <entry pos="NP" word="Austrian_Alps" class="slm-AustrianAlps" macros="@num.sg" />
-  <entry pos="NP" word="Tirunelveli" class="slm-Tirunelveli" macros="@num.sg" />
-  <entry pos="NP" word="Tamil_Nadu" class="slm-TamilNadu" macros="@num.sg" />
-  <entry pos="NP" word="India"      class="slm-India" macros="@num.sg" />
-  <entry pos="NP" word="Dublin"      class="slm-Dublin" macros="@num.sg" />
-  <entry pos="NP" word="Ireland"      class="slm-Ireland" macros="@num.sg" />
-  <entry pos="NP" word="Europe"      class="slm-Europe" macros="@num.sg" />
-  <entry pos="NP" word="Scammonden_Water" class="gum-NamedObject" macros="@num.sg" />
-  <entry pos="NP" word="Broadway" class="gum-NamedObject" macros="@num.sg" />
-
+    
+  <entry pos="NP" word="Salzburg" class="slm-Salzburg" macros="@num.sg" />    
+  <entry pos="NP" word="Austrian_Alps" class="slm-AustrianAlps" macros="@num.sg" />      
+  <entry pos="NP" word="Tirunelveli" class="slm-Tirunelveli" macros="@num.sg" />  
+  <entry pos="NP" word="Tamil_Nadu" class="slm-TamilNadu" macros="@num.sg" />  
+  <entry pos="NP" word="India"      class="slm-India" macros="@num.sg" />  
+  <entry pos="NP" word="Dublin"      class="slm-Dublin" macros="@num.sg" />    
+  <entry pos="NP" word="Ireland"      class="slm-Ireland" macros="@num.sg" />      
+  <entry pos="NP" word="Europe"      class="slm-Europe" macros="@num.sg" />          
+  <entry pos="NP" word="Scammonden_Water" class="gum-NamedObject" macros="@num.sg" />  
+  <entry pos="NP" word="Broadway" class="gum-NamedObject" macros="@num.sg" />  
+  
   <!-- Named Roads -->
-  <entry pos="N" word="B6114" class="slm-Road" macros="@num.sg @pers.3rd" />
+  <entry pos="N" word="B6114" class="slm-Road" macros="@num.sg @pers.3rd" />    
+  
   <entry pos="NP" word="pluto" class="slm-Pluto" macros="@num.sg" />
   <entry pos="NP" word="Pluto" stem="pluto" class="slm-Pluto" macros="@num.sg" />
   <entry pos="NP" word="town" class="slm-Town" macros="@num.sg" />
@@ -1065,8 +990,6 @@ s
   <entry pos="NP" word="robert" class="slm-Robert" />
   <entry pos="NP" word="John" class="slm-John" />
   <entry pos="NP" word="John" class="slm-John" />
-
-
   <!-- Nominalised Directions -->
   <!-- e.g., the left of the cup -->
   <entry pos="NDIR" word="left" class="gs-LeftProjection" macros="@num.sg" />
@@ -1092,15 +1015,15 @@ s
   <entry pos="NP.space.deixis" word="there" class="gs-SpatialModality" />
   <entry pos="NP.space.deixis" word="here" class="gs-SpatialModality" />
   <!-- Pronominal Noun Phrases -->
-  <!-- english : subject / object / relfexive
+  <!-- english : subject / object / relfexive 
     german  : nom / acc / dat / gen -->
-  <entry pos="NP" word="I" class="uio-Speaker" macros="@num.sg @case.nom @pers.1st @pers.first @number.singular" />
-  <entry pos="NP" word="i" class="uio-Speaker" macros="@num.sg @case.nom @pers.1st @pers.first @number.singular" />
-  <entry pos="NP" word="me" class="uio-Speaker" macros="@num.sg @pers.1st @pers.first @number.singular" />
-  <entry pos="NP" word="you" class="uio-Hearer" macros="@pers.2nd @pers.second @number.singular" />
+  <entry pos="NP" word="I" class="gum-ConsciousBeing" macros="@num.sg @case.nom @pers.1st @pers.first @number.singular" />
+  <entry pos="NP" word="i" class="gum-ConsciousBeing" macros="@num.sg @case.nom @pers.1st @pers.first @number.singular" />
+  <entry pos="NP" word="me" class="gum-ConsciousBeing" macros="@num.sg @pers.1st @pers.first @number.singular" />
+  <entry pos="NP" word="you" class="gum-ConsciousBeing" macros="@pers.2nd @pers.second @number.singular" />
   <entry pos="NP" word="she" class="gum-Female" macros="@num.sg @case.nom @pers.3rd @pers.third @number.singular @pers.female" />
   <entry pos="NP" word="her" class="gum-Female" macros="@num.sg @pers.3rd @pers.third @number.singular @pers.female" />
-  <entry pos="NP" word="it" class="gum-NonConsciousThing" macros="@num.sg @pers.3rd @pers.third @number.singular" />
+  <entry pos="NP" word="it" class="gum-ConsciousBeing" macros="@num.sg @pers.3rd @pers.third @number.singular" />
   <entry pos="NP" word="he" class="gum-Male" macros="@num.sg @case.nom @pers.3rd @pers.third @number.singular @pers.male" />
   <entry pos="NP" word="him" class="gum-Male" macros="@num.sg @pers.3rd @pers.third @number.singular @pers.male" />
   <entry pos="NP" word="we" class="gum-ConsciousBeing" macros="@num.pl @case.nom @pers.1st @pers.first @number.singular" />
@@ -1110,59 +1033,23 @@ s
   <!-- existential particles -->
   <entry pos="EXIST" word="there" />
   <entry pos="V.exist" word="there's" />
-
   <!-- questions - act as pronominals -->
-  <entry pos="PRON" word="where" />
+  <entry pos="Q.where" word="where" />
+  <entry pos="Q.where" word="xxx" />
   <entry pos="PRON" word="when" stem="interrogative" />
-
   <!-- Coordinating Words -->
   <entry pos="COORD" word="and" />
   <entry pos="COORD" word="or" />
   <entry pos="COORD" word="then" />
   <entry pos="COORD" word="and_then" stem="then" />
-  <entry pos="COORD" word="with" stem="with" />
   <entry pos="COORD" word="," />
-
-  <!-- Clause Coordinating Words. The semantics define Multi-Configuration types. -->
-  <entry pos="C-COORD" word="and"       class="gum-Conjunction" />
-  <entry pos="C-COORD" word="or"        class="gum-Disjunction" />
-  <entry pos="C-COORD" word="then"      class="slm-Sequencing" />
-  <entry pos="C-COORD" word="and_then"  class="slm-Sequencing"/>
-  <entry pos="C-COORD" word="," stem="COMMA" class="slm-Sequencing"/>
-
   <!-- speech act indicators -->
-  <entry pos="PARTICLE" word="yes" class="uio-Affirmation" />
-  <entry pos="PARTICLE" word="yeah" class="uio-Affirmation" />
-  <entry pos="PARTICLE" word="sure" class="uio-Affirmation" />
-  <entry pos="PARTICLE" word="yep" class="uio-Affirmation" />
-  <entry pos="PARTICLE" word="okay" class="uio-Affirmation" />
-  <entry pos="PARTICLE" word="ok" class="uio-Affirmation" />
-
-  <entry pos="PARTICLE" word="no" class="uio-Denial" />
-  <entry pos="PARTICLE" word="nope" class="uio-Denial" />
-
-  <entry pos="PARTICLE" word="maybe" class="uio-Hedging" />
-  <entry pos="PARTICLE" word="possibly" class="uio-Hedging" />
-  <entry pos="PARTICLE" word="probably" class="uio-Hedging" />
-
-  <entry pos="PARTICLE" word="pardon" class="uio-SignalNonUnderstanding" />
-  <entry pos="PARTICLE" word="what" class="uio-SignalNonUnderstanding" />
-  <entry pos="PARTICLE" word="sorry" class="uio-SignalNonUnderstanding" />
-
-  <entry pos="PARTICLE" word="emm" class="uio-SignalHold" />
-  <entry pos="PARTICLE" word="hold_on" class="uio-SignalHold" />
-
-  <entry pos="PARTICLE" word="bye" class="uio-LeaveTaking" />
-  <entry pos="PARTICLE" word="goodbye" class="uio-LeaveTaking" />
-  <entry pos="PARTICLE" word="bye_bye" class="uio-LeaveTaking" />
-  <entry pos="PARTICLE" word="b'bye" class="uio-LeaveTaking" />
-
-  <entry pos="PARTICLE" word="hi" class="uio-Greeting" />
-  <entry pos="PARTICLE" word="hello" class="uio-Greeting" />
-
-
+  <entry pos="PARTICLE" word="yes" class="uio-Positive" />
+  <entry pos="PARTICLE" word="okay" class="uio-Positive" />
+  <entry pos="PARTICLE" word="ok" class="uio-Positive" />
+  <entry pos="PARTICLE" word="maybe" class="uio-Uncertain" />
+  <entry pos="PARTICLE" word="no" class="uio-Negative" />
   <entry pos="Q.particle" word="?" />
-
   <!-- Adjectives -->
   <entry pos="ADJ" word="blue" class="slm-Blue" />
   <entry pos="ADJ" word="red" class="slm-Red" />
@@ -1185,24 +1072,14 @@ s
   <entry pos="ADJ" word="deepest" stem="deep" class="gs-QualitativeSpatialTemporal" />
   <entry pos="ADJ" word="furthest" stem="deep" class="gs-QualitativeSpatialTemporal" />
   <entry pos="ADJ" word="closest" stem="deep" class="gs-QualitativeSpatialTemporal" />
-
-  <!-- Qualitative distance expressions -->
-  <entry pos="QUAL-EXT" word="a_tiny_bit" class="slm-TinyExtent" />
-  <entry pos="QUAL-EXT" word="a_bit" class="slm-TinyExtent" />
-  <entry pos="QUAL-EXT" word="a_little" class="slm-SmallExtent" />
-  <entry pos="QUAL-EXT" word="a_little_bit" class="slm-SmallExtent" />
-  <entry pos="QUAL-EXT" word="a_short_way" class="slm-SmallExtent" />
-  <entry pos="QUAL-EXT" word="half_way" class="slm-MediumExtent" />
-  <entry pos="QUAL-EXT" word="a_good_bit" class="slm-LargeExtent" />
-  <entry pos="QUAL-EXT" word="all_the_way" class="slm-HugeExtent" />
-
+  
     <!-- The Set of Spatial Adjectives -->
    <entry pos="ADJ.spt" word="central" class="gs-Distribution" />
    <entry pos="ADJ.spt" word="southern" class="gs-South" />
-   <entry pos="ADJ.spt" word="northern" class="gs-North" />
-   <entry pos="ADJ.spt" word="western" class="gs-West" />
-   <entry pos="ADJ.spt" word="eastern" class="gs-East" />
-
+   <entry pos="ADJ.spt" word="northern" class="gs-North" />  
+   <entry pos="ADJ.spt" word="western" class="gs-West" />    
+   <entry pos="ADJ.spt" word="eastern" class="gs-East" />        
+  
   <!-- Non contributive works??? -->
   <entry pos="DCONN" word="now" stem="well" />
   <entry pos="DCONN" word="then" stem="well" />
@@ -1210,59 +1087,6 @@ s
   <entry pos="DCONN" word="sorry" stem="well" />
   <entry pos="DCONN" word="just" stem="well" />
   <entry pos="DCONN" word="please" stem="well" />
-  <entry pos="DCONN" word="and" stem="well" />
-  <entry pos="DCONN" word="ok" stem="well" />
-  <entry pos="DCONN" word="ok," stem="well" />
-  <entry pos="DCONN" word="," stem="well" />
-  <entry pos="DCONN" word="next" stem="well" />
-  <entry pos="DCONN" word="next," stem="well" />
-
-
-
-
-  <!-- Entries introduced for a cooking domain. START -->
-
-
-
-  <!-- Fruit (29.06.2018) -->
-  <entry pos="NP" word="orange" class="slm-Food" macros="@num.sg @pers.3rd" />
-  <entry pos="NP" word="oranges" stem="orange" class="slm-Food" macros="@num.pl @pers.3rd" />
-
-
-  <!-- Liquids used for cooking (03.11.18) -->
-  <entry pos="N" word="oil" class="slm-Food" macros="@num.sg @pers.3rd" />
-  <entry pos="N" word="oils" stem="oil" class="slm-Food" macros="@num.pl @pers.3rd" />
-
-  <!-- Kitchen tools and dishes (03.11.18) -->
-   <entry pos="N" word="pan" class="slm-Pan" macros="@num.sg @pers.3rd" />
-   <entry pos="N" word="pans" stem="pan" class="slm-Pan" macros="@num.pl @pers.3rd" />
-   <entry pos="N" word="griddle_pan" class="slm-Pan" macros="@num.sg @pers.3rd" />
-   <entry pos="N" word="griddle_pans" stem="pan" class="slm-Pan" macros="@num.pl @pers.3rd" />
-   <entry pos="N" word="saucepan" class="slm-Pan" macros="@num.sg @pers.3rd" />
-   <entry pos="N" word="saucepans" stem="pan" class="slm-Pan" macros="@num.pl @pers.3rd" />
-
-
-   <entry pos="N" word="heat" class="slm-Heat" macros="@num.sg @pers.3rd" />
-   <entry pos="N" word="heat" stem="heat" class="slm-Heat" macros="@num.pl @pers.3rd" />
-
-
-  <!-- Adjectives (03.11.18)
-
-   gum:SimpleQuality - Qualities are properties of SimpleThings and Processes. They participate in property ascription relations. Roughly speaking, qualities include anything that can be expressed as an English adjective.  -->
-
-  <entry pos="ADJ" word="frying" class="gum-SimpleQuality" />
-
-  <entry pos="ADJ" word="vegetable" class="gum-SimpleQuality" />
-  <entry pos="ADJ" word="medium" class="gum-SimpleQuality" />  <!-- "medium" as  pos="QUAL-EXT"? -->
-
-
-
-
-
- <!-- Entries introduced for a cooking domain. END -->
-
-
-
   <!-- Negation Triggers -->
   <entry pos="NEG" word="not" />
   <macro name="@verb.full">
@@ -1326,7 +1150,7 @@ s
     <fs val="goal" attr="kind" id="1" />
   </macro>
   <macro name="@prep.landmark">
-    <fs val="landmark" attr="kind" id="1" />
+    <fs val="segment" attr="kind" id="1" />
   </macro>
   <macro name="@prep.segment">
     <fs val="segment" attr="kind" id="1" />
@@ -1447,30 +1271,30 @@ s
     <fs val="2nd" attr="pers" id="1" />
     <fs val="xyz" attr="num" id="1" />
   </macro>
-  <!--   =================================================================
-    Semantic Content for Pronouns
-    We use marcros for assigning this type of information becuase we
-    don't have simple semantic cateogires which sum up all the variants.
-
-    For example, while we have gum-Male and gum-Female categories, we
-    do not have a category which indicates if an entity was addressed
-    in the first or second person. We must handle these with various
-    grammatical style entities for now.
-    In the future it could be possible to do away with an awful lot of
-    this. We have gum-Male and gum-Female and gum-ConsciousBeing to
-    indicate the gender of the referrent, and whether something is
-    is given a 1st or 2nd person reference should be capturable via
-    the roles the entities play in the atomic speech act.
-    Number should similarly be handled in a far more semantic way with
-    groups versus individuals.
-
-    C is for conscious beings
+  <!--   ================================================================= 
+    Semantic Content for Pronouns  
+    We use marcros for assigning this type of information becuase we 
+    don't have simple semantic cateogires which sum up all the variants. 
+    
+    For example, while we have gum-Male and gum-Female categories, we 
+    do not have a category which indicates if an entity was addressed 
+    in the first or second person. We must handle these with various 
+    grammatical style entities for now. 
+    In the future it could be possible to do away with an awful lot of 
+    this. We have gum-Male and gum-Female and gum-ConsciousBeing to 
+    indicate the gender of the referrent, and whether something is 
+    is given a 1st or 2nd person reference should be capturable via 
+    the roles the entities play in the atomic speech act. 
+    Number should similarly be handled in a far more semantic way with 
+    groups versus individuals. 
+    
+    C is for conscious beings 
     ========================================================================  -->
   <macro name="@pers.male">
     <lf>
       <satop nomvar="C">
         <diamond mode="gender">
-          <prop name="pers.male" />
+          <prop name="male" />
         </diamond>
       </satop>
     </lf>
@@ -1479,7 +1303,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="gender">
-          <prop name="pers.female" />
+          <prop name="female" />
         </diamond>
       </satop>
     </lf>
@@ -1488,7 +1312,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="person">
-          <prop name="pers.first" />
+          <prop name="first" />
         </diamond>
       </satop>
     </lf>
@@ -1497,7 +1321,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="person">
-          <prop name="pers.second" />
+          <prop name="second" />
         </diamond>
       </satop>
     </lf>
@@ -1506,7 +1330,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="person">
-          <prop name="pers.third" />
+          <prop name="third" />
         </diamond>
       </satop>
     </lf>
@@ -1515,7 +1339,7 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="number">
-          <prop name="number.singular" />
+          <prop name="singular" />
         </diamond>
       </satop>
     </lf>
@@ -1524,8 +1348,25 @@ s
     <lf>
       <satop nomvar="C">
         <diamond mode="number">
-          <prop name="number.plural" />
+          <prop name="plural" />
         </diamond>
+      </satop>
+    </lf>
+  </macro>
+  <!--   =========================================================  -->
+  <!--   Questionable Macros                                        -->
+  <!--   =========================================================  -->
+  <macro name="@gum-Facing">
+    <lf>
+      <satop nomvar="C1:gum-Facing">
+        <prop name="gum-Facing" />
+      </satop>
+    </lf>
+  </macro>
+  <macro name="@gs-Surrounding">
+    <lf>
+      <satop nomvar="C1:gs-Surrounding">
+        <prop name="gs-Surrounding" />
       </satop>
     </lf>
   </macro>
@@ -1536,7 +1377,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Proximity">
-          <prop name="lf.T.prox.proximal" />
+          <prop name="proximal" />
         </diamond>
       </satop>
     </lf>
@@ -1545,7 +1386,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Proximity">
-          <prop name="lf.T.prox.distal" />
+          <prop name="distal" />
         </diamond>
       </satop>
     </lf>
@@ -1557,7 +1398,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Number">
-          <prop name="lf.T.num.sg" />
+          <prop name="sg" />
         </diamond>
       </satop>
     </lf>
@@ -1566,7 +1407,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="Number">
-          <prop name="lf.T.num.pl" />
+          <prop name="pl" />
         </diamond>
       </satop>
     </lf>
@@ -1575,7 +1416,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="ident">
-          <prop name="lf.T.del.unique" />
+          <prop name="specific" />
         </diamond>
       </satop>
     </lf>
@@ -1584,7 +1425,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="ident">
-          <prop name="lf.T.del.exist" />
+          <prop name="unspecific" />
         </diamond>
       </satop>
     </lf>
@@ -1593,7 +1434,7 @@ s
     <lf>
       <satop nomvar="Q">
         <diamond mode="quant">
-          <prop name="lf.q.quant.nonsg" />
+          <prop name="plural" />
         </diamond>
       </satop>
     </lf>
@@ -1602,7 +1443,7 @@ s
     <lf>
       <satop nomvar="Q">
         <diamond mode="quant">
-          <prop name="lf.q.quant.sg" />
+          <prop name="singular" />
         </diamond>
       </satop>
     </lf>
@@ -1611,7 +1452,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="quant">
-          <prop name="lf.T.quant.pl" />
+          <prop name="plural" />
         </diamond>
       </satop>
     </lf>
@@ -1620,7 +1461,7 @@ s
     <lf>
       <satop nomvar="T">
         <diamond mode="quant">
-          <prop name="lf.T.quant.sg" />
+          <prop name="singular" />
         </diamond>
       </satop>
     </lf>
@@ -1632,7 +1473,7 @@ s
     <lf>
       <satop nomvar="U">
         <diamond mode="polarity">
-          <prop name="pol.pos" />
+          <prop name="positive" />
         </diamond>
       </satop>
     </lf>
@@ -1641,7 +1482,7 @@ s
     <lf>
       <satop nomvar="U">
         <diamond mode="polarity">
-          <prop name="pol.neg" />
+          <prop name="negative" />
         </diamond>
       </satop>
     </lf>
@@ -1650,7 +1491,7 @@ s
     <lf>
       <satop nomvar="U">
         <diamond mode="polarity">
-          <prop name="pol.med" />
+          <prop name="medium" />
         </diamond>
       </satop>
     </lf>
@@ -1683,7 +1524,7 @@ s
     <lf>
       <satop nomvar="E">
         <diamond mode="tense">
-          <prop name="pres.habitual" />
+          <prop name="pres.simple" />
         </diamond>
       </satop>
     </lf>
